@@ -23,7 +23,7 @@
 		<a href="<?=site_url()?>/page/load/contact">контакты</a>
 	</div>
 
-	<!-- absolutely positioned block -->
+	<!-- cart is absolutely positioned block -->
 	<div id="cart">
 		<a class="cart" href="<?=site_url()?>/cart/view">
 			<img class="cart" src="<?=base_url()?>images/cart1_blue.png" />
