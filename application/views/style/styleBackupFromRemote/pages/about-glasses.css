@@ -1,0 +1,11 @@
+#about-glasses {
+	color: #555;
+	font-family: sans;
+}
+#about-glasses h1 {
+	text-align: center;
+}
+#about-glasses .logo {
+	float: right;
+	width: 200px;
+}

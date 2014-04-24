@@ -1,0 +1,165 @@
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: sans;
+}
+a {
+	text-decoration: none;
+	color: #3f92d2;
+}
+img {text-decoration: none; border: 0px} /* ie image border fix */
+button, button:active, button:visited { border: 0; background: 0; padding: 0; margin: 0; outline: none } /* reset button styles */
+/* layout */
+#header {
+	position: relative;
+	z-index: 100;
+	height: 40px;
+	
+}
+#topLine {
+	width: 100%;
+	height: 4px;
+	background-color: #0013ff;
+
+	transition: background-color 1s;
+}
+#header:hover #topLine {
+	background-color: #a6000c;
+}
+#topNavbar {
+	opacity: .8;
+  text-align: left;
+	/* padding: 5px 10px 5px 10px; */
+	height: 36px;
+	
+	background-color: #eee;
+
+  font-size: 0;
+  font-size: 12px\9; /* IE6-9 only hack */
+}
+#topNavbar:hover {
+}
+#topNavbar a {
+	color: #333;
+	color: black;
+	font-family: sans;
+	padding: 5px;
+	margin: 0 15px 0 0;
+	height: 26px;
+
+	/* layout */
+  display: inline-block;
+  font-size: 18px;
+  zoom: 1; /* for IE */
+  *display: inline; /* for IE */
+
+	/* animation */
+	transition: background-color 1s, color .5s;
+}
+#topNavbar a:hover {
+	background-color: #a6000c;
+	color: white;
+}
+#topNavbar:after { /* adds additional line in order to make align justify work */
+  content: "";
+  width: 100%;
+  display: inline-block;
+
+  zoom: 1;
+  *display: inline; /* for IE */
+}
+
+#cart {
+	position: absolute;
+	right: 0;
+	top: 5px;
+	height: 50px;
+	padding: 25px 10px 0 70px;
+
+	z-index: 1000;
+	background-color: #fff;
+	border-bottom: solid #eee 4px;
+	border-left: solid #eee 2px;
+	border-radius: 0px 0px 0px 60px;
+
+	overflow: hidden;
+
+	transition: width .5s;
+}
+#cart:hover {
+	/* width: <?=$this->cart->total_items()*100?>px; */
+}
+#cart img.cart, #cart img.cartHover {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	height: 60px;
+	vertical-align: bottom;
+
+	cursor: pointer;
+}
+#cart img.cartHover {
+	opacity: 0;
+	z-index: 10;
+	transition: opacity .5s;
+}
+#cart:hover img.cartHover {
+	opacity: 1;
+}
+#cart div#cartContent {
+	float: right;
+	//margin: 23px 5px 0 0;
+
+}
+#cart div#cartContent div.imgContainer {
+	display: inline-block;
+	position: relative;
+}
+div#cartContent div.imgContainer button.removeItem {
+	visibility: hidden;
+}
+div#cartContent div.imgContainer:hover button.removeItem {
+	visibility: visible;
+}
+#cart div#cartContent .imgContainer > img {
+	height: 30px;
+}
+
+#cart button.removeItem {
+	position: absolute;
+	top: 5px;
+	left: 15px;
+
+	cursor: pointer;
+}
+
+#cart button.removeItem img {
+	width: 20px;
+	height: 20px;
+}
+#cartContent div.itemCount {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	padding: 2px;
+	text-align: center;
+	font-size: 13px;
+
+	width: 15px;
+	height: 15px;
+	border-radius: 40px;
+	background-color: #eee;
+}
+
+#body {
+	width: 100%;
+	position: absolute;
+	top:0;
+	z-index: 1;
+}
+div.page-body {
+	margin-top: 40px; /* header height */	
+}
+

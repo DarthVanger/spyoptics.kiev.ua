@@ -1,0 +1,118 @@
+/* for devices with screen width > 1000px (so that, "powerful") page sliding animation is ON, so layout is different */
+@media screen and (min-width: 1000px) {
+	<?php $this->load->view("style/pageSlidingLayout.css")?>
+}
+#page1, #page2, #page3, #page4 {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	z-index: -1;
+}
+
+/* #page1 */
+.pictures {
+	text-align: center;	
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin-top: 40px; /* header height */
+}
+.pictures .modelName {
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 10;
+	
+	color: white;
+	background-color: #333;
+	padding: 3px 6px 3px 6px;
+	border-radius: 0 0 10px 0;
+	
+	font-size: 25px;
+}
+.pictures img {
+	margin: auto;
+	margin-bottom: -0.3em; /* get rid of white space after image */
+}
+div.flex-caption {
+}
+div.color {
+	position: absolute;
+	left: 0;
+	top: 50px;
+	background-color: #eee;
+	color: #555;
+	margin: 0;
+	padding: 10px;
+	border-radius: 0 10px 10px 0;
+}
+.priceAndCart {
+	position: absolute;
+	z-index: 100;
+	top: 60px;
+	right: 20px;
+	width: 90px;
+}
+.priceAndCart .price {
+	line-height: 1.5em;
+	background-color: #a6000c;
+	border-radius: 2px;
+	padding: 10px;
+	color: white;
+	font-family: sans;
+	letter-spacing: 1px;
+
+}
+.descriptionBlock .color, .descriptionBlock .model {
+	padding: 8px;
+}
+.orderButton {
+	display: inline-block;
+
+	cursor: pointer;
+}
+.orderButton img {
+	width: 80px;
+}
+.orderButton.old {
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 60px;
+
+	width: 80px;
+	background-color: #000;	
+	border-radius: 2px;
+	padding: 5px;
+	color: white;
+	font-family: sans;
+
+	cursor: pointer;
+	
+	/* animation */
+	transition: background-color 1s;
+}
+.orderButton.old:hover {
+	background-color: #a6000c;
+}
+/* END #page1 */
+
+/* #page4 */
+#page4 {
+	text-align: center;
+}
+#page4 img {
+	height: 80%;
+}
+/* END #page4 */
+
+/* #page3 */
+#page3 {
+	text-align: center;
+	font-family: sans-serif;
+	padding-top: 30px;
+}
+#page3 img {
+}
+/* END #page3 */
