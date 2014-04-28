@@ -1,12 +1,8 @@
 #content, .content {
 	padding: 10px;
-	font-family: sans;
-	line-height: 1.5em;
-}
-#content {
-	color: #555;
-	font-family: sans;
+	/* line-height: 1.5em; */
 }
 #content h1 {
 	text-align: center;
 }
+<?php $this->load->view('style/text.arduinoStyle.css');
