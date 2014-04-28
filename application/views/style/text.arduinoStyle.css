@@ -1,0 +1,18 @@
+/* Copied this style from arduino.cc site */
+.text p {
+	display: block;
+	-webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+.text {	
+	font: normal 112.5%/1.75 serif;
+	font-family: "TyponineSans Regular 18", "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	color: #4f4e4e;
+
+	text-align: justify;
+}
+
