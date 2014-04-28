@@ -28,8 +28,10 @@
 	background-color: #333;
 	padding: 3px 6px 3px 6px;
 	border-radius: 0 0 10px 0;
-	
-	font-size: 25px;
+
+	font-size: 160%;
+	font-family: serif;
+	letter-spacing: 1px;
 }
 .pictures img {
 	margin: auto;
@@ -46,6 +48,8 @@ div.color {
 	margin: 0;
 	padding: 10px;
 	border-radius: 0 10px 10px 0;
+
+	font-size: 90%;
 }
 .priceAndCart {
 	position: absolute;
