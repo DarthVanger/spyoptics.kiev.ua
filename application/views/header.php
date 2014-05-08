@@ -21,6 +21,7 @@
 		<a href="<?=site_url()?>/page/load/order">заказать</a>
 		<a href="<?=site_url()?>/page/load/delivery">доставка</a>
 		<a href="<?=site_url()?>/page/load/contact">контакты</a>
+
 	</div>
 
 	<!-- cart is absolutely positioned block -->
@@ -43,7 +44,7 @@
 			<?php endforeach; ?>
 		</div>
 	</div>
-</div>
+</div> <!-- end header -->
 
 
 <div id="body">
