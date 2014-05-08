@@ -10,6 +10,7 @@
 	<link rel="icon" 
 	      type="image/png" 
 				      href="<?=base_url()?>images/faviconEye1-6.png"> <!--favicon2.2.png-->
+
 	<title>Spyoptic Киев Украина | Стильные очки Киев Украина</title>
 </head>
 <body>
@@ -21,8 +22,16 @@
 		<a href="<?=site_url()?>/page/load/order">заказать</a>
 		<a href="<?=site_url()?>/page/load/delivery">доставка</a>
 		<a href="<?=site_url()?>/page/load/contact">контакты</a>
-
 	</div>
+
+	<div class="instagramLogoContainer">
+		<a href="http://instagram.com/spyoptics_kiev" target="_blank">
+			<img class="instagramLogo1" src="<?=base_url()?>images/social/instagramLogoBeautiful.png" />
+			<img class="instagramLogo2" src="<?=base_url()?>images/social/instagramLogoBlack.png " />
+			<img class="instagramLogoBkg" src="<?=base_url()?>images/social/instagramLogoBeautiful.png " />
+		</a>
+	</div>
+
 
 	<!-- cart is absolutely positioned block -->
 	<div id="cart">
@@ -48,3 +57,5 @@
 
 
 <div id="body">
+
+

@@ -1,8 +1,33 @@
 #contact-page {
 	font-size: 25px;
 }
-#contact-page img {
+#contact-page img.contacts {
 	height: 70px;
 	margin: 20px;
 	vertical-align: middle;
+}
+/* instagram logo animation */
+#contact-page #instagramLogoContainer {
+	position: relative;	
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	float: right;
+}
+#contact-page #instagramLogo, #contact-page #instagramLogoHover {
+	position: absolute;
+	top:0;
+	left:0;
+
+	height: 200px;
+}
+#contact-page #instagramLogo {
+	z-index: 10;
+	transition: opacity 1s ease-in-out;
+}
+#contact-page #instagramLogo:hover {
+	opacity: 0;
+}
+#contact-page #instagramLogoHover {
+
 }
