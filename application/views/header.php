@@ -24,15 +24,6 @@
 		<a href="<?=site_url()?>/page/load/contact">контакты</a>
 	</div>
 
-	<div class="instagramLogoContainer">
-		<a href="http://instagram.com/spyoptics_kiev" target="_blank">
-			<img class="instagramLogo1" src="<?=base_url()?>images/social/instagramLogoBeautiful.png" />
-			<img class="instagramLogo2" src="<?=base_url()?>images/social/instagramLogoBlack.png " />
-			<img class="instagramLogoBkg" src="<?=base_url()?>images/social/instagramLogoBeautiful.png " />
-		</a>
-	</div>
-
-
 	<!-- cart is absolutely positioned block -->
 	<div id="cart">
 		<a class="cart" href="<?=site_url()?>/cart/view">

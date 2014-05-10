@@ -154,31 +154,6 @@ div#cartContent div.imgContainer:hover button.removeItem {
 	background-color: #eee;
 }
 
-.instagramLogoContainer {
-	position: relative;
-	display: inline-block;
-	height: 90%; 
-}
-.instagramLogoContainer img {
-	position: absolute;
-	top: 10%;
-	left: 0;
-	height: 100%;
-}
-img.instagramLogo1 {
-}
-img.instagramLogo2 {
-	opacity: 0;
-	z-index: 1;
-	transition: opacity .5s ease-in-out;
-}
-img.instagramLogoBkg {
-	z-index: -1;
-}
-#header:hover img.instagramLogo2 {
-	opacity: 1;
-}
-
 #body {
 	width: 100%;
 	position: absolute;

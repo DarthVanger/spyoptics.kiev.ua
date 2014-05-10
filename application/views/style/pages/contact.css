@@ -10,16 +10,16 @@
 #contact-page #instagramLogoContainer {
 	position: relative;	
 	display: inline-block;
-	height: 200px;
-	width: 200px;
-	float: right;
+	height: 70px;
+	width: 65px;
+	vertical-align: middle;
+	margin: 20px;
 }
 #contact-page #instagramLogo, #contact-page #instagramLogoHover {
 	position: absolute;
 	top:0;
 	left:0;
-
-	height: 200px;
+	height: 70px;
 }
 #contact-page #instagramLogo {
 	z-index: 10;
