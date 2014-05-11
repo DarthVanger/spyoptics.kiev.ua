@@ -21,7 +21,7 @@ var addCartListeners = function() {
 var addToCart = function(id) {
 	console.log('adding to cart product with id='+id);
 	$.ajax({
-		url: '<?=site_url()?>'+'/cart/add/'+id,
+		url: '<?=site_url()?>'+'/cartcontroller/add/'+id,
 		success: function(response) {
 			console.log('ajax response: ' + response);
 			updateCartHeader();
@@ -32,7 +32,7 @@ var addToCart = function(id) {
 var removeItem = function(id) {
 	console.log('removing item');
 	$.ajax({
-		url: '<?=site_url()?>'+'/cart/remove/'+id,
+		url: '<?=site_url()?>'+'/cartcontroller/remove/'+id,
 		success: function(response) {
 			console.log('success! Ajax response: ' + response);
 			updateCartHeader();

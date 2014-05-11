@@ -1,8 +1,8 @@
 <?php include 'headerPage.php'?>
 <div id="cart-page">
 	<div class="cart">
-		<?php foreach($this->cart->contents() as $item): ?> 
-			<img src="<?=$item['mini_img_path']?>" />	
+		<?php foreach($sunglasses as $sunglass): ?> 
+			<img src="<?=$sunglass['mini_img_path']?>" />	
 		<?php endforeach; ?>
 	</div>
 </div>

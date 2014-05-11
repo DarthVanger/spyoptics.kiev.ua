@@ -17,7 +17,9 @@ class Main extends CI_Controller {
 
 		$viewData['sunglasses'] = $sunglasses;
 
-		$this->load->view('header');
+		$this->load->model('Header');
+
+		$this->load->view('header', $this->Header->getViewData());
 		$this->load->view('main', $viewData);
 		$this->load->view('footer');
 	}
