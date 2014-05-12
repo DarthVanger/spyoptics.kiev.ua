@@ -1,8 +1,33 @@
+<script type="text/javascript">
+if(typeof jQuery == 'undefined'){
+	document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+  }
+</script>
+
 <script>
 
-$(document).ready(function() {
-	addListeners();
-});
+/** CartJS class
+ *	TODO: add CartJS prefixes to all methods
+ */
+var CartJS = function(){
+};
+
+// static variable
+CartJS.cartId;
+
+/** init
+ *	Reads config and adds listeners to buttons.
+ *
+ *	@param config is an object {cartId: "id of element which displays cart content", ...}.
+ */
+
+CartJS.init = function(config) {
+	CartJS.cartId = config.cartId;
+
+	$(document).ready(function() {
+		addListeners();
+	});
+}
 
 var addListeners = function() {
 	console.log('adding onclick listeners');
@@ -24,7 +49,7 @@ var addToCart = function(id) {
 		url: '<?=site_url()?>'+'/cartcontroller/add/'+id,
 		success: function(response) {
 			console.log('ajax response: ' + response);
-			updateCartHeader();
+			CartJS.updateCart();
 		}
 	});
 }
@@ -35,14 +60,16 @@ var removeItem = function(id) {
 		url: '<?=site_url()?>'+'/cartcontroller/remove/'+id,
 		success: function(response) {
 			console.log('success! Ajax response: ' + response);
-			updateCartHeader();
+			CartJS.updateCart();
 		}
 	});
 }
 
-var updateCartHeader = function() {
-	console.log('updating cart header');
-	$('#cartCount').load(document.URL + ' #cartCount');
-	$('#cartContent').load(document.URL + ' #cartContent', addCartListeners); // since DOM is reloaded, listeners should be readded 
+/** updateCart
+ *	Reloads elements with id=this.cartId 
+ */
+CartJS.updateCart = function() {
+	console.log('updating cart');
+	$('#'+CartJS.cartId).load(document.URL + ' #'+CartJS.cartId, addCartListeners); // since DOM is reloaded, listeners should be readded 
 }
 </script>

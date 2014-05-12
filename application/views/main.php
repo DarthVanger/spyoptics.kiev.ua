@@ -3,7 +3,6 @@
 
 <!-- flex slider sources -->
 <link rel="stylesheet" href="<?=base_url()?>plugins/flexSlider/flexslider.css" type="text/css">
-<script src="<?=base_url()?>plugins/jquery.min.js"></script>
 <script src="<?=base_url()?>plugins/flexSlider/jquery.flexslider.js"></script>
 
 <script type="text/javascript" charset="utf-8">
@@ -37,4 +36,3 @@
 
 
 <?php include 'mousewheelSliding.js'; ?>
-<?php include 'cart.js'; ?>

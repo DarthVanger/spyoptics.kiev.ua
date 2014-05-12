@@ -1,5 +1,11 @@
+<?php include './application/views/cart.js'; ?>
+<script>
+	CartJS.init({
+		cartId: "cartContent"
+	});
+</script>
 <!-- cart is absolutely positioned block -->
-<div id="cart">
+<div id="cart" class="cart">
 	<a class="cart" href="<?=site_url()?>/cartcontroller/view">
 		<img class="cart" src="<?=base_url()?>images/cart1_blue.png" />
 		<img class="cartHover" src="<?=base_url()?>images/cart1_red.png" />

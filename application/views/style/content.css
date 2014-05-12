@@ -5,4 +5,5 @@
 #content h1 {
 	text-align: center;
 }
-<?php $this->load->view('style/text.arduinoStyle.css');
+<?php $this->load->view('style/text.arduinoStyle.css'); ?>
+<?php $this->load->view('style/general.css'); ?>

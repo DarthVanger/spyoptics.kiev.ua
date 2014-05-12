@@ -18,7 +18,8 @@ class CartController extends CI_Controller {
 	 */
 	public function view() {
 		$basket = $this->Basket->getInstance();
-		$viewData['cartItems'] = $basket->getItems();
+		$viewData['cart']['items'] = $basket->getItems();
+		$viewData['cart']['totalPrice'] = $basket->getTotalPrice();
 
 		$this->load->view('header/forPageNoCart');	
 		$this->load->view('pages/cart', $viewData);	

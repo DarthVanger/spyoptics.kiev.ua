@@ -53,7 +53,7 @@ class Basket extends CI_Model {
 	 *	Inserts an item to the basket.
 	 *	
 	 *	@param $item array of item's properties in format [nameOfProperty] => [value]. Examples of properties: id, name, price.
-	 *	Property ['id'] is required!
+	 *	
 	 */
 	public function insert($item) {
 		if(!is_array($item)) throw new Exception("basket::insert() - item is not array!");
@@ -91,5 +91,19 @@ class Basket extends CI_Model {
 		}
 		return false;
 	 }
+
+	 /** getTotalPrice
+	  *	 Returns total price of all items in the basket.
+	  */
+	  public function getTotalPrice() {
+		$items = $this->getItems();
+
+		$totalPrice = 0;
+		foreach($items as $item) {
+			$totalPrice += $item['price'];
+		}
+
+		return $totalPrice;
+	  }
 
 }
