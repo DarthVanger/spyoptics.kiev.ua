@@ -17,6 +17,11 @@ class CartController extends CI_Controller {
 	 * Loads cart view, showing all the products.
 	 */
 	public function view() {
-		$this->load->view('cart.php');	
+		$basket = $this->Basket->getInstance();
+		$viewData['cartItems'] = $basket->getItems();
+
+		$this->load->view('header/forPageNoCart');	
+		$this->load->view('pages/cart', $viewData);	
+		$this->load->view('footer');	
 	}
 }

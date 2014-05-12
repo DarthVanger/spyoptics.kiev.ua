@@ -19,7 +19,7 @@ class Main extends CI_Controller {
 
 		$this->load->model('Header');
 
-		$this->load->view('header', $this->Header->getViewData());
+		$this->load->view('header/forMainPage', $this->Header->getViewData());
 		$this->load->view('main', $viewData);
 		$this->load->view('footer');
 	}
