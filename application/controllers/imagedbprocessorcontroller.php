@@ -10,4 +10,14 @@ class ImageDbProcessorController extends CI_Controller {
 		//$this->ImageDbProcessor->addMiniatures('flynn', 'h200');
 		$this->ImageDbProcessor->addMiniatures('kenBlockHelm', 'h200');
 	}
+
+	public function addMiniatures($model, $subfolder) {
+		$this->load->model("ImageDbProcessor");
+		$this->ImageDbProcessor->addMiniatures($model, $subfolder);
+	}
+
+	public function addThumbnails($model, $subfolder) {
+		$this->load->model("ImageDbProcessor");
+		$this->ImageDbProcessor->addThumbnails($model, $subfolder);
+	}
 }
