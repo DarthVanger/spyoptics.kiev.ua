@@ -131,7 +131,7 @@ class Basket extends CI_Model {
 		return $this->sendEmail($shopManagerEmail, $subject, $message, $from);
 	 }
 
-	 private function sendEmail($to, $subject, $message, $fromArray) {
+	 private function sendEmail($to, $subject, $message, $from) {
 	 	/*
 		$this->load->library('email');
 
