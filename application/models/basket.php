@@ -120,8 +120,12 @@ class Basket extends CI_Model {
 			$message .= $key.": ".$value."\n";
 		}
 		$message .= "Заказ:\n";
-		foreach($this->items as $item) {
-			$message .= $item['model']." ".$item['color']."\n";
+		if(is_array($this->items)) {
+			foreach($this->items as $item) {
+				$message .= $item['model']." ".$item['color']."\n";
+			}
+		} else {
+			$message .= "Корзина пуста\n";
 		}
 
 		return $this->sendEmail($shopManagerEmail, $subject, $message, $from);
