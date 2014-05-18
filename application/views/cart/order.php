@@ -36,14 +36,14 @@
 
 	<form class="order" method="GET" action="<?=site_url()?>/cartcontroller/submitOrder">
 		<h2 class="textAlignCenter">Оформление заказа</h2>
-		<div class="fieldName">Имя</div> <input type="text" class="glowing-border" />
+		<div class="fieldName">Имя</div> <input name="name" type="text" class="glowing-border" />
 		<br />
-		<div class="fieldName">Телефон</div> <input type="text" class="glowing-border" />
+		<div class="fieldName">Телефон</div> <input name="phone" type="text" class="glowing-border" />
 		<br />
 		<div class="fieldName">Адрес</div> <input name="address" type="text" class="glowing-border" />
 		<br />
 		<div class="fieldName">Доставка</div>
-		<select class="glowing-border">
+		<select name="delivery" class="glowing-border">
 			<option>Новая Почта</option>
 			<option>Курьерская (только г. Киев, правый берег)
 		</select>

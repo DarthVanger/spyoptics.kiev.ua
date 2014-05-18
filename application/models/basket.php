@@ -114,7 +114,7 @@ class Basket extends CI_Model {
 	 public function submitOrder($userInfo) {
 	 	$shopManagerEmail = "darthvanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
-		$from = "Силы Тьмы <DarkSide@spyoptics.kiev.ua>";
+		$from = "Силы Тьмы <DarkSide@nowhere.world>";
 		$message = "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."\n";
