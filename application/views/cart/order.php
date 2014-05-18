@@ -50,7 +50,7 @@
 		</select>
 		<div class="fieldName">Способ оплаты</div>
 		<select name="paymentMethod" class="glowing-border">
-			<option>Наложенный платеж</option>
+			<option>Оплата при получении</option>
 			<option>Предоплата на карточку ПриватБанк (номер будет сообщен по смс)</option>
 		</select>
 		<br />

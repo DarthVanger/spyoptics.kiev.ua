@@ -83,7 +83,7 @@ class Basket extends CI_Model {
 	 *
 	 */
 	 public function removeAll() {
-		unset($this->items);
+		$this->items = null;
 		$this->saveBasketToSession();
 	 }
 	/** isInside
