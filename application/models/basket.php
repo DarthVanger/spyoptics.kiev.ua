@@ -114,7 +114,7 @@ class Basket extends CI_Model {
 	 public function submitOrder($userInfo) {
 	 	$shopManagerEmail = "darthvanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
-		$from= "Силы Тьмы";
+		$from = "Силы Тьмы <DarkSide>";
 		$message = "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."\n";
@@ -131,7 +131,7 @@ class Basket extends CI_Model {
 		return $this->sendEmail($shopManagerEmail, $subject, $message, $from);
 	 }
 
-	 private function sendEmail($to, $subject, $message, $from) {
+	 private function sendEmail($to, $subject, $message, $fromArray) {
 	 	/*
 		$this->load->library('email');
 
