@@ -83,12 +83,8 @@ class Basket extends CI_Model {
 	 *
 	 */
 	 public function removeAll() {
-		foreach($this->items as $key => $itemInBasket) {
-			unset($this->items);
-			$this->saveBasketToSession();
-		}
-		$this->Log->message("debug", "Basket::remove() - no such item in the basket, nothing to remove");
-		return false;
+		unset($this->items);
+		$this->saveBasketToSession();
 	 }
 	/** isInside
 	 *	Checks if $item is inside the basket.
