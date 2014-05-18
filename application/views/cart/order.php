@@ -35,7 +35,7 @@
 		<?php endif;?>
 	</div>
 
-	<form class="order" method="GET" action="<?=site_url()?>/cartcontroller/submitOrder">
+	<form class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
 		<h2 class="textAlignCenter">Оформление заказа</h2>
 		<div class="fieldName">Имя</div> <input name="name" type="text" class="glowing-border" />
 		<br />

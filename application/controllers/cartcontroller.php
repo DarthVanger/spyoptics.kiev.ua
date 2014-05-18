@@ -29,14 +29,14 @@ class CartController extends CI_Controller {
 	public function submitOrder() {
 		$basket = $this->Basket->getInstance();
 		
-		$submitResult = $basket->submitOrder($_GET);
+		$submitResult = $basket->submitOrder($_POST);
 
 		$this->load->view("header/forPageNoCart");	
 		if($submitResult == false) {
 			$this->load->view("cart/submitOrderFail");
 		} else {
 			$basket->removeAll();
-			$this->load->view("cart/submitOrderSuccess", $_GET);
+			$this->load->view("cart/submitOrderSuccess", $_POST);
 		}
 		$this->load->view("footer");	
 	}
