@@ -109,10 +109,10 @@ class Basket extends CI_Model {
 	  }
 
 	/** submitOrder
-	 *	Submits order by sending email with all info to $this->shopManagerEmail
+	 *	Submits order by sending email with all info to $shopManagerEmail (specified inside this method).
 	 */
 	 public function submitOrder($userInfo) {
-	 	$shopManagerEmail = "darthvanger@gmail.com";
+	 	$shopManagerEmail = "Acdc2007@ukr.net";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere.world>";
 		$message = "Инфо о клиенте:\n";
@@ -132,7 +132,7 @@ class Basket extends CI_Model {
 	 }
 
 	 private function sendEmail($to, $subject, $message, $from) {
-	 	/*
+	 	/* CodeIgniters library doesn't work for some reason, dont want to fix it.
 		$this->load->library('email');
 
 		$this->email->from($from, 'Силы Тьмы');

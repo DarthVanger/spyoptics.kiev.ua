@@ -2,6 +2,7 @@
 #cart-page .cart {
 	display: inline-block;
 	float: right;
+	margin-right: 30px;
 }
 #cart-page .item .description {
 	display: inline-block;
@@ -15,6 +16,7 @@
 #cart-page form.order {
 	display: inline-block;
 	margin-right: 100px;
+	margin-left: 30px;
 	text-align: left;
 	width: 600px;
 }
@@ -69,6 +71,11 @@ form.order select, form.order option {
 .item button.removeItem img {
     width: 20px;
     height: 20px;
+}
+
+.total-price {
+	margin-top: 30px;
+	font-weight: bold;
 }
 
 /* submit button style */

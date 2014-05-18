@@ -19,7 +19,7 @@
 				<div class="item">
 					<div class="imgContainer">
 						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=base_url()?>images/removeItem3.png" /></button>
-						<img class="glasses" src="<?=$item['mini_img_path']?>" />
+						<img class="glasses" src="<?=base_url()?><?=$item['mini_img_path']?>" />
 					</div>
 					<div class="description">
 						<div><?=$item['model']?></div>
@@ -31,6 +31,7 @@
 			<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
 		<?php else:?>
 			<div>Ваша корзинка пуста</div>
+			<div><a href="<?=base_url()?>">Выбрать и добавить в корзинку очки</a></div>
 		<?php endif;?>
 	</div>
 
