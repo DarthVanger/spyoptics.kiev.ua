@@ -114,7 +114,7 @@ class Basket extends CI_Model {
 	 public function submitOrder($userInfo) {
 	 	$shopManagerEmail = "darthvanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
-		$from = "Силы Тьмы <DarkSide>";
+		$from = "Силы Тьмы <DarkSide@spyoptics.kiev.ua>";
 		$message = "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."\n";
@@ -145,6 +145,13 @@ class Basket extends CI_Model {
 
 		return $this->email->print_debugger();
 		*/
+
+		$headers = "MIME-Version: 1.0" . PHP_EOL;
+		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
+
+		$headers .= 'From: ' . $from . PHP_EOL;
+		$headers .= 'Cc: darthvanger@gmail.com' . PHP_EOL;
+
 		return mail($to, $subject, $message, "From: $from");
 	 }
 
