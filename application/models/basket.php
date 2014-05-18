@@ -98,6 +98,8 @@ class Basket extends CI_Model {
 	  public function getTotalPrice() {
 		$items = $this->getItems();
 
+		if(!is_array($items)) return 0; // if cart is empty
+
 		$totalPrice = 0;
 		foreach($items as $item) {
 			$totalPrice += $item['price'];
