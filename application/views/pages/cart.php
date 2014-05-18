@@ -30,7 +30,7 @@
 		<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
 	</div>
 
-	<form class="order">
+	<form class="order" method="GET" action="<?=site_url()?>/cartcontroller/submitOrder">
 		<h2 class="textAlignCenter">Оформление заказа</h2>
 		<div class="fieldName">Имя</div> <input type="text" class="glowing-border" />
 		<br />

@@ -25,4 +25,13 @@ class CartController extends CI_Controller {
 		$this->load->view('pages/cart', $viewData);	
 		$this->load->view('footer');	
 	}
+
+	public function submitOrder() {
+		$basket = $this->Basket->getInstance();
+		
+		echo "emailing order: ";
+		$temp = $basket->submitOrder($_GET);
+		var_dump($temp);
+		
+	}
 }

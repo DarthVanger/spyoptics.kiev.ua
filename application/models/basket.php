@@ -106,4 +106,39 @@ class Basket extends CI_Model {
 		return $totalPrice;
 	  }
 
+	/** submitOrder
+	 *	Submits order by sending email with all info to $this->shopManagerEmail
+	 */
+	 public function submitOrder($userInfo) {
+	 	$shopManagerEmail = "darthvanger@gmail.com";
+		$subject = "spyoptics.kiev.ua";
+		$from= "Силы Тьмы";
+		$message = "Инфо о клиенте:\n";
+		foreach($userInfo as $key => $value) {
+			$message .= $key.": ".$value."\n";
+		}
+		$message .= "Заказ:\n";
+		foreach($this->items as $item) {
+			$message .= $item['model']." ".$item['color']."\n";
+		}
+
+		return $this->sendEmail($shopManagerEmail, $subject, $message, $from);
+	 }
+
+	 private function sendEmail($to, $subject, $message, $from) {
+		$this->load->library('email');
+
+		$this->email->from($from, 'Силы Тьмы');
+		$this->email->to($to); 
+
+		$this->email->subject($subject);
+		$this->email->message($message);	
+
+		$this->email->send();
+
+		return $this->email->print_debugger();
+	 }
+
+
+
 }
