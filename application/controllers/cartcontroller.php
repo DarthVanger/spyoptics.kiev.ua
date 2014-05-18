@@ -35,10 +35,9 @@ class CartController extends CI_Controller {
 		if($submitResult == false) {
 			$this->load->view("cart/submitOrderFail");
 		} else {
+			$basket->removeAll();
 			$this->load->view("cart/submitOrderSuccess", $_GET);
 		}
 		$this->load->view("footer");	
-
-		
 	}
 }
