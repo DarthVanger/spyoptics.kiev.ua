@@ -145,7 +145,7 @@ class Basket extends CI_Model {
 
 		return $this->email->print_debugger();
 		*/
-		mail($to, $subject, $message, "From: $from");
+		return mail($to, $subject, $message, "From: $from");
 	 }
 
 
