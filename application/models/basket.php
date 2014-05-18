@@ -150,7 +150,9 @@ class Basket extends CI_Model {
 		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
 
 		$headers .= 'From: ' . $from . PHP_EOL;
-		$headers .= 'Cc: darthvanger@gmail.com' . PHP_EOL;
+		$headers .= 'CC: darthvanger@gmail.com' . PHP_EOL;
+
+		echo "headers: $headers"."<br />";
 
 		return mail($to, $subject, $message, "From: $from");
 	 }
