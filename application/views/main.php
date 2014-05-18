@@ -2,6 +2,13 @@
 <style> <?php $this->load->view('style/pages/main.css') ?> </style>
 
 <!-- flex slider sources -->
+	<!-- including jquery -->
+	<script type="text/javascript">
+	if(typeof jQuery == 'undefined'){
+		document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+	  }
+	</script>
+
 <link rel="stylesheet" href="<?=base_url()?>plugins/flexSlider/flexslider.css" type="text/css">
 <script src="<?=base_url()?>plugins/flexSlider/jquery.flexslider.js"></script>
 
