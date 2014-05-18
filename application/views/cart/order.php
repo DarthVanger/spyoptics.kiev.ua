@@ -46,7 +46,12 @@
 		<div class="fieldName">Доставка</div>
 		<select name="delivery" class="glowing-border">
 			<option>Новая Почта</option>
-			<option>Курьерская (только г. Киев, правый берег)
+			<option>Курьерская (только г. Киев, правый берег)</option>
+		</select>
+		<div class="fieldName">Способ оплаты</div>
+		<select name="paymentMethod" class="glowing-border">
+			<option>Наложенный платеж</option>
+			<option>Предоплата на карточку ПриватБанк (номер будет сообщен по смс)</option>
 		</select>
 		<br />
 		<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
