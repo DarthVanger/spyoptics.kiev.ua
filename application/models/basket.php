@@ -132,6 +132,7 @@ class Basket extends CI_Model {
 	 }
 
 	 private function sendEmail($to, $subject, $message, $from) {
+	 	/*
 		$this->load->library('email');
 
 		$this->email->from($from, 'Силы Тьмы');
@@ -143,6 +144,8 @@ class Basket extends CI_Model {
 		$this->email->send();
 
 		return $this->email->print_debugger();
+		*/
+		mail($to, $subject, $message, "From: $from");
 	 }
 
 
