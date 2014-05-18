@@ -4,6 +4,8 @@ CREATE TABLE sunglasses (
 	color varchar(100),
 	price int(4),
 	img_path varchar(200),
+	mini_img_path varchar(200),
+	thumbnail_img_path varchar(200),
 	mini_img_path varchar(200)
 );
 
