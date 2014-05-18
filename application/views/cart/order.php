@@ -2,7 +2,7 @@
 <?php $this->load->view('cart.js');?>
 <script>
 	CartJS.init({
-		cartId: "cart-page"
+		cartId: "cart-view"
 	});
 </script>
 
