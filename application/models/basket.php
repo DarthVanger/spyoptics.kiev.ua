@@ -78,6 +78,18 @@ class Basket extends CI_Model {
 		return false;
 	 }
 
+	/** removeAll
+	 *	Removes all items from the basket.
+	 *
+	 */
+	 public function removeAll() {
+		foreach($this->items as $key => $itemInBasket) {
+			unset($this->items);
+			$this->saveBasketToSession();
+		}
+		$this->Log->message("debug", "Basket::remove() - no such item in the basket, nothing to remove");
+		return false;
+	 }
 	/** isInside
 	 *	Checks if $item is inside the basket.
 	 *
@@ -112,7 +124,7 @@ class Basket extends CI_Model {
 	 *	Submits order by sending email with all info to $shopManagerEmail (specified inside this method).
 	 */
 	 public function submitOrder($userInfo) {
-	 	$shopManagerEmail = "Acdc2007@ukr.net";
+	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere.world>";
 		$message = "Инфо о клиенте:\n";
@@ -128,7 +140,7 @@ class Basket extends CI_Model {
 			$message .= "Корзина пуста\n";
 		}
 
-		return $this->sendEmail($shopManagerEmail, $subject, $message, $from);
+		return $this->sendEmail($shopManagerEmails, $subject, $message, $from);
 	 }
 
 	 private function sendEmail($to, $subject, $message, $from) {
@@ -150,9 +162,6 @@ class Basket extends CI_Model {
 		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
 
 		$headers .= 'From: ' . $from . PHP_EOL;
-		$headers .= 'CC: darthvanger@gmail.com' . PHP_EOL;
-
-		echo "headers: $headers"."<br />";
 
 		return mail($to, $subject, $message, "From: $from");
 	 }
