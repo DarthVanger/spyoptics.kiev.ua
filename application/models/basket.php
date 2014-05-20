@@ -123,7 +123,8 @@ class Basket extends CI_Model {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere>";
-		$message = "Инфо о клиенте:\n";
+		$message = "Новый заказ!\n";
+		$message .= "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."\n";
 		}
