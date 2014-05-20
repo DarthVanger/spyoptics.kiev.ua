@@ -1,4 +1,12 @@
-<script src="<?=base_url()?>plugins/jquery.min.js"></script>
+<!-- load jquery (if it's not already loaded) -->
+<script type="text/javascript">
+if(typeof jQuery == 'undefined'){
+	document.write('<script type="text/javascript" src="<?=base_url()?>plugins/jquery.min.js"></'+'script>');
+  }
+</script>
+
+
+<?php $this->load->view('cart/formValidation.js');?>
 <?php $this->load->view('cart.js');?>
 <script>
 	CartJS.init({
@@ -14,7 +22,8 @@
 
 	<div class="cart" id="cart-view">
 		<h2 class="textAlignCenter">Ваш заказ</h2>
-		<?php if(is_array($cart['items'])):?>
+		<?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
+			<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
 			<?php foreach($cart['items'] as $item): ?> 
 				<div class="item">
 					<div class="imgContainer">
@@ -28,18 +37,21 @@
 					</div>
 				</div>
 			<?php endforeach; ?>
-			<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
 		<?php else:?>
 			<div>Ваша корзинка пуста</div>
-			<div><a href="<?=base_url()?>">Выбрать и добавить в корзинку очки</a></div>
+			<div>
+				<a href="<?=base_url()?>">Выбрать и добавить в корзинку очки</a> <br />
+				Или заказывайте по телефону 063 206 60 97
+			</div>
 		<?php endif;?>
 	</div>
 
-	<form class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
+	<form id="orderForm" class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
 		<h2 class="textAlignCenter">Оформление заказа</h2>
 		<div class="fieldName">Имя</div> <input name="name" type="text" class="glowing-border" />
 		<br />
-		<div class="fieldName">Телефон</div> <input name="phone" type="text" class="glowing-border" />
+		<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
+		<div id="phoneValidation">&nbsp;</div>
 		<br />
 		<div class="fieldName">Адрес</div> <input name="address" type="text" class="glowing-border" />
 		<br />

@@ -1,6 +1,7 @@
+<!-- load jquery (if it's not already loaded) -->
 <script type="text/javascript">
 if(typeof jQuery == 'undefined'){
-	document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+	document.write('<script type="text/javascript" src="<?=base_url()?>plugins/jquery.min.js"></'+'script>');
   }
 </script>
 

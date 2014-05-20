@@ -10,6 +10,7 @@
 }
 #cart-page .cart img.glasses {
 	width: 300px;
+	vertical-align: bottom;
 }
 
 /* order form */
@@ -40,6 +41,21 @@ form.order select {
 }
 form.order select, form.order option {
 	background-color: #eee;
+}
+form.order #phoneValidation {
+	display: inline-block;
+	width: 150px;  
+	padding-left: 5px;
+	color: red;
+	font-family: sans;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: 90%;
+	letter-spacing: 1px;
+}
+form.order img.validation {
+	vertical-align: bottom;
+	height: 32px;
 }
 
 .glowing-border {border:2px solid #dadada;border-radius:7px;}
@@ -74,7 +90,6 @@ form.order select, form.order option {
 }
 
 .total-price {
-	margin-top: 30px;
 	font-weight: bold;
 }
 
