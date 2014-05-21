@@ -7,8 +7,7 @@
 
 	<link href="<?=CSS?>layout.css" rel="stylesheet" type="text/css" />
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
-	<link rel="icon" type="image/png" href="<?=IMG?>faviconEye1-6.png"> <!--favicon2.2.png-->
-
-	<title>Spyoptic Киев Украина | Стильные очки Киев Украина</title>
+	<link rel="icon" type="image/png" href="<?=IMG?>faviconGlasses.png">
+	<title>Spyoptic стильные очки | Киев Украина</title>
 </head>
 <body>

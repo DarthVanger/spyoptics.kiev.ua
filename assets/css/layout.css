@@ -153,3 +153,11 @@ div.page-body {
 	margin-top: 40px; /* header height */	
 }
 
+#footer {
+	border-top: 1px solid pink;
+	text-align: center;
+	font-size: 70%;
+	line-height: 150%;
+	margin-top: 50px;
+	padding-top: 5px;
+}

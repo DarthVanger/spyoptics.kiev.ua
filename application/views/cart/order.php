@@ -68,7 +68,7 @@ if(typeof jQuery == 'undefined'){
 		<br />
 		<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
 		<input type="submit" value="Готово" />
-
-
 	</form>
 </div>
+
+<div class="clear">&nbsp;</div>
