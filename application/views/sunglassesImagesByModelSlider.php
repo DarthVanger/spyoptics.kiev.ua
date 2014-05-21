@@ -8,13 +8,13 @@
 				<?php foreach($sunglasses as $sunglass): ?>
 					<?php if($sunglass['model']==$model): ?>
 						<li>
-							<img class="flex" src="<?=base_url().$sunglass['img_path']?>" />
+							<img class="flex" src="<?=IMG?><?=$sunglass['img_path']?>" />
 							 <p class="flex-caption">
 									<div class="priceAndCart">
 										<div class="price">
 											<?=$sunglass['price']?> грн
 										</div>
-									<button class="orderButton" id="<?=$sunglass['id']?>"><img src="<?=base_url()?>images/addToCart.png" /></button>
+									<button class="orderButton" id="<?=$sunglass['id']?>"><img src="<?=IMG?>addToCart.png" /></button>
 									</div>
 
 									<div class="color">

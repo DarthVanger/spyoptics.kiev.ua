@@ -1,9 +1,3 @@
-<script src="<?=base_url()?>plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="<?=base_url()?>plugins/jquery.mobile.touch.min.js"></script>
-<script src="<?=base_url()?>plugins/jquery.mobile.touch.patch.js"></script>
-<script src="<?=base_url()?>plugins/hammer.min.js"></script>
-
-<script>
 	/* config */
 	var numberOfPages = 3;
 
@@ -83,5 +77,3 @@
 			console.log('debug', 'Can\'t scroll above the first page');
 		}
 	}
-
-</script>

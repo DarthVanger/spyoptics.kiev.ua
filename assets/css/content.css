@@ -1,0 +1,9 @@
+@import url('text.arduinoStyle.css');
+@import url('general.css');
+#content, .content {
+	padding: 10px;
+	/* line-height: 1.5em; */
+}
+#content h1 {
+	text-align: center;
+}

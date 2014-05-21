@@ -1,5 +1,4 @@
-<!-- css is included via php so that php variables can be used inside css file -->
-<style> <?php $this->load->view('style/pages/order.css') ?> </style>
+<link href="<?=CSS?>pages/order.css" rel="stylesheet" type="text/css" />
 
 <div id="order-page">
 	Заказывайте по телефону. Будем рады Вашему звонку!

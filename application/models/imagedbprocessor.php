@@ -159,6 +159,27 @@ class ImageDbProcessor extends CI_Model {
 		}
 	}
 
+	/** relocateImages
+	 *	DEPRECATED. Was used only once to remove "images/" prefix in image pathes from database.
+	 *
+	 */
+	public function relocateImages($oldFolder="images", $newFolder="") {
+		$query = $this->db->query("SELECT id, img_path, mini_img_path, thumbnail_img_path FROM sunglasses");
+		foreach($query->result_array() as $row) {
+			$pattern = "/".$oldFolder."\//";
+			$newImagePath = preg_replace($pattern, $newFolder, $row['img_path']);
+			$newImagePathMini = preg_replace($pattern, $newFolder, $row['mini_img_path']);
+			$newImagePathThumbnail = preg_replace($pattern, $newFolder, $row['thumbnail_img_path']);
+			echo $newImagePath."<br />";
+			echo $newImagePathMini."<br />";
+			echo $newImagePathThumbnail."<br />";
+			$id = $row['id'];
+			$this->db->query("UPDATE sunglasses SET img_path = '".$newImagePath."' WHERE id=".$id);
+			$this->db->query("UPDATE sunglasses SET mini_img_path = '".$newImagePathMini."' WHERE id=".$id);
+			$this->db->query("UPDATE sunglasses SET thumbnail_img_path = '".$newImagePathThumbnail."' WHERE id=".$id);
+		}
+	}
+
 	/** getImagePaths method
 	 *	Returns array of image paths of all images from folder $folder
 	 *  @param $folder	folder with images

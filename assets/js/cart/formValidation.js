@@ -1,10 +1,8 @@
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script>
 	$(document).ready(function() {
 		var validated = false;
 		phoneEmpty = "укажите телефон";
-		phoneOk = "<img src=\"<?=base_url()?>images/validated5.png\" class=\"validation\" />";
-		phoneWarning = "<img title=\"Проверьте, пожалуйста, номер телефона. Возможно Вы пропустили цифру.\" src=\"<?=base_url()?>images/warningIcon.png\" class=\"validation\" />";
+		phoneOk = "<img src=\"" + IMG + "validated5.png\" class=\"validation\" />";
+		phoneWarning = "<img title=\"Проверьте, пожалуйста, номер телефона. Возможно Вы пропустили цифру.\" src=\""+IMG+"warningIcon.png\" class=\"validation\" />";
 
 		$("#phoneInput").blur(function() {
 			var $this = $(this);
@@ -55,4 +53,3 @@
 			}
 		});
 	}); 
-</script>

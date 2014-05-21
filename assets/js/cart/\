@@ -1,11 +1,7 @@
-<!-- load jquery (if it's not already loaded) -->
-<script type="text/javascript">
+// load jquery (if it's not already loaded) 
 if(typeof jQuery == 'undefined'){
-	document.write('<script type="text/javascript" src="<?=base_url()?>plugins/jquery.min.js"></'+'script>');
+	document.write('<script type="text/javascript" src="../jquery/jquery.min.js"></'+'script>');
   }
-</script>
-
-<script>
 
 /** CartJS class
  *	TODO: add CartJS prefixes to all methods
@@ -73,4 +69,3 @@ CartJS.updateCart = function() {
 	console.log('updating cart');
 	$('#'+CartJS.cartId).load(document.URL + ' #'+CartJS.cartId, addCartListeners); // since DOM is reloaded, listeners should be readded 
 }
-</script>

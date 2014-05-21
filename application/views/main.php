@@ -1,24 +1,29 @@
-<!-- css is included via php so that php variables can be used inside css file -->
-<style> <?php $this->load->view('style/pages/main.css') ?> </style>
-
+<link href="<?=CSS?>pages/main.css" rel="stylesheet" type="text/css" /> 
 <!-- flex slider sources -->
 	<!-- including jquery -->
 	<script type="text/javascript">
 	if(typeof jQuery == 'undefined'){
-		document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
+		document.write('<script type="text/javascript" src="<?=JS?>jquery/jquery.min.js"></'+'script>');
 	  }
 	</script>
 
-<link rel="stylesheet" href="<?=base_url()?>plugins/flexSlider/flexslider.css" type="text/css">
-<script src="<?=base_url()?>plugins/flexSlider/jquery.flexslider.js"></script>
+	<link rel="stylesheet" href="<?=TOOLS?>flexSlider/flexslider.css" type="text/css">
+	<script src="<?=TOOLS?>flexSlider/jquery.flexslider.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider();
-  });
-</script>
+	<script type="text/javascript" charset="utf-8">
+	  $(window).load(function() {
+		$('.flexslider').flexslider();
+	  });
+	</script>
 <!-- END flex slider sources -->
 
+<!-- mousewheelSliding sources -->
+	<script src="<?=JS?>jquery/jquery-mousewheel/jquery.mousewheel.js"></script>
+	<script src="<?=JS?>jquery/jquery.mobile.touch.min.js"></script>
+	<script src="<?=JS?>jquery/jquery.mobile.touch.patch.js"></script>
+	<script src="<?=TOOLS?>hammer.min.js"></script>
+	<script src="<?=JS?>mousewheelSliding.js" type="text/javascript"></script>
+<!-- END mousewheelSliding sources -->
 
 <div id="page1">
 	<?php
@@ -37,9 +42,8 @@
 <div id="page3">
 	<div class="page-body">
 		<h1>Just a hot chick</h1>
-		<img src="<?=base_url()?>images/spyFlynnGirl.jpg" />
+		<img src="<?=IMG?>spyFlynnGirl.jpg" />
 	</div>
 </div> <!-- end page3 -->
 
 
-<?php include 'mousewheelSliding.js'; ?>

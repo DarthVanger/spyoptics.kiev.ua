@@ -1,21 +1,21 @@
 <!-- load jquery (if it's not already loaded) -->
 <script type="text/javascript">
 if(typeof jQuery == 'undefined'){
-	document.write('<script type="text/javascript" src="<?=base_url()?>plugins/jquery.min.js"></'+'script>');
+	document.write('<script type="text/javascript" src="<?=JS?>jquery/jquery.min.js"></'+'script>');
   }
 </script>
 
 
-<?php $this->load->view('cart/formValidation.js');?>
-<?php $this->load->view('cart.js');?>
+<script type="text/javascript" src="<?=JS?>jquery/jquery-ui-effects.min.js"></script>
+<script type="text/javascript" src="<?=JS?>cart/formValidation.js"></script>
+<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
 <script>
 	CartJS.init({
 		cartId: "cart-view"
 	});
 </script>
 
-<!-- css is included via php so that php variables can be used inside css file -->
-<style> <?php $this->load->view('style/pages/cart.css') ?> </style>
+<link href="<?=CSS?>pages/cart.css" rel="stylesheet" type="text/css" />
 
 
 <div id="cart-page">
@@ -27,8 +27,8 @@ if(typeof jQuery == 'undefined'){
 			<?php foreach($cart['items'] as $item): ?> 
 				<div class="item">
 					<div class="imgContainer">
-						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=base_url()?>images/removeItem3.png" /></button>
-						<img class="glasses" src="<?=base_url()?><?=$item['mini_img_path']?>" />
+						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItem3.png" /></button>
+						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
 					</div>
 					<div class="description">
 						<div><?=$item['model']?></div>

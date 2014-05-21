@@ -20,4 +20,9 @@ class ImageDbProcessorController extends CI_Controller {
 		$this->load->model("ImageDbProcessor");
 		$this->ImageDbProcessor->addThumbnails($model, $subfolder);
 	}
+
+	public function relocateImages($oldFolder, $newFolder) {
+		$this->load->model("ImageDbProcessor");
+		$this->ImageDbProcessor->relocateImages($oldFolder, $newFolder="");
+	}
 }

@@ -79,7 +79,6 @@ button, button:active, button:visited, input[type="submit"], input[type="submit"
 	transition: width .5s;
 }
 #cart:hover {
-	/* width: <?=$this->cart->total_items()*100?>px; */
 }
 #cart img.cart, #cart img.cartHover {
 	position: absolute;
