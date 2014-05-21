@@ -2,6 +2,6 @@
 <?php include 'elements/navbar.php'?>
 
 <div id="body">
-<style> <?php include './application/views/style/content.css'?> </style>
+<link href="<?=CSS?>content.css" rel="stylesheet" type="text/css" />
 <div class="page-body">
 	<div id="content" class="text">
