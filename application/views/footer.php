@@ -1,5 +1,5 @@
 <div id="footer">
-	Spyoptic стильные очки <br />
+	Spyoptic Стильные Очки <br />
 	Киев Украина 2014
 </div>
 </div>

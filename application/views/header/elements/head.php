@@ -8,6 +8,6 @@
 	<link href="<?=CSS?>layout.css" rel="stylesheet" type="text/css" />
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="<?=IMG?>faviconGlasses.png">
-	<title>Spyoptic стильные очки | Киев Украина</title>
+	<title>Spyoptic Стильные Очки | Киев Украина</title>
 </head>
 <body>
