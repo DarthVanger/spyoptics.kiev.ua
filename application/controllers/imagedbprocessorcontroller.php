@@ -35,4 +35,9 @@ class ImageDbProcessorController extends CI_Controller {
 		$this->load->model("ImageDbProcessor");
 		$this->ImageDbProcessor->resize($folder, $height);
 	}
+
+	public function cropAndResize($folder, $height) {
+		$this->load->model("ImageDbProcessor");
+		$this->ImageDbProcessor->cropAndResize($folder, $height);
+	}
 }
