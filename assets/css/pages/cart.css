@@ -57,6 +57,13 @@ form.order img.validation {
 	vertical-align: bottom;
 	height: 32px;
 }
+form.order input.novaPoshtaOffice {
+	height: 2.5em;	
+	vertical-align: top;
+	width: 2.5em;
+	text-align: center;
+}
+/* END order form */
 
 .glowing-border {border:2px solid #dadada;border-radius:7px;}
 .glowing-border:focus {outline: none;border-color:#9ecaed;box-shadow:0010px#9ecaed;}

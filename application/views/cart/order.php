@@ -53,6 +53,8 @@ if(typeof jQuery == 'undefined'){
 		<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
 		<div id="phoneValidation">&nbsp;</div>
 		<br />
+		<div class="fieldName">E-mail</div> <input name="email" type="text" class="glowing-border" />
+		<br />
 		<div class="fieldName">Адрес</div> <input name="address" type="text" class="glowing-border" />
 		<br />
 		<div class="fieldName">Доставка</div>
@@ -60,6 +62,8 @@ if(typeof jQuery == 'undefined'){
 			<option>Новая Почта</option>
 			<option>Курьерская (только г. Киев, правый берег)</option>
 		</select>
+		<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
+		<br />
 		<div class="fieldName">Способ оплаты</div>
 		<select name="paymentMethod" class="glowing-border">
 			<option>Оплата при получении</option>
