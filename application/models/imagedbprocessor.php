@@ -48,7 +48,7 @@ class ImageDbProcessor extends CI_Model {
 		);
 		$outputHeight = $height;
 
-		$folder = 'images/'.$model.'/';
+		$folder = 'assets/img/'.$model.'/';
 
 		// include resize_image function, which I copied from stackoverflow
 		include 'resources/resize_image.php';
