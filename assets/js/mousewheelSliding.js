@@ -1,5 +1,5 @@
 	/* config */
-	var numberOfPages = 3;
+	var numberOfPages = 2;
 
 	/* code */
 	var currentPageNumber = 1;

@@ -1,5 +1,5 @@
 <?php
-class Sunglasses extends CI_Model {
+class SunglassesModel extends CI_Model {
 	function __construct() {
 		parent::__construct();
 	}

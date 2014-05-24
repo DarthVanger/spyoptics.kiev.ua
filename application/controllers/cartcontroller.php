@@ -2,13 +2,13 @@
 
 class CartController extends CI_Controller {
 	public function add($productId) {
-		$this->load->model('Sunglasses');
-		$this->Sunglasses->addToCart($productId);
+		$this->load->model('SunglassesModel');
+		$this->SunglassesModel->addToCart($productId);
 		echo "Adding product to cart";
 	}
 	public function remove($productId) { 
-		$this->load->model('Sunglasses');
-		$this->Sunglasses->removeFromCart($productId);
+		$this->load->model('SunglassesModel');
+		$this->SunglassesModel->removeFromCart($productId);
 
 		echo "Removing prodcut from cart";
 	}

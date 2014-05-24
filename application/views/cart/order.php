@@ -27,7 +27,7 @@ if(typeof jQuery == 'undefined'){
 			<?php foreach($cart['items'] as $item): ?> 
 				<div class="item">
 					<div class="imgContainer">
-						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItem3.png" /></button>
+						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></button>
 						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
 					</div>
 					<div class="description">
@@ -62,7 +62,7 @@ if(typeof jQuery == 'undefined'){
 			<option>Новая Почта</option>
 			<option>Курьерская (только г. Киев, правый берег)</option>
 		</select>
-		<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
+		<div class="fieldName">№ Отделения <br />Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
 		<br />
 		<div class="fieldName">Способ оплаты</div>
 		<select name="paymentMethod" class="glowing-border">

@@ -13,9 +13,9 @@ class ImageDbProcessor extends CI_Model {
 	 *
 	 *	Resizes images from folder specified in config section of method and saves them to './pub'.
 	 */
-	public function resize($model, $height) {
+	public function resize($folder, $height) {
 		// config
-		$folder = 'images/'.$model.'/'; // folder path WITH trailing slash!
+		$folder = 'assets/img/'.$folder.'/'; // folder path WITH trailing slash!
 		$outputHeight = $height;
 
 		// include resize_image function, which I copied from stackoverflow
@@ -76,25 +76,42 @@ class ImageDbProcessor extends CI_Model {
 	/** addToDbByImages method 
 	 *	Adds sunglasses to database by images located in folder, specified in config section of this method.
 	 *	Reads folder named '$folder', generates pathes to all the images in this folder, and creates new sunglasses in database with these image pathes.
-	 *	Also adds newly added sunglasses will have model name filled with model name specified in '$model' variable of config section of this method.
+	 *	
+	 *	$model, $css_class, $pice, $batch from config section of method are field values that will newly added sunglasses have.
+	 *
 	 */
 	public function addToDbByImages() {
 		// config
-		$folder = 'images/flynn/';
-		$model = 'Flynn';
+		$folder = 'kenBlockHelm2/';
+		$model = 'Ken Block Helm';
+		$css_class = 'kenBlockHelm2';
+		$price = 150;
+		$batch = 2;
 
 		// get image pathes
 		$this->load->helper('directory');
 
-		$imageNames = directory_map('./'.$folder);
+		$imageNames = directory_map('./assets/img/'.$folder);
+
+		$i = 0;
 		foreach($imageNames as $imageName) {
 			if(is_string($imageName)) {
-				$imagePaths[] = $folder.$imageName;
+				$images[$i]['path'] = $folder.$imageName;
+				$images[$i]['mini_path'] = $folder."h200/".$imageName;
+				$images[$i]['thumbnail_path'] = $folder."h30/".$imageName;
+				$images[$i]['color'] = substr($imageName, 0, -4);
+				$i++;
 			}
 		}
 
-		foreach($imagePaths as $imagePath) {
-			$sql = "INSERT INTO sunglasses (model, img_path) VALUES ('".$model."', '".$imagePath."')";		
+		foreach($images as $image) {
+			$sql = "INSERT INTO sunglasses (
+				model, img_path, mini_img_path, thumbnail_img_path, color, css_class, price, batch
+			) 
+			VALUES (
+				'".$model."', '".$image['path']."', '".$image['mini_path']."', '".$image['thumbnail_path']."', '".$image['color']."', '".$css_class."', ".$price.", ".$batch."
+			)";
+			echo $sql."<br />";
 			$this->db->query($sql);
 		}
 	}

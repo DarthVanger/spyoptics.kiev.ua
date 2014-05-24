@@ -6,7 +6,8 @@ CREATE TABLE sunglasses (
 	img_path varchar(200),
 	mini_img_path varchar(200),
 	thumbnail_img_path varchar(200),
-	mini_img_path varchar(200)
+	css_class varchar(50),
+	batch int(2)
 );
 
 -- set price after glasses where created

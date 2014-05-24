@@ -7,6 +7,25 @@
 	z-index: -1;
 }
 
+@media screen and (orientation: landscape) {
+	.flexslider img.h100 {
+		height: 100%!important;
+		max-width: 10000%!important; /* over ride any existing responsive image styling */
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.flexslider img.h100 {
+		width: 100%!important;
+	}
+}
+
+.flexslider img.kenBlockHelm2 {
+	max-width: 80%;
+	vertical-align: middle;
+	display: inline!important;
+}
+
 /* #page1 */
 .pictures {
 	text-align: center;	
@@ -64,7 +83,7 @@ div.color {
 	color: white;
 	font-family: sans;
 	letter-spacing: 1px;
-
+	font-size: 90%
 }
 .descriptionBlock .color, .descriptionBlock .model {
 	padding: 8px;

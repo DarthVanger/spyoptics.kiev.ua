@@ -27,23 +27,15 @@
 
 <div id="page1">
 	<?php
-		$model = 'Flynn';
-		include 'sunglassesImagesByModelSlider.php';
+		$model = 'Ken Block Helm';
+		include 'imagesByModelFlexSlider.php';
 	?>
 </div> <!-- end page1 -->
 
 <div id="page2">
 	<?php
-		$model = 'Ken Block Helm';
-		include 'sunglassesImagesByModelSlider.php';
+		$model = 'Flynn';
+		include 'imagesByModelFlexSlider.php';
 	?>
 </div> <!-- end page2 -->
-
-<div id="page3">
-	<div class="page-body">
-		<h1>Just a hot chick</h1>
-		<img src="<?=IMG?>spyFlynnGirl.jpg" />
-	</div>
-</div> <!-- end page3 -->
-
 
