@@ -27,23 +27,21 @@
 	<script type="text/javascript" charset="utf-8">
 	  $(window).load(function() {
 		if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
-			//PageSlidingEffect.init({
-			//	pageClass: 'page'		
-			//});
+			PageSlidingEffect.init();
 		 }
 
 	  });
 	</script>
 <!-- END Page Sliding Effect sources -->
 
-<div id="page1">
+<div class="page">
 	<?php
 		$model = 'Ken Block Helm';
 		include 'imagesByModelFlexSlider.php';
 	?>
 </div> <!-- end page1 -->
 
-<div id="page2">
+<div class="page">
 	<?php
 		$model = 'Flynn';
 		include 'imagesByModelFlexSlider.php';
