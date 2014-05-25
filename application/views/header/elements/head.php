@@ -8,6 +8,6 @@
 	<link href="<?=CSS?>layout.css" rel="stylesheet" type="text/css" />
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="<?=IMG?>faviconGlasses.png">
-	<title>Spy Optic очки Киев купить. Стильные Очки. Украина. </title>
+	<title>Spy Optic очки Киев купить. Стильные Очки. Украина | Для поиска: spy helm купить, flynn очки купить,ken block helm, spy очки купить киев. </title>
 </head>
 <body>

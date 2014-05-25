@@ -13,25 +13,28 @@
 	<script type="text/javascript" charset="utf-8">
 	  $(window).load(function() {
 		$('.flexslider').flexslider();
-
-		// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { //
-		//alert(navigator.userAgent);
-		//if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
-			//MousewheelSLidin
-			//alert('mobile');
-		 //}
-
 	  });
 	</script>
 <!-- END flex slider sources -->
 
-<!-- mousewheelSliding sources -->
+<!-- Page Sliding Effect sources -->
 	<script src="<?=JS?>jquery/jquery-mousewheel/jquery.mousewheel.js"></script>
 	<script src="<?=JS?>jquery/jquery.mobile.touch.min.js"></script>
 	<script src="<?=JS?>jquery/jquery.mobile.touch.patch.js"></script>
 	<script src="<?=TOOLS?>hammer.min.js"></script>
-	<script src="<?=JS?>mousewheelSliding.js" type="text/javascript"></script>
-<!-- END mousewheelSliding sources -->
+	<script src="<?=JS?>PageSlidingEffect.js" type="text/javascript"></script>
+
+	<script type="text/javascript" charset="utf-8">
+	  $(window).load(function() {
+		if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
+			//PageSlidingEffect.init({
+			//	pageClass: 'page'		
+			//});
+		 }
+
+	  });
+	</script>
+<!-- END Page Sliding Effect sources -->
 
 <div id="page1">
 	<?php

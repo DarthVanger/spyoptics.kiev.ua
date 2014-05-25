@@ -41,6 +41,7 @@ form.order input, textarea, select {
 	margin: 2px;
 	padding: 4px;
 	font-size: 100%;
+	font-family: "Roboto Slab";
 	vertical-align: bottom;
 }
 form.order textarea {
@@ -60,7 +61,7 @@ form.order #phoneValidation {
 	overflow: hidden;
 	padding-left: 5px;
 	color: red;
-	font-family: sans-serif;
+	font-family: Play;
 	font-weight: bold;
 	font-variant: small-caps;
 	font-size: 90%;
@@ -118,7 +119,7 @@ form.order input[type="submit"] {
 	cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
 	/*style the text*/
 	font-size:1.2em;
-	font-family:Oswald, sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+	font-family: "Roboto Slab";
 	letter-spacing:.1em;
 	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
 	color: #fff;

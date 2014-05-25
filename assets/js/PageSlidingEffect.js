@@ -1,3 +1,13 @@
+	/** PageSlidingEffect class
+	 *	Adds page sliding animation instead of usual page scrolling. 
+	 *
+	 */
+	function PageSlidingEffect() {
+			
+	}
+	function PageSlidingEffect.init(
+
+	}
 	/* config */
 	var numberOfPages = 2;
 
