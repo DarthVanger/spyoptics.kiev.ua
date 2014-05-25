@@ -3,7 +3,7 @@
 	display: inline-block;
 	float: right;
 	margin-right: 30px;
-	width: 380px;
+	width: 300px;
 	text-align: center;
 }
 #cart-page .item .description {
@@ -12,7 +12,7 @@
 	margin: 5px 0 5px 0;
 }
 #cart-page .cart img.glasses {
-	width: 400px;
+	width: 300px;
 	vertical-align: bottom;
 	border-bottom: 2px dotted #dd7;
 }
@@ -28,7 +28,7 @@
 	margin-right: 100px;
 	margin-left: 30px;
 	text-align: left;
-	width: 700px;
+	width: 780px;
 }
 .fieldName {
 	display: inline-block;
@@ -47,7 +47,7 @@ form.order textarea {
 	vertical-align: middle;
 }
 input[name="address"], input[name="name"], form.order textarea {
-	width: 400px;
+	width: 480px;
 }
 form.order select {
 	width: 412px;
@@ -58,7 +58,6 @@ form.order select, form.order option {
 form.order #phoneValidation {
 	display: inline-block;
 	overflow: hidden;
-	width: 150px;  
 	padding-left: 5px;
 	color: red;
 	font-family: sans-serif;

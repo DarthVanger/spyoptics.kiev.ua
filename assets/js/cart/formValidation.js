@@ -1,13 +1,3 @@
-function validationNotPassedAnimation() {
-	$phoneValidation.animate({color: "black", marginLeft: "5px"}, speed/2, function() {
-		$(this).animate({color: "black", marginLeft: "-5px"}, speed/2);
-	});
-	times--;
-	if(times===0) {
-		clearInterval(loop);
-		setTimeout(function() {$phoneValidation.animate({color: "red", marginLeft: 0}, speed/2);}, speed);
-	}
-}
 
 	$(document).ready(function() {
 		var validated = false;
@@ -44,12 +34,27 @@ function validationNotPassedAnimation() {
 			if(validated) {
 				return true;
 			} else {
+				/**
+				 * Animation for validation errors
+				 */
 				$this = $(this);
+				var times = 3;
+				var speed = 200;
+				function validationNotPassedAnimation() {
+					$phoneValidation.animate({color: "black", marginLeft: "5px"}, speed/2, function() {
+						$(this).animate({color: "black", marginLeft: "-5px"}, speed/2);
+					});
+					times--;
+					if(times===0) {
+						clearInterval(loop);
+						setTimeout(function() {$phoneValidation.animate({color: "red", marginLeft: 0}, speed/2);}, speed);
+					}
+				}
+				/* * * * * * * * * * * * * * * * * * * * */
+
 				$phoneValidation = $("#phoneValidation");
 				$phoneValidation.html(phoneEmpty);
-				var speed = 200;
 				var loop = setInterval(validationNotPassedAnimation, speed);
-				var times = 3;
 				return false;
 			}
 		});
