@@ -13,6 +13,14 @@
 	<script type="text/javascript" charset="utf-8">
 	  $(window).load(function() {
 		$('.flexslider').flexslider();
+
+		// if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { //
+		//alert(navigator.userAgent);
+		//if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
+			//MousewheelSLidin
+			//alert('mobile');
+		 //}
+
 	  });
 	</script>
 <!-- END flex slider sources -->
