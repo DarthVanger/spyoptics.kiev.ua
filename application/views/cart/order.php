@@ -23,17 +23,17 @@ if(typeof jQuery == 'undefined'){
 	<div class="cart" id="cart-view">
 		<h2 class="textAlignCenter">Ваш заказ</h2>
 		<?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
-			<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
+			<div class="total-price">Общая стоимость заказа: <br /> <?=$cart['totalPrice']?> грн (+ доставка)</div>
 			<?php foreach($cart['items'] as $item): ?> 
 				<div class="item">
+					<div class="description">
+						<?=$item['model']?>,
+						<?=$item['color']?>,
+						<?=$item['price']?> грн
+					</div>
 					<div class="imgContainer">
 						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></button>
 						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
-					</div>
-					<div class="description">
-						<div><?=$item['model']?></div>
-						<div><?=$item['color']?></div>
-						<div><?=$item['price']?> грн</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
@@ -48,7 +48,7 @@ if(typeof jQuery == 'undefined'){
 
 	<form id="orderForm" class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
 		<h2 class="textAlignCenter">Оформление заказа</h2>
-		<div class="fieldName">Имя</div> <input name="name" type="text" class="glowing-border" />
+		<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text" class="glowing-border" />
 		<br />
 		<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
 		<div id="phoneValidation">&nbsp;</div>
@@ -62,7 +62,7 @@ if(typeof jQuery == 'undefined'){
 			<option>Новая Почта</option>
 			<option>Курьерская (только г. Киев, правый берег)</option>
 		</select>
-		<div class="fieldName">№ Отделения <br />Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
+		<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
 		<br />
 		<div class="fieldName">Способ оплаты</div>
 		<select name="paymentMethod" class="glowing-border">
