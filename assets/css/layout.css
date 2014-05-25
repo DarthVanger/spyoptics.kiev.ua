@@ -1,70 +1,14 @@
+@import url("navbar.css");
+@import url("general.css");
 html, body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: sans;
+	font-family: "Roboto Slab";
 	font-size: 18px;
 }
-a {
-	text-decoration: none;
-	color: #3f92d2;
-}
-img {text-decoration: none; border: 0px} /* ie image border fix */
-button, button:active, button:visited, input[type="submit"], input[type="submit"]:active, input[type="submit"]:visited { border: 0; background: 0; padding: 0; margin: 0; outline: none } /* reset button styles */
+
 /* layout */
-#topNavbar {
-	position: relative;
-	z-index: 100;
-	height: 40px;
-
-	background-color: #eee;
-	opacity: .8;
-}
-#topLine {
-	width: 100%;
-	height: 4px;
-	background-color: #0013ff;
-
-	transition: background-color 1s;
-}
-#topNavbar:hover #topLine {
-	background-color: #a6000c;
-}
-#topNavbar .navbar {
-	display: inline-block;
-  text-align: left;
-	/* padding: 5px 10px 5px 10px; */
-	height: 36px;
-	
-
-  font-size: 0;
-  font-size: 12px\9; /* IE6-9 only hack */
-}
-#topNavbar .navbar a {
-	color: #333;
-	color: black;
-	font-family: sans-serif;
-	font-variant: small-caps;
-	font-weight: bold;
-	letter-spacing: 1px;
-	padding: 5px;
-	margin: 0 15px 0 0;
-	height: 26px;
-
-	/* layout */
-  display: inline-block;
-  font-size: 18px;
-  zoom: 1; /* for IE */
-  *display: inline; /* for IE */
-
-	/* animation */
-	transition: background-color 1s, color .5s;
-}
-#topNavbar .navbar a:hover {
-	background-color: #a6000c;
-	color: white;
-}
-
 #cart {
 	position: absolute;
 	right: 0;
