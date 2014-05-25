@@ -1,12 +1,3 @@
-/* for devices with screen width > 1000px (so that, "powerful") page sliding animation is ON, so layout is different */
-@import url("../pageSlidingLayout.css") (min-width: 1000px); 
-#page1, #page2, #page3, #page4 {
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	z-index: -1;
-}
-
 @media screen and (orientation: landscape) {
 	.flexslider img.h100 {
 		height: 100%!important;
