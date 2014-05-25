@@ -5,7 +5,7 @@
 	function PageSlidingEffect() {
 			
 	}
-	function PageSlidingEffect.init(
+	PageSlidingEffect.init = function() {
 
 	}
 	/* config */
