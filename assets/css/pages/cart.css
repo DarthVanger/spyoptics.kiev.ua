@@ -32,7 +32,8 @@
 }
 .fieldName {
 	display: inline-block;
-	width: 250px;
+	overflow: hidden;
+	width: 270px;
 	text-align: right;
 	padding-right: 5px;
 }
@@ -55,10 +56,11 @@ form.order select, form.order option {
 }
 form.order #phoneValidation {
 	display: inline-block;
+	overflow: hidden;
 	width: 150px;  
 	padding-left: 5px;
 	color: red;
-	font-family: sans;
+	font-family: sans-serif;
 	font-weight: bold;
 	font-variant: small-caps;
 	font-size: 90%;
