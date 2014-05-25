@@ -41,6 +41,7 @@ form.order input, textarea, select {
 	margin: 2px;
 	padding: 4px;
 	font-size: 100%;
+	vertical-align: bottom;
 }
 form.order textarea {
 	vertical-align: middle;

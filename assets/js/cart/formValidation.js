@@ -1,3 +1,14 @@
+function validationNotPassedAnimation() {
+	$phoneValidation.animate({color: "black", marginLeft: "5px"}, speed/2, function() {
+		$(this).animate({color: "black", marginLeft: "-5px"}, speed/2);
+	});
+	times--;
+	if(times===0) {
+		clearInterval(loop);
+		setTimeout(function() {$phoneValidation.animate({color: "red", marginLeft: 0}, speed/2);}, speed);
+	}
+}
+
 	$(document).ready(function() {
 		var validated = false;
 		phoneEmpty = "укажите телефон";
@@ -37,18 +48,8 @@
 				$phoneValidation = $("#phoneValidation");
 				$phoneValidation.html(phoneEmpty);
 				var speed = 200;
-				var loop = setInterval(anim, speed);
+				var loop = setInterval(validationNotPassedAnimation, speed);
 				var times = 3;
-				function anim() {
-					$phoneValidation.animate({color: "black", marginLeft: "5px"}, speed/2, function() {
-						$(this).animate({color: "black", marginLeft: "-5px"}, speed/2);
-					});
-					times--;
-					if(times===0) {
-						clearInterval(loop);
-						setTimeout(function() {$phoneValidation.animate({color: "red", marginLeft: 0}, speed/2);}, speed);
-					}
-				}
 				return false;
 			}
 		});
