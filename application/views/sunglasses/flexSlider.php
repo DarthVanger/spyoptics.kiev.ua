@@ -48,3 +48,9 @@
 	?>
 </div> <!-- end page2 -->
 
+<!-- third page is under development right now -->
+<!-- <div class="page"> -->
+	<?php
+		//include 'peoplePhotosFlexSlider.php';
+	?>
+<!-- </div> --> <!-- end page3 -->

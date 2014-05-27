@@ -14,3 +14,9 @@ CREATE TABLE sunglasses (
 UPDATE sunglasses SET price=280 WHERE model='Flynn';
 UPDATE sunglasses SET price=150 WHERE model='Ken Block Helm';
 
+CREATE TABLE people_wearing_glasses(
+	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	img_path varchar(200),
+	sunglasses_id int NOT NULL
+);
+-- FOREIGN KEY (sunglasses_id) REFERENCES (sunglasses.id)
