@@ -49,8 +49,8 @@
 </div> <!-- end page2 -->
 
 <!-- third page is under development right now -->
-<div class="page">
+<!-- <div class="page"> -->
 	<?php
-		include 'peoplePhotosFlexSlider.php';
+		//include 'peoplePhotosFlexSlider.php';
 	?>
-</div> <!-- end page3 -->
+<!-- </div> --> <!-- end page3 -->
