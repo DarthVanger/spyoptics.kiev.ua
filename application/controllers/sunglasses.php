@@ -3,7 +3,7 @@
 class Sunglasses extends CI_Controller {
 	
 		/** index method
-		*	Loads main view, which displays sunglasses images. Gets image	paths using Sunglasses model.
+		*	Loads main view, which displays sunglasses images. Gets image paths using Sunglasses model.
 		*/
 	public function show() {
 		$this->load->model('SunglassesModel');
@@ -14,8 +14,10 @@ class Sunglasses extends CI_Controller {
 		//$this->SunglassesImageDbProcessor->addToDbByImages();
 
 		$sunglasses = $this->SunglassesModel->selectAll();	
+		//$peoplePhotos = $this->
 
 		$viewData['sunglasses'] = $sunglasses;
+		//$viewData['peoplePhotos'] = $peoplePhotos;
 
 		$this->load->model('Header');
 
