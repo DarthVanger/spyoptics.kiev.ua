@@ -20,10 +20,11 @@ class CartController extends CI_Controller {
 		$basket = $this->Basket->getInstance();
 		$viewData['cart']['items'] = $basket->getItems();
 		$viewData['cart']['totalPrice'] = $basket->getTotalPrice();
+		$viewData['liqpay'] = $basket->prepareLiqpayFormData();
 
 		$this->load->view('header/forPageNoCart');	
 		$this->load->view('cart/order', $viewData);	
-		$this->load->view('footer');	
+		$this->load->view('footer/forPage');	
 	}
 
 	public function submitOrder() {
@@ -38,7 +39,7 @@ class CartController extends CI_Controller {
 			$basket->removeAll();
 			$this->load->view("cart/submitOrderSuccess", $_POST);
 		}
-		$this->load->view("footer");	
+		$this->load->view("footer/forPage");	
 	}
 	
 	/** liqpay
@@ -49,8 +50,24 @@ class CartController extends CI_Controller {
 		
 		$viewData['liqpay'] = $this->Basket->prepareLiqpayFormData();
 		
-		$this->load->view("header/header.min");
-		$this->load->view("cart/liqpay");
-		$this->load->footer("footer/footer.min");
+		$this->load->view("header/minimal");
+		$this->load->view("cart/liqpay", $viewData);
+		$this->load->view("footer/minimal");
+	}
+
+	public function liqpayPaymentResponseHandler() {
+		$paymentStatus = "";
+		foreach($_POST as $key => $value) {
+			$paymentStatus .= $key . ": " . $value . PHP_EOL;
+		}
+
+		$sql = "INSERT INTO payment (status) VALUES ('".$paymentStatus."')";
+		$this->db->query($sql);
+	}
+
+	public function liqpayTest() {
+		$this->load->view("header/minimal");
+		$this->load->view("liqpayTest");
+		$this->load->view("footer/minimal");
 	}
 }

@@ -116,10 +116,46 @@ class Basket extends CI_Model {
 		return $totalPrice;
 	  }
 
+	 public function getItemsCount() {
+		return count($this->items);
+	 }
+
+	/***********************************************************/
+
+	/*************** Methods for making orders ****************/
+
+	/** prepareLiqpayFormData
+	 *	Prepares data for liqpay payment.
+	 *
+	 *	@return array with variables, needed for liqpay form.
+	 */
+	public function prepareLiqpayFormData() {
+		$formData = array();
+
+		$formData['sandbox'] = 1;
+		// url where user will be redirected after payment
+		$formData['result_url'] = site_url("cartcontroller/liqpayPaymentResult");
+		// url where server answer about operation result will be sent
+		//$formData['server_url'] = site_url("cartcontroller/liqpayPaymentResponseHandler");
+		$formData['server_url'] = ("http://spyoptics.kiev.ua/index.php/cartcontroller/liqpayPaymentResponseHandler");
+		$formData['amount'] = $this->getTotalPrice();
+		$formData['description'] = "Оплата покупки очков Spyoptic (".$this->getItemsCount()." шт)";
+
+		return $formData;
+	}
+
 	/** submitOrder
-	 *	Submits order by sending email with all info to $shopManagerEmail (specified inside this method).
+	 *	Saves order to database and sends email notification to shop managers.
 	 */
 	 public function submitOrder($userInfo) {
+	 	//$this->saveOrderToDb($userInfo); // Not implemented yet!
+	 	$this->sendNewOrderNotification($userInfo);
+	 }
+
+	 /** sendNewOrderNotification
+	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
+	  */
+	 private function sendNewOrderNotification($userInfo) {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere>";
@@ -137,32 +173,12 @@ class Basket extends CI_Model {
 			$message .= "Корзина пуста\n";
 		}
 
-		return $this->sendEmail($shopManagerEmails, $subject, $message, $from);
-	 }
-
-	 private function sendEmail($to, $subject, $message, $from) {
-	 	/* CodeIgniters library doesn't work for some reason, dont want to fix it.
-		$this->load->library('email');
-
-		$this->email->from($from, 'Силы Тьмы');
-		$this->email->to($to); 
-
-		$this->email->subject($subject);
-		$this->email->message($message);	
-
-		$this->email->send();
-
-		return $this->email->print_debugger();
-		*/
-
+		// prepare headers for using mail() function
 		$headers = "MIME-Version: 1.0" . PHP_EOL;
 		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
-
 		$headers .= 'From: ' . $from . PHP_EOL;
 
 		return mail($to, $subject, $message, "From: $from");
+
 	 }
-
-
-
 }

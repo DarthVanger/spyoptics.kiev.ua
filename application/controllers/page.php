@@ -6,6 +6,6 @@ class Page extends CI_Controller {
 
 		$this->load->view('header/forPage', $this->Header->getViewData());
 		$this->load->view('pages/'.$pageName);
-		$this->load->view('footer');
+		$this->load->view('footer/forPage');
 	}
 }
