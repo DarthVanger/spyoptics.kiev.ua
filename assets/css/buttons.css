@@ -1,6 +1,6 @@
 /* reset button styles */
 button, button:active, button:visited, input[type="submit"], input[type="submit"]:active, input[type="submit"]:visited {
-	border: 0; padding: 0; background-color: 0; margin: 0; outline: none
+	border: 0; padding: 0; background: 0; margin: 0; outline: none
 } 
 a {
 	text-decoration: none;
