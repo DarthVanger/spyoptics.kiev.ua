@@ -124,25 +124,6 @@ class Basket extends CI_Model {
 
 	/*************** Methods for making orders ****************/
 
-	/** prepareLiqpayFormData
-	 *	Prepares data for liqpay payment.
-	 *
-	 *	@return array with variables, needed for liqpay form.
-	 */
-	public function prepareLiqpayFormData() {
-		$formData = array();
-
-		$formData['sandbox'] = 1;
-		// url where user will be redirected after payment
-		$formData['result_url'] = site_url("cartcontroller/liqpayPaymentResult");
-		// url where server answer about operation result will be sent
-		//$formData['server_url'] = site_url("cartcontroller/liqpayPaymentResponseHandler");
-		$formData['server_url'] = ("http://spyoptics.kiev.ua/index.php/cartcontroller/liqpayPaymentResponseHandler");
-		$formData['amount'] = $this->getTotalPrice();
-		$formData['description'] = "Оплата покупки очков Spyoptic (".$this->getItemsCount()." шт)";
-
-		return $formData;
-	}
 
 	/** submitOrder
 	 *	Saves order to database and sends email notification to shop managers.
@@ -179,6 +160,25 @@ class Basket extends CI_Model {
 		$headers .= 'From: ' . $from . PHP_EOL;
 
 		return mail($to, $subject, $message, "From: $from");
-
 	 }
+
+	/** prepareLiqpayFormData
+	 *	Prepares data for liqpay payment.
+	 *
+	 *	@return array with variables, needed for liqpay form.
+	 */
+	public function prepareLiqpayFormData() {
+		$formData = array();
+
+		$formData['sandbox'] = 1;
+		// url where user will be redirected after payment
+		$formData['result_url'] = site_url("cartcontroller/liqpayPaymentResult");
+		// url where server answer about operation result will be sent
+		// spyoptics.kiev.ua is for testing. Real url is here: $formData['server_url'] = site_url("cartcontroller/liqpayPaymentResponseHandler");
+		$formData['server_url'] = ("http://spyoptics.kiev.ua/index.php/cartcontroller/liqpayPaymentResponseHandler");
+		$formData['amount'] = $this->getTotalPrice();
+		$formData['description'] = "Оплата покупки очков Spyoptic (".$this->getItemsCount()." шт)";
+
+		return $formData;
+	}
 }

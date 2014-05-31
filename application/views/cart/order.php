@@ -46,36 +46,37 @@ if(typeof jQuery == 'undefined'){
 		<?php endif;?>
 	</div>
 
-	<form id="orderForm" class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
-		<h2 class="textAlignCenter">Оформление заказа</h2>
-		<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text" class="glowing-border" />
-		<br />
-		<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
-		<div id="phoneValidation">&nbsp;</div>
-		<br />
-		<div class="fieldName">E-mail</div> <input name="email" type="text" class="glowing-border" />
-		<br />
-		<div class="fieldName">Адрес</div> <input name="address" type="text" class="glowing-border" />
-		<br />
-		<div class="fieldName">Доставка</div>
-		<select name="delivery" class="glowing-border">
-			<option>Новая Почта</option>
-			<option>Курьерская (только г. Киев, правый берег)</option>
-		</select>
-		<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
-		<br />
-		<div class="fieldName">Способ оплаты</div>
-		<select name="paymentMethod" class="glowing-border">
-			<option>Оплата при получении</option>
-			<option>Предоплата на карточку ПриватБанк (номер будет сообщен по смс)</option>
-		</select>
-		<br />
-		<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
-		<input type="submit" value="Готово" />
-	</form>
-	
-	<!-- liqpay button -->
-	<!-- <?php //$this->load->view("cart/liqpayButton"); ?> -->
+	<div id="orderForm">
+		<form class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
+			<h2 class="textAlignCenter">Оформление заказа</h2>
+			<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text" class="glowing-border" />
+			<br />
+			<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
+			<div id="phoneValidation">&nbsp;</div>
+			<br />
+			<div class="fieldName">E-mail</div> <input name="email" type="text" class="glowing-border" />
+			<br />
+			<div class="fieldName">Адрес</div> <input name="address" type="text" class="glowing-border" />
+			<br />
+			<div class="fieldName">Доставка</div>
+			<select name="delivery" class="glowing-border">
+				<option>Новая Почта</option>
+				<option>Курьерская (только г. Киев, правый берег)</option>
+			</select>
+			<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="glowing-border novaPoshtaOffice" />
+			<br />
+			<div class="fieldName">Способ оплаты</div>
+			<select name="paymentMethod" class="glowing-border">
+				<option>Оплата при получении</option>
+				<option>Предоплата на карточку ПриватБанк (номер будет сообщен по смс)</option>
+			</select>
+			<br />
+			<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
+			<input type="submit" value="Готово" />
+		</form>
+	</div>
+
+	<?php //$this->load->view("cart/liqpayButton"); ?>
 
 </div>
 

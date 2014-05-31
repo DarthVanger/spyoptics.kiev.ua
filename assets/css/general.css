@@ -1,6 +1,7 @@
 @import url('content.css');
 @import url('font.css');
 @import url('text.arduinoStyle.css');
+@import url('buttons.css');
 
 .textAlignCenter {
 	text-align: center;
@@ -10,11 +11,3 @@
 }
 img {text-decoration: none; border: 0px} /* ie image border fix */
 
-/* reset button styles */
-button, button:active, button:visited, input[type="submit"], input[type="submit"]:active, input[type="submit"]:visited {
-	border: 0; background: 0; padding: 0; margin: 0; outline: none
-} 
-a {
-	text-decoration: none;
-	color: #3f92d2;
-}
