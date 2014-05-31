@@ -40,4 +40,17 @@ class CartController extends CI_Controller {
 		}
 		$this->load->view("footer");	
 	}
+	
+	/** liqpay
+	 *	Loads page to pay via liqpay
+	 */
+	public function liqpay() {
+		$basket = $this->Basket->getInstance();
+		
+		$viewData['liqpay'] = $this->Basket->prepareLiqpayFormData();
+		
+		$this->load->view("header/header.min");
+		$this->load->view("cart/liqpay");
+		$this->load->footer("footer/footer.min");
+	}
 }
