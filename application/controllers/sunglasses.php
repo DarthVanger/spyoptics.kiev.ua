@@ -8,11 +8,6 @@ class Sunglasses extends CI_Controller {
 	public function show() {
 		$this->load->model('SunglassesModel');
 		
-		// add miniatures to database
-		//$this->load->model('SunglassesImageDbProcessor');
-		//$this->SunglassesImageDbProcessor->addMiniatures();
-		//$this->SunglassesImageDbProcessor->addToDbByImages();
-
 		$sunglasses = $this->SunglassesModel->selectAll();	
 		//$peoplePhotos = $this->
 
@@ -23,6 +18,6 @@ class Sunglasses extends CI_Controller {
 
 		$this->load->view('header/forMainPage', $this->Header->getViewData());
 		$this->load->view('sunglasses/flexSlider', $viewData);
-		$this->load->view('footer');
+		$this->load->view('footer/forMainPage');
 	}
 }

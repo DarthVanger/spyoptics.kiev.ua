@@ -4,5 +4,4 @@
 	Фразы для поиска: spy helm купить, flynn очки купить, ken block helm, spy очки купить киев.
 </div>
 </div>
-</body>
-</html>
+<?php $this->load->view('footer/minimal');
