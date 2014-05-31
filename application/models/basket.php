@@ -127,14 +127,18 @@ class Basket extends CI_Model {
 
 	/** submitOrder
 	 *	Saves order to database and sends email notification to shop managers.
+	 *
+	 *	@return true on success, false on fail.
 	 */
 	 public function submitOrder($userInfo) {
 	 	//$this->saveOrderToDb($userInfo); // Not implemented yet!
-	 	$this->sendNewOrderNotification($userInfo);
+	 	return $this->sendNewOrderNotification($userInfo);
 	 }
 
 	 /** sendNewOrderNotification
 	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
+	  *
+	  *	 @return true on success, false on fail.
 	  */
 	 private function sendNewOrderNotification($userInfo) {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
