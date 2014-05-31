@@ -147,9 +147,9 @@ class Basket extends CI_Model {
 		$message = "Новый заказ!\n";
 		$message .= "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
-			$message .= $key.": ".$value."\n";
+			$message .= $key.": ".$value.PHP_EOL;
 		}
-		$message .= "Заказ:\n";
+		$message .= "Заказ:".PHP_EOL;
 		if(is_array($this->items)) {
 			foreach($this->items as $item) {
 				$message .= $item['model']." ".$item['color']."\n";
