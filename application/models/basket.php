@@ -159,7 +159,7 @@ class Basket extends CI_Model {
 		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
 		$headers .= 'From: ' . $from . PHP_EOL;
 
-		return mail($to, $subject, $message, "From: $from");
+		return mail($shopManagerEmails, $subject, $message, $headers);
 	 }
 
 	/** prepareLiqpayFormData
