@@ -75,7 +75,7 @@ if(typeof jQuery == 'undefined'){
 	</form>
 	
 	<!-- liqpay button -->
-	<!-- <?php $this->load->view("cart/liqpayButton"); ?> -->
+	<!-- <?php //$this->load->view("cart/liqpayButton"); ?> -->
 
 </div>
 
