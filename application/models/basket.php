@@ -1,5 +1,27 @@
 <?php
 
+/** Basket class (singleton)
+ *
+ *	Basket (cart) for e-shop.
+ *	
+ *	Uses PHP Session to store items.
+ *	Also provides methods to submit orders.
+ *
+ ********************************
+ *	Interface
+ *******************************
+ *	Basket getInstance();
+ *	Array getItems();
+ *	void insert($item);
+ *	bool remove($item);
+ *	void removeAll();
+ *	bool isInside($item);
+ *	bool submitOrder($userInfo);
+ ********************************
+ *
+ *	@author DarthVanger
+ */
+
 class Basket extends CI_Model {
 
 	/* singleton instance */
@@ -19,6 +41,8 @@ class Basket extends CI_Model {
 
 	/** getInstance
 	 *	Singleton getInstance method - returns existing $this->instance or creates a new one if none is existing.
+	 *
+	 *	@return Basket instance
 	 */
 	public static function getInstance() {
 		if(self::$instance === null) {
@@ -27,10 +51,17 @@ class Basket extends CI_Model {
 		return self::$instance;
 	}
 
+	/** saveBasketToSession
+	 *	Saves $this->items to session
+	 */
+	public function saveBasketToSession() {
+		$this->session->set_userdata('cartItems', $this->items);
+	}
+
 	/** getItems
-	*	 Returns all items from the basket.
+	*	Returns all items from the basket.
 	*	 
-	*	 @return $this->items - all items from the basket.
+	*	@return $this->items - all items from the basket.
 	*/
 	public function getItems() {
 		return $this->items;
@@ -43,10 +74,6 @@ class Basket extends CI_Model {
 	public function setItems($items) {
 		$this->items = $items;
 		$this->saveBasketToSession();
-	}
-
-	public function saveBasketToSession() {
-		$this->session->set_userdata('cartItems', $this->items);
 	}
 
 	/** insert
@@ -86,9 +113,11 @@ class Basket extends CI_Model {
 		$this->items = null;
 		$this->saveBasketToSession();
 	 }
+
 	/** isInside
 	 *	Checks if $item is inside the basket.
 	 *
+	 *	@param $item item to be checked.
 	 * 	@return bool
 	 */
 	 public function isInside($item) {
@@ -116,6 +145,9 @@ class Basket extends CI_Model {
 		return $totalPrice;
 	  }
 
+	/** getItemsCount
+	 *	Returns count of all items in the basket.
+	 */
 	 public function getItemsCount() {
 		return count($this->items);
 	 }

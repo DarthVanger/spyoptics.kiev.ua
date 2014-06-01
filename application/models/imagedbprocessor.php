@@ -2,7 +2,16 @@
 
 /** ImageDbProcessor model
  *
- *	Has methods which help adding sugnlasses images to db from folder; methods to create miniatures (thumbnails) etc.
+ *	Provides methods to resize/crop images; methods to add sugnlasses images to DB from folder.
+ *
+ *****************************************************
+ * Used libraries
+ *****************************************************
+ *	php GD graphics library;
+ *	resize_image function, copied from stackoverflow (located at './resources/resize_image.php').
+ 	link: http://stackoverflow.com/questions/14649645/resize-image-in-php).
+ *****************************************************
+ *
  */
 class ImageDbProcessor extends CI_Model {
 	function __construct() {
@@ -11,7 +20,10 @@ class ImageDbProcessor extends CI_Model {
 
 	/** resize method
 	 *
-	 *	Resizes images from folder specified in config section of method and saves them to './pub'.
+	 *	Resizes all images from $folder and saves them to './pub/' ('./pub/' must have access 666 or higher!).
+	 *
+	 *	@param $folder folder where images to be resized are located.
+	 *	@param $height output height of resized images.
 	 */
 	public function resize($folder, $height) {
 		// config
@@ -33,12 +45,20 @@ class ImageDbProcessor extends CI_Model {
 		}
 	}
 
-	/** createMiniaturesUsingCrop method
+	/** cropAndResize method
 	 *	
-	 *	Crops and resizes images from folder specified in config section of this method.
-	 *	Saves modified images to './pub' directory.
+	 *	Crops and resizes images from $folder.
+	 *	Saves modified images to './pub' directory ('./pub/' must have access 666 or higher!).
+	 *
+	 *	Crop rectangle is specified in the beginning of this method.
+	 *	
+	 *	Uses resize_image() function copied from stackoverflow (located at './resources/resize_image.php').
+	 *
+	 *	@param $folder folder with images to be cropped and resized.
+	 *	@param $height output height of resized images.
+	 *
 	 */
-	public function cropAndResize($model, $height) {
+	public function cropAndResize($folder, $height) {
 		//config
 		$cropRect = array(
 			'x' => 0,
@@ -48,7 +68,7 @@ class ImageDbProcessor extends CI_Model {
 		);
 		$outputHeight = $height;
 
-		$folder = 'assets/img/'.$model.'/';
+		$folder = 'assets/img/'.$folder.'/';
 
 		// include resize_image function, which I copied from stackoverflow
 		include 'resources/resize_image.php';
@@ -58,7 +78,6 @@ class ImageDbProcessor extends CI_Model {
 		foreach($imagePaths as $imagePath) {
 			$image = imagecreatefromjpeg($imagePath);
 			list($width, $height) = getimagesize($imagePath);
-
 
 			// crop image		
 			$image = imagecrop($image, $cropRect);
@@ -74,10 +93,11 @@ class ImageDbProcessor extends CI_Model {
 	}
 
 	/** addToDbByImages method 
-	 *	Adds sunglasses to database by images located in folder, specified in config section of this method.
+	 *
+	 *	Adds sunglasses to database by images located in folder, specified in the config section of this method.
 	 *	Reads folder named '$folder', generates pathes to all the images in this folder, and creates new sunglasses in database with these image pathes.
 	 *	
-	 *	$model, $css_class, $pice, $batch from config section of method are field values that will newly added sunglasses have.
+	 *	$model, $css_class, $pice, $batch from config section of method are field values that newly added sunglasses will have.
 	 *
 	 */
 	public function addToDbByImages() {
@@ -198,7 +218,9 @@ class ImageDbProcessor extends CI_Model {
 	}
 
 	/** getImagePaths method
+	 *
 	 *	Returns array of image paths of all images from folder $folder
+	 *
 	 *  @param $folder	folder with images
 	 */
 	private function getImagePaths($folder) {

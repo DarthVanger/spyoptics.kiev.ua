@@ -1,5 +1,8 @@
 <?php
-		// copied from stackoverflow, resizes image.
+		/**
+		 *	Resizes image.
+		 *	Copied from stackoverflow (link: http://stackoverflow.com/questions/14649645/resize-image-in-php).
+		 */
 		function resize_image($file, $w, $h, $crop=FALSE) {
 			list($width, $height) = getimagesize($file);
 			$r = $width / $height;

@@ -1,10 +1,17 @@
-	/** PageSlidingEffect class
-	 *	Adds page sliding animation instead of usual page scrolling. 
-	 *
-	 */
-	function PageSlidingEffect() {
-			
-	}
+/** PageSlidingEffect class
+ *
+ *	Adds page sliding animation instead of usual page scrolling. 
+ *
+ */
+function PageSlidingEffect(){}
+
+	// total number of pages to scroll
+	var numberOfPages;
+	// array of DOM objects, representing pages
+	var pages;
+	// number of page that is currently viewed
+	var currentPageNumber;
+
 	/** init
 	 *	Changes css of divs with class="page", adds moushweel listeners, adds the sliding effect.
 	 *
@@ -31,18 +38,20 @@
 		hideAllPages();
 		showPage($(pages[currentPageNumber]));
 	}
-	/* properties are specified in init() method */
-	var numberOfPages;
-	var pages;
-	var currentPageNumber;
 
-	/* functions implementation */
+	/** addScrollListeners
+	 *	Adds mouswheel listeners.
+	 *	Adding Swipe listeners is under development.	
+	 */
 	function addScrollListeners() {
 		console.log('debug', 'adding scroll listeners');
 		addMousewheelListeners();
 		//addSwipeListeners();
 	}
 
+	/** addMousewheelListeners
+	 *	Adds mousewheel listeners, which launch page scrolling animation.
+	 */
 	function addMousewheelListeners() {
 		console.log('debug', 'adding mouswheel listeners');
 		$("body").on("mousewheel", function (e) {
@@ -53,6 +62,11 @@
 			}
 		});
 	}
+
+	/** addSwipeListeners (IS UNDER DEVELOPMENT)
+	 *	Adds swipe listeners, which launch pages scrolling animation.
+	 *	Uses jquery.mobile.touch with little patch (see jquery/jquery.mobile.touch.patch.js for details)
+	 */
 	function addSwipeListeners() {
 		$("body").on("swipeup", function() {
 			scrollPagesDown();
@@ -62,21 +76,35 @@
 		});
 	}
 
+	/** removeScrollListeners
+	 *	Removes mousewheel and swipe listeners.
+	 *	Is used to remove listeners while page scrolling is being animated.
+	 *	Swipe listeners are under development.
+	 */
 	function removeScrollListeners() {
 		removeMousewheelListeners();
 		//removeSwipeListeners();
 	}
 
+	/** removeMouseweehlListeners
+	 *	Removes mousewheel listeners
+	 */
 	function removeMousewheelListeners() {
 		console.log('debug', 'removing mouswheel listeners');
 		$("body").unmousewheel();
 	}
 	
+	/** removeSwipeListeners
+	 *	Removes swipe listeners.
+	 */
 	function removeSwipeListeners() {
 		$("body").unbind("swipeup");
 		$("body").unbind("swipedown");
 	}
 
+	/** scrollPagesDown
+	 *	Animates pages divs, so it looks like pages are scrolling down.
+	 */
 	function scrollPagesDown() {
 		if(currentPageNumber<numberOfPages-1) { // if not on the last page
 			removeScrollListeners(); // remove listeners untill the process of sliding is over.
@@ -96,6 +124,9 @@
 		}
 	}
 
+	/** scrollPagesUp
+	 *	Animates pages divs, so it looks like pages are scrolling up.
+	 */
 	function scrollPagesUp() {
 		if(currentPageNumber>0) { // if not on the first page
 			removeScrollListeners(); // remove listeners untill the process of sliding is over.
@@ -115,6 +146,9 @@
 		}
 	}
 
+	/** hideAllPages
+	 *	Sets display to none for all pages.
+	 */
 	function hideAllPages() {
 		for(i=0; i<pages.length; i++) {
 			if(i!=currentPageNumber) {
@@ -124,14 +158,27 @@
 		}
 	}
 
+	/** hidePage
+	 *	Sets display to none for page $page.
+	 *
+	 *	@param $page jquery object of page to hide.
+	 */
 	function hidePage($page) {
 		$page.css({display: "none"});
 	}
 	
+	/** showPage
+	 *	Sets display to block for page $page.
+	 *
+	 *	@param $page jquery object of page to show.
+	 */
 	function showPage($page) {
 		$page.css({display: "block"});
 	}
 
+	/** changeLayout
+	 *	Changes layout so that all pages are 100% height in order to be able to scroll between them.
+	 */
 	function changeLayout() {
 		// set all parents to height: 100%
 		$(pages[0]).parents().css({
@@ -148,6 +195,5 @@
 				zIndex: "-1"
 			});
 		}
-
 	}
 

@@ -1,10 +1,15 @@
-<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script> 
-<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 
-<script>
-	CartJS.init({
-		cartId: "cartContent"
-	});
-</script>
+<!-- CartJS sources -->
+	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script> 
+	<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 
+	<script>
+		CartJS.init({
+			cartId: "cartContent",
+			addItemButtonClass: "orderButton",
+			removeItemButtonClass: "removeItem"
+		});
+	</script>
+<!-- END CartJS sources -->
+
 <!-- cart is absolutely positioned block -->
 <div id="cart" class="cart">
 	<a class="cart" href="<?=site_url()?>/cartcontroller/view">

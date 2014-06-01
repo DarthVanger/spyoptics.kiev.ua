@@ -1,5 +1,10 @@
 <?php
 
+/** Log class
+ *
+ *	Is under development. Is intended to write log to file... :)
+ *
+ */
 class Log extends CI_Model {
 
 	function __construct() {
