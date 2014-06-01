@@ -1,18 +1,21 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/** Sunglasses controller
+ *
+ *	Takes care of viewing sunglasses.
+ *	
+ */
 class Sunglasses extends CI_Controller {
 	
-		/** index method
-		*	Loads main view, which displays sunglasses images. Gets image paths using Sunglasses model.
-		*/
+		/** show 
+		 *	Shows all sunglasses using 'sunglasses/flexSlider' view.
+		 */
 	public function show() {
 		$this->load->model('SunglassesModel');
 		
 		$sunglasses = $this->SunglassesModel->selectAll();	
-		//$peoplePhotos = $this->
 
 		$viewData['sunglasses'] = $sunglasses;
-		//$viewData['peoplePhotos'] = $peoplePhotos;
 
 		$this->load->model('Header');
 

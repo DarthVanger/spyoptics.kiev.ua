@@ -1,4 +1,9 @@
-// code source: http://developingwithstyle.blogspot.com/2010/11/jquery-mobile-swipe-up-down-left-right.html
+/**
+ * Adds "mousedown" and "mouseup" events to jquery.mobile.touch.
+ *
+ * code source: http://developingwithstyle.blogspot.com/2010/11/jquery-mobile-swipe-up-down-left-right.html
+ *
+ */
     (function() {
 // initializes touch and scroll events
         var supportTouch = $.support.touch,

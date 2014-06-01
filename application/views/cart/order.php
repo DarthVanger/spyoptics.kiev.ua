@@ -1,21 +1,33 @@
-<!-- load jquery (if it's not already loaded) -->
-<script type="text/javascript">
-if(typeof jQuery == 'undefined'){
-	document.write('<script type="text/javascript" src="<?=JS?>jquery/jquery.min.js"></'+'script>');
-  }
-</script>
-
-
-<script type="text/javascript" src="<?=JS?>jquery/jquery-ui-effects.min.js"></script>
-<script type="text/javascript" src="<?=JS?>cart/formValidation.js"></script>
-<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
-<script>
-	CartJS.init({
-		cartId: "cart-view"
-	});
-</script>
-
 <link href="<?=CSS?>pages/cart.css" rel="stylesheet" type="text/css" />
+
+<!-- load jquery (if it's not already loaded) -->
+	<script type="text/javascript">
+	if(typeof jQuery == 'undefined'){
+		document.write('<script type="text/javascript" src="<?=JS?>jquery/jquery.min.js"></'+'script>');
+	  }
+	</script>
+
+<!-- CartJS -->
+	<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
+	<script>
+		$(document).ready(function() {
+			CartJS.init({
+				cartId: "cart-view",
+				removeItemButtonClass: "removeItem"
+			});
+		});
+	</script>
+<!-- END CartJS -->
+
+<!-- FormValidator -->
+	<script type="text/javascript" src="<?=JS?>jquery/jquery-ui-effects.min.js"></script>
+	<script type="text/javascript" src="<?=JS?>cart/formValidator.js"></script>
+	<script>
+		$(document).ready(function() {
+			FormValidator.init();
+		});
+	</script>
+<!-- END FormValidator -->
 
 
 <div id="cart-page">
