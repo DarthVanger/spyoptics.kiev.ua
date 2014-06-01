@@ -179,7 +179,7 @@ class Basket extends CI_Model {
 		$message = "Новый заказ!\n";
 		$message .= "Инфо о клиенте:\n";
 		foreach($userInfo as $key => $value) {
-			$message .= $key.": ".$value.PHP_EOL;
+			$message .= $key.": ".$value."<br />";
 		}
 		$message .= "Заказ:".PHP_EOL;
 		if(is_array($this->items)) {
