@@ -176,18 +176,18 @@ class Basket extends CI_Model {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere>";
-		$message = "Новый заказ!\n";
-		$message .= "Инфо о клиенте:\n";
+		$message = "Новый заказ!<br />";
+		$message .= "Инфо о клиенте:<br />";
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
 		}
-		$message .= "Заказ:".PHP_EOL;
+		$message .= "Заказ:"."<br />";
 		if(is_array($this->items)) {
 			foreach($this->items as $item) {
-				$message .= $item['model']." ".$item['color']."\n";
+				$message .= $item['model']." ".$item['color']."<br />";
 			}
 		} else {
-			$message .= "Корзина пуста\n";
+			$message .= "Корзина пуста<br />";
 		}
 
 		// prepare headers for using mail() function
