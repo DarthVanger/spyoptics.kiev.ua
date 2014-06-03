@@ -7,20 +7,16 @@
  */
 class Sunglasses extends CI_Controller {
 	
-		/** show 
-		 *	Shows all sunglasses using 'sunglasses/flexSlider' view.
-		 */
+	/** show 
+	 *	Shows all sunglasses using 'sunglasses' view.
+	 */
 	public function show() {
 		$this->load->model('SunglassesModel');
+		$basket = $this->Basket->getInstance();
 		
-		$sunglasses = $this->SunglassesModel->selectAll();	
+		$viewData['sunglasses'] = $this->SunglassesModel->selectAll();	
+		$viewData['cartContent'] = $basket->getItems();
 
-		$viewData['sunglasses'] = $sunglasses;
-
-		$this->load->model('Header');
-
-		$this->load->view('header/forMainPage', $this->Header->getViewData());
-		$this->load->view('sunglasses/flexSlider', $viewData);
-		$this->load->view('footer/forMainPage');
+		$this->load->view('sunglasses', $viewData);
 	}
 }

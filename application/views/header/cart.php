@@ -1,3 +1,7 @@
+<!-- header/cart view
+ -	 Absolutely positioned cart in the top right corner of the page
+-->
+
 <!-- CartJS sources -->
 	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script> 
 	<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 

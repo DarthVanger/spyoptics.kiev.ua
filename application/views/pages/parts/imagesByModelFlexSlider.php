@@ -1,5 +1,6 @@
-<!-- This view is a flexslider showing pictures of sunglasses of a model specified in $model variable -->
-<!-- IMPORTANT: $model variable must be set in php before loading this view -->
+<!-- sunglasses/imagesByModelFlexSlider
+ -	 FlexSlider showing sunglasses images of model specified in $model variable.
+-->
 
 	<div class="pictures">
 		<div class="modelName"><?=$model?></div>

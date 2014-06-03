@@ -1,3 +1,11 @@
+<!-- sunglasses view 
+ -	 Shows all sunglasses using FlexSlider 
+-->
+<?php $this->load->view('header/minimal.php');?>
+<?php $this->load->view('header/cart.php');?>
+<?php $this->load->view('header/navbar.php');?>
+
+
 <link href="<?=CSS?>pages/main.css" rel="stylesheet" type="text/css" /> 
 <!-- flex slider sources -->
 	<!-- including jquery -->
@@ -29,28 +37,32 @@
 		if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
 			PageSlidingEffect.init();
 		 }
-
 	  });
 	</script>
 <!-- END Page Sliding Effect sources -->
 
-<div class="page">
-	<?php
-		$model = 'Ken Block Helm';
-		include 'imagesByModelFlexSlider.php';
-	?>
-</div> <!-- end page1 -->
+<div id="body">
 
-<div class="page">
-	<?php
-		$model = 'Flynn';
-		include 'imagesByModelFlexSlider.php';
-	?>
-</div> <!-- end page2 -->
+	<div class="page">
+		<?php
+			$viewData['model'] = 'Ken Block Helm';
+			$this->load->view('pages/parts/imagesByModelFlexSlider.php', $viewData);
+		?>
+	</div> <!-- end page1 -->
 
-<!-- third page is under development right now -->
-<!-- <div class="page"> -->
-	<?php
-		//include 'peoplePhotosFlexSlider.php';
-	?>
-<!-- </div> --> <!-- end page3 -->
+	<div class="page">
+		<?php
+			$viewData['model'] = 'Flynn';
+			$this->load->view('pages/parts/imagesByModelFlexSlider.php', $viewData);
+		?>
+	</div> <!-- end page2 -->
+
+	<!-- third page is under development right now -->
+	<!-- <div class="page"> -->
+		<?php
+			//include 'peoplePhotosFlexSlider.php';
+		?>
+	<!-- </div> --> <!-- end page3 -->
+</div> <!-- end div id="body" -->
+
+<?php $this->load->view('footer/minimal'); ?>

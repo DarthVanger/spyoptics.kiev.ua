@@ -1,5 +1,7 @@
-<!-- this view is showing photos of people wearing spy sunglasses -->
-<!-- FOR NOW IT'S ONLY A COPY OF imagesByModelFlexSlider.php, so to say, it's under development :) -->
+<!-- sunglasses/peoplePhotosFlexSlider view
+ -	 Shows photos of people wearing spy sunglasses, using FlexSlider.
+ -	 FOR NOW IT'S ONLY A COPY OF imagesByModelFlexSlider.php, so to say, it's under development :)
+-->
 	<div class="pictures">
 		<div class="modelName"><?=$model?></div>
 		<div class="flexslider">
