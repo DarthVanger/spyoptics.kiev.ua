@@ -22,6 +22,8 @@ class ImageDbProcessor extends CI_Model {
 	 *
 	 *	Resizes all images from $folder and saves them to './pub/' ('./pub/' must have access 666 or higher!).
 	 *
+	 *	Uses resize_image() function copied from stackoverflow (located at './resources/resize_image.php').
+	 *
 	 *	@param $folder folder where images to be resized are located.
 	 *	@param $height output height of resized images.
 	 */

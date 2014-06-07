@@ -1,5 +1,8 @@
 <!-- header/cart view
- -	 Absolutely positioned cart in the top right corner of the page
+ -
+ -	 This view is absolutely positioned cart in the top right corner of the page.
+ -	 It is a part of the page header.
+ -
 -->
 
 <!-- CartJS sources -->

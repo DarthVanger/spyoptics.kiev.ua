@@ -1,5 +1,9 @@
 <!-- sunglasses view 
+ -
  -	 Shows all sunglasses using FlexSlider 
+ -	
+ -	 Loads minimal header, navigation bar, cart, and 2 pages with flexslider showing sunglasses.
+ -
 -->
 <?php $this->load->view('header/minimal.php');?>
 <?php $this->load->view('header/cart.php');?>

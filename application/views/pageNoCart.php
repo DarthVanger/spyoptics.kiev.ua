@@ -1,6 +1,17 @@
 <!-- pageNoCart view
- -	 This view is just like "page" view, but without cart in header.
- -	 Page is loaded from "views/pages/".$pageName.
+ -	
+ -	 View for pages that need the cart to be NOT displayed in header.
+ -	 This view is just like "page" view, but without cart in header. 
+ -
+ -	 Loads minimal header, navigation bar, and a page named $pageName from "views/pages/" folder.
+ -	 Is used to load pages like 'order', 'orderSubmitSuccess', 'orderSubmitFail', etc.
+ -
+ ----- Usage -----
+ -	 Following code loads page "examplePage.php" from "views/pages/" folder.
+ -	 In a controller write:
+ -	 $viewData['pageName'] = 'examplePage';	 
+ -	 $this->load->view('pageNoCart', $viewData);	
+ -----------------
 -->
 
 <?php $this->load->view('header/minimal.php');?>

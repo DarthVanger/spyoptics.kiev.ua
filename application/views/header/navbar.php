@@ -1,5 +1,8 @@
 <!-- header/navbar view
- -	 Horizontal navigation bar
+ -
+ -	 This view is a horizontal navigation bar.
+ -	 It is a part of the page header.
+ -
 -->
 
 <div id="topNavbar">

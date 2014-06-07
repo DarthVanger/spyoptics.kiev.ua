@@ -1,6 +1,16 @@
 <!-- page view
+ -	
  -	 View for common pages.
- -	 Page is loaded from "views/pages/".$pageName.
+ -
+ -	 Loads minimal header, navigation bar, cart, and a page named $pageName from "views/pages/" folder.
+ -	 Is used to load most of the site's pages (contact, about, ...).
+ -
+ ----- Usage -----
+ -	 Following code loads page "examplePage.php" from "views/pages/" folder.
+ -	 In a controller write:
+ -	 $viewData['pageName'] = 'examplePage';	 
+ -	 $this->load->view('page', $viewData);	
+ -----------------
 -->
 
 <?php $this->load->view('header/minimal.php');?>

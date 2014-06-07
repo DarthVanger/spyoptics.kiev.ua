@@ -65,7 +65,7 @@ function PageSlidingEffect(){}
 
 	/** addSwipeListeners (IS UNDER DEVELOPMENT)
 	 *	Adds swipe listeners, which launch pages scrolling animation.
-	 *	Uses jquery.mobile.touch with little patch (see jquery/jquery.mobile.touch.patch.js for details)
+	 *	Uses jquery.mobile.touch with a little patch (see jquery/jquery.mobile.touch.patch.js for details)
 	 */
 	function addSwipeListeners() {
 		$("body").on("swipeup", function() {
