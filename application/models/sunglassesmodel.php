@@ -3,6 +3,15 @@
  *
  *	Provides methods to get sunglasses from database and cart, add sunglasses to cart.	
  *
+ ********************************
+ *	Interface
+ ********************************
+ *	array selectAll();
+ *	array selectById();	
+ *	void addToCart($id);
+ *	void removeFromCart($id);
+ ********************************
+ *
  */
 class SunglassesModel extends CI_Model {
 	function __construct() {
