@@ -10,13 +10,14 @@
 					<?php if($sunglass['model']==$model): ?>
 						<li>
 							<div class="container">
-								<img class="flex <?=$sunglass['css_class']?>" src="<?=IMG?><?=$sunglass['img_path']?>" />
+								<!-- "lazy-src" - is for image lazy loading: it will be changed to "src" when page is shown by PageSlidingEffect script -->
+								<img class="flex <?=$sunglass['css_class']?>" src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>" />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
 									<div class="price">
 										<?=$sunglass['price']?> грн
 									</div>
-								<button class="orderButton" id="<?=$sunglass['id']?>"><img src="<?=IMG?>addToCart.png" /></button>
+								<button class="orderButton" id="<?=$sunglass['id']?>"><img src="#" lazy-src="<?=IMG?>addToCart.png" /></button>
 								</div>
 
 								<div class="color">

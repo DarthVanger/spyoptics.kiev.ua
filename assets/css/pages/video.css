@@ -1,0 +1,9 @@
+#video-page {
+	height: 95%;
+	text-align: center;
+	padding-top: 5%;
+}
+#video-page iframe.youtube {
+	height: 90%;
+	width: 90%;
+}

@@ -50,23 +50,29 @@
 	<div class="page">
 		<?php
 			$viewData['model'] = 'Ken Block Helm';
-			$this->load->view('pages/parts/imagesByModelFlexSlider.php', $viewData);
+			$this->load->view('pages/sunglasses/imagesByModelFlexSlider.php', $viewData);
 		?>
 	</div> <!-- end page1 -->
 
 	<div class="page">
 		<?php
 			$viewData['model'] = 'Flynn';
-			$this->load->view('pages/parts/imagesByModelFlexSlider.php', $viewData);
+			$this->load->view('pages/sunglasses/imagesByModelFlexSlider.php', $viewData);
 		?>
 	</div> <!-- end page2 -->
 
-	<!-- third page is under development right now -->
+	<div class="page">
+		<?php
+			$this->load->view('pages/sunglasses/video.php');
+		?>
+	</div> <!-- end page3 -->
+
+	<!-- 4th page is under development right now -->
 	<!-- <div class="page"> -->
 		<?php
 			//include 'peoplePhotosFlexSlider.php';
 		?>
-	<!-- </div> --> <!-- end page3 -->
+	<!-- </div> --> <!-- end page4 -->
 </div> <!-- end div id="body" -->
 
 <?php $this->load->view('footer/minimal'); ?>

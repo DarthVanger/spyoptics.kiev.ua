@@ -174,6 +174,25 @@ function PageSlidingEffect(){}
 	 */
 	function showPage($page) {
 		$page.css({display: "block"});
+		lazyLoad($page);
+	}
+	
+	/** lazyLoad
+	 *	Images and videos that have "lazy-src" attribute instead of "src" on page @param $page, will be now loaded.
+	 *	Replaces "lazy-src" attribute of all child elements of @param $page with "src" attribute.
+	 *	This trick is used to make load only one page at a time, but not all at once.
+	 *
+	 *	Code src: http://stackoverflow.com/questions/5582739/lazy-loading-images
+	 *
+	 *	@param $page jquery object of html element that contains images/videos needed to be loaded.
+	 *
+	 *	@return void
+	 */
+	function lazyLoad($page) {
+		$page.find('*[lazy-src]').each(function() {
+			$(this).attr('src', $(this).attr('lazy-src'))
+				.removeAttr('lazy-src');
+		});
 	}
 
 	/** changeLayout
