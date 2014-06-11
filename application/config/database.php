@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'vanger';
-$db['default']['password'] = '14a86d3s#';
-$db['default']['database'] = 'spyoptic';
+$db['default']['username'] = 'van4ik';
+$db['default']['password'] = '14a86d3s5';
+$db['default']['database'] = 'vanger';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
