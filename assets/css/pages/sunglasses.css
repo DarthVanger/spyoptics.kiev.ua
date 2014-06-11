@@ -1,23 +1,45 @@
-@media screen and (orientation: landscape) {
-	.flexslider img.h100 {
-		height: 100%!important;
-		max-width: 10000%!important; /* over ride any existing responsive image styling */
-	}
+.flexslider img.h100 {
+	height: 100%!important;
+	max-width: 10000%!important; /* over ride any existing responsive image styling */
 }
-
-@media screen and (orientation: portrait) {
-	.flexslider img.h100 {
-		width: 100%!important;
-	}
-}
-
 .flexslider img.kenBlockHelm2 {
 	width: 80%;
 	vertical-align: middle;
 	display: inline!important;
 }
 
-/* #page1 */
+/* pageSlidingNavbar */
+	#pageSlidingNavbar {
+		position: absolute;
+		display: inline-block;
+		top: 150px;
+		left: 20px;
+		height: 500px;
+		width: 80px;
+		background-image: url("../../img/pages/sunglasses/leftNavbarLineH500.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: 10;
+	}
+	#pageSlidingNavbar .pageSlidingButton:first-child {
+		margin-top: 50px;
+	}
+	#pageSlidingNavbar .pageSlidingButton {
+		display: inline-block;
+		width: 70px;
+		padding: 10px 5px 10px 5px;
+		border-radius: 55px;
+		margin: 0 0 85px 0;
+	}
+	#pageSlidingNavbar img {
+		width: 70px;
+	}
+	#pageSlidingNavbar .current {
+		background-color: rgba(0, 155, 222, .1); 
+		/* background-color: rgba(0, 0, 0, .1); */
+	}
+/* END pageSlidingNavbar */
+
 .pictures {
 	text-align: center;	
 	position: relative;
@@ -91,4 +113,3 @@ div.color {
 .orderButton.old:hover {
 	background-color: #a6000c;
 }
-/* END #page1 */

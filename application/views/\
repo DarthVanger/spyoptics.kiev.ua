@@ -38,7 +38,9 @@
 
 	<script type="text/javascript" charset="utf-8">
 	  $(window).load(function() {
+		if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/.test(navigator.userAgent) ) {
 			PageSlidingEffect.init();
+		 }
 	  });
 	</script>
 <!-- END Page Sliding Effect sources -->
@@ -47,15 +49,9 @@
 
 	<!-- pageSlidingNavbar has absolute position -->
 	<div id="pageSlidingNavbar">
-		<a href="javascript: void(0)" id="kenBlockButton" class="pageSlidingButton current">
-			<img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
-		</a>
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
-		</a>
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
-		</a>
+		<img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
+		<img src="<?=IMG?>pages/sunglasses/FlynnIcon.png" />
+		<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
 	</div>
 
 	<div class="page">

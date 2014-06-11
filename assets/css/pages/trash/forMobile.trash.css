@@ -1,0 +1,31 @@
+/* from sunglasses.css */
+@media screen and (orientation: landscape) {
+	.flexslider img.h100 {
+		height: 100%!important;
+		max-width: 10000%!important; /* over ride any existing responsive image styling */
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.flexslider img.h100 {
+		width: 100%!important;
+	}
+}
+
+/* from flexslider.css */
+@media screen and (orientation: portrait) {
+    /* making flexslider width=100% */
+    .flexslider {
+        width: 100%!important;
+    }
+
+    .flexslider .slides,
+    .flexslider .slides li{
+        width: 100%!important;
+    }
+
+    .flexslider .slides img.flex {
+        width: 100%!important;
+    }
+}
+
