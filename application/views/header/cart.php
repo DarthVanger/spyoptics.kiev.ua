@@ -1,3 +1,10 @@
+<!-- header/cart view
+ -
+ -	 This view is absolutely positioned cart in the top right corner of the page.
+ -	 It is a part of the page header.
+ -
+-->
+
 <!-- CartJS sources -->
 	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script> 
 	<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 

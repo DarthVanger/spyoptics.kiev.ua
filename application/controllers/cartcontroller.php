@@ -30,18 +30,17 @@ class CartController extends CI_Controller {
 		echo "Removing prodcut from cart";
 	}
 
-	/** view method
-	 *	Loads cart view, showing all the products.
+	/** order method
+	 *	Loads "order" page, showing order form and all the products.
 	 */
-	public function view() {
+	public function order() {
 		$basket = $this->Basket->getInstance();
 		$viewData['cart']['items'] = $basket->getItems();
 		$viewData['cart']['totalPrice'] = $basket->getTotalPrice();
 		$viewData['liqpay'] = $basket->prepareLiqpayFormData();
 
-		$this->load->view('header/forPageNoCart');	
-		$this->load->view('cart/order', $viewData);	
-		$this->load->view('footer/forPage');	
+		$viewData['pageName'] = 'order';
+		$this->load->view('pageNoCart', $viewData);	
 	}
 
 	/** submitOrder
@@ -52,14 +51,15 @@ class CartController extends CI_Controller {
 		
 		$submitResult = $basket->submitOrder($_POST);
 
-		$this->load->view("header/forPageNoCart");	
 		if($submitResult == false) {
-			$this->load->view("cart/submitOrderFail");
+			$viewData['pageName'] = 'submitOrderFail';
+			$this->load->view("pageNoCart", $viewData);
 		} else {
 			$basket->removeAll();
-			$this->load->view("cart/submitOrderSuccess", $_POST);
+			$viewData['pageName'] = 'submitOrderSuccess';
+			$viewData['post'] = $_POST;
+			$this->load->view("pageNoCart", $viewData);
 		}
-		$this->load->view("footer/forPage");	
 	}
 	
 	/** liqpayPaymentResponseHandler

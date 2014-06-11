@@ -1,3 +1,7 @@
+<!-- liqpayButton
+ -	 A button which redirects to liqpay online payment system
+-->
+
 <form method="POST" accept-charset="utf-8" action="https://www.liqpay.com/api/pay">
 	<input type="hidden" name="public_key" value="i36679239154" />
 	<input type="hidden" name="amount" value="<?=$liqpay['amount']?>" />

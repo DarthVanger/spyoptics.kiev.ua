@@ -2,19 +2,21 @@
 
 /** Page controller
  *
- *	Takes care of loading pages with simple html content.
+ *	Takes care of loading pages with simple html content (like contacts, about, etc).
  *
  */
 class Page extends CI_Controller {
 	/** load
-	 *	Loads page named $pageName from views/pages/ folder.
-	 *	Also loads "forPage" header and footer.
+	 *	Loads page named $pageName.
+	 *
+	 *	@param $pageName name of page to be loaded.
 	 */
 	public function load($pageName) {
-		$this->load->model('Header');
+		$basket = $this->Basket->getInstance();
 
-		$this->load->view('header/forPage', $this->Header->getViewData());
-		$this->load->view('pages/'.$pageName);
-		$this->load->view('footer/forPage');
+		$viewData['pageName'] = $pageName;
+		$viewData['cartContent'] = $basket->getItems(); // cartContent is needed by cart in page header.
+
+		$this->load->view('page', $viewData);
 	}
 }

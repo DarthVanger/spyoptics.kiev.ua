@@ -1,0 +1,26 @@
+#video-page {
+	height: 100%;
+	text-align: center;
+}
+#video-page iframe.youtube {
+	margin-top: 40px; /* 40px is header height */
+    vertical-align: middle;
+	height: calc(100% - 80px); /* 80px is header height + margin */
+	width: calc(100% - 260px); /* 260px is width of left navbar + margins */
+}
+
+/* container to align the iframe vertically at center */
+#video-page .iframeContainer {
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+}
+#video-page .iframeContainer:before { /* create a full-height inline block pseudo-element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+
+}
+~                                                                                                                                            
+~                                                                                                                                            

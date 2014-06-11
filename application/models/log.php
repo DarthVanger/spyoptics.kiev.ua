@@ -2,7 +2,7 @@
 
 /** Log class
  *
- *	Is under development. Is intended to write log to file... :)
+ *	Is under development. Is intended to write log to a file... :)
  *
  */
 class Log extends CI_Model {

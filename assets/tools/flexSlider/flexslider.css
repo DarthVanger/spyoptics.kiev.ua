@@ -97,49 +97,32 @@ html[xmlns] .slides {display: block;}
 
 /* My styles */
 
-@media screen and (orientation: landscape) {
-	/* making flexslider height = 100% - header - footer */
-	.flexslider{
-	display: block;
-	position: relative; /* fixed or absolute may be needed */
-	height: 80%!important; /* this is a fallback if calc() won't work */
-	height: calc(100% - 40px - 50px)!important; /* 40px is my header height, and 50px is flex slider's footer height */
-	width: 100%!important;
-	}
-	.flexslider .slides,
-	.flexslider .slides li {
-	width: 100%!important;
-	height: 100%!important;
-	vertical-align: middle;
-	}
-	/* for vertical aligned at middle images */
-	.flexslider .slides li .container {
-		height: 100%;
-		overflow: hidden;
-		vertical-align: middle;
-	}
-	.flexslider .slides li .container img.flex {
-		vertical-align: middle;
-	}
-	.flexslider .slides li .container:before  {    /* create a full-height inline block pseudo-element */
-		content: ' ';
-		display: inline-block;
-		vertical-align: middle;  /* vertical alignment of the inline element */
-		height: 100%;
-	}
+/* making flexslider height = 100% - header - footer */
+.flexslider{
+display: block;
+position: relative; /* fixed or absolute may be needed */
+height: 80%!important; /* this is a fallback if calc() won't work */
+height: calc(100% - 40px - 50px)!important; /* 40px is my header height, and 50px is flex slider's footer height */
+width: 100%!important;
 }
-@media screen and (orientation: portrait) {
-	/* making flexslider width=100% */
-	.flexslider {
-		width: 100%!important;
-	}
-
-	.flexslider .slides,
-	.flexslider .slides li{
-		width: 100%!important;
-	}
-
-	.flexslider .slides img.flex {
-		width: 100%!important;
-	}
+.flexslider .slides,
+.flexslider .slides li {
+width: 100%!important;
+height: 100%!important;
+vertical-align: middle;
+}
+/* for vertical aligned at middle images */
+.flexslider .slides li .container {
+	height: 100%;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.flexslider .slides li .container img.flex {
+	vertical-align: middle;
+}
+.flexslider .slides li .container:before  {    /* create a full-height inline block pseudo-element */
+	content: ' ';
+	display: inline-block;
+	vertical-align: middle;  /* vertical alignment of the inline element */
+	height: 100%;
 }
