@@ -19,11 +19,6 @@
 	<!-- check if user is using mobile and write "mobile version under development" -->
 	<script>
 		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			if(! /MSIE/i.test(navigator.userAgent) ) {
-				window.stop();
-			} else {
-				document.execCommand("Stop");	
-			}
 			document.body.innerHTML = ("Мобильная версия сайта в разработке :( <br /> Пожалуйста, зайдите с компьютера");
 		}
 	</script>
