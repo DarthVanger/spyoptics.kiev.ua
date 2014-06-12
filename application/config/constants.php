@@ -8,7 +8,7 @@
 | URLs for images, css, js, etc.
 |
 */
-define('URL', 'http://spyoptics.kiev.ua/');
+define('URL', 'http://vanger.kiev.ua/spyoptics/');
 define('IMG', URL.'assets/img/');
 define('CSS', URL.'assets/css/');
 define('JS', URL.'assets/js/');
