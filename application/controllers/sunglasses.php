@@ -12,9 +12,11 @@ class Sunglasses extends CI_Controller {
 	 */
 	public function show() {
 		$this->load->model('SunglassesModel');
+		$this->load->model('PeoplePhoto');
 		$basket = $this->Basket->getInstance();
 		
 		$viewData['sunglasses'] = $this->SunglassesModel->selectAll();	
+		$viewData['peoplePhotos'] = $this->PeoplePhoto->selectAllWithSunglasses();	
 		$viewData['cartContent'] = $basket->getItems();
 
 		$this->load->view('sunglasses', $viewData);

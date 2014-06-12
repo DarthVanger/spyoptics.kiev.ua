@@ -75,10 +75,11 @@ form.order input.novaPoshtaOffice {
 	width: 2em;
 	text-align: center;
 }
-/* END order form */
 
 .glowing-border {border:2px solid #dadada;border-radius:7px;}
 .glowing-border:focus {outline: none;border-color:#9ecaed;box-shadow:0010px#9ecaed;}
+
+/* END order form */
 
 .item div.imgContainer {
     display: inline-block;

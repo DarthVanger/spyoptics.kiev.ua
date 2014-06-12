@@ -56,6 +56,9 @@
 		<a href="javascript: void(0)" class="pageSlidingButton">
 			<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
 		</a>
+		<a href="javascript: void(0)" class="pageSlidingButton">
+			<img src="<?=IMG?>pages/sunglasses/photosIcon.png" />
+		</a>
 	</div>
 
 	<div class="page">
@@ -78,12 +81,10 @@
 		?>
 	</div> <!-- end page3 -->
 
-	<!-- 4th page is under development right now -->
-	<!-- <div class="page"> -->
+	<div class="page">
 		<?php
-			//include 'peoplePhotosFlexSlider.php';
+			$this->load->view('pages/sunglasses/peoplePhotosFlexSlider.php');
 		?>
-	<!-- </div> --> <!-- end page4 -->
-</div> <!-- end div id="body" -->
+	</div> <!-- end div id="body" -->
 
 <?php $this->load->view('footer/minimal'); ?>
