@@ -28,7 +28,7 @@
 			<?php foreach($cartContent as $item):?>
 				<div class="imgContainer">
 					<img src="<?=IMG?><?=$item['thumbnail_img_path']?>" />
-					<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></button>
+					<a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
 				</div>
 			<?php endforeach; ?>
 		<?php endif; ?>

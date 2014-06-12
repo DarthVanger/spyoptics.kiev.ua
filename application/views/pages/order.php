@@ -49,7 +49,7 @@
 						<?=$item['price']?> грн
 					</div>
 					<div class="imgContainer">
-						<button class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></button>
+						<a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
 						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
 					</div>
 				</div>

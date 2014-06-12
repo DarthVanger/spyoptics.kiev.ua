@@ -17,7 +17,7 @@
 									<div class="price">
 										<?=$sunglass['price']?> грн
 									</div>
-								<button class="orderButton" id="<?=$sunglass['id']?>"><img src="#" lazy-src="<?=IMG?>addToCart.png" /></button>
+								<a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>"><img src="#" lazy-src="<?=IMG?>addToCart.png" /></a>
 								</div>
 
 								<div class="color">

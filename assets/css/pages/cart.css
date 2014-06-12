@@ -87,16 +87,16 @@ form.order input.novaPoshtaOffice {
 }
 
 /* remove item button */
-.item div.imgContainer button.removeItem {
+.item div.imgContainer a.removeItem {
     visibility: hidden;
 }
-.item  div.imgContainer:hover button.removeItem {
+.item  div.imgContainer:hover a.removeItem {
     visibility: visible;
 }
 .item .imgContainer > img {
 }
 
-#cart-page .item button.removeItem {
+#cart-page .item a.removeItem {
     position: absolute;
 	right: 0;
 	top: 0;
@@ -104,7 +104,7 @@ form.order input.novaPoshtaOffice {
     cursor: pointer;
 }
 
-.item button.removeItem img {
+.item a.removeItem img {
     width: 20px;
     height: 20px;
 }

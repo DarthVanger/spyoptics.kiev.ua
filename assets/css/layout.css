@@ -53,17 +53,17 @@ html, body {
 	display: inline-block;
 	position: relative;
 }
-div#cartContent div.imgContainer button.removeItem {
+div#cartContent div.imgContainer a.removeItem {
 	visibility: hidden;
 }
-div#cartContent div.imgContainer:hover button.removeItem {
+div#cartContent div.imgContainer:hover a.removeItem {
 	visibility: visible;
 }
 #cart div#cartContent .imgContainer > img {
 	height: 30px;
 }
 
-#cart button.removeItem {
+#cart a.removeItem {
 	position: absolute;
 	top: 5px;
 	left: 15px;
@@ -71,7 +71,7 @@ div#cartContent div.imgContainer:hover button.removeItem {
 	cursor: pointer;
 }
 
-#cart button.removeItem img {
+#cart a.removeItem img {
 	width: 20px;
 	height: 20px;
 }
