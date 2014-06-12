@@ -15,5 +15,5 @@
 		</span>
 	<?php endforeach; ?>
 	<br />
-	<input class="awesome button" type="submit" value="submit" />
+	<input class="button2" type="submit" value="submit" />
 </form>
