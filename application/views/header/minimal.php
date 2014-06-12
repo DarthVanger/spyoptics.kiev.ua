@@ -16,10 +16,13 @@
 	<link rel="icon" type="image/png" href="<?=IMG?>faviconGlasses.png">
 	<title>Spy Optic очки Киев купить. Стильные Очки. Украина | Для поиска: spy helm купить, flynn очки купить,ken block helm, spy очки купить киев. </title>
 
+	<!-- check if user is using mobile and write "mobile version under development" -->
 	<script>
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-			document.write("Мобильная версия сайта в разработке :(. Пожалуйста, зайдите с компьютера");
-		}
+		$(document).ready(function() {
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				$("body").html("Мобильная версия сайта в разработке :(. Пожалуйста, зайдите с компьютера");
+			}
+		});
 	</script>
 </head>
 <body>
