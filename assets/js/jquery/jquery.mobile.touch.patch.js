@@ -1,5 +1,5 @@
 /**
- * Adds "mousedown" and "mouseup" events to jquery.mobile.touch.
+ * Adds "swipeup" and "swipedown" events to jquery.mobile.touch.
  *
  * code source: http://developingwithstyle.blogspot.com/2010/11/jquery-mobile-swipe-up-down-left-right.html
  *
