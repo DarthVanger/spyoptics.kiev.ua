@@ -1,5 +1,5 @@
 <!-- header/minimal view
- -	 Minimal header with doctype declaration, charset, title, and opening <body> tag.
+ -	 Minimal header with doctype declaration, charset, title, <head>, and opening <body> tag.
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -15,5 +15,11 @@
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="<?=IMG?>faviconGlasses.png">
 	<title>Spy Optic очки Киев купить. Стильные Очки. Украина | Для поиска: spy helm купить, flynn очки купить,ken block helm, spy очки купить киев. </title>
+
+	<script>
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			document.write("Мобильная версия сайта в разработке :(. Пожалуйста, зайдите с компьютера");
+		}
+	</script>
 </head>
 <body>
