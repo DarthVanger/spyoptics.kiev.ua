@@ -7,6 +7,12 @@
 	vertical-align: middle;
 	display: inline!important;
 }
+.flexslider img.peoplePhoto {
+	max-width: 100%!important;
+	max-height: 100%!important;
+	vertical-align: middle;
+	display: inline!important;
+}
 
 /* pageSlidingNavbar */
 	#pageSlidingNavbar {
@@ -29,7 +35,7 @@
 		width: 70px;
 		padding: 10px 5px 10px 5px;
 		border-radius: 55px;
-		margin: 0 0 85px 0;
+		margin: 0 0 25px 0;
 	}
 	#pageSlidingNavbar img {
 		width: 70px;

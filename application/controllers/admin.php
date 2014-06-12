@@ -16,11 +16,44 @@ class Admin extends CI_Controller {
 	}
 
 	/** uploadPeoplePhotos
-	 *	Loads uploadPeoplePhotos view, which provides form for uploading photos of people wearing Spyoptic sunglasses.
+	 *	Loads uploadPeoplePhotos page, which provides form for uploading photos of people wearing Spyoptic sunglasses.
 	 */
-	public function uploadPeoplePhotos() {
-		$this->load->view("admin/header.php");
-		$this->load->view("admin/uploadPeoplePhotos");
-		$this->load->view("admin/footer.php");
+	public function uploadPeoplePhotos($message="") {
+		$this->load->model("SunglassesModel");
+
+		$viewData["sunglasses"] = $this->SunglassesModel->selectAll();
+		$viewData["message"] = $message;
+
+		$viewData["pageName"] = "uploadPeoplePhotos";
+		$this->load->view("admin/page.php", $viewData);
+	}
+
+	/** savePeoplePhoto
+	 *	Saves new photo of people wearing spyoptic from $_POST.
+	 *	Is used by uploadPoeplePhotos form.
+	 *
+	 *	@return void
+	 */	
+	public function savePeoplePhoto() {
+
+		// config for photo uploading
+		$config['upload_path'] = "./assets/img/peoplePhotos/";
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '5000';
+		$config['max_width']  = '2000';
+		$config['max_height']  = '2000';
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->do_upload()) { // on upload failure
+			$this->uploadPeoplePhotos($this->upload->display_errors());
+		} else { // on upload success
+			$uploadData = $this->upload->data();
+
+			$this->load->model("PeoplePhoto");
+			$this->PeoplePhoto->addToDb($uploadData["file_name"], $_POST["sunglassesId"]);
+
+			$this->uploadPeoplePhotos($uploadData);
+		}
 	}
 }
