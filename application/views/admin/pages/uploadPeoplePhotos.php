@@ -14,6 +14,10 @@
 			<img class="sunglasses" src="<?=IMG.$sunglass['thumbnail_img_path']?>" />
 		</span>
 	<?php endforeach; ?>
+		<span class="sunglasses">
+			<input type="radio" name="sunglassesId" value="null" />
+			Нихуя
+		</span>
 	<br />
 	<input class="button2" type="submit" value="submit" />
 </form>

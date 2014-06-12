@@ -28,7 +28,9 @@ class PeoplePhoto extends CI_Model {
 	 */
 	function addToDb($imgName, $sunglassesId) {
 		$img_path = "peoplePhotos/" . $imgName;
-		$sql = "INSERT INTO people_wearing_glasses(img_path, sunglasses_id) VALUES('$img_path', '$sunglassesId')";
+		if($sunglassesId!="null") $sunglassesId = "'" + $sunglassesId + "'";
+
+		$sql = "INSERT INTO people_wearing_glasses(img_path, sunglasses_id) VALUES('$img_path', $sunglassesId)";
 		$this->db->query($sql);
 		echo "<br />query: ".$sql . "<br />";
 	}
@@ -42,7 +44,7 @@ class PeoplePhoto extends CI_Model {
 		$sql = "
 			SELECT people_wearing_glasses.img_path, sunglasses_id, sunglasses.model, sunglasses.color, sunglasses.price
 			FROM people_wearing_glasses
-			INNER JOIN sunglasses
+			LEFT JOIN sunglasses
 			ON people_wearing_glasses.sunglasses_id = sunglasses.id
 		";
 		$query = $this->db->query($sql);
