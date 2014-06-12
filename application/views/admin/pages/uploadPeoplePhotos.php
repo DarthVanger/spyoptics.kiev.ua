@@ -15,7 +15,7 @@
 		</span>
 	<?php endforeach; ?>
 		<span class="sunglasses">
-			<input type="radio" name="sunglassesId" value="null" />
+			<input type="radio" checked="checked" name="sunglassesId" value="null" />
 			Нихуя
 		</span>
 	<br />
