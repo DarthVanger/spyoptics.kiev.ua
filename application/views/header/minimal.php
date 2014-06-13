@@ -22,7 +22,7 @@
 	<script>
 		$("document").ready(function() {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				document.body.innerHTML = "Мобильная версия сайта в разработке :( <br /> Пожалуйста, зайдите с компьютера";
+				//document.body.innerHTML = "Мобильная версия сайта в разработке :( <br /> Пожалуйста, зайдите с компьютера";
 			}
 		});
 	</script>
