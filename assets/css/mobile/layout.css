@@ -1,0 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	width: 100%;
+	overflow-x: hidden;
+}
+/* container for pages scrolling animation */
+#pageContainer {
+	width: 200%;
+}
+/* pages that are changed by swipes */
+.page {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+}
