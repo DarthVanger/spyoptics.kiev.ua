@@ -11,8 +11,9 @@
 	<!-- Google analytics src - uncomment when uploaded on web -->
 	<!-- <script src="<?=TOOLS?>googleAnalytics.js"></script> -->
 
-	<link rel="stylesheet" href="<?=CSS?>mobile/layout.css" type="text/css" />
 	<link rel="stylesheet" href="<?=CSS?>general.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CSS?>mobile/layout.css" type="text/css" />
+	<link rel="stylesheet" href="<?=CSS?>mobile/general.css" type="text/css" />
 
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
 	<!-- jquery & jquery.touch sources -->
@@ -24,10 +25,10 @@
 	<title>Spy Optic Киев</title>
 
 	<!-- Initiate JS touch controls -->
-		<script src="<?=JS?>mobile/NavigationControl.js"></script>
+		<script src="<?=JS?>mobile/ShopControls.js"></script>
 		<script>
 			$(document).ready(function() {
-				NavigationControl.init();
+				(new ShopControls).init();
 			});
 		</script>
 	<!-- ------------------------- -->
