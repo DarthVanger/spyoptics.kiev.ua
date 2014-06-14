@@ -4,8 +4,7 @@
 	<div id="pagesContainer">
 		<div class="page" id="sunglasses-page">
 			<?php $this->load->view("mobile/pages/parts/sunglasses"); ?>
-		</div>
-		<div class="page" id="order-page">
+		</div><div class="page" id="order-page">
 			<?php $this->load->view("mobile/pages/parts/order"); ?>
 		</div>
 	</div>

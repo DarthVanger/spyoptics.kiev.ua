@@ -16,12 +16,6 @@
 
 <?php $this->load->view("mobile/templates/parts/header.php"); ?>
 
-<div id="pageContainer">
-	<div class="page">
-
 <?php $this->load->view("mobile/pages/".$pageName); ?>
-
-	</div> <!-- end div class="page" -->
-</div> <!-- end di id="pageContainer -->
 
 <?php $this->load->view("mobile/templates/parts/footer.php"); ?>
