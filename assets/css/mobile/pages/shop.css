@@ -1,0 +1,8 @@
+#shop-page .page {
+	display: inline-block;
+	width: 50%;
+	vertical-align: top;
+}
+#shop-page #pagesContainer {
+	width: 200%;
+}
