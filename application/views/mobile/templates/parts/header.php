@@ -24,15 +24,6 @@
 	<link rel="icon" type="image/png" href="<?=IMG?>favicon.png">
 	<title>Spy Optic Киев</title>
 
-	<!-- Initiate JS touch controls -->
-		<script src="<?=TOOLS?>jquery-flip/jquery.flip.min.js"></script>
-		<script src="<?=JS?>mobile/ShopControls.js"></script>
-		<script>
-			$(document).ready(function() {
-				(new ShopControls).init();
-			});
-		</script>
-	<!-- ------------------------- -->
 </head>
 <body>
 

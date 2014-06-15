@@ -14,6 +14,7 @@
  *
  */
 class SunglassesModel extends CI_Model {
+
 	function __construct() {
 		parent::__construct();
 	}
@@ -27,8 +28,13 @@ class SunglassesModel extends CI_Model {
 		$sql = "SELECT * FROM sunglasses";
 		$query = $this->db->query($sql);
 
-		return $query->result_array();
+		$sunglassesArray = $query->result_array();
+
+		$sunglassesArray = $this->addInCartKeys($sunglassesArray);
+
+		return $sunglassesArray;
 	}
+
 
 	/** selectById
 	 *	Gets sunglasses with id=$id from database.
@@ -67,5 +73,30 @@ class SunglassesModel extends CI_Model {
 		
 		$basket = $this->Basket->getInstance();
 		$this->Basket->remove($sunglasses);
+	}
+
+	/** addInCartKeys
+	 *	Adds 'inCart'=true/false key to all sunglasses in $sunglassesArray, depending on their presense in the cart.
+	 *
+	 *	@param $sunglassesArray array of sunglasses to be marked
+	 *
+	 *	@return updated array of sunglasses
+	 */
+	private function addInCartKeys($sunglassesArray) {
+		$basket = $this->Basket->getInstance();
+		$sunglassesInCart = $basket->getItems();
+
+		$i = 0;
+		foreach($sunglassesArray as $sunglass) {
+			$sunglassesArray[$i]['inCart'] = false;
+			foreach($sunglassesInCart as $sunglassInCart) {
+				if($sunglass['id'] == $sunglassInCart['id']) {
+					$sunglassesArray[$i]['inCart'] = true;
+				}
+			}
+			$i++;
+		}
+
+		return $sunglassesArray;
 	}
 }

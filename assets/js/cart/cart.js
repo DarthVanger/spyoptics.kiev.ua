@@ -1,62 +1,60 @@
-/** CartJS class (static only)
+/** CartJS class
  *	
  *	Adds listeners to cart buttons (e.g. "add to cart"), connecting button click events with CartController via Ajax.
  *
  */
-var CartJS = function(){};
+var CartJS = function() {
 
-	/* static variables */
+		// keeping track of class' this pointer to pass it to events
+		var classThis = this;
 
 		// id of DOM element, which displays cart content. It will be reloaded after adding/removing products.
-		CartJS.cartId; 
+		this.cartId; 
 		// class name of buttons, which are responsible for adding product to cart
-		CartJS.addItemButtonClass;
+		this.addItemButtonClass;
 		// class name of buttons, which are responsible for removing product from the cart
-		CartJS.removeItemButtonClass;
+		this.removeItemButtonClass;
 
-	/* static methods */
 
 		/** init
 		 *	Reads config and adds listeners to buttons.
 		 *
 		 *	@param config is an object {cartId: "id of element which displays cart content", ...}.
 		 */
-		CartJS.init = function(config) {
-			CartJS.cartId = config.cartId;
-			CartJS.addItemButtonClass = config.addItemButtonClass;
-			CartJS.removeItemButtonClass = config.removeItemButtonClass;
+		this.init = function(config) {
+			this.cartId = config.cartId;
+			this.addItemButtonClass = config.addItemButtonClass;
+			this.removeItemButtonClass = config.removeItemButtonClass;
 
 			console.log("debug", "initiating CartJS");
-			console.log("debug", "cartId: " + CartJS.cartId);
-			console.log("debug", "addItemButtonClass: " + CartJS.addItemButtonClass);
-			console.log("debug", "removeItemButtonClass: " + CartJS.removeItemButtonClass);
+			console.log("debug", "cartId: " + this.cartId);
+			console.log("debug", "addItemButtonClass: " + this.addItemButtonClass);
+			console.log("debug", "removeItemButtonClass: " + this.removeItemButtonClass);
 
-			$(document).ready(function() {
-				CartJS.addListeners();
-			});
+			this.addListeners();
 		}
 
 		/** addListeners
 		 *	Adds click listeners to buttons responsive for adding and removing items from the cart.
 		 */
-		CartJS.addListeners = function() {
+		this.addListeners = function() {
 			console.log("debug", "CartJS: adding onclick listeners");
 			// listeners for adding items
-			$('.' + CartJS.addItemButtonClass).click(function() {
-				CartJS.addItem($(this).attr('id'));
+			$('.' + this.addItemButtonClass).click(function() {
+				classThis.addItem($(this).attr('id'));
 			});
 
-			CartJS.addItemRemovalListeners();
+			this.addItemRemovalListeners();
 		}
 
 		/** addItemRemovalListeners
 		 *	Adds click listeners to button responsive for removing items from the cart.
 		 *	It is made as separate method for readding this listeners when the cart is reloaded.
 		 */
-		CartJS.addItemRemovalListeners = function() {
-			// listeners for removing items
-			$('.' + CartJS.removeItemButtonClass).click(function() {
-				CartJS.removeItem($(this).attr('id'));
+		this.addItemRemovalListeners = function() {
+			console.log("debug", "adding item removal listeners");
+			$('.' + classThis.removeItemButtonClass).click(function() {
+				classThis.removeItem($(this).attr('id'));
 			});
 		}
 
@@ -65,13 +63,13 @@ var CartJS = function(){};
 		 *
 		 * 	@param id id of product to be added to the cart
 		 */
-		CartJS.addItem = function(id) {
+		this.addItem = function(id) {
 			console.log('adding to cart product with id='+id);
 			$.ajax({
 				url: SITE_URL + 'cartcontroller/add/'+id,
 				success: function(response) {
 					console.log('ajax response: ' + response);
-					CartJS.updateCart();
+					classThis.updateCart();
 				}
 			});
 		}
@@ -81,22 +79,22 @@ var CartJS = function(){};
 		 *
 		 *	@param id id of product to be removed from the cart.
 		 */
-		CartJS.removeItem = function(id) {
-			console.log('removing item');
+		this.removeItem = function(id) {
+			console.log('CartJS: removing item');
 			$.ajax({
 				url: SITE_URL + 'cartcontroller/remove/'+id,
 				success: function(response) {
 					console.log('success! Ajax response: ' + response);
-					CartJS.updateCart();
+					classThis.updateCart();
 				}
 			});
 		}
 
 		/** updateCart
-		 *	Reloads element with id = CartJS.cartId 
+		 *	Reloads element with id = this.cartId 
 		 */
-		CartJS.updateCart = function() {
-			$('#'+CartJS.cartId).load(document.URL + ' #'+CartJS.cartId, CartJS.addItemRemovalListeners); // since DOM is reloaded, listeners should be readded 
+		this.updateCart = function() {
+			console.log("debug", "CartJS: updating cart, this.cartId = " + this.cartId);
+			$('#' + this.cartId).load(document.URL + ' #' + classThis.cartId, classThis.addItemRemovalListeners); // since DOM is reloaded, listeners should be readded 
 		}
-
-/* END CartJS class */
+} /* END CartJS class */
