@@ -89,9 +89,11 @@ class SunglassesModel extends CI_Model {
 		$i = 0;
 		foreach($sunglassesArray as $sunglass) {
 			$sunglassesArray[$i]['inCart'] = false;
-			foreach($sunglassesInCart as $sunglassInCart) {
-				if($sunglass['id'] == $sunglassInCart['id']) {
-					$sunglassesArray[$i]['inCart'] = true;
+			if( isset($sunglassesInCart) ) {
+				foreach($sunglassesInCart as $sunglassInCart) {
+					if($sunglass['id'] == $sunglassInCart['id']) {
+						$sunglassesArray[$i]['inCart'] = true;
+					}
 				}
 			}
 			$i++;
