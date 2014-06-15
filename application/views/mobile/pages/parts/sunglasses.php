@@ -8,8 +8,19 @@
 
 <div id="sunglasses-page">
 	<div class="sunglasses">
+		<?php $i=0; ?>
 		<?php foreach($sunglasses as $sunglass): ?>
-			<img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+				<div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+					<img
+						src="<?=IMG?>mobile/pages/shop/inCart.svg" 
+						class = "isInCartMark"
+						<?php if(!$sunglass['inCart']): ?>
+							style = "display: none";
+						<?php endif; ?>
+					/>
+					<img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+				</div>
+			<?php $i++; ?>
 		<?php endforeach; ?>
 	</div>
 </div>

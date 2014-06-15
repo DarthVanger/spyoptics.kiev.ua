@@ -6,13 +6,16 @@
 -->
 
 <!-- CartJS sources -->
-	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script> 
+<!-- depends on jquery (assuming it was already included) -->
 	<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 
 	<script>
-		CartJS.init({
-			cartId: "cartContent",
-			addItemButtonClass: "orderButton",
-			removeItemButtonClass: "removeItem"
+		$(document).ready(function() {
+			var cartJS = new CartJS();
+			cartJS.init({
+				cartId: "cartContent",
+				addItemButtonClass: "orderButton",
+				removeItemButtonClass: "removeItem"
+			});
 		});
 	</script>
 <!-- END CartJS sources -->

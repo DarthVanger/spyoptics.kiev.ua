@@ -41,6 +41,8 @@
 $route['default_controller'] = "sunglasses/show";
 $route['404_override'] = '';
 
+$route['mobile'] = 'mobile/mobileshop';
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

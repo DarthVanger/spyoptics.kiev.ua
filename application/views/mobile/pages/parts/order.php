@@ -16,10 +16,7 @@
 	<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
 	<script>
 		$(document).ready(function() {
-			CartJS.init({
-				cartId: "cart-view",
-				removeItemButtonClass: "removeItem"
-			});
+			// TODO: initiate cart controls.
 		});
 	</script>
 <!-- ---------------------------------------- -->
@@ -47,8 +44,7 @@
 						<?=$item['color']?>,
 						<?=$item['price']?> грн
 					</div>
-					<div class="imgContainer">
-						<a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
+					<div class="imgContainer" id="<?=$item['id']?>" >
 						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
 					</div>
 				</div>

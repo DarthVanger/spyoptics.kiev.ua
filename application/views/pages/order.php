@@ -16,7 +16,8 @@
 	<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
 	<script>
 		$(document).ready(function() {
-			CartJS.init({
+			cartJS = new CartJS();
+			cartJS.init({
 				cartId: "cart-view",
 				removeItemButtonClass: "removeItem"
 			});
