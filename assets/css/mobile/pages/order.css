@@ -14,15 +14,15 @@
 .cart {
 }
 .cart img.cart {
-	height: 250px;
 }
 .cartSemicolon {
-	font-size: 300px;
+	font-size: 200px;
 }
 .cart .item {
 	display: inline-block;
 }
 .cart .item img.glasses {
+	height: 200px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
