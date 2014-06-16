@@ -14,8 +14,8 @@
 					<img
 						src="<?=IMG?>mobile/pages/shop/inCart.svg" 
 						class = "isInCartMark"
-						<?php if(!$sunglass['inCart']): ?>
-							style = "display: none";
+						<?php if($sunglass['inCart']): ?>
+							style = "display: inline-block";
 						<?php endif; ?>
 					/>
 					<img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
