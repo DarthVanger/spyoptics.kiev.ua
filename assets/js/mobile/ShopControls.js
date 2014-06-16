@@ -1,12 +1,22 @@
-/** ShopControls class UNDER DEVELOPMENT
+/** ShopControls class
  *	
- *	Provides controls for mobile "shop" page: swipes and touches to navigate and choose sunglasses.
+ *	Provides controls for mobile "shop" page: swipes and touches to navigate and add sunglasses to cart.
  *
- ***** Controls description *****
- *	*** Adding/removing sunglasses
- *	Tap on sunglasses image to add to cart. After tapping, the "inCartMark" image will be shown over the sunglasses image.
- *	After this "addItem" tap listener is removed, and "removeItem" listener is added.
- *	So when you tap again, the sunglasses are removed from the cart, and "inCartMark" image is hidden.
+ ***** Controls ******
+ *	Tap sunglasses image to add it to cart, tap again to remove from cart.
+ *	Swipe left to see order form, swipe right to go back to sunglasses page.
+ *************************************
+ *
+ ***** Program logic scheme ******
+ *
+ *	*** Adding/removing sunglasses ***
+ *	When sunglasses container div is tapped, CartJS.addToCart(id) is called (which adds sunglasses to cart via ajax), the "isInCartMark" image is shown, "add to cart" listener is removed, "remove from cart" listener is added. So when tapped again, "remove from cart" will be called, "isInCartMark" image hidden, "remove from cart" listener removed, "add to cart" listener added back.
+ *
+ *	*** Scrolling through pages ***
+ *	There are only two pages: "sunglasses" and "order". So each of "swipeleft" and "swiperight" is responsible only for one page.
+ *	When "swipeleft" is detected, program should scroll pages to "order" page. If user is not already on "order" page, animation of page scrolling is launched. 
+ *	When "swiperight" is detected, program should scroll pages to "sunglasses" page. If user is not already on "sunglasses page, animation of page scrolling is luanched.
+ *
  ********************************
  *
  */
@@ -15,7 +25,6 @@ function ShopControls() {
 
 	// storing pointer to class' "this" to be able to pass it to function called by events
 	var classThis = this;
-
 
 	// CartJS class instance
 	cartJS = null;
@@ -52,68 +61,6 @@ function ShopControls() {
 		this.addCartListeners();
 	 };
 
-	/** addDebugButtons
-	 *	Method for debugging. Adds to buttons which fire swipe events onclick.
-	 */
-	this.addDebugButtons = function() {
-		var swipeRightButton = document.createElement("button");
-		swipeRightButton.innerHTML = "swipeRight";
-		swipeRightButton.style.position = "absolute";
-		swipeRightButton.style.top = 0;
-		swipeRightButton.style.left = 0;
-		swipeRightButton.onclick = function() {
-			console.log("debug", "triggering swipe right on " + classThis.orderPage);
-			$(classThis.orderPage).trigger("swiperight");
-		}
-		this.orderPage.appendChild(swipeRightButton);
-
-		var swipeLeftButton = document.createElement("button");
-		swipeLeftButton.innerHTML = "swipeLeft";
-		swipeLeftButton.style.position = "absolute";
-		swipeLeftButton.style.top = 0;
-		swipeLeftButton.style.left = "100px";
-		swipeLeftButton.onclick = function() {
-			console.log("debug", "triggering swipe left on " + classThis.sunglassesPage);
-			$(classThis.sunglassesPage).trigger("swipeleft");
-		}
-		this.sunglassesPage.appendChild(swipeLeftButton);
-
-		var tapSunglassesButton = document.createElement("button");
-		tapSunglassesButton.innerHTML = "tapSunglasses";
-		tapSunglassesButton.style.position = "absolute";
-		tapSunglassesButton.style.top = "50px";
-		tapSunglassesButton.style.left = "0px";
-
-		var tapIsInCartImage = document.createElement("button");
-		tapIsInCartImage.innerHTML = "tapIsInCartImage";
-		tapIsInCartImage.style.position = "absolute";
-		tapIsInCartImage.style.top = "100px";
-		tapIsInCartImage.style.left = "0px";
-
-		tapSunglassesButton.onclick = function() {
-			console.log("debug", "triggering tap on sunglasses on " + classThis.sunglasses[0]);
-			$(classThis.sunglasses[0]).trigger("tap");
-		}
-		tapIsInCartImage.onclick = function() {
-			var isInCartImage = classThis.sunglasses[0].getElementsByClassName("isInCartMark")[0];
-			console.log("debug", "triggering tap on isInCartImage on " + isInCartImage); 
-			$(isInCartImage).trigger("tap");
-	
-		}
-		this.sunglassesPage.appendChild(tapSunglassesButton);
-		this.sunglassesPage.appendChild(tapIsInCartImage);
-
-		var updateCartButton = document.createElement("button");
-		updateCartButton.innerHTML = "updateCartButton";
-		updateCartButton.style.position = "absolute";
-		updateCartButton.style.top = "100px";
-		updateCartButton.style.left = "100px";
-		updateCartButton.onclick = function() {
-			console.log("debug", "triggering update cart");
-			classThis.cartJS.updateCart();
-		}
-		this.orderPage.appendChild(updateCartButton);
-	};
 
 	 /** addPageScrollListeners
 	  *	 Adds swipe listeners to "sunglasses" and "order" pages to scroll between them.
@@ -207,7 +154,7 @@ function ShopControls() {
 	 };
 
 	/** markAsAddedToCart
-	 *	Launches animation and makes "inCartMark" image visible, changes "add to cart" listener to "remove from cart" listener.	
+	 *  Makes "inCartMark" image visible, changes "add to cart" listener to "remove from cart" listener.	
 	 *	
 	 *	@param sunglasses sunglasses to mark.
 	 *
@@ -236,7 +183,11 @@ function ShopControls() {
 
 
 	 /** removeAddedToCartMark
+	  *	 Hides "isInCartMark" image, and changes "remove from cart" listener to "add to cart" listener.
 	  *
+	  *	 @param sunglasses sunglasses container div of sunglasses that are in cart.
+	  *
+	  *	 @return void.
 	  */
 	 this.removeAddedToCartMark = function(sunglasses) {
 		console.log("debug", "removing added to cart mark from " + sunglasses);
@@ -259,7 +210,17 @@ function ShopControls() {
 	 };
 
 	/** scrollToOrderPage
-	 *	Scrolls sunglasses page out, and scrolls order page in.
+	 *	Scrolls sunglasses page out, and scrolls order page in (if not already on order page).
+	 *
+	 *
+	 *	Scrolling (animation) mechanism:
+	 *	OrderPage's display is set to "inline-block", it appears off the screen, to the right of the current page.
+	 *	Then current page's margin is animated to "-50%" (which is 100% of screen width, because pages container has width=200%),
+	 *	so the order page shows up on the screen from the right.
+	 *	When previous page is totally off the screen, it's display is set to "none".
+	 *	Scrolling is over, order page is now the current page.
+	 *
+	 *	@return void
 	 */
 	 this.scrollToOrderPage = function() {
 	 	if(classThis.currentPage != classThis.orderPage) {
@@ -270,13 +231,22 @@ function ShopControls() {
 			}, classThis.SCROLL_TIME, function() {
 				classThis.currentPage.style.display = "none";
 				classThis.currentPage = classThis.orderPage;
-				classThis.cartJS.updateCart();
+				// debug // classThis.cartJS.updateCart();
 			});
 		}
 	 };
 
 	/** scrollToSunglassesPage
 	 *	Scrolls order page out, and scrolls sunglasses page in.
+	 *
+	 *	Scrolling (animation) mechanism:
+	 *	Sunglasses page is located to the left of order page, off the screen.
+	 *	It has display="none" and marginLeft = "-50%" (which is 100% of screen width, because pages container width = 200% of screen).
+	 *	First, it's display property is set to "inline-block".
+	 *	Then it's marginLeft is animated to "0". This pushes "order" page to the right, beyond the screen.
+	 *	Now only "sunglasses" page is seen. "Order" page's display is set to "none".
+	 *
+	 *	@return void
 	 */
 	 this.scrollToSunglassesPage = function() {
 	 	if(classThis.currentPage != classThis.sunglassesPage) {
@@ -290,4 +260,67 @@ function ShopControls() {
 			});
 		}
 	 };
+
+	/** addDebugButtons
+	 *	Method for debugging. Adds debug buttons to page, which fire swipe/touch events for testing.
+	 */
+	this.addDebugButtons = function() {
+		var swipeRightButton = document.createElement("button");
+		swipeRightButton.innerHTML = "swipeRight";
+		swipeRightButton.style.position = "absolute";
+		swipeRightButton.style.top = 0;
+		swipeRightButton.style.left = 0;
+		swipeRightButton.onclick = function() {
+			console.log("debug", "triggering swipe right on " + classThis.orderPage);
+			$(classThis.orderPage).trigger("swiperight");
+		}
+		this.orderPage.appendChild(swipeRightButton);
+
+		var swipeLeftButton = document.createElement("button");
+		swipeLeftButton.innerHTML = "swipeLeft";
+		swipeLeftButton.style.position = "absolute";
+		swipeLeftButton.style.top = 0;
+		swipeLeftButton.style.left = "100px";
+		swipeLeftButton.onclick = function() {
+			console.log("debug", "triggering swipe left on " + classThis.sunglassesPage);
+			$(classThis.sunglassesPage).trigger("swipeleft");
+		}
+		this.sunglassesPage.appendChild(swipeLeftButton);
+
+		var tapSunglassesButton = document.createElement("button");
+		tapSunglassesButton.innerHTML = "tapSunglasses";
+		tapSunglassesButton.style.position = "absolute";
+		tapSunglassesButton.style.top = "50px";
+		tapSunglassesButton.style.left = "0px";
+
+		var tapIsInCartImage = document.createElement("button");
+		tapIsInCartImage.innerHTML = "tapIsInCartImage";
+		tapIsInCartImage.style.position = "absolute";
+		tapIsInCartImage.style.top = "100px";
+		tapIsInCartImage.style.left = "0px";
+
+		tapSunglassesButton.onclick = function() {
+			console.log("debug", "triggering tap on sunglasses on " + classThis.sunglasses[0]);
+			$(classThis.sunglasses[0]).trigger("tap");
+		}
+		tapIsInCartImage.onclick = function() {
+			var isInCartImage = classThis.sunglasses[0].getElementsByClassName("isInCartMark")[0];
+			console.log("debug", "triggering tap on isInCartImage on " + isInCartImage); 
+			$(isInCartImage).trigger("tap");
+	
+		}
+		this.sunglassesPage.appendChild(tapSunglassesButton);
+		this.sunglassesPage.appendChild(tapIsInCartImage);
+
+		var updateCartButton = document.createElement("button");
+		updateCartButton.innerHTML = "updateCartButton";
+		updateCartButton.style.position = "absolute";
+		updateCartButton.style.top = "100px";
+		updateCartButton.style.left = "100px";
+		updateCartButton.onclick = function() {
+			console.log("debug", "triggering update cart");
+			classThis.cartJS.updateCart();
+		}
+		this.orderPage.appendChild(updateCartButton);
+	};
 }
