@@ -2,6 +2,13 @@
  *	
  *	Provides controls for mobile "shop" page: swipes and touches to navigate and choose sunglasses.
  *
+ ***** Controls description *****
+ *	*** Adding/removing sunglasses
+ *	Tap on sunglasses image to add to cart. After tapping, the "inCartMark" image will be shown over the sunglasses image.
+ *	After this "addItem" tap listener is removed, and "removeItem" listener is added.
+ *	So when you tap again, the sunglasses are removed from the cart, and "inCartMark" image is hidden.
+ ********************************
+ *
  */
 
 function ShopControls() {
@@ -124,18 +131,33 @@ function ShopControls() {
 	 	console.log("debug", "adding cart listeners");
 		
 		for(i=0; i<this.sunglasses.length; i++) {
-
-			var currentSunglass = this.sunglasses[i];
-
-			// add buttons are the sunglasses photos itself - tap to add
-			classThis.addAddToCartListener(currentSunglass);
-
-			// remove buttons are images which appear above the sunglasses pictures, tap on them to remove sunglasses
-			var isInCartImage = this.sunglasses[i].getElementsByClassName("isInCartMark")[0];
-			console.log("debug", "Adding cart listeners: isInCartImage = " + isInCartImage);
-			classThis.addRemoveListener(isInCartImage, currentSunglass);
+			if( this.isInCart(this.sunglasses[i]) ) {
+				// debug // console.log("debug", "addCartListeners(): adding removeFromCart Listener to sunglasses.id = " + this.sunglasses[i].id);
+				this.addRemoveFromCartListener(this.sunglasses[i]);	
+			} else {
+				this.addAddToCartListener(this.sunglasses[i]);
+			}
 		}
 	 };
+
+	 /** isInCart
+	  *	
+	  *	 Checks if @param sunglasses is in cart.
+	  *	 This is done by checking if "isInCartMark" is visible (if its display is set to none or not).
+	  *
+	  *	 @param sunglasses sunglasses to check if it is in the cart.
+	  *
+	  *	 @return true if @param sunglasses is in cart, false if not in cart.
+	  */
+	  this.isInCart = function(sunglasses) {
+		var isInCartMark = sunglasses.getElementsByClassName("isInCartMark")[0];
+		console.log("debug", "isInCart(): isInCartMark = " + isInCartMark);
+		if ( $(isInCartMark).css("display") == "none" ) {
+			return false;
+		} else {
+			return true;
+		}
+	  };
 
 	/** addAddToCartListener
 	 *	Adds "add to cart listener" to sunglasses container DOM element @param sunglasses.
@@ -157,12 +179,12 @@ function ShopControls() {
 	  *
 	  *	 @return void
 	  */
-	 this.addRemoveListener = function(button, itemToRemove) {
-		console.log("debug", "addRemoveListener(): adding remove listener to button = " + button + ", itemToRemove = " + itemToRemove);
-		$(button).on("tap", function() {
-				console.log("debug", "isInCartImage tapped, calling remove from cart, sunglass = " + itemToRemove);
-				classThis.removeFromCart(itemToRemove);
-				classThis.removeAddedToCartMark(itemToRemove);
+	 this.addRemoveFromCartListener = function(sunglasses) {
+		console.log("debug", "addRemoveListener(): adding remove listener to sunglasses.id = " + sunglasses.id);
+		$(sunglasses).on("tap", function() {
+				console.log("debug", "sunglasses tapped, calling remove from cart, sunglasses.id = " + sunglasses.id);
+				classThis.removeFromCart(sunglasses);
+				classThis.removeAddedToCartMark(sunglasses);
 		});
 		// debugging
 		//$(button).trigger("tap");
@@ -185,7 +207,11 @@ function ShopControls() {
 	 };
 
 	/** markAsAddedToCart
+	 *	Launches animation and makes "inCartMark" image visible, changes "add to cart" listener to "remove from cart" listener.	
 	 *	
+	 *	@param sunglasses sunglasses to mark.
+	 *
+	 *	@return void
 	 */
 	 this.markAsAddedToCart = function(sunglasses) {
 		console.log("debug", "marking " + sunglasses + "as added to cart");
@@ -193,28 +219,20 @@ function ShopControls() {
 			direction: "tb",
 			speed: this.FLIP_TIME,
 			onEnd: function() {
-				var inCartImg = sunglasses.getElementsByClassName("isInCartMark")[0];
-				// set image height here, because in css it's absolutely positioned and can't get height of parent
-				inCartImg.style.height= $(sunglasses).css("height");
-				// now make it visible
-				inCartImg.style.display = "inline-block";
-				// now add a listener to it, so when it is tapped it acts as a remove button
-				console.log("debug", "markAsAddedToCart method: adding remove listener to: inCartImg = " + inCartImg + ", sunglasses = " + sunglasses);
-				// removing "add to cart" listener from sunglasses
-				classThis.removeAddToCartListener(sunglasses);
+				var inCartMark = sunglasses.getElementsByClassName("isInCartMark")[0];
+				// make the mark visible
+				inCartMark.style.display = "inline-block";
+
+				// removing "add to cart" listener from sunglasses and adding "remove from cart" listener
+				console.log("markAsAddedToCart(): unbinding tap listener from sunglasses.id = " + sunglasses.id);
+				$(sunglasses).unbind("tap");
+				classThis.addRemoveFromCartListener(sunglasses);
 				
 				console.log("debug", "marked as added to cart sunglasses  = " + sunglasses);
 			}
 		});
 	 };
 
-	 /** removeAddToCartListener
-	  *
-	  */
-	 this.removeAddToCartListener = function(sunglasses) {
-	 	console.log("debug", "removeAddToCartListener(): removing add to cart listener from sunglasses.id = " + sunglasses.id);
-		$(sunglasses).unbind("tap");
-	 }
 
 
 	 /** removeAddedToCartMark
@@ -229,7 +247,10 @@ function ShopControls() {
 				var inCartImg = sunglasses.getElementsByClassName("isInCartMark")[0];
 				// hide isInCart mark
 				inCartImg.style.display = "none";
-				// add back "add to cart" listener to sunglasses
+
+				// remove "remove from cart" listener and add "add to cart" listener to sunglasses
+				console.log("removeAddedToCartMark(): unbinding tap listener from sunglasses.id = " + sunglasses.id);
+				$(sunglasses).unbind("tap");
 				classThis.addAddToCartListener(sunglasses);
 				
 				console.log("debug", "removed \"added to cart\" mark from sunglasses = " + sunglasses);
