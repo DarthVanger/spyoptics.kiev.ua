@@ -34,21 +34,21 @@
 
 <div id="order-page">
 	<div class="cart" id="cart-view">
-		<h2 class="textAlignCenter">Ваш заказ</h2>
+		<img class="cart" src="<?=IMG?>mobile/layout/cartIcon.png" /><span class="cartSemicolon" />:</span>
 		<?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
-			<div class="total-price">Общая стоимость заказа: <br /> <?=$cart['totalPrice']?> грн (+ доставка)</div>
 			<?php foreach($cart['items'] as $item): ?> 
 				<div class="item">
-					<div class="description">
-						<?=$item['model']?>,
-						<?=$item['color']?>,
-						<?=$item['price']?> грн
-					</div>
 					<div class="imgContainer" id="<?=$item['id']?>" >
 						<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
 					</div>
+					<div class="description">
+						<?=$item['model']?>, <br />
+						<?=$item['color']?>, <br />
+						<?=$item['price']?> грн
+					</div>
 				</div>
 			<?php endforeach; ?>
+			<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
 		<?php else:?>
 			<div>Ваша корзинка пуста</div>
 			<div>
@@ -61,21 +61,26 @@
 	<div id="orderForm">
 		<form class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
 			<h2 class="textAlignCenter">Оформление заказа</h2>
-			<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text"  />
+			<div class="fieldName">Фамилия, имя, отчество</div>
+			<input name="name" type="text"  placeholder="Фамилия, имя, отчество" />
 			<br />
-			<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text"  />
+			<div class="fieldName">Телефон</div>
+			<input name="phone"  id="phoneInput" type="text" placeholder="Телефон" />
 			<div id="phoneValidation">&nbsp;</div>
 			<br />
-			<div class="fieldName">E-mail</div> <input name="email" type="text"  />
+			<div class="fieldName">E-mail</div>
+			<input name="email" type="text" placeholder="email" />
 			<br />
-			<div class="fieldName">Адрес</div> <input name="address" type="text"  />
+			<div class="fieldName">Адрес</div>
+			<input name="address" type="text" placeholder="адрес" />
 			<br />
 			<div class="fieldName">Доставка</div>
 			<select name="delivery" >
 				<option>Новая Почта</option>
 				<option>Курьерская (только г. Киев, правый берег)</option>
 			</select>
-			<div class="fieldName">№ Отделения Новой Почты</div> <input name="novaPostaOffice" type="text" class="novaPoshtaOffice" />
+			<div class="fieldName">№ Отделения Новой Почты</div>
+			<input name="novaPostaOffice" type="text" class="novaPoshtaOffice" placeholder="№ отделения новой почты" />
 			<br />
 			<div class="fieldName">Способ оплаты</div>
 			<select name="paymentMethod" >
@@ -83,7 +88,8 @@
 				<option>Предоплата на карточку ПриватБанк (номер будет сообщен по смс)</option>
 			</select>
 			<br />
-			<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo"  rows="5"></textarea>
+			<div class="fieldName">Доп. информация</div>
+			<textarea name="additionalInfo"  rows="5" placeholder="Дополнительная информация"></textarea>
 			<input type="submit" value="Готово" />
 		</form>
 	</div>

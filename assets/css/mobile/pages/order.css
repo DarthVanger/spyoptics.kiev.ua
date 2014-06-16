@@ -3,13 +3,37 @@
 		width: 100%;
 	}
 	.fieldName {
-		text-align: center;
+		text-align: left;
+	}
+	form.order textarea {
+		height: 400px;
 	}
 /****************************/
 
 /*** cart ***/
 .cart {
-	text-align: center;
+}
+.cart img.cart {
+	height: 250px;
+}
+.cartSemicolon {
+	font-size: 300px;
+}
+.cart .item {
+	display: inline-block;
+}
+.cart .item img.glasses {
+}
+.cart .item .imgContainer {
+	display: inline-block;
+}
+.cart .item .description {
+	display: inline-block;
+	font-size: 0.75em;
+}
+.cart .total-price {
+	color: #500025;
+	font-weight: bold;
 }
 /***************************/
 
