@@ -15,6 +15,7 @@
 -->
 
 <?php $this->load->view("mobile/templates/parts/header.php"); ?>
+<?php $this->load->view("mobile/templates/parts/navbar.php"); ?>
 
 <?php $this->load->view("mobile/pages/".$pageName); ?>
 

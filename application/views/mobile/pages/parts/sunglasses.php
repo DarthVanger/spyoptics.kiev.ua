@@ -7,6 +7,9 @@
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
 
 <div id="sunglasses-page">
+	<div>
+		Нажмите на очки, чтобы добавить/убрать очки из корзинки. <br />
+	</div>
 	<div class="sunglasses">
 		<?php $i=0; ?>
 		<?php foreach($sunglasses as $sunglass): ?>
