@@ -57,7 +57,7 @@ function ShopControls() {
 		this.sunglasses = document.getElementsByClassName("sunglassesImgContainer");
 
 		this.addPageScrollListeners();
-		this.addDebugButtons();
+		//this.addDebugButtons();
 		this.addCartListeners();
 	 };
 
