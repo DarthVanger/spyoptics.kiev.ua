@@ -5,13 +5,13 @@
  -
 -->
 
-<!-- CartJS sources -->
+<!-- CartAjax sources -->
 <!-- depends on jquery (assuming it was already included) -->
-	<script src="<?=JS?>cart/cart.js" type="text/javascript"></script> 
+	<script src="<?=JS?>cart/CartAjax.js" type="text/javascript"></script> 
 	<script>
 		$(document).ready(function() {
-			var cartJS = new CartJS();
-			cartJS.init({
+			var cartAjax = new CartAjax();
+			cartAjax.initListeners({
 				cartId: "cartContent",
 				addItemButtonClass: "orderButton",
 				removeItemButtonClass: "removeItem"

@@ -38,7 +38,7 @@
 
 	<script type="text/javascript" charset="utf-8">
 	  $(window).load(function() {
-			PageSlidingEffect.init();
+			(new PageSlidingEffect).init();
 	  });
 	</script>
 <!-- END Page Sliding Effect sources -->

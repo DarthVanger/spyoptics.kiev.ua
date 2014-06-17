@@ -3,7 +3,9 @@
  *	Adds page sliding animation instead of usual page scrolling. 
  *
  */
-function PageSlidingEffect(){}
+function PageSlidingEffect(){
+
+	// private properties
 
 	// total number of pages to scroll
 	var numberOfPages;
@@ -24,7 +26,7 @@ function PageSlidingEffect(){}
 	 *	List of available options:
 	 *		- pagesClass: name of class that is used to identify different fullscreen pages, to slide between them. Default: 'page';
 	 */
-	PageSlidingEffect.init = function(config) {
+	this.init = function(config) {
 		if(typeof config !== 'undefined') {
 			if(typeof config.pagesClass != 'undefined') {	
 				pagesClass = config.pagesClass;
@@ -284,4 +286,5 @@ function PageSlidingEffect(){}
 			});
 		}
 	}
+}
 
