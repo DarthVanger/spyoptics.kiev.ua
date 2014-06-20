@@ -15,7 +15,7 @@
                                     <?php if($model=="Flynn"): ?>
                                         class="height-100-percent"
                                     <?php else: ?>
-                                        class="width-80-percent"
+                                        class="width-75-percent"
                                     <?php endif; ?>
                                     src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
                                 />

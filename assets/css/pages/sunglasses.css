@@ -2,8 +2,9 @@
 	height: 100%!important;
 	max-width: 10000%!important; /* over ride any existing responsive image styling */
 }
-.flexslider img.width-80-percent {
-	width: 80%;
+.flexslider img.width-75-percent {
+	width: 75%;
+    max-height: 100%!important;
 	vertical-align: middle;
 	display: inline!important;
 }
