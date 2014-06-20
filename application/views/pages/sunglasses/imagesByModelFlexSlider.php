@@ -11,7 +11,14 @@
 						<li>
 							<div class="container">
 								<!-- "lazy-src" - is for image lazy loading: it will be changed to "src" when page is shown by PageSlidingEffect script -->
-								<img class="flex <?=$sunglass['css_class']?>" src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>" />
+								<img
+                                    <?php if($model=="Flynn"): ?>
+                                        class="height-100-percent"
+                                    <?php else: ?>
+                                        class="width-80-percent"
+                                    <?php endif; ?>
+                                    src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
+                                />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
 									<div class="price">

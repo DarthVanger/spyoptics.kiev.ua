@@ -1,8 +1,8 @@
-.flexslider img.h100 {
+.flexslider img.height-100-percent {
 	height: 100%!important;
 	max-width: 10000%!important; /* over ride any existing responsive image styling */
 }
-.flexslider img.kenBlockHelm2 {
+.flexslider img.width-80-percent {
 	width: 80%;
 	vertical-align: middle;
 	display: inline!important;
