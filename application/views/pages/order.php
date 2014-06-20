@@ -70,7 +70,6 @@
 			<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text" class="glowing-border" />
 			<br />
 			<div class="fieldName">Телефон</div> <input name="phone"  id="phoneInput" type="text" class="glowing-border" />
-			<div id="phoneValidation">&nbsp;</div>
 			<br />
 			<div class="fieldName">E-mail</div> <input name="email" type="text" class="glowing-border" />
 			<br />
@@ -91,6 +90,11 @@
 			<br />
 			<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
 			<input type="submit" value="Готово" />
+
+            <!-- div for phone validation message for formValidation.js -->
+			<div id="phoneValidation">&nbsp;</div>
+
+            <!-- php phone validation fallback (if js fails) -->
             <?php if(is_array($validationErrors)): ?>
                 <?php foreach($validationErrors as $validationError): ?>
                     <div class = "validationError">
@@ -98,6 +102,7 @@
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
+
 		</form>
 	</div>
 

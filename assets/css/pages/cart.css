@@ -57,14 +57,12 @@ form.order select, form.order option {
 	background-color: #eee;
 }
 form.order #phoneValidation {
-	display: inline-block;
 	overflow: hidden;
-	padding-left: 5px;
 	color: red;
 	font-family: Play;
 	font-weight: bold;
 	font-variant: small-caps;
-	font-size: 90%;
+    font-size: 1.2em;
 	letter-spacing: 1px;
 }
 form.order img.validation {

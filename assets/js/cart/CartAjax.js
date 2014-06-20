@@ -41,7 +41,7 @@ var CartAjax = function(config) {
 			addItemButtonClass = config.addItemButtonClass;
 			removeItemButtonClass = config.removeItemButtonClass;
 
-			console.log("debug", "initiating CartJS");
+			console.log("debug", "initiating CartAjax");
 			console.log("debug", "cartId: " + cartId);
 			console.log("debug", "addItemButtonClass: " + addItemButtonClass);
 			console.log("debug", "removeItemButtonClass: " + removeItemButtonClass);
@@ -71,7 +71,7 @@ var CartAjax = function(config) {
 		 *	@param id id of product to be removed from the cart.
 		 */
 		this.removeItem = function(id) {
-			console.log('CartJS: removing item');
+			console.log('CartAjax: removing item');
 			$.ajax({
 				url: SITE_URL + 'cartcontroller/remove/'+id,
 				success: function(response) {
@@ -82,10 +82,10 @@ var CartAjax = function(config) {
 		}
 
 		/** updateCart
-		 *	Reloads element with id = this.cartId 
+		 *	Reloads element with id = cartId 
 		 */
 		this.updateCart = function() {
-			console.log("debug", "CartJS: updating cart, this.cartId = " + this.cartId);
+			console.log("debug", "CartAjax: updating cart, cartId = " + cartId);
 			$('#' + cartId).load(document.URL + ' #' + cartId, addItemRemovalListeners); // since DOM is reloaded, listeners should be readded 
 		}
 
@@ -97,7 +97,7 @@ var CartAjax = function(config) {
 		 *	Adds click listeners to buttons responsive for adding and removing items from the cart.
 		 */
 		var addListeners = function() {
-			console.log("debug", "CartJS: adding onclick listeners");
+			console.log("debug", "CartAjax: adding onclick listeners");
 			// listeners for adding items
 			$('.' + addItemButtonClass).click(function() {
 				classThis.addItem($(this).attr('id'));

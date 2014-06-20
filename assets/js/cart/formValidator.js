@@ -17,8 +17,8 @@ var FormValidator = function(){};
 
 	/* validation result signs/phares/pictures */
 	var validated = false;
-	var phoneEmpty = "укажите телефон";
-	var noDigits = "номер без цифр";
+	var phoneEmpty = "Пожалуйста, укажите номер телефона.";
+	var noDigits = "В номере телефона нет цифр. Пожалуйста, исправте номер телефона.";
 	var phoneOk = "<img src=\"" + IMG + "validated5.png\" class=\"validation\" />";
 	var phoneWarning = "<img title=\"Проверьте, пожалуйста, номер телефона. Возможно Вы пропустили цифру.\" src=\""+IMG+"warningIcon.png\" class=\"validation\" />";
 
