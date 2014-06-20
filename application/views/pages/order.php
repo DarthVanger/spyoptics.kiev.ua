@@ -27,7 +27,7 @@
 
 <!-- FormValidator -->
 	<script type="text/javascript" src="<?=JS?>jquery/jquery-ui-effects.min.js"></script>
-	<script type="text/javascript" src="<?=JS?>cart/formValidator.js"></script>
+	<script type="text/javascript" src="<?=JS?>cart/FormValidator.js"></script>
 	<script>
 		$(document).ready(function() {
 			FormValidator.init();
@@ -89,8 +89,6 @@
 			</select>
 			<br />
 			<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
-			<input type="submit" value="Готово" />
-
             <!-- div for phone validation message for formValidation.js -->
 			<div id="phoneValidation">&nbsp;</div>
 
@@ -102,6 +100,8 @@
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
+
+			<input type="submit" value="Готово" />
 
 		</form>
 	</div>

@@ -20,7 +20,7 @@ var FormValidator = function(){};
 	var phoneEmpty = "Пожалуйста, укажите номер телефона.";
 	var noDigits = "В номере телефона нет цифр. Пожалуйста, исправте номер телефона.";
 	var phoneOk = "<img src=\"" + IMG + "validated5.png\" class=\"validation\" />";
-	var phoneWarning = "<img title=\"Проверьте, пожалуйста, номер телефона. Возможно Вы пропустили цифру.\" src=\""+IMG+"warningIcon.png\" class=\"validation\" />";
+	var phoneWarning = "<img title=\"Проверьте, пожалуйста, номер телефона. Возможно Вы пропустили цифру.\" src=\""+IMG+"warningIcon.png\" class=\"validation\" /> Перепроверьте, пожалуйста, номер телефона. Возможно, Вы пропустили цифру.";
 
 	/* validation regular expressions */
 
@@ -80,7 +80,7 @@ var FormValidator = function(){};
 			validated = false;
 		} else if(!phoneWarningRegex.test(userPhone)) {
 			console.log("debug", "phone warning");
-			$phoneValidation.css({opacity: 0});		
+			$phoneValidation.css({opacity: 0, color: "black"});		
 			$phoneValidation.html(phoneWarning);
 			$phoneValidation.animate({opacity: 1});
 			validated = true;
