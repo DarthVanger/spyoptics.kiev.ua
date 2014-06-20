@@ -91,9 +91,17 @@
 			<br />
 			<div class="fieldName">Доп. информация</div> <textarea name="additionalInfo" class="glowing-border" rows="5"></textarea>
 			<input type="submit" value="Готово" />
+            <?php if(is_array($validationErrors)): ?>
+                <?php foreach($validationErrors as $validationError): ?>
+                    <div class = "validationError">
+                        <?=$validationError?>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
 		</form>
 	</div>
 
+    <!-- liqpay button is under development -->
 	<?php //$this->load->view("cart/liqpayButton"); ?>
 
 </div>

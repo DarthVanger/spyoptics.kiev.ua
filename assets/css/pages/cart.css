@@ -79,6 +79,11 @@ form.order input.novaPoshtaOffice {
 .glowing-border {border:2px solid #dadada;border-radius:7px;}
 .glowing-border:focus {outline: none;border-color:#9ecaed;box-shadow:0010px#9ecaed;}
 
+.validationError {
+    color: red;
+    font-weight: bold;
+}
+
 /* END order form */
 
 .item div.imgContainer {
@@ -114,6 +119,7 @@ form.order input.novaPoshtaOffice {
 form.order input[type="submit"] {
 	width: 100%;
 	margin-top: 20px;
+    margin-bottom: 20px;
 	background: #3e9cbf; /*the colour of the button*/
 	padding: 6px 10px 6px; /*apply some padding inside the button*/
 	border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
