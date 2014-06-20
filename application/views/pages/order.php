@@ -12,12 +12,12 @@
 	</script>
 <!-- ----------------------------------------- -->
 
-<!-- CartJS -->
-	<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
+<!-- CartAjax -->
+	<script type="text/javascript" src="<?=JS?>cart/CartAjax.js"></script>
 	<script>
 		$(document).ready(function() {
-			cartJS = new CartJS();
-			cartJS.init({
+			cartAjax = new CartAjax();
+			cartAjax.initListeners({
 				cartId: "cart-view",
 				removeItemButtonClass: "removeItem"
 			});
