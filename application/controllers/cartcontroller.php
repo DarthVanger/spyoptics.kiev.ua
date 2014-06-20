@@ -50,6 +50,8 @@ class CartController extends CI_Controller {
 		$viewData['liqpay'] = $basket->prepareLiqpayFormData();
 
 		$viewData['pageName'] = 'order';
+
+        // working on this // if($this->Mobile->
 		$this->load->view('pageNoCart', $viewData);	
 	}
 

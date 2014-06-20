@@ -12,8 +12,8 @@
 	</script>
 <!-- ----------------------------------------- -->
 
-<!-- CartJS -->
-	<script type="text/javascript" src="<?=JS?>cart/cart.js"></script>
+<!-- CartAjax -->
+	<script type="text/javascript" src="<?=JS?>cart/CartAjax.js"></script>
 	<script>
 		$(document).ready(function() {
 			// TODO: initiate cart controls.
@@ -23,7 +23,7 @@
 
 <!-- FormValidator -->
 	<script type="text/javascript" src="<?=JS?>jquery/jquery-ui-effects.min.js"></script>
-	<script type="text/javascript" src="<?=JS?>cart/formValidator.js"></script>
+	<script type="text/javascript" src="<?=JS?>cart/FormValidator.js"></script>
 	<script>
 		$(document).ready(function() {
 			FormValidator.init();
