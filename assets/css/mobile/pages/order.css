@@ -21,20 +21,20 @@
 .cart .item {
 }
 .cart .item img.glasses {
-	height: 80px;
+	height: 100px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
 }
 .cart .item .description {
-	font-size: 0.75em;
+	font-size: 0.9em;
 }
 .cart .total-price {
 	color: #500025;
 	font-weight: bold;
 }
 .cart a.removeItem img {
-    height: 40px;
+    height: 60px;
 }
 /***************************/
 
