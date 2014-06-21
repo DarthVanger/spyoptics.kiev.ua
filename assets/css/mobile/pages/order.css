@@ -5,7 +5,7 @@
 		text-align: left;
 	}
 	form.order textarea {
-		height: 200px;
+		height: 100px;
 	}
 /****************************/
 
@@ -13,9 +13,10 @@
 .cart {
 }
 .cart img.cart {
+    height: 80px;
 }
 .cartSemicolon {
-	font-size: 50px;
+	font-size: 80px;
 }
 .cart .item {
 }
