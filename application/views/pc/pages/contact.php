@@ -9,7 +9,6 @@
 	<a id="instagramLogoContainer" target="_blank" href="http://instagram.com/spyoptics_kiev">
 		<img id="instagramLogo" src="<?=IMG?>social/instagramLogoBeautifulBlue.png" />
 		<img id="instagramLogoHover" src="<?=IMG?>social/instagramLogoBeautiful.png" />
-	</a>
 	spyoptics_kiev
-
+	</a>
 </div>
