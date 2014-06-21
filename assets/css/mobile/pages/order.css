@@ -13,7 +13,7 @@
 .cart {
 }
 .cart img.cart {
-    height: 80px;
+    height: 70px;
 }
 .cartSemicolon {
 	font-size: 80px;
@@ -21,7 +21,7 @@
 .cart .item {
 }
 .cart .item img.glasses {
-	height: 60px;
+	height: 80px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
