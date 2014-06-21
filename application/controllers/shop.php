@@ -19,8 +19,8 @@ class Shop extends CI_Controller
             $this->userDevice = 'pc'; 
         }
 
-        // for testing mobile version
-        $this->userDevice = 'mobile';
+        // testing mobile version
+        //$this->userDevice = 'mobile';
 
         $this->viewData['userDevice'] = $this->userDevice;
 
