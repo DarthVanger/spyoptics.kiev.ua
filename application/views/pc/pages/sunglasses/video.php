@@ -1,4 +1,4 @@
-<link href="<?=CSS?>pages/video.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/pages/video.css" rel="stylesheet" type="text/css" />
 <div id="video-page">
 	<div class="iframeContainer">
 		<!-- "lazy-src" is for lazy loading: it will be changed to "src" by PageSlidingEffect, when this page is shown -->

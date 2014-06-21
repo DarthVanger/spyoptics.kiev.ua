@@ -17,6 +17,8 @@
 <?php $this->load->view("mobile/templates/parts/header.php"); ?>
 <?php $this->load->view("mobile/templates/parts/navbar.php"); ?>
 
-<?php $this->load->view("mobile/pages/".$pageName); ?>
+<div id="page-body">
+    <?php $this->load->view("mobile/pages/".$pageName); ?>
+</div>
 
 <?php $this->load->view("mobile/templates/parts/footer.php"); ?>

@@ -4,6 +4,22 @@
  -
 -->
 
+<!-- Initiate JS touch controls -->
+	<script src="<?=JS?>cart/CartAjax.js"></script>
+	<script src="<?=TOOLS?>jquery-flip/jquery.flip.min.js"></script>
+	<script src="<?=JS?>mobile/ShopControls.js"></script>
+	<script>
+		$(document).ready(function() {
+			(new ShopControls).init();
+			var cartAjax = new CartAjax();
+			cartAjax.initListeners({
+				cartId: "cart-view",
+				removeItemButtonClass: "removeItem"
+			});
+		});
+	</script>
+<!-- ------------------------- -->
+
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
 
 <div id="sunglasses-page">

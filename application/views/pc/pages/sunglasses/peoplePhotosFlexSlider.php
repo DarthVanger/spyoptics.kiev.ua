@@ -1,6 +1,5 @@
 <!-- sunglasses/peoplePhotosFlexSlider view
  -	 Shows photos of people wearing spy sunglasses, using FlexSlider.
- -	 FOR NOW IT'S ONLY A COPY OF imagesByModelFlexSlider.php, so to say, it's under development :)
 -->
 	<div class="pictures">
 		<div class="flexslider">
@@ -8,7 +7,7 @@
 				<?php foreach($peoplePhotos as $photo): ?>
 					<li>
 						<div class="container">
-							<img class="flex peoplePhoto" src="<?=IMG?><?=$photo['img_path']?>" />
+							<img class="flex peoplePhoto" lazy-src="<?=IMG?><?=$photo['img_path']?>" />
 							<!--
 								Some photos have sunglasses_id = NULL, when we don't have glasses that are on photo.
 								So we don't display "add to cart" button if no sunglasses are acosiated with current photo.

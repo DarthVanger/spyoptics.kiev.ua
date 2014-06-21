@@ -2,10 +2,11 @@
 
 /** CartController controller
  *
- *	Provides interface to work with cart: add products, show products, make order.
+ *	Provides interface to work with cart: add product, remove product. 
  *
  */
-class CartController extends CI_Controller {
+class CartController extends CI_Controller
+{
 
 	/** add
 	 *	Adds sunglasses with id=$sunglassesId to the cart.	
@@ -30,59 +31,6 @@ class CartController extends CI_Controller {
 		echo "Removing prodcut from cart";
 	}
 
-	/** order method
-	 *	Loads "order" page, showing order form and all the products.
-     *
-     *  @param $validationErrors array of strings - validation errors messages.
-     *  All these messages will be displayed under the "submit" button.
-     *  Default value: null.
-     * 
-     *  @return void
-	 */
-	public function order($validationErrors = null)
-    {
-		$basket = $this->Basket->getInstance();
-		$viewData['cart']['items'] = $basket->getItems();
-		$viewData['cart']['totalPrice'] = $basket->getTotalPrice();
-		$viewData['validationErrors'] = $validationErrors;
-
-        // liqpay is under development
-		$viewData['liqpay'] = $basket->prepareLiqpayFormData();
-
-		$viewData['pageName'] = 'order';
-
-        // working on this // if($this->Mobile->
-		$this->load->view('pageNoCart', $viewData);	
-	}
-
-	/** submitOrder
-	 *	Calls Basket model's submitOrder() method and loads success or fail view, depending on Basket model's response.
-     *  Also performs form validation and loads "order" view again, if there are any.
-     *
-     *  @return void
-	 */
-	public function submitOrder()
-    {
-		$basket = $this->Basket->getInstance();
-		
-		$submitResult = $basket->submitOrder($_POST);
-        
-        // form validation: phone must not be null!
-        // (more advanced form validation is done in javascript, this is just a fallback)
-        if(!$_POST['phone']) {
-            $validationErrors = array();
-            $validationErrors[] = 'Пожалуйста, укажите номер телефона!';
-            $this->order($validationErrors); 
-        } else if(!$submitResult) { // if $basket->submitOrder() is ok 
-			$viewData['pageName'] = 'submitOrderFail';
-			$this->load->view('pageNoCart', $viewData);
-		} else { // if $basket->submitOrder() went wrong
-			$basket->removeAll();
-			$viewData['pageName'] = 'submitOrderSuccess';
-			$viewData['post'] = $_POST;
-			$this->load->view('pageNoCart', $viewData);
-		}
-	}
 	
 	/** liqpayPaymentResponseHandler
 	 *	Accepts POST message from Liqpay API with result of payment.

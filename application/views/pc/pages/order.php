@@ -2,7 +2,7 @@
  -	 Shows order form and cart contents
 -->
 
-<link href="<?=CSS?>pages/cart.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/pages/cart.css" rel="stylesheet" type="text/css" />
 
 <!-- load jquery (if it's not already loaded) -->
 	<script type="text/javascript">
@@ -65,7 +65,7 @@
 	</div>
 
 	<div id="orderForm">
-		<form class="order" method="POST" action="<?=site_url()?>/cartcontroller/submitOrder">
+		<form class="order" method="POST" action="<?=site_url()?>/shop/submitOrder">
 			<h2 class="textAlignCenter">Оформление заказа</h2>
 			<div class="fieldName">Фамилия, имя, отчество</div> <input name="name" type="text" class="glowing-border" />
 			<br />

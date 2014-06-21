@@ -25,10 +25,6 @@ function ShopControls() {
 
 	// page that is currently being displayed to user
 	var currentPage = null;
-	// div container of "sunglasses" page
-	var sunglassesPage = null;
-	// div container of "order" page
-	var orderPage = null;
 
 	// time of page scrolling animation in miliseconds
 	var SCROLL_TIME = 500;
@@ -42,10 +38,6 @@ function ShopControls() {
 	 *	Initiates the controls and class variables: gets DOM elements, adds listeners.
 	 */
 	 this.init = function() {
-	 	sunglassesPage = document.getElementById("sunglasses-page");
-		currentPage = this.sunglassesPage;
-	 	orderPage = document.getElementById("order-page");
-		orderPage.style.display = "none";
 		cartAjax = new CartAjax();
 		cartAjax.setCartId("cart-view");
 		sunglasses = document.getElementsByClassName("sunglassesImgContainer");

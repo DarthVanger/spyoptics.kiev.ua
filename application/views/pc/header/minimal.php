@@ -11,8 +11,8 @@
 	<!-- Google analytics src - uncomment when uploaded on web -->
 	<!-- <script src="<?=TOOLS?>googleAnalytics.js"></script> -->
 
-	<link href="<?=CSS?>layout.css" rel="stylesheet" type="text/css" />
-	<link href="<?=CSS?>general.css" rel="stylesheet" type="text/css" />
+	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />
+	<link href="<?=CSS.$userDevice?>/general.css" rel="stylesheet" type="text/css" />
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
 	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="<?=IMG?>favicon.png">

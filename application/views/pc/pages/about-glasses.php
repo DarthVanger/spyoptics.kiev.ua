@@ -1,4 +1,4 @@
-<link href="<?=CSS?>pages/about-glasses.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/pages/about-glasses.css" rel="stylesheet" type="text/css" />
 
 <div id="about-glasses">
 	<div name="about-generally" class="about-block about-generally">

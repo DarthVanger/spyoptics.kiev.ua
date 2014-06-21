@@ -1,4 +1,4 @@
-<link href="<?=CSS?>pages/contact.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/pages/contact.css" rel="stylesheet" type="text/css" />
 
 <div id="contact-page">
 	<img class="contacts" src="<?=IMG?>phoneIcon2.png" />063 206 60 97<br />

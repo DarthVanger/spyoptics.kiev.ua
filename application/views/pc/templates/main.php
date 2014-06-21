@@ -1,6 +1,6 @@
-<!-- page view
+<!-- pc/templates/main view
  -	
- -	 View for common pages.
+ -	 Main template for common pages.
  -
  -	 Loads minimal header, navigation bar, cart, and a page named $pageName from "views/pages/" folder.
  -	 Is used to load most of the site's pages (contact, about, ...).
@@ -13,19 +13,17 @@
  -----------------
 -->
 
-<?php $this->load->view('header/minimal.php');?>
-<?php $this->load->view('header/cart.php');?>
-<?php $this->load->view('header/navbar.php');?>
-
-<link href="<?=CSS?>content.css" rel="stylesheet" type="text/css" />
+<?php $this->load->view('pc/header/minimal.php');?>
+<?php $this->load->view('pc/header/cart.php');?>
+<?php $this->load->view('pc/header/navbar.php');?>
 
 <div id="body">
 	<div class="page-body">
 		<div id="content" class="text">
-			<?php $this->load->view("pages/".$pageName); ?>
+			<?php $this->load->view("pc/pages/".$pageName); ?>
 		</div>
 	</div>
-	<?php $this->load->view('footer/signature'); ?>
+	<?php $this->load->view('pc/footer/signature'); ?>
 </div>
 
-<?php $this->load->view('footer/minimal'); ?> 
+<?php $this->load->view('pc/footer/minimal'); ?> 

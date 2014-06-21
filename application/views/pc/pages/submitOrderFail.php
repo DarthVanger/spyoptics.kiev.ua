@@ -8,4 +8,4 @@
 <h4>
 	Пожалуйста, позвоните нам и закажите по телефону!
 </h4>
-<?php $this->load->view("pages/contact"); ?>
+<?php $this->load->view("pc/pages/contact"); ?>

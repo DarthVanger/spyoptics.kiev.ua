@@ -17,7 +17,7 @@
 <?php $this->load->view('header/minimal.php');?>
 <?php $this->load->view('header/navbar.php');?>
 
-<link href="<?=CSS?>content.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/content.css" rel="stylesheet" type="text/css" />
 
 <div id="body">
 	<div class="page-body">

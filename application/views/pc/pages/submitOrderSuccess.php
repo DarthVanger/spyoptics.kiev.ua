@@ -2,7 +2,7 @@
  -	 Shows congradulations of successeful ordering
 -->
 
-<link href="<?=CSS?>pages/submitOrderSuccess.css" rel="stylesheet" type="text/css" />
+<link href="<?=CSS.$userDevice?>/pages/submitOrderSuccess.css" rel="stylesheet" type="text/css" />
 <div id="submitOrderSuccess-page">
 	<div>
         Спасибо,
@@ -15,4 +15,4 @@
         Если Вам не перезвонят по поводу заказа в течении двух дней, пожалуйста, свяжитесь с нами по телефону!
 	</div>
 </div>
-<?php $this->load->view("pages/contact");?>
+<?php $this->load->view("pc/pages/contact");?>
