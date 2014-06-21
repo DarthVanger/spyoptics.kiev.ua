@@ -37,7 +37,7 @@
 
 <div id="order-page">
 	<div class="cart" id="cart-view">
-        <img class="cart" src="<?=IMG?>mobile/layout/cartIcon.png" /><span class="cartSemicolon" />:</span>
+        <h2 class="textAlignCenter">Ваш заказ</h2>
         <?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
             <?php foreach($cart['items'] as $item): ?> 
                 <div class="item">
