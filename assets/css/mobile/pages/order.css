@@ -1,6 +1,5 @@
 /*** order form ***/
 	form.order input[type="text"], form.order select, form.order textarea {
-		width: 100%;
 	}
 	.fieldName {
 		text-align: left;

@@ -3,19 +3,12 @@
  *  Adds tap listeners to sunglasses img containers.
  *  Tap events will add/remove sunglasses from cart, as well as show/hide "is in cart" mark.
  *
- ****** Dependencies ******
- *  Depends on CartAjax class.
- **************************
- *
  */
 
 function ShopControls() {
 
 	// storing pointer to class' "this" to be able to pass it to function called by events
 	var classThis = this;
-
-	// CartAjax class instance
-	var cartAjax = null;
 
 	// array of DOM sunglasses img containers
 	var sunglasses = null;
@@ -24,9 +17,7 @@ function ShopControls() {
 	 *	Initiates the controls and class variables: gets DOM elements, adds listeners.
 	 */
 	 this.init = function() {
-		cartAjax = new CartAjax();
 		sunglasses = document.getElementsByClassName("sunglassesImgContainer");
-
 		this.addCartListeners();
 	 };
 
@@ -44,16 +35,62 @@ function ShopControls() {
             $(sunglasses[i]).on("tap", function() {
                 if(!isInCart(this)) { // if the sunglasses are not in the cart
                     console.log("debug", "sunglasses image tapped, calling add to cart, sunglass = " + this);
-                    cartAjax.addItem(this.id);
-                    classThis.markAsAddedToCart(this);
+                    classThis.addToCart(this);
                 } else { // if the sunglasses are in the cart
                     console.log("debug", "sunglasses tapped, calling remove from cart, sunglasses.id = " + this.id);
-                    cartAjax.removeItem(this.id);
-                    classThis.removeAddedToCartMark(this);
+                    classThis.removeFromCart(this);
                 }
             });
 		}
 	 };
+
+     /** addToCart
+      *  Adds @param sunglasses to cart via ajax call to CartController.
+      *  Also shows loading spinner while waiting for ajax.
+      *
+      *  @param sunglasses sunglasses img container with id of sunglasses it contains.
+      *
+      *  @return void
+      */
+      this.addToCart = function(sunglasses) {
+        console.log('adding to cart product with id=' + sunglasses.id);
+
+        var loadingIcon = sunglasses.getElementsByClassName('loadingIcon')[0];
+        loadingIcon.style.display = 'inline-block';
+
+        $.ajax({
+            url: SITE_URL + 'cartcontroller/add/' + sunglasses.id,
+            success: function(response) {
+                console.log('ajax response: ' + response);
+                loadingIcon.style.display = 'none';
+                classThis.markAsAddedToCart(sunglasses);
+            }
+        });
+      }
+
+     /** removeFromCart
+      *  Removes @param sunglasses from cart via ajax call to CartController.
+      *  Also shows loading spinner while waiting for ajax.
+      *
+      *  @param sunglasses sunglasses img container with id of sunglasses it contains.
+      *
+      *  @return void
+      */
+      this.removeFromCart = function(sunglasses) {
+        console.log('debug', 'removing from cart product with id =' + sunglasses.id);
+
+        var loadingIcon = sunglasses.getElementsByClassName('loadingIcon')[0];
+        loadingIcon.style.display = 'inline-block';
+
+        $.ajax({
+            url: SITE_URL + 'cartcontroller/remove/' + sunglasses.id,
+            success: function(response) {
+                console.log('ajax response: ' + response);
+                loadingIcon.style.display = 'none';
+                classThis.removeAddedToCartMark(sunglasses);
+            }
+        });
+      }
 
 	/** markAsAddedToCart
 	 *  Makes "inCartMark" image visible, changes "add to cart" listener to "remove from cart" listener.	

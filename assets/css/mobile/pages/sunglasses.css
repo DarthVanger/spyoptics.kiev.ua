@@ -6,7 +6,7 @@
 	position: relative;
 }
 /* hidden by default */
-img.isInCartMark {
+img.isInCartMark, img.loadingIcon {
 	display: none;
 	position: absolute;
 	bottom: 2%;
