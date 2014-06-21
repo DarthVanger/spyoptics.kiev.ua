@@ -10,13 +10,13 @@
 #navbar a {
 	display: inline-block;
 	width: 50px;
-	height: 40px;
+	height: 45px;
 	line-height: 50px;
 	background-color: #ddd;
 	margin: 0 3px 0 3px;
 	vertical-align: top;
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 5px;
 }
 #navbar a img {
 	width: 80%;
