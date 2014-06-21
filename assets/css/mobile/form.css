@@ -1,10 +1,21 @@
-input, select, textarea {
-	line-height: 2.5em;
-    width: 100%;
-	font-size: 1.5em;
+input, textarea {
+	line-height: 1em;
+    width: 95%;
+	font-size: 1em;
 	margin: 5px 0 5px 0;
 	background-color: #333;
-	/* border: solid #aaa 3px; */
-    text-indent: 7px;
+	border: solid #aaa 1px;
+	padding: 5px 10px 5px 10px;
+	color: white;
+}
+/* padding doesn't work with select on android,
+ * so hacking it with text-indent and line-height
+ */
+select {
+    font-size: 1em;
+    line-height: 1.5em;
+    text-indent: 10px;
+    margin: 5px 0 5px 0;
+	border: solid #aaa 1px;
 	color: white;
 }
