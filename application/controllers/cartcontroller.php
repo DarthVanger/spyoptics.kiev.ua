@@ -2,10 +2,11 @@
 
 /** CartController controller
  *
- *	Provides interface to work with cart: add products, show products, make order.
+ *	Provides interface to work with cart: add product, remove product. 
  *
  */
-class CartController extends CI_Controller {
+class CartController extends CI_Controller
+{
 
 	/** add
 	 *	Adds sunglasses with id=$sunglassesId to the cart.	
@@ -30,37 +31,6 @@ class CartController extends CI_Controller {
 		echo "Removing prodcut from cart";
 	}
 
-	/** order method
-	 *	Loads "order" page, showing order form and all the products.
-	 */
-	public function order() {
-		$basket = $this->Basket->getInstance();
-		$viewData['cart']['items'] = $basket->getItems();
-		$viewData['cart']['totalPrice'] = $basket->getTotalPrice();
-		$viewData['liqpay'] = $basket->prepareLiqpayFormData();
-
-		$viewData['pageName'] = 'order';
-		$this->load->view('pageNoCart', $viewData);	
-	}
-
-	/** submitOrder
-	 *	Calls Basket model's submitOrder() method and loads success or fail view, depending on Basket model's response.
-	 */
-	public function submitOrder() {
-		$basket = $this->Basket->getInstance();
-		
-		$submitResult = $basket->submitOrder($_POST);
-
-		if($submitResult == false) {
-			$viewData['pageName'] = 'submitOrderFail';
-			$this->load->view("pageNoCart", $viewData);
-		} else {
-			$basket->removeAll();
-			$viewData['pageName'] = 'submitOrderSuccess';
-			$viewData['post'] = $_POST;
-			$this->load->view("pageNoCart", $viewData);
-		}
-	}
 	
 	/** liqpayPaymentResponseHandler
 	 *	Accepts POST message from Liqpay API with result of payment.

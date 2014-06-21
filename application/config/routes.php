@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "sunglasses/show";
+$route['default_controller'] = "shop/showSunglasses";
 $route['404_override'] = '';
 
 $route['mobile'] = 'mobile/mobileshop';

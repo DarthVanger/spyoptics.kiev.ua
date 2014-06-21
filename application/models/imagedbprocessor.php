@@ -99,16 +99,14 @@ class ImageDbProcessor extends CI_Model {
 	 *	Adds sunglasses to database by images located in folder, specified in the config section of this method.
 	 *	Reads folder named '$folder', generates pathes to all the images in this folder, and creates new sunglasses in database with these image pathes.
 	 *	
-	 *	$model, $css_class, $pice, $batch from config section of method are field values that newly added sunglasses will have.
 	 *
 	 */
 	public function addToDbByImages() {
 		// config
+        // name of folder with images (with trailing SLASH!)
 		$folder = 'kenBlockHelm2/';
 		$model = 'Ken Block Helm';
-		$css_class = 'kenBlockHelm2';
 		$price = 150;
-		$batch = 2;
 
 		// get image pathes
 		$this->load->helper('directory');
@@ -119,8 +117,8 @@ class ImageDbProcessor extends CI_Model {
 		foreach($imageNames as $imageName) {
 			if(is_string($imageName)) {
 				$images[$i]['path'] = $folder.$imageName;
-				$images[$i]['mini_path'] = $folder."h200/".$imageName;
-				$images[$i]['thumbnail_path'] = $folder."h30/".$imageName;
+				$images[$i]['mini_path'] = $folder."mini/".$imageName;
+				$images[$i]['thumbnail_path'] = $folder."thumbnail/".$imageName;
 				$images[$i]['color'] = substr($imageName, 0, -4);
 				$i++;
 			}
@@ -128,10 +126,10 @@ class ImageDbProcessor extends CI_Model {
 
 		foreach($images as $image) {
 			$sql = "INSERT INTO sunglasses (
-				model, img_path, mini_img_path, thumbnail_img_path, color, css_class, price, batch
+				model, img_path, mini_img_path, thumbnail_img_path, color, price
 			) 
 			VALUES (
-				'".$model."', '".$image['path']."', '".$image['mini_path']."', '".$image['thumbnail_path']."', '".$image['color']."', '".$css_class."', ".$price.", ".$batch."
+				'".$model."', '".$image['path']."', '".$image['mini_path']."', '".$image['thumbnail_path']."', '".$image['color']."', ".$price." 
 			)";
 			echo $sql."<br />";
 			$this->db->query($sql);

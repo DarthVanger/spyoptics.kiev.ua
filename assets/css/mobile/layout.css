@@ -6,3 +6,6 @@ html, body {
 	width: 100%;
 	overflow-x: hidden;
 }
+#page-body {
+    padding: 20px;
+}

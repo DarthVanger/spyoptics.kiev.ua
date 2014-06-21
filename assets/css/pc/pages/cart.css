@@ -1,0 +1,146 @@
+/* cart */
+#cart-page .cart {
+	display: inline-block;
+	float: right;
+	margin-right: 30px;
+	width: 250px;
+	text-align: center;
+}
+#cart-page .item .description {
+	display: inline-block;
+	margin-left: 15px;
+	margin: 5px 0 5px 0;
+}
+#cart-page .cart img.glasses {
+	width: 250px;
+	vertical-align: bottom;
+	border-bottom: 2px dotted #dd7;
+}
+
+.total-price {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+/* order form */
+#cart-page form.order {
+	display: inline-block;
+	margin-right: 100px;
+	margin-left: 30px;
+	text-align: left;
+	width: 780px;
+}
+.fieldName {
+	display: inline-block;
+	overflow: hidden;
+	width: 270px;
+	text-align: right;
+	padding-right: 5px;
+}
+form.order input, textarea, select {
+	margin: 2px;
+	padding: 4px;
+	font-size: 100%;
+	font-family: "Roboto Slab";
+	vertical-align: bottom;
+}
+form.order textarea {
+	vertical-align: middle;
+}
+input[name="address"], input[name="name"], form.order textarea {
+	width: 480px;
+}
+form.order select {
+	width: 412px;
+}
+form.order select, form.order option {
+	background-color: #eee;
+}
+form.order #phoneValidation {
+	color: red;
+	font-family: Play;
+	font-weight: bold;
+	font-variant: small-caps;
+    font-size: 1.2em;
+	letter-spacing: 1px;
+    margin-top: 10px;
+}
+form.order img.validation {
+	vertical-align: bottom;
+	height: 32px;
+}
+form.order input.novaPoshtaOffice {
+	width: 2em;
+	text-align: center;
+}
+
+.glowing-border {border:2px solid #dadada;border-radius:7px;}
+.glowing-border:focus {outline: none;border-color:#9ecaed;box-shadow:0010px#9ecaed;}
+
+.validationError {
+    color: red;
+    font-weight: bold;
+}
+
+/* END order form */
+
+.item div.imgContainer {
+    display: inline-block;
+    position: relative;
+}
+
+/* remove item button */
+.item div.imgContainer a.removeItem {
+    visibility: hidden;
+}
+.item  div.imgContainer:hover a.removeItem {
+    visibility: visible;
+}
+.item .imgContainer > img {
+}
+
+#cart-page .item a.removeItem {
+    position: absolute;
+	right: 0;
+	top: 0;
+
+    cursor: pointer;
+}
+
+.item a.removeItem img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* submit button style */
+form.order input[type="submit"] {
+	width: 100%;
+	margin-top: 20px;
+    margin-bottom: 20px;
+	background: #3e9cbf; /*the colour of the button*/
+	padding: 6px 10px 6px; /*apply some padding inside the button*/
+	border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
+	cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+	/*style the text*/
+	font-size:1.2em;
+	font-family: "Roboto Slab";
+	letter-spacing:.1em;
+	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+	color: #fff;
+	/*use box-shadow to give the button some depth - see cssdemos.tupence.co.uk/box-shadow.htm#demo7 for more info on this technique*/
+	-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+	/*give the corners a small curve*/
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
+	color:#dfe7ea;
+	/*reduce the size of the shadow to give a pushed effect*/
+	-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}

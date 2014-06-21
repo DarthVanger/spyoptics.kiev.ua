@@ -1,7 +1,17 @@
-@import url('content.css');
 @import url('font.css');
-@import url('text.arduinoStyle.css');
-@import url('buttons.css');
+
+a {
+	text-decoration: none;
+	color: #3f92d2;
+}
+
+#content, .content {
+	padding: 10px;
+	/* line-height: 1.5em; */
+}
+#content h1 {
+	text-align: center;
+}
 
 .textAlignCenter {
 	text-align: center;
