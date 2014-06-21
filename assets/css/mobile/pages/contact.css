@@ -1,1 +1,26 @@
-@import url('../../pc/pages/contact.css');
+#contact-page {
+	font-size: 1.5em;
+}
+#contact-page img.contacts {
+	height: 50px;
+	margin: 10px;
+	vertical-align: middle;
+}
+/* instagram logo animation */
+#contact-page #instagramLogoContainer {
+	position: relative;	
+	display: inline-block;
+	height: 50px;
+	width: 40px;
+	vertical-align: middle;
+	margin: 10px;
+}
+#contact-page #instagramLogo, #contact-page #instagramLogoHover {
+	position: absolute;
+	top:0;
+	left:0;
+	height: 50px;
+}
+#contact-page #instagramLogo {
+	z-index: 10;
+}
