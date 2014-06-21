@@ -9,7 +9,7 @@
 <head>
 	<meta charset="UTF-8">
     <!-- fixing android divs not 100% width because of zooming -->
-    <meta name="viewport" content="width=1000px" />
+    <meta name="viewport" content="width=1000, initial-scale=1" />
 	<!-- Google analytics src - uncomment when uploaded on web -->
 	<!-- <script src="<?=TOOLS?>googleAnalytics.js"></script> -->
 
