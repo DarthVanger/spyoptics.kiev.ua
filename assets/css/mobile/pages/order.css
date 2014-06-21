@@ -5,7 +5,7 @@
 		text-align: left;
 	}
 	form.order textarea {
-		height: 400px;
+		height: 200px;
 	}
 /****************************/
 
@@ -15,12 +15,12 @@
 .cart img.cart {
 }
 .cartSemicolon {
-	font-size: 200px;
+	font-size: 50px;
 }
 .cart .item {
 }
 .cart .item img.glasses {
-	height: 250px;
+	height: 60px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
@@ -33,7 +33,7 @@
 	font-weight: bold;
 }
 .cart a.removeItem img {
-    height: 150px;
+    height: 40px;
 }
 /***************************/
 
@@ -44,7 +44,7 @@
 /* submit button style */
 form.order input[type="submit"] {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     background: #3e9cbf; /*the colour of the button*/
     padding: 6px 10px 6px; /*apply some padding inside the button*/
     border:1px solid #3e9cbf; /*required or the default border for the browser will appear*/
