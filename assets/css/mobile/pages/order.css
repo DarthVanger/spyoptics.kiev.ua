@@ -13,15 +13,15 @@
 .cart {
 }
 .cart img.cart {
-    height: 70px;
+    height: 60px;
 }
 .cartSemicolon {
-	font-size: 70px;
+	font-size: 60px;
 }
 .cart .item {
 }
 .cart .item img.glasses {
-	height: 100px;
+	height: 90px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
@@ -34,7 +34,7 @@
 	font-weight: bold;
 }
 .cart a.removeItem img {
-    height: 55px;
+    height: 45px;
 }
 /***************************/
 
