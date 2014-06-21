@@ -6,16 +6,17 @@
 	background-color: #111;
     overflow: hidden;
 }
+/* assuming that mobile viewport = 320 */
 #navbar a {
 	display: inline-block;
-	width: 150px;
-	height: 135px;
-	line-height: 150px;
+	width: 50px;
+	height: 40px;
+	line-height: 50px;
 	background-color: #ddd;
 	margin: 0 3px 0 3px;
 	vertical-align: top;
 	text-align: center;
-	padding-top: 15px;
+	padding-top: 10px;
 }
 #navbar a img {
 	width: 80%;
