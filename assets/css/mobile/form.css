@@ -1,21 +1,26 @@
 input, textarea {
-	line-height: 1em;
     width: 95%;
 	font-size: 1em;
-	margin: 5px 0 5px 0;
-	background-color: #333;
-	border: solid #aaa 1px;
+	line-height: 1em;
 	padding: 5px 10px 5px 10px;
+
+    margin: 5px 0 5px 0;
+	border: solid #aaa 2px;
 	color: white;
+	background-color: #333;
 }
 /* padding doesn't work with select on android,
  * so hacking it with text-indent and line-height
  */
 select {
+    width: 97%; /* fallback if calc doesn't work */
+    width: calc(95% + 20px);
     font-size: 1em;
     line-height: 1.5em;
     text-indent: 10px;
+
     margin: 5px 0 5px 0;
-	border: solid #aaa 1px;
+	border: solid #aaa 2px;
 	color: white;
+	background-color: #333;
 }
