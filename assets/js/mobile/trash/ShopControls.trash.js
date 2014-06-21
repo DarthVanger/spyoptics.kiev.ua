@@ -1,69 +1,81 @@
-/**
- *	Swipe left to see order form, swipe right to go back to sunglasses page.
- *	*** Scrolling through pages ***
- *	There are only two pages: "sunglasses" and "order". So each of "swipeleft" and "swiperight" is responsible only for one page.
- *	When "swipeleft" is detected, program should scroll pages to "order" page. If user is not already on "order" page, animation of page scrolling is launched. 
- *	When "swiperight" is detected, program should scroll pages to "sunglasses" page. If user is not already on "sunglasses page, animation of page scrolling is luanched.
- *
- */
 
-	 /** addPageScrollListeners
-	  *	 Adds swipe listeners to "sunglasses" and "order" pages to scroll between them.
-	  */
-	 this.addPageScrollListeners = function() {
-	 	console.log("debug", "adding page scroll listeners");
-		$(this.sunglassesPage).on("swipeleft", classThis.scrollToOrderPage);
-		$(this.orderPage).on("swiperight", classThis.scrollToSunglassesPage);
-	 };
-
-	/** scrollToOrderPage
-	 *	Scrolls sunglasses page out, and scrolls order page in (if not already on order page).
-	 *
-	 *
-	 *	Scrolling (animation) mechanism:
-	 *	OrderPage's display is set to "inline-block", it appears off the screen, to the right of the current page.
-	 *	Then current page's margin is animated to "-50%" (which is 100% of screen width, because pages container has width=200%),
-	 *	so the order page shows up on the screen from the right.
-	 *	When previous page is totally off the screen, it's display is set to "none".
-	 *	Scrolling is over, order page is now the current page.
-	 *
-	 *	@return void
+	/** addAddToCartListener
+	 *	Adds "add to cart listener" to sunglasses container DOM element @param sunglasses.
 	 */
-	 this.scrollToOrderPage = function() {
-	 	if(classThis.currentPage != classThis.orderPage) {
-			classThis.orderPage.style.display = "inline-block";
-			console.log("debug", "scrolling to order page");
-			$(classThis.sunglassesPage).animate({
-				marginLeft: "-50%"
-			}, classThis.SCROLL_TIME, function() {
-				classThis.currentPage.style.display = "none";
-				classThis.currentPage = classThis.orderPage;
-				// debug // classThis.cartJS.updateCart();
-			});
-		}
-	 };
+	 var addCartListener = function(sunglasses) {
+		console.log("debug", "addAddCartListener(): adding tap listener to " + sunglasses);
+		$(sunglasses).on("tap", function() {
+            if(!isInCart(sunglasses)) {
+                console.log("debug", "sunglasses image tapped, calling add to cart, sunglass = " + this);
+                classThis.addToCart(sunglasses);
+                classThis.markAsAddedToCart(sunglasses);
+            } else {
+				console.log("debug", "sunglasses tapped, calling remove from cart, sunglasses.id = " + sunglasses.id);
+				classThis.removeFromCart(sunglasses);
+				classThis.removeAddedToCartMark(sunglasses);
+            }
+		});
+	 }
 
-	/** scrollToSunglassesPage
-	 *	Scrolls order page out, and scrolls sunglasses page in.
-	 *
-	 *	Scrolling (animation) mechanism:
-	 *	Sunglasses page is located to the left of order page, off the screen.
-	 *	It has display="none" and marginLeft = "-50%" (which is 100% of screen width, because pages container width = 200% of screen).
-	 *	First, it's display property is set to "inline-block".
-	 *	Then it's marginLeft is animated to "0". This pushes "order" page to the right, beyond the screen.
-	 *	Now only "sunglasses" page is seen. "Order" page's display is set to "none".
-	 *
-	 *	@return void
+	/** addDebugButtons
+	 *	Method for debugging. Adds debug buttons to page, which fire swipe/touch events for testing.
 	 */
-	 this.scrollToSunglassesPage = function() {
-	 	if(classThis.currentPage != classThis.sunglassesPage) {
-			classThis.sunglassesPage.style.display = "inline-block";
-			console.log("debug", "scrolling to sunglasses page");
-			$(classThis.sunglassesPage).animate({
-				marginLeft: 0
-			}, classThis.scrollTime, function() {
-				classThis.currentPage.style.display = "none";
-				classThis.currentPage = classThis.sunglassesPage;
-			});
+	var addDebugButtons = function() {
+		var swipeRightButton = document.createElement("button");
+		swipeRightButton.innerHTML = "swipeRight";
+		swipeRightButton.style.position = "absolute";
+		swipeRightButton.style.top = 0;
+		swipeRightButton.style.left = 0;
+		swipeRightButton.onclick = function() {
+			console.log("debug", "triggering swipe right on " + classThis.orderPage);
+			$(classThis.orderPage).trigger("swiperight");
 		}
-	 };
+		orderPage.appendChild(swipeRightButton);
+
+		var swipeLeftButton = document.createElement("button");
+		swipeLeftButton.innerHTML = "swipeLeft";
+		swipeLeftButton.style.position = "absolute";
+		swipeLeftButton.style.top = 0;
+		swipeLeftButton.style.left = "100px";
+		swipeLeftButton.onclick = function() {
+			console.log("debug", "triggering swipe left on " + classThis.sunglassesPage);
+			$(classThis.sunglassesPage).trigger("swipeleft");
+		}
+		sunglassesPage.appendChild(swipeLeftButton);
+
+		var tapSunglassesButton = document.createElement("button");
+		tapSunglassesButton.innerHTML = "tapSunglasses";
+		tapSunglassesButton.style.position = "absolute";
+		tapSunglassesButton.style.top = "50px";
+		tapSunglassesButton.style.left = "0px";
+
+		var tapIsInCartImage = document.createElement("button");
+		tapIsInCartImage.innerHTML = "tapIsInCartImage";
+		tapIsInCartImage.style.position = "absolute";
+		tapIsInCartImage.style.top = "100px";
+		tapIsInCartImage.style.left = "0px";
+
+		tapSunglassesButton.onclick = function() {
+			console.log("debug", "triggering tap on sunglasses on " + classThis.sunglasses[0]);
+			$(classThis.sunglasses[0]).trigger("tap");
+		}
+		tapIsInCartImage.onclick = function() {
+			var isInCartImage = classThis.sunglasses[0].getElementsByClassName("isInCartMark")[0];
+			console.log("debug", "triggering tap on isInCartImage on " + isInCartImage); 
+			$(isInCartImage).trigger("tap");
+	
+		}
+		sunglassesPage.appendChild(tapSunglassesButton);
+		sunglassesPage.appendChild(tapIsInCartImage);
+
+		var updateCartButton = document.createElement("button");
+		updateCartButton.innerHTML = "updateCartButton";
+		updateCartButton.style.position = "absolute";
+		updateCartButton.style.top = "100px";
+		updateCartButton.style.left = "100px";
+		updateCartButton.onclick = function() {
+			console.log("debug", "triggering update cart");
+			cartAjax.updateCart();
+		}
+		orderPage.appendChild(updateCartButton);
+	};

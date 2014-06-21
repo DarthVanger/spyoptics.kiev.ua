@@ -25,21 +25,38 @@
 <div id="sunglasses-page">
 	<div>
 		Нажмите на очки, чтобы добавить/убрать очки из корзинки. <br />
+        Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
 	</div>
 	<div class="sunglasses">
-		<?php $i=0; ?>
+        <!-- Ken Block Helm -->
 		<?php foreach($sunglasses as $sunglass): ?>
-				<div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
-					<img
-						src="<?=IMG?>mobile/pages/shop/inCart.svg" 
-						class = "isInCartMark"
-						<?php if($sunglass['inCart']): ?>
-							style = "display: inline-block";
-						<?php endif; ?>
-					/>
-					<img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
-				</div>
-			<?php $i++; ?>
+            <?php if($sunglass['model'] == 'Ken Block Helm'): ?>
+                <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+                    <img
+                        src="<?=IMG?>mobile/pages/shop/inCart.svg" 
+                        class = "isInCartMark"
+                        <?php if($sunglass['inCart']): ?>
+                            style = "display: inline-block";
+                        <?php endif; ?>
+                    />
+                    <img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+                </div>
+            <?php endif; ?>
+		<?php endforeach; ?>
+        <!-- Flynn -->
+		<?php foreach($sunglasses as $sunglass): ?>
+            <?php if($sunglass['model'] == 'Flynn'): ?>
+                <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+                    <img
+                        src="<?=IMG?>mobile/pages/shop/inCart.svg" 
+                        class = "isInCartMark"
+                        <?php if($sunglass['inCart']): ?>
+                            style = "display: inline-block";
+                        <?php endif; ?>
+                    />
+                    <img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+                </div>
+            <?php endif; ?>
 		<?php endforeach; ?>
 	</div>
 </div>
