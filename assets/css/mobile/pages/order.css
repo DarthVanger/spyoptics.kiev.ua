@@ -13,10 +13,10 @@
 .cart {
 }
 .cart img.cart {
-    height: 50px;
+    height: 70px;
 }
 .cartSemicolon {
-	font-size: 60px;
+	font-size: 70px;
 }
 .cart .item {
 }
@@ -34,7 +34,7 @@
 	font-weight: bold;
 }
 .cart a.removeItem img {
-    height: 60px;
+    height: 55px;
 }
 /***************************/
 
