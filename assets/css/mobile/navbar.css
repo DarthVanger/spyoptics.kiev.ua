@@ -1,12 +1,12 @@
+/* assuming that mobile viewport = 320px */
 #navbar {
 	width: 100%;
-	height: 150px;
+	height: 50px;
 	text-align: center;
-	padding: 20px 0 20px 0;
+	padding: 10px 0 10px 0;
 	background-color: #111;
     overflow: hidden;
 }
-/* assuming that mobile viewport = 320 */
 #navbar a {
 	display: inline-block;
 	width: 50px;
