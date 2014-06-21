@@ -1,13 +1,13 @@
 .flexslider{
     display: block;
     position: relative; /* fixed or absolute may be needed */
-    height: 90%!important; 
+    height: 95%!important; 
     width: 100%!important;
 }
 .flexslider .slides,
 .flexslider .slides li {
     width: 100%!important;
-    height: 90%!important;
+    height: 100%!important;
     vertical-align: middle;
 }
 
