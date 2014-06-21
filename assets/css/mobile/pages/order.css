@@ -19,21 +19,22 @@
 	font-size: 200px;
 }
 .cart .item {
-	display: inline-block;
 }
 .cart .item img.glasses {
-	height: 200px;
+	height: 250px;
 }
 .cart .item .imgContainer {
 	display: inline-block;
 }
 .cart .item .description {
-	display: inline-block;
 	font-size: 0.75em;
 }
 .cart .total-price {
 	color: #500025;
 	font-weight: bold;
+}
+.cart a.removeItem img {
+    height: 150px;
 }
 /***************************/
 

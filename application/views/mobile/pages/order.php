@@ -16,7 +16,10 @@
 	<script type="text/javascript" src="<?=JS?>cart/CartAjax.js"></script>
 	<script>
 		$(document).ready(function() {
-			// TODO: initiate cart controls.
+            (new CartAjax).initListeners({
+                cartId: 'cart-view',
+                removeItemButtonClass: 'removeItem'
+            });
 		});
 	</script>
 <!-- ---------------------------------------- -->
@@ -34,30 +37,31 @@
 
 <div id="order-page">
 	<div class="cart" id="cart-view">
-		<div class="pagePadding">
-			<img class="cart" src="<?=IMG?>mobile/layout/cartIcon.png" /><span class="cartSemicolon" />:</span>
-			<?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
-				<?php foreach($cart['items'] as $item): ?> 
-					<div class="item">
-						<div class="imgContainer" id="<?=$item['id']?>" >
-							<img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
-						</div>
-						<div class="description">
-							<?=$item['model']?>, <br />
-							<?=$item['color']?>, <br />
-							<?=$item['price']?> грн
-						</div>
-					</div>
-				<?php endforeach; ?>
-				<div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
-			<?php else:?>
-				<div>Ваша корзинка пуста</div>
-				<div>
-					<a href="<?=base_url()?>">Выбрать и добавить в корзинку очки</a> <br />
-					Или заказывайте по телефону 063 206 60 97
-				</div>
-			<?php endif;?>
-		</div>
+        <img class="cart" src="<?=IMG?>mobile/layout/cartIcon.png" /><span class="cartSemicolon" />:</span>
+        <?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
+            <?php foreach($cart['items'] as $item): ?> 
+                <div class="item">
+                    <div class="description">
+                        <?=$item['model']?>, 
+                        <?=$item['color']?>, 
+                        <?=$item['price']?> грн
+                    </div>
+                    <div class="imgContainer" id="<?=$item['id']?>" >
+                        <img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
+                    </div>
+                    <a id="<?=$item['id']?>" class="removeItem" href="javascript:void(0)">
+                        <img src="<?=IMG?>mobile/layout/cartRemoveIcon.svg" />
+                    </a>
+                </div>
+            <?php endforeach; ?>
+            <div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
+        <?php else:?>
+            <div>Ваша корзинка пуста</div>
+            <div>
+                <a href="<?=base_url()?>">Выбрать и добавить в корзинку очки</a> <br />
+                Или заказывайте по телефону 063 206 60 97
+            </div>
+        <?php endif;?>
 	</div>
 
 	<div id="orderForm">
