@@ -4,8 +4,9 @@ input, select, textarea {
 	font-size: 1em;
 	margin: 5px 0 5px 0;
 	background-color: #333;
-	border: solid #aaa 5px;
-	padding: 3px 5px 3px 5px;
+	border: solid #aaa 3px;
+	padding: 5px 10px 5px 10px;
+	-webkit-padding: 5px 10px 5px 10px;
 	color: white;
 }
 /* Trying to disable auto-zoom */
