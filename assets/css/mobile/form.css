@@ -1,12 +1,12 @@
 input, select, textarea {
-	line-height: 100%;
+    display: block;
+	line-height: 1.3em;
     width: 95%;
 	font-size: 1em;
 	margin: 5px 0 5px 0;
 	background-color: #333;
 	border: solid #aaa 3px;
 	padding: 5px 10px 5px 10px;
-	-webkit-padding: 5px 10px 5px 10px;
 	color: white;
 }
 /* Trying to disable auto-zoom */
