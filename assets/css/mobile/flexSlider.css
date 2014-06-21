@@ -1,4 +1,31 @@
+.flexslider{
+    display: block;
+    position: relative; /* fixed or absolute may be needed */
+    height: 90%!important; 
+    width: 100%!important;
+}
+.flexslider .slides,
+.flexslider .slides li {
+    width: 100%!important;
+    height: 90%!important;
+    vertical-align: middle;
+}
+
+/* for vertical aligned at middle images */
+.flexslider .slides li .container {
+    height: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+}
 .flexslider .slides li .container img.flex {
+    vertical-align: middle;
     max-width: 100%!important;
     max-height: 100%!important;
 }
+.flexslider .slides li .container:before  {    /* create a full-height inline block pseudo-element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
