@@ -8,6 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
+    <!-- fixing android divs not 100% width because of zooming -->
+    <meta name="viewport" content="width=device-width" />
 	<!-- Google analytics src - uncomment when uploaded on web -->
 	<!-- <script src="<?=TOOLS?>googleAnalytics.js"></script> -->
 
