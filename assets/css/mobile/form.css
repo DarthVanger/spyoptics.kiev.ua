@@ -13,7 +13,7 @@ input, textarea {
  * so hacking it with text-indent and line-height
  */
 select {
-    width: 97%; /* fallback if calc doesn't work */
+    width: 100%; /* fallback if calc doesn't work */
     width: calc(95% + 20px);
     font-size: 1em;
     line-height: 1.5em;
