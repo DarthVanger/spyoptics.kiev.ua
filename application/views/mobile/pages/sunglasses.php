@@ -33,13 +33,14 @@
             <?php if($sunglass['model'] == 'Ken Block Helm'): ?>
                 <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
                     <img
-                        src="<?=IMG?>mobile/pages/shop/inCart.svg" 
+                        src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
                         class = "isInCartMark"
                         <?php if($sunglass['inCart']): ?>
                             style = "display: inline-block";
                         <?php endif; ?>
                     />
-                    <img class="sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+                    <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
+                    <img class = "sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
                 </div>
             <?php endif; ?>
 		<?php endforeach; ?>
