@@ -6,9 +6,11 @@
 	<a style="color: #555" href="mailto:spyoptics@ukr.net" target="_blank">
 		<img class="contacts" src="<?=IMG?>envelope.jpg" />spyoptics@ukr.net<br />
 	</a>
-	<a id="instagramLogoContainer" target="_blank" href="http://instagram.com/spyoptics_kiev">
-		<img id="instagramLogo" src="<?=IMG?>social/instagramLogoBeautifulBlue.png" />
-		<img id="instagramLogoHover" src="<?=IMG?>social/instagramLogoBeautiful.png" />
-	spyoptics_kiev
-	</a>
+    <a target="_blank" href="http://instagram.com/spyoptics_kiev">
+        <div id="instagramLogoContainer" >
+            <img id="instagramLogo" src="<?=IMG?>social/instagramLogoBeautifulBlue.png" />
+            <img id="instagramLogoHover" src="<?=IMG?>social/instagramLogoBeautiful.png" />
+        </div>
+        <span>spyoptics_kiev</span>
+    </a>
 </div>
