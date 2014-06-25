@@ -1,8 +1,8 @@
-/** GoogleAnalyticsAPI class UNDER DEVELOPMENT
+/** GoogleAnalyticsAPI class
  * 
  *  This class is used to communicate with Google Analytics API.
- *  Sends notification to google analytics about custom events.
- *  Events are like: product sold, etc. 
+ *  Currently it's only sending info to eCommerce plugin.
+ *
  */ 
 
 var GoogleAnalyticsAPI = function() {
