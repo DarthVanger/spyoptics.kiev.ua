@@ -127,8 +127,9 @@ class Shop extends CI_Controller
 			$this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
 			$this->viewData['totalPrice'] = $basket->getTotalPrice();
 
+			$basket->removeAll();
+
 			$this->load->view($this->userDevice . '/templates/main', $this->viewData);
-			//$basket->removeAll();
 		}
 	}
 
