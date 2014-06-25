@@ -162,9 +162,9 @@ class Basket extends CI_Model {
 	 *
 	 *	@return true on success, false on fail.
 	 */
-	 public function submitOrder($userInfo) {
+	 public function submitOrder($submitData) {
 	 	//$this->saveOrderToDb($userInfo); // Not implemented yet!
-	 	return $this->sendNewOrderNotification($userInfo);
+	 	return $this->sendNewOrderNotification($submitData);
 	 }
 
 	 /** sendNewOrderNotification
@@ -172,12 +172,16 @@ class Basket extends CI_Model {
 	  *
 	  *	 @return true on success, false on fail.
 	  */
-	 private function sendNewOrderNotification($userInfo) {
+	 private function sendNewOrderNotification($submitData) {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Силы Тьмы <DarkSide@nowhere>";
 		$message = "Новый заказ!<br />";
 		$message .= "Инфо о клиенте:<br />";
+
+    $userInfo = $submitData['post'];
+    $userInfo['userDevice'] = $submitData['userDevice'];
+
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
 		}
@@ -194,11 +198,13 @@ class Basket extends CI_Model {
 		$headers = "MIME-Version: 1.0" . PHP_EOL;
 		$headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
 		$headers .= 'From: ' . $from . PHP_EOL;
+    
+    //debug // echo $message;
 
 		return mail($shopManagerEmails, $subject, $message, $headers);
 	 }
 
-	/** prepareLiqpayFormData
+	/** prepareLiqpayFormData UNDER DEVELOPMENT
 	 *	Prepares data for liqpay payment.
 	 *
 	 *	@return array with variables, needed for liqpay form.

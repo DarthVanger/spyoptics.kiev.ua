@@ -109,19 +109,26 @@ class Shop extends CI_Controller
 	public function submitOrder()
     {
 		$basket = $this->Basket->getInstance();
+
+        $submitData['post'] = $_POST;
+        $submitData['userDevice'] = $this->userDevice;
 		
-		$submitResult = $basket->submitOrder($_POST);
+		$submitResult = $basket->submitOrder($submitData);
         
-        if(!$submitResult) { // if $basket->submitOrder() is ok 
+    if($submitResult) { // if $basket->submitOrder() went wrong
 			$this->viewData['pageName'] = 'submitOrderFail';
 			$this->viewData['hideHeaderCart'] = true;
 			$this->load->view($this->userDevice . '/templates/main', $this->viewData);
-		} else { // if $basket->submitOrder() went wrong
-			$basket->removeAll();
+		} else { // if $basket->submitOrder() is ok
 			$this->viewData['pageName'] = 'submitOrderSuccess';
 			$this->viewData['hideHeaderCart'] = true;
 			$this->viewData['post'] = $_POST;
+            // cartItems are needed by JS for google analytics ecommerce 
+			$this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
+			$this->viewData['totalPrice'] = $basket->getTotalPrice();
+
 			$this->load->view($this->userDevice . '/templates/main', $this->viewData);
+			//$basket->removeAll();
 		}
 	}
 
