@@ -19,23 +19,30 @@
                 });
             });
         </script>
-    <!-- END CartJS sources -->
+    <!-- END CartAjax sources -->
 
     <!-- cart is absolutely positioned block -->
     <div id="cart" class="cart">
-        <a class="cart" href="<?=site_url()?>/shop/order">
-            <img class="cart" src="<?=IMG?>cart1_blue.png" />
-            <img class="cartHover" src="<?=IMG?>cart1_red.png" />
-        </a>
         <div id="cartContent">
             <?php if(!is_null($cartContent)): ?>
                 <?php foreach($cartContent as $item):?>
                     <div class="imgContainer">
-                        <img src="<?=IMG?><?=$item['thumbnail_img_path']?>" />
+                        <img src="<?=IMG?><?=$item['thumbnail_img_path']?>" class="sunglasses" />
                         <a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
+
+        <a href="<?=site_url()?>/shop/order">
+          <div class="makeOrder">
+            оформить <br />
+            заказ
+          </div>
+          <div id="cartImgContainer" >
+            <img class="cart" src="<?=IMG?>cart1_blue.png" />
+            <img class="cartHover" src="<?=IMG?>cart1_red.png" />
+          </div>
+        </a>
     </div>
 <?php endif; ?>

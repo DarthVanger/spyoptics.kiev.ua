@@ -127,11 +127,12 @@ div.color {
 .priceAndCart {
 	position: absolute;
 	z-index: 100;
-	top: 60px;
+	top: 80px;
 	right: 20px;
-	width: 90px;
+	width: 120px;
 }
 .priceAndCart .price {
+  width: 90px;
 	line-height: 1.5em;
 	background-color: #a6000c;
 	border-radius: 2px;
@@ -147,8 +148,10 @@ div.color {
 }
 .orderButton {
 	display: inline-block;
-
+  width: 120px;
+  margin-top: 20px;
 	cursor: pointer;
+  font-size: .85em;
 }
 .orderButton img {
 	width: 80px;
