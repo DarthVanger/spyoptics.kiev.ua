@@ -12,8 +12,9 @@ html, body {
 	position: absolute;
 	right: 0;
 	top: 5px;
-	height: 50px;
-	padding: 25px 10px 0 70px;
+	height: 80px;
+  line-height: 50px;
+	padding: 0 10px 0px 10px;
 
 	z-index: 1000;
 	background-color: #fff;
@@ -23,9 +24,29 @@ html, body {
 
 	overflow: hidden;
 
-	transition: width .5s;
+	transition: padding-left .5s;
 }
 #cart:hover {
+  padding-left: 120px;
+}
+#cart:hover .makeOrder {
+  display: inline-block;
+}
+div.makeOrder {
+  display: none;
+  margin: 0 0 37px -100px;
+  transition: display .5s;
+  vertical-align: middle;
+  text-align: center;
+  color: red;
+  line-height: 20px;
+}
+#cartImgContainer {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 0 0px 0 0px;
 }
 #cart img.cart, #cart img.cartHover {
 	position: absolute;
@@ -45,13 +66,34 @@ html, body {
 	opacity: 1;
 }
 #cart div#cartContent {
+  display: inline-block;
+  vertical-align: middle;
+  height: 80px;
+  line-height: 80px;
 	float: right;
-	//margin: 23px 5px 0 0;
 
+}
+/* pseudo element for vertical aligning at middle */
+#cart div#cartContent:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 #cart div#cartContent div.imgContainer {
 	display: inline-block;
+  vertical-align: middle;
 	position: relative;
+}
+#cart div#cartContent .imgContainer > img.sunglasses {
+	height: 30px;
+  vertical-align: middle;
+}
+#cart a.removeItem {
+	position: absolute;
+	top: 5px;
+	left: 15px;
+	cursor: pointer;
 }
 div#cartContent div.imgContainer a.removeItem {
 	visibility: hidden;
@@ -59,17 +101,7 @@ div#cartContent div.imgContainer a.removeItem {
 div#cartContent div.imgContainer:hover a.removeItem {
 	visibility: visible;
 }
-#cart div#cartContent .imgContainer > img {
-	height: 30px;
-}
 
-#cart a.removeItem {
-	position: absolute;
-	top: 5px;
-	left: 15px;
-
-	cursor: pointer;
-}
 
 #cart a.removeItem img {
 	width: 20px;

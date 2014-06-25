@@ -12,19 +12,22 @@
 							<div class="container">
 								<!-- "lazy-src" - is for image lazy loading: it will be changed to "src" when page is shown by PageSlidingEffect script -->
 								<img
-                                    <?php if($model=="Flynn"): ?>
-                                        class="height-100-percent"
-                                    <?php else: ?>
-                                        class="width-75-percent"
-                                    <?php endif; ?>
-                                    src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
-                                />
+                    <?php if($model=="Flynn"): ?>
+                        class="height-100-percent"
+                    <?php else: ?>
+                        class="width-75-percent"
+                    <?php endif; ?>
+                    src="#" lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
+                />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
 									<div class="price">
 										<?=$sunglass['price']?> грн
 									</div>
-								<a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>"><img src="#" lazy-src="<?=IMG?>addToCart.png" /></a>
+                  <a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>">
+                    <img src="#" lazy-src="<?=IMG?>addToCart.png" />
+                    <div>добавить <br /> в корзинку</div>
+                  </a>
 								</div>
 
 								<div class="color">
