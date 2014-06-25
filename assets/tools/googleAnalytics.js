@@ -5,4 +5,9 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-33871645-5', 'spyoptics.kiev.ua');
+  //for testing on localhost
+  //ga('create', 'UA-33871645-5', {
+  //  'cookieDomain': 'none'  
+  //  });
+
   ga('send', 'pageview');
