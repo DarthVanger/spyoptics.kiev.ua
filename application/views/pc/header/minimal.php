@@ -18,13 +18,5 @@
 	<link rel="icon" type="image/png" href="<?=IMG?>favicon.png">
 	<title>Spy Optic очки Киев купить. Стильные Очки. Украина | Для поиска: spy helm купить, flynn очки купить,ken block helm, spy очки купить киев. </title>
 
-	<!-- check if user is using mobile and write "mobile version under development" -->
-	<script>
-		$("document").ready(function() {
-			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				document.body.innerHTML = "Мобильная версия сайта в разработке :( <br /> Пожалуйста, зайдите с компьютера";
-			}
-		});
-	</script>
 </head>
 <body>
