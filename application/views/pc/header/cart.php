@@ -23,7 +23,7 @@
 
     <!-- cart is absolutely positioned block -->
     <div id="cart" class="cart">
-        <a class="cart" href="<?=site_url()?>/cartcontroller/order">
+        <a class="cart" href="<?=site_url()?>/shop/order">
             <img class="cart" src="<?=IMG?>cart1_blue.png" />
             <img class="cartHover" src="<?=IMG?>cart1_red.png" />
         </a>
