@@ -179,8 +179,7 @@ class Basket extends CI_Model {
 		$message = "Новый заказ!<br />";
 		$message .= "Инфо о клиенте:<br />";
 
-    $userInfo = $submitData['post'];
-    $userInfo['userDevice'] = $submitData['userDevice'];
+        $userInfo = $submitData['post'];
 
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
@@ -193,6 +192,10 @@ class Basket extends CI_Model {
 		} else {
 			$message .= "Корзина пуста<br />";
 		}
+
+        $message .= "Debug:"."<br />";
+        $message .= "user device: " . $submitData['userDevice'] . "<br />";
+        $message .= "user agent: " . $submitData['userAgent'] . "<br />";
 
 		// prepare headers for using mail() function
 		$headers = "MIME-Version: 1.0" . PHP_EOL;

@@ -112,25 +112,26 @@ class Shop extends CI_Controller
 
         $submitData['post'] = $_POST;
         $submitData['userDevice'] = $this->userDevice;
+        $submitData['userAgent'] = $this->agent->agent_string();
 		
 		$submitResult = $basket->submitOrder($submitData);
         
-    if(!$submitResult) { // if $basket->submitOrder() went wrong
-			$this->viewData['pageName'] = 'submitOrderFail';
-			$this->viewData['hideHeaderCart'] = true;
-			$this->load->view($this->userDevice . '/templates/main', $this->viewData);
-		} else { // if $basket->submitOrder() is ok
-			$this->viewData['pageName'] = 'submitOrderSuccess';
-			$this->viewData['hideHeaderCart'] = true;
-			$this->viewData['post'] = $_POST;
+        if(!$submitResult) { // if $basket->submitOrder() went wrong
+            $this->viewData['pageName'] = 'submitOrderFail';
+            $this->viewData['hideHeaderCart'] = true;
+            $this->load->view($this->userDevice . '/templates/main', $this->viewData);
+        } else { // if $basket->submitOrder() is ok
+            $this->viewData['pageName'] = 'submitOrderSuccess';
+            $this->viewData['hideHeaderCart'] = true;
+            $this->viewData['post'] = $_POST;
             // cartItems are needed by JS for google analytics ecommerce 
-			$this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
-			$this->viewData['totalPrice'] = $basket->getTotalPrice();
+            $this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
+            $this->viewData['totalPrice'] = $basket->getTotalPrice();
 
-			$basket->removeAll();
+            $basket->removeAll();
 
-			$this->load->view($this->userDevice . '/templates/main', $this->viewData);
-		}
+            $this->load->view($this->userDevice . '/templates/main', $this->viewData);
+        }
 	}
 
 }
