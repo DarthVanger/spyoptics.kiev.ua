@@ -8,8 +8,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
-	<!-- Google analytics src - uncomment when uploaded on web -->
-	<!-- <script src="<?=TOOLS?>googleAnalytics.js"></script> -->
+
+	<script src="<?=TOOLS?>googleAnalytics.js"></script>
 
 	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/general.css" rel="stylesheet" type="text/css" />

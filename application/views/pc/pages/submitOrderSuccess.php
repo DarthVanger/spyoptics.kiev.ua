@@ -2,6 +2,16 @@
  -	 Shows congradulations of successeful ordering
 -->
 
+<!-- Send Google Analytics notification that new order was made -->
+<script src="<?=JS?>GoogleAnalyticsAPI.js"></script>
+<script>
+  $(document).ready(function(){
+    var cartItems = JSON.parse('<?=$cartItemsJSON?>');
+    var totalPrice = <?=$totalPrice?>;
+    api = new GoogleAnalyticsAPI();
+    api.placeOrder(cartItems, totalPrice);
+  });
+</script>
 <link href="<?=CSS.$userDevice?>/pages/submitOrderSuccess.css" rel="stylesheet" type="text/css" />
 <div id="submitOrderSuccess-page">
 	<div>
