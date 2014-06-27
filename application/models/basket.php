@@ -180,10 +180,13 @@ class Basket extends CI_Model {
 		$message .= "Инфо о клиенте:<br />";
 
         $userInfo = $submitData['post'];
+        $userInfo['userDevice'] = $submitData['userDevice'];
 
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
 		}
+        $message .= "<br />";
+
 		$message .= "Заказ:"."<br />";
 		if(is_array($this->items)) {
 			foreach($this->items as $item) {
@@ -192,9 +195,9 @@ class Basket extends CI_Model {
 		} else {
 			$message .= "Корзина пуста<br />";
 		}
+        $message .= "<br />";
 
-        $message .= "Debug:"."<br />";
-        $message .= "user device: " . $submitData['userDevice'] . "<br />";
+        $message .= "Debug:" . "<br />";
         $message .= "user agent: " . $submitData['userAgent'] . "<br />";
 
 		// prepare headers for using mail() function
