@@ -28,7 +28,8 @@ var GoogleAnalyticsAPI = function() {
     var transactionData = {
       'id': transactionId,
       'affiliation': 'Spy Optic Kiev',
-      'revenue': totalPrice
+      'revenue': totalPrice,
+      'currency': 'UAH'
     };
     console.log('debug', 'GoogleAnalyticsAPI: transaction data: ' + JSON.stringify(transactionData));
     ga('ecommerce:addTransaction', transactionData)
