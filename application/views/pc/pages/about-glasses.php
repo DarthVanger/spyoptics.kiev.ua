@@ -1,6 +1,6 @@
 <link href="<?=CSS.$userDevice?>/pages/about-glasses.css" rel="stylesheet" type="text/css" />
 
-<div id="about-glasses">
+<div id="about-glasses" class="page-padding text">
 	<div name="about-generally" class="about-block about-generally">
 		<div class="alignCenter"><img class="logo" src="<?=IMG?>spyopticLogo.jpg" /></div>
 		<p>Всемирно известная компания Spy Optic (SPY) находится на севере Сан-Диего, в нескольких минутах от прекрасного прибоя, легендарных парков для катания на коньках, у подножья гор. Компания Spy Optic использовала такое выгодное месторасположения в своих интересах, работники Spy Optic регулярно катаются на сёрфе, коньках, совершают мотокроссы, горные велокроссы, а также катаются на сноубордах в горах. Spy Optic любит свободу и хорошее настроение. В коллекциях солнцезащитных очков, компания Spy Optic умело сочетает высоко технологические элементы дизайна с спортивным стиле, под воздействием поп-культуры. В результате чего, Вы получаете продукцию высокого качества торговой марки Spy Optic. </p>

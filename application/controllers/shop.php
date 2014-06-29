@@ -23,7 +23,6 @@ class Shop extends CI_Controller
         //$this->userDevice = 'mobile';
 
         $this->viewData['userDevice'] = $this->userDevice;
-
     }
 
 	/** loadSimplePage
@@ -100,21 +99,47 @@ class Shop extends CI_Controller
 	}
 
 	/** submitOrder
-	 *	Calls Basket model's submitOrder() method and loads success or fail view, depending on Basket model's response.
-     *  Also performs form validation and loads "order" view again, if there are any.
+     *  Validates "order" form $_POST data, and calls $this->submitValidatedOrder()
+     *  when validaation is passed.
      *
      *  @return void
 	 */
-
 	public function submitOrder()
     {
-		$basket = $this->Basket->getInstance();
+        // validation
+        $this->load->library('form_validation');
 
-        $submitData['post'] = $_POST;
+        // syntax: set_rules(field, label, rules)
+        $this->form_validation->set_rules('name', 'Имя', 'required');
+        $this->form_validation->set_rules('phone', 'Телефон', 'required');
+        $this->form_validation->set_rules('address', 'Адрес', 'required');
+
+        // syntax: set_message('rule', 'Error Message');
+        $this->form_validation->set_message('required', 'Поле <b>%s</b> не должно быть пустым');
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->order();
+        } else {
+            $this->submitValidatedOrder($_POST);
+        }
+	}
+
+    /** submitValidatedOrder
+     *  Must be called only after order info is validated.
+	 *	Calls Basket model's submitOrder() method and loads success or fail view, depending on Basket model's response.
+     *
+     *  @param $userInputData associative array of data that user entered into input fields (e.g. $_POST)
+     *
+     *  @return void
+     */
+    private function submitValidatedOrder($userInputData) {
+        $basket = $this->Basket->getInstance();
+
+        $submitData['userInputData'] = $userInputData;
         $submitData['userDevice'] = $this->userDevice;
         $submitData['userAgent'] = $this->agent->agent_string();
-		
-		$submitResult = $basket->submitOrder($submitData);
+        
+        $submitResult = $basket->submitOrder($submitData);
         
         if(!$submitResult) { // if $basket->submitOrder() went wrong
             $this->viewData['pageName'] = 'submitOrderFail';
@@ -132,6 +157,5 @@ class Shop extends CI_Controller
 
             $this->load->view($this->userDevice . '/templates/main', $this->viewData);
         }
-	}
-
+    }
 }

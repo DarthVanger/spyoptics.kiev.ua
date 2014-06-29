@@ -12,8 +12,9 @@
     api.placeOrder(cartItems, totalPrice);
   });
 </script>
+
 <link href="<?=CSS.$userDevice?>/pages/submitOrderSuccess.css" rel="stylesheet" type="text/css" />
-<div id="submitOrderSuccess-page">
+<div id="submitOrderSuccess-page" class="page-padding text">
 	<div>
         Спасибо,
         <?php if(isset($post['name'])):?>

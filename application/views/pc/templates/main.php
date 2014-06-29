@@ -19,9 +19,7 @@
 
 <div id="body">
 	<div class="page-body">
-		<div id="content" class="text">
-			<?php $this->load->view("pc/pages/".$pageName); ?>
-		</div>
+        <?php $this->load->view("pc/pages/".$pageName); ?>
 	</div>
 	<?php $this->load->view('pc/footer/signature'); ?>
 </div>

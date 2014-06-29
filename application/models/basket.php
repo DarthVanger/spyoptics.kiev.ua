@@ -51,12 +51,6 @@ class Basket extends CI_Model {
 		return self::$instance;
 	}
 
-	/** saveBasketToSession
-	 *	Saves $this->items to session
-	 */
-	public function saveBasketToSession() {
-		$this->session->set_userdata('cartItems', $this->items);
-	}
 
 	/** getItems
 	*	Returns all items from the basket.
@@ -154,7 +148,7 @@ class Basket extends CI_Model {
 
 	/***********************************************************/
 
-	/*************** Methods for making orders ****************/
+	
 
 
 	/** submitOrder
@@ -167,8 +161,20 @@ class Basket extends CI_Model {
 	 	return $this->sendNewOrderNotification($submitData);
 	 }
 
+	/** saveBasketToSession
+	 *	Saves $this->items to session
+	 */
+	private function saveBasketToSession() {
+		$this->session->set_userdata('cartItems', $this->items);
+	}
+
 	 /** sendNewOrderNotification
 	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
+      *
+      *  @param $submitData array with submit data, should contain:
+      *  $submitData['userInputData'] - associative array of user input data (e.g. $_POST)
+      *  $submitData['userDevice'] - string with user device type ('pc', 'mobile' , ...)
+      *  $submitData['userAgent'] - string with user agent description
 	  *
 	  *	 @return true on success, false on fail.
 	  */
@@ -179,11 +185,14 @@ class Basket extends CI_Model {
 		$message = "Новый заказ!<br />";
 		$message .= "Инфо о клиенте:<br />";
 
-        $userInfo = $submitData['post'];
+        $userInfo = $submitData['userInputData'];
+        $userInfo['userDevice'] = $submitData['userDevice'];
 
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
 		}
+        $message .= "<br />";
+
 		$message .= "Заказ:"."<br />";
 		if(is_array($this->items)) {
 			foreach($this->items as $item) {
@@ -192,9 +201,9 @@ class Basket extends CI_Model {
 		} else {
 			$message .= "Корзина пуста<br />";
 		}
+        $message .= "<br />";
 
-        $message .= "Debug:"."<br />";
-        $message .= "user device: " . $submitData['userDevice'] . "<br />";
+        $message .= "Debug:" . "<br />";
         $message .= "user agent: " . $submitData['userAgent'] . "<br />";
 
 		// prepare headers for using mail() function

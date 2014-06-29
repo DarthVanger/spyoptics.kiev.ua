@@ -22,7 +22,7 @@
 
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
 
-<div id="sunglasses-page">
+<div id="sunglasses-page" class="page-padding text">
 	<div>
 		Нажмите на очки, чтобы добавить/убрать очки из корзинки. <br />
         Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
