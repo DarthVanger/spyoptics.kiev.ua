@@ -51,12 +51,6 @@ class Basket extends CI_Model {
 		return self::$instance;
 	}
 
-	/** saveBasketToSession
-	 *	Saves $this->items to session
-	 */
-	public function saveBasketToSession() {
-		$this->session->set_userdata('cartItems', $this->items);
-	}
 
 	/** getItems
 	*	Returns all items from the basket.
@@ -154,7 +148,7 @@ class Basket extends CI_Model {
 
 	/***********************************************************/
 
-	/*************** Methods for making orders ****************/
+	
 
 
 	/** submitOrder
@@ -166,6 +160,13 @@ class Basket extends CI_Model {
 	 	//$this->saveOrderToDb($userInfo); // Not implemented yet!
 	 	return $this->sendNewOrderNotification($submitData);
 	 }
+
+	/** saveBasketToSession
+	 *	Saves $this->items to session
+	 */
+	private function saveBasketToSession() {
+		$this->session->set_userdata('cartItems', $this->items);
+	}
 
 	 /** sendNewOrderNotification
 	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
