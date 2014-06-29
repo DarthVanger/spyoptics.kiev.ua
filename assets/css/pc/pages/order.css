@@ -1,77 +1,101 @@
-/* cart */
-#cart-page .cart {
-	display: inline-block;
-	float: right;
-	margin-right: 30px;
-	width: 250px;
-	text-align: center;
+#order-page {
+    text-align: center;
+    background-color: #eee;
+    color: #494841;
 }
-#cart-page .item .description {
-	display: inline-block;
-	margin-left: 15px;
-	margin: 5px 0 5px 0;
+#order-page .inner-container {
+    background-color: white;
+    overflow: hidden;
 }
-#cart-page .cart img.glasses {
-	width: 250px;
-	vertical-align: bottom;
-	border-bottom: 2px dotted #dd7;
-}
+@media (min-width: 700px) {
+    #order-page .inner-container {
+        display: inline-block;
+        width: 650px;
+        border: 1px solid rgba(128,128,128,0.4);
+        border-radius: 10px;
+        padding: 15px;
+    }
 
-.total-price {
-	font-weight: bold;
-	margin-bottom: 20px;
 }
+@media (max-width: 699px) {
+    #order-page {
+        padding: 0;
+    }
+    #order-page .inner-container {
+        padding: 0;
+    }
+}
+/* cart */
+.cart {
+    display: inline-block;
+}
+.cart img.cart {
+    height: 60px;
+}
+.cartSemicolon {
+	font-size: 60px;
+}
+.cart .item {
+    margin-bottom: .5em;
+}
+.cart .item img.glasses {
+	height: 90px;
+}
+.cart .item .imgContainer {
+	display: inline-block;
+}
+.cart .item .description {
+	font-size: 0.9em;
+}
+.cart .total-price {
+	color: #500025;
+	font-weight: bold;
+    margin-top: 1em;
+}
+.cart a.removeItem img {
+    height: 45px;
+}
+/**********************************/
 
 /* order form */
-#cart-page form.order {
-	display: inline-block;
-	margin-right: 100px;
-	margin-left: 30px;
-	text-align: left;
-	width: 780px;
-}
-.fieldName {
-	display: inline-block;
-	overflow: hidden;
-	width: 270px;
-	text-align: right;
-	padding-right: 5px;
-}
-form.order input, textarea, select {
-	margin: 2px;
-	padding: 4px;
+form.order input[type="text"], form.order select, form.order textarea {
+    display: block;
+    width: 95%;
+    -webkit-box-shadow: 2px 2px 0 rgba(0,0,0,0.3) inset;
+    -moz-box-shadow: 2px 2px 0 rgba(0,0,0,0.3) inset;
+    box-shadow: 2px 2px 0 rgba(0,0,0,0.3) inset;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: 300;
+    border-radius: 10px;
+    margin: 0;
+
+	padding: .2em;
 	font-size: 100%;
 	font-family: "Roboto Slab";
 	vertical-align: bottom;
+    margin-bottom: .2em;
+
+    margin-right: auto;
+    margin-left: auto;
 }
 form.order textarea {
-	vertical-align: middle;
+    height: 5em;
 }
-input[name="address"], input[name="name"], form.order textarea {
-	width: 480px;
+form.order input[type="text"] {
+    margin-bottom: -10px;
 }
-form.order select {
-	width: 412px;
+form.order h1 {
+    font-size: 2.5em;
+    padding: .5em;
+    margin: .5em;
 }
-form.order select, form.order option {
-	background-color: #eee;
+form.order h2 {
+    font-size: 2em;
 }
-form.order #phoneValidation {
-	color: red;
-	font-family: Play;
-	font-weight: bold;
-	font-variant: small-caps;
-    font-size: 1.2em;
-	letter-spacing: 1px;
-    margin-top: 10px;
-}
-form.order img.validation {
-	vertical-align: bottom;
-	height: 32px;
-}
-form.order input.novaPoshtaOffice {
-	width: 2em;
-	text-align: center;
+.fieldName {
+    text-align: left;
+    margin: .2em .2em .2em  .7em;
 }
 
 .glowing-border {border:2px solid #dadada;border-radius:7px;}
@@ -79,42 +103,16 @@ form.order input.novaPoshtaOffice {
 
 .validationError {
     color: red;
-    font-weight: bold;
 }
+/***************************/
 
 /* END order form */
 
-.item div.imgContainer {
-    display: inline-block;
-    position: relative;
-}
-
-/* remove item button */
-.item div.imgContainer a.removeItem {
-    visibility: hidden;
-}
-.item  div.imgContainer:hover a.removeItem {
-    visibility: visible;
-}
-.item .imgContainer > img {
-}
-
-#cart-page .item a.removeItem {
-    position: absolute;
-	right: 0;
-	top: 0;
-
-    cursor: pointer;
-}
-
-.item a.removeItem img {
-    width: 20px;
-    height: 20px;
-}
 
 
 /* submit button style */
 form.order input[type="submit"] {
+    height: 2.5em;
 	width: 100%;
 	margin-top: 20px;
     margin-bottom: 20px;

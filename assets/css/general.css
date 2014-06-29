@@ -6,9 +6,8 @@ a {
 	color: #3f92d2;
 }
 
-#content, .content {
-	padding: 10px;
-	/* line-height: 1.5em; */
+.pagePadding, .page-padding {
+	padding: 10px 10px 50px 10px; /* 50px before footer */
 }
 #content h1 {
 	text-align: center;

@@ -1,6 +1,6 @@
 <link href="<?=CSS.$userDevice?>/pages/contact.css" rel="stylesheet" type="text/css" />
 
-<div id="contact-page">
+<div id="contact-page" class="page-padding text">
 	<img class="contacts" src="<?=IMG?>phoneIcon2.png" />063 206 60 97<br />
 	<img class="contacts" src="<?=IMG?>skypeIcon.png" />spyoptics_kiev<br />
 	<a style="color: #555" href="mailto:spyoptics@ukr.net" target="_blank">

@@ -170,6 +170,11 @@ class Basket extends CI_Model {
 
 	 /** sendNewOrderNotification
 	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
+      *
+      *  @param $submitData array with submit data, should contain:
+      *  $submitData['userInputData'] - associative array of user input data (e.g. $_POST)
+      *  $submitData['userDevice'] - string with user device type ('pc', 'mobile' , ...)
+      *  $submitData['userAgent'] - string with user agent description
 	  *
 	  *	 @return true on success, false on fail.
 	  */
@@ -180,7 +185,7 @@ class Basket extends CI_Model {
 		$message = "Новый заказ!<br />";
 		$message .= "Инфо о клиенте:<br />";
 
-        $userInfo = $submitData['post'];
+        $userInfo = $submitData['userInputData'];
         $userInfo['userDevice'] = $submitData['userDevice'];
 
 		foreach($userInfo as $key => $value) {

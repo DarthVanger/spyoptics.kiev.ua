@@ -1,0 +1,46 @@
+
+#order-page form.order {
+	display: inline-block;
+	text-align: left;
+	width: 780px;
+}
+.fieldName {
+	overflow: hidden;
+	text-align: center;
+}
+form.order input, textarea, select {
+	margin: 2px;
+	padding: 4px;
+	font-size: 100%;
+	font-family: "Roboto Slab";
+	vertical-align: bottom;
+}
+form.order textarea {
+	vertical-align: middle;
+}
+input[name="address"], input[name="name"], form.order textarea {
+	width: 480px;
+}
+form.order select {
+	width: 412px;
+}
+form.order select, form.order option {
+	background-color: #eee;
+}
+form.order #phoneValidation {
+	color: red;
+	font-family: Play;
+	font-weight: bold;
+	font-variant: small-caps;
+    font-size: 1.2em;
+	letter-spacing: 1px;
+    margin-top: 10px;
+}
+form.order img.validation {
+	vertical-align: bottom;
+	height: 32px;
+}
+form.order input.novaPoshtaOffice {
+	width: 2em;
+	text-align: center;
+}
