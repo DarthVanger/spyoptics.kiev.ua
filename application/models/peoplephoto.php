@@ -46,6 +46,7 @@ class PeoplePhoto extends CI_Model {
 			FROM people_wearing_glasses
 			LEFT JOIN sunglasses
 			ON people_wearing_glasses.sunglasses_id = sunglasses.id
+      ORDER BY sort
 		";
 		$query = $this->db->query($sql);
 
