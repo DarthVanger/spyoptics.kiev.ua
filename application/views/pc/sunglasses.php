@@ -84,6 +84,13 @@
 		<?php
 			$this->load->view('pc/pages/sunglasses/peoplePhotosFlexSlider.php');
 		?>
-	</div> <!-- end div id="body" -->
+    </div>
+
+	<div class="page">
+		<?php
+			$this->load->view('pc/pages/sunglasses/site-description.php');
+		?>
+    </div> <!-- end page4 -->
+</div> <!-- end div id="body" -->
 
 <?php $this->load->view('pc/footer/minimal'); ?>
