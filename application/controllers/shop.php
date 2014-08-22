@@ -16,11 +16,11 @@ class Shop extends CI_Controller
         if($this->agent->is_mobile()) {
             $this->userDevice = 'mobile';
         } else {
-            $this->userDevice = 'mobile'; 
+            $this->userDevice = 'pc'; 
         }
 
         // testing mobile version
-        //$this->userDevice = 'mobile';
+        $this->userDevice = 'mobile';
 
         $this->viewData['userDevice'] = $this->userDevice;
     }
