@@ -42,10 +42,11 @@ class PeoplePhoto extends CI_Model {
 	 */
 	function selectAllWithSunglasses() {
 		$sql = "
-			SELECT people_wearing_glasses.img_path, sunglasses_id, sunglasses.model, sunglasses.color, sunglasses.price
+			SELECT people_wearing_glasses.img_path, sunglasses_id, sort, sunglasses.model, sunglasses.color, sunglasses.price
 			FROM people_wearing_glasses
 			LEFT JOIN sunglasses
 			ON people_wearing_glasses.sunglasses_id = sunglasses.id
+      ORDER BY sort
 		";
 		$query = $this->db->query($sql);
 

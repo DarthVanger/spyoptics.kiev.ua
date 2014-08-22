@@ -13,3 +13,10 @@ img.isInCartMark, img.loadingIcon {
 	right: 2%;
 	width: 30%;
 }
+.sunglasses-item {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.sunglasses-item .description {
+    text-align: center;
+}

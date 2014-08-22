@@ -1,1 +1,3 @@
 *.swp # vim swap files
+assets/js/config/constants.js
+application/config/constants.php

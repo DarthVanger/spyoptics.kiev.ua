@@ -12,8 +12,8 @@
  ------------------------------------------------
 -->
 
-<?php $this->load->view("header/minimal"); ?>
+<?php $this->load->view("pc/header/minimal"); ?>
 
 <?php $this->load->view("admin/pages/".$pageName); ?>
 
-<?php $this->load->view("footer/minimal"); ?>
+<?php $this->load->view("pc/footer/minimal"); ?>
