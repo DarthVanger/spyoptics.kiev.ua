@@ -4,6 +4,7 @@
  -
 -->
 
+
 <!-- Initiate JS touch controls -->
 	<script src="<?=JS?>cart/CartAjax.js"></script>
 	<script src="<?=TOOLS?>jquery-flip/jquery.flip.min.js"></script>
