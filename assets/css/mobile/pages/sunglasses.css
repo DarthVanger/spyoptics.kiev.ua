@@ -5,6 +5,7 @@
 .sunglassesImgContainer {
 	position: relative;
 }
+
 /* hidden by default */
 img.isInCartMark, img.loadingIcon {
 	display: none;
@@ -13,9 +14,12 @@ img.isInCartMark, img.loadingIcon {
 	right: 2%;
 	width: 30%;
 }
+
 .sunglasses-item {
     margin-top: 2em;
     margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid #808080;
 }
 .sunglasses-item .description {
     text-align: center;
