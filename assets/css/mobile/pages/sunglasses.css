@@ -23,4 +23,5 @@ img.isInCartMark, img.loadingIcon {
 }
 .sunglasses-item .description {
     text-align: center;
+    margin-bottom: .5em;
 }
