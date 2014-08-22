@@ -61,16 +61,21 @@ $(document).ready(function(){
         <!-- Flynn -->
 		<?php foreach($sunglasses as $sunglass): ?>
             <?php if($sunglass['model'] == 'Flynn'): ?>
-                <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
-                    <img
-                        src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
-                        class = "isInCartMark"
-                        <?php if($sunglass['inCart']): ?>
-                            style = "display: inline-block";
-                        <?php endif; ?>
-                    />
-                    <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
-                    <img class = "sunglasses" src="<?=IMG.$sunglass['mini_img_path']?>" />
+                <div class="sunglasses-item">
+                        <div class="description">
+                            <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
+                        </div>
+                        <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+                            <img
+                                src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
+                                class = "isInCartMark"
+                                <?php if($sunglass['inCart']): ?>
+                                    style = "display: inline-block";
+                                <?php endif; ?>
+                            />
+                            <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
+                            <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
+                        </div>
                 </div>
             <?php endif; ?>
 		<?php endforeach; ?>
