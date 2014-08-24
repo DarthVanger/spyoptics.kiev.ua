@@ -141,7 +141,7 @@ class Shop extends CI_Controller
         
         $submitResult = $basket->submitOrder($submitData);
         
-        if(!$submitResult) { // if $basket->submitOrder() went wrong
+        if (!$submitResult) { // if $basket->submitOrder() went wrong
             $this->viewData['pageName'] = 'submitOrderFail';
             $this->viewData['hideHeaderCart'] = true;
             $this->load->view($this->userDevice . '/templates/main', $this->viewData);
