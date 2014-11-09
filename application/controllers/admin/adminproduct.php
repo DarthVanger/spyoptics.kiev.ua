@@ -5,10 +5,26 @@
  *	Is under development. Is intented to provide e-shop backend interface for managers.
  *
  */
-class Admin extends CI_Controller {
+class AdminProduct extends CI_Controller {
 
 	public function login() {
+        $this->load->helper('cookie');
+        set_cookie(array(
+            'name' => 'admin',
+            'value' => 1,
+            'expire' => '86500'
+        ));
+        echo 'logged in';
+        $this->load->helper('url');
+        redirect('/');
+	}
 
+	public function logout() {
+        $this->load->helper('cookie');
+        delete_cookie('admin');
+        echo 'logged out';
+        $this->load->helper('url');
+        redirect('/');
 	}
 
 	public function checkPass() {

@@ -35,7 +35,6 @@ class SunglassesModel extends CI_Model {
 		return $sunglassesArray;
 	}
 
-
 	/** selectById
 	 *	Gets sunglasses with id=$id from database.
 	 *
@@ -48,6 +47,14 @@ class SunglassesModel extends CI_Model {
 
 		return $query->row_array();
 	}
+
+    /**
+     *  
+     */
+    public function update($product) {
+        $this->db->where('id', $product['id']);
+        $this->db->update('sunglasses', $product);
+    }
 
 	/** addToCart
 	 *	Finds sunglasses with id=$id in database and adds it to cart.

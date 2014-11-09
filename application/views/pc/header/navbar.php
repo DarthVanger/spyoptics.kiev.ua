@@ -13,5 +13,6 @@
 		<a href="<?=site_url()?>/shop/order">заказать</a>
 		<a href="<?=site_url()?>/shop/loadSimplePage/delivery">доставка</a>
 		<a href="<?=site_url()?>/shop/loadSimplePage/contact">контакты</a>
+        <div id="loading">loading...</div>
 	</div>
 </div>

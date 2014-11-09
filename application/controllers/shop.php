@@ -52,11 +52,16 @@ class Shop extends CI_Controller
 		$this->viewData['peoplePhotos'] = $this->PeoplePhoto->selectAllWithSunglasses();	
 		$this->viewData['cartContent'] = $basket->getItems();
 
-        if($this->userDevice == 'pc') {
+        if ($this->userDevice == 'pc') {
             $this->load->view($this->userDevice . '/sunglasses', $this->viewData);
         } else if($this->userDevice == 'mobile') {
             $this->viewData['pageName'] = 'sunglasses';
             $this->load->view($this->userDevice . '/templates/main', $this->viewData);
+        }
+
+        if (isset($_COOKIE['admin'])) {
+            // enable JS editing
+            $this->load->view('admin/product/edit-script.php');
         }
 	}
 

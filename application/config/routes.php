@@ -42,6 +42,8 @@ $route['default_controller'] = "shop/showSunglasses";
 $route['404_override'] = '';
 
 $route['mobile'] = 'mobile/mobileshop';
+$route['login'] = 'admin/adminproduct/login';
+$route['logout'] = 'admin/adminproduct/logout';
 
 
 /* End of file routes.php */
