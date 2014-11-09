@@ -1,3 +1,4 @@
+console.log('debug', 'entered admin mode');
 var $loadingBar = $('#loading');
 $loadingBar.html('admin mode');
 $loadingBar.css({'opacity': 1});

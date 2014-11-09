@@ -43,7 +43,7 @@ function PageSlidingEffect(){
 			navigationButtonsClass = 'pageSlidingButton';
 		}
 		
-		console.log('debug', 'PageSlidingEffect initiation');
+		//console.log('debug', 'PageSlidingEffect initiation');
 
 		pages = $('.' + pagesClass);
 		navigationButtons = $('.' + navigationButtonsClass);
@@ -63,12 +63,12 @@ function PageSlidingEffect(){
 	 *	Adding Swipe listeners is under development.	
 	 */
 	function addScrollListeners() {
-		console.log('debug', 'adding scroll listeners');
+		//console.log('debug', 'adding scroll listeners');
 		addMousewheelListeners();
 		if(typeof navigationButtons != 'undefined') {
 			addButtonListeners();
 		} else {
-			console.log("debug", "can't find navigation buttons with class='"+navigationButtonsClass+"'");
+			//console.log("debug", "can't find navigation buttons with class='"+navigationButtonsClass+"'");
 		}
 		//addSwipeListeners();
 	}
@@ -77,7 +77,7 @@ function PageSlidingEffect(){
 	 *	Adds mousewheel listeners, which launch page scrolling animation.
 	 */
 	function addMousewheelListeners() {
-		console.log('debug', 'adding mouswheel listeners');
+		//console.log('debug', 'adding mouswheel listeners');
 		$("body").on("mousewheel", function (e) {
 			if (e.deltaY <= 0) { // if scrolling down
 				scrollPagesDownTo(currentPageNumber+1);
@@ -104,7 +104,7 @@ function PageSlidingEffect(){
 	 *	Adds listeners to buttons on left navigational bar.
 	 */
 	function addButtonListeners() {
-		console.log("debug", "adding button listeners");
+		//console.log("debug", "adding button listeners");
 		for(i=0; i<navigationButtons.length; i++) {
 			(function(i){ // anonymous function to use loop variable "i" by value, but no by reference
 				navigationButtons[i].onclick = function() {
@@ -128,7 +128,7 @@ function PageSlidingEffect(){
 	 *	Removes mousewheel listeners
 	 */
 	function removeMousewheelListeners() {
-		console.log('debug', 'removing mouswheel listeners');
+		//console.log('debug', 'removing mouswheel listeners');
 		$("body").unmousewheel();
 	}
 	
@@ -147,7 +147,7 @@ function PageSlidingEffect(){
 	 *	@return void
 	 */
 	function moveToPage(pageNumber) {
-		console.log("debug", "moving to page #"+pageNumber);
+		//console.log("debug", "moving to page #"+pageNumber);
 		if(pageNumber==currentPageNumber) {
 		} else if(pageNumber<currentPageNumber) {
 			scrollPagesUpTo(pageNumber);
@@ -182,9 +182,9 @@ function PageSlidingEffect(){
 				addScrollListeners();
 			});
 			currentPageNumber = pageNumber;
-			console.log('debug', 'Scrolling down, currentPageNumber='+currentPageNumber);
+			//console.log('debug', 'Scrolling down, currentPageNumber='+currentPageNumber);
 		} else {
-			console.log('debug', 'debug', 'Can\'t scroll below the last page');
+			//console.log('debug', 'debug', 'Can\'t scroll below the last page');
 		}
 	}
 
@@ -211,9 +211,9 @@ function PageSlidingEffect(){
 				addScrollListeners();	
 			});
 			currentPageNumber = pageNumber;
-			console.log('debug', 'Scrolling up, currentPageNumber='+currentPageNumber);
+			//console.log('debug', 'Scrolling up, currentPageNumber='+currentPageNumber);
 		} else {
-			console.log('debug', 'Can\'t scroll above the first page');
+			//console.log('debug', 'Can\'t scroll above the first page');
 		}
 	}
 

@@ -41,10 +41,10 @@ var CartAjax = function(config) {
 			addItemButtonClass = config.addItemButtonClass;
 			removeItemButtonClass = config.removeItemButtonClass;
 
-			console.log("debug", "initiating CartAjax");
-			console.log("debug", "cartId: " + cartId);
-			console.log("debug", "addItemButtonClass: " + addItemButtonClass);
-			console.log("debug", "removeItemButtonClass: " + removeItemButtonClass);
+			//console.log("debug", "initiating CartAjax");
+			//console.log("debug", "cartId: " + cartId);
+			//console.log("debug", "addItemButtonClass: " + addItemButtonClass);
+			//console.log("debug", "removeItemButtonClass: " + removeItemButtonClass);
 
 			addListeners();
 		}
