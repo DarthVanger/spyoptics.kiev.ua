@@ -8,7 +8,7 @@ class AdminAjaxProduct extends CI_Controller
      */
     public function update()
     {
-        $MAIN_HEIGHT = 800;
+        $MAIN_HEIGHT = 700;
         $THUMBNAIL_HEIGHT = 60;
         $MINI_HEIGHT = 300;
 
