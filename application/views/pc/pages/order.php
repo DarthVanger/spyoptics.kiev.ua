@@ -59,7 +59,7 @@
         <br />
 
         <div id="orderForm">
-            <form class="order" method="POST" action="<?=site_url()?>/shop/submitOrder">
+            <form class="order" method="POST" action="<?=site_url('/shop/submitOrder')?>">
                 <h2 class="textAlignCenter">Оформление заказа</h2>
                 <div class="fieldName">Фамилия, имя, отчество</div>
                 <input name="name" type="text" class="glowing-border" value="<?=set_value('name')?>" />
