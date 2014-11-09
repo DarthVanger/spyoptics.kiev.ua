@@ -14,7 +14,6 @@ class AdminProduct extends CI_Controller {
             'value' => 1,
             'expire' => '86500'
         ));
-        echo 'logged in';
         $this->load->helper('url');
         redirect('/');
 	}
@@ -22,7 +21,6 @@ class AdminProduct extends CI_Controller {
 	public function logout() {
         $this->load->helper('cookie');
         delete_cookie('admin');
-        echo 'logged out';
         $this->load->helper('url');
         redirect('/');
 	}
