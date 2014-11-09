@@ -23,7 +23,7 @@ for (var i=0; i<productImages.length; i++) {
 }
 
 function requestImageUpdate() {
-    console.log('gonna upload the file');
+    console.log('debug', 'gonna upload the file');
     var formData = new FormData();
 
     formData.append('id', clickedImageId);
@@ -38,9 +38,12 @@ function requestImageUpdate() {
         contentType: false,
         data: formData,
         success: function(response) {
-            console.log(response);
+            console.log('debug', 'product update success! Response: ' + response);
             $loadingBar.html('upload success!');
             $loadingBar.css({'background-color': '#5f5'});
+        },
+        error: function(response) {
+            console.log('debug', 'product update error :(. Response: ' + response);
         }
     });
 }
