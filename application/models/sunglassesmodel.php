@@ -53,7 +53,7 @@ class SunglassesModel extends CI_Model {
      */
     public function update($product) {
         $this->db->where('id', $product['id']);
-        $this->db->update('sunglasses', $product);
+        return $this->db->update('sunglasses', $product);
     }
 
 	/** addToCart

@@ -20,7 +20,7 @@ class AdminAjaxProduct extends CI_Controller
         $uploadPath = $imagesFolderPath . $uploadPathInImagesFolder;
 
         $uploadResult = $this->do_upload($uploadPath); 
-        var_dump($uploadResult);
+        //var_dump($uploadResult);
         $uploadedFileInfo = $uploadResult['upload_data'];
 
         $this->load->model('ImageResizer');
@@ -47,9 +47,34 @@ class AdminAjaxProduct extends CI_Controller
         $product['thumbnail_img_path'] = $uploadPathInImagesFolder . $THUMBNAIL_FOLDER . $uploadedFileInfo['file_name'];
         $product['mini_img_path'] = $uploadPathInImagesFolder . $MINI_FOLDER . $uploadedFileInfo['file_name'];
 
+
         $this->load->model('SunglassesModel');
 
-        $this->SunglassesModel->update($product);
+        $oldProduct = $this->SunglassesModel->selectById($product['id']);
+
+        if ($this->SunglassesModel->update($product)) {
+            // update success, delete old images
+            $mainImgPath = './' . $imagesFolderPath . $oldProduct['img_path'];
+            $miniImgPath = './' . $imagesFolderPath . $oldProduct['mini_img_path'];
+            $thumbnailImgPath = './' . $imagesFolderPath . $oldProduct['thumbnail_img_path'];
+
+            //echo 'unlinking ' . $mainImgPath . PHP_EOL;
+            //echo 'unlinking ' . $miniImgPath . PHP_EOL;
+            //echo 'unlinking ' . $thumbnailImgPath;
+            
+            unlink($mainImgPath);
+            unlink($miniImgPath);
+            unlink($thumbnailImgPath);
+        };
+
+
+    }
+
+    private function deleteImages($imageId) {
+        $this->load->model('SunglassesModel');
+        $sunglasses = $this->SunglassesModel->selectById($imageId);
+        var_dump($sunglasses);
+        die();
     }
 
     function do_upload($uploadPath)

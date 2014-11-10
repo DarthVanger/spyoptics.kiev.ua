@@ -19,7 +19,7 @@ class ImageResizer extends CI_Model {
         list($width, $height) = getimagesize($imagePath);
         $image = resize_image($imagePath, $width, $outputHeight); // old image width is passed to resize function, but it preserves ratio anyway
         // save image
-        $newImagePath = './pub/'.end(explode('/', $imagePath));
+        $newImagePath = './temp/'.end(explode('/', $imagePath));
         imagejpeg($image, $newImagePath);
 
         return $newImagePath;
