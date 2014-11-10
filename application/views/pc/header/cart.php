@@ -34,7 +34,7 @@
             <?php endif; ?>
         </div>
 
-        <a href="<?=site_url()?>/shop/order">
+        <a href="<?=site_url('/shop/order')?>">
           <div class="makeOrder">
             оформить <br />
             заказ
