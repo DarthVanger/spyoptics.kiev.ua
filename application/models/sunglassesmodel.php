@@ -25,7 +25,7 @@ class SunglassesModel extends CI_Model {
 	 *	@return array of all sunglasses from database.
 	 */
 	public function selectAll() {
-		$sql = "SELECT * FROM sunglasses";
+		$sql = "SELECT * FROM sunglasses ORDER BY sort_order ASC";
 		$query = $this->db->query($sql);
 
 		$sunglassesArray = $query->result_array();

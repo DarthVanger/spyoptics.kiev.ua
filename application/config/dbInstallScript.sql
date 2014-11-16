@@ -5,9 +5,7 @@ CREATE TABLE sunglasses (
 	price int(4),
 	img_path varchar(200),
 	mini_img_path varchar(200),
-	thumbnail_img_path varchar(200),
-	css_class varchar(50),
-	batch int(2)
+	thumbnail_img_path varchar(200)
 );
 
 -- set price after glasses where created
@@ -20,3 +18,7 @@ CREATE TABLE people_wearing_glasses(
 	sunglasses_id int,
 	FOREIGN KEY (sunglasses_id) REFERENCES sunglasses(id)
 );
+
+-- update 2014-11-16 --
+ALTER TABLE sunglasses
+ADD sort_order int(4) DEFAULT 0
