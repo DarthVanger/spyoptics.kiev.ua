@@ -149,6 +149,9 @@ div.color {
 	bottom: 20px;
 	right: 20px;
 }
+.slides .product-description .heading {
+    font-size: 0.9em;
+}
 .slides .product-description img.pouch {
     width: 150px;
 }

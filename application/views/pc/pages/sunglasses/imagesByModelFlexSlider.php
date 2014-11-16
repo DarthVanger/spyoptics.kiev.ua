@@ -39,7 +39,7 @@
                                 <?php if ($model == 'Ken Block Helm'): ?>
                                     <div class="product-description">
                                         <div class="heading">
-                                            Мешочек в подарок!
+                                            В комплекте мешочек
                                         </div>
                                         <img class="pouch" src="<?=IMG?>pouch.jpg" />
                                     </div>
