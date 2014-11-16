@@ -143,6 +143,15 @@ div.color {
 	letter-spacing: 1px;
 	font-size: 90%
 }
+.slides .product-description {
+    position: absolute;
+	z-index: 100;
+	bottom: 20px;
+	right: 20px;
+}
+.slides .product-description img.pouch {
+    width: 150px;
+}
 .descriptionBlock .color, .descriptionBlock .model {
 	padding: 8px;
 }

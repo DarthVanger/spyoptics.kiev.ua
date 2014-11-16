@@ -26,15 +26,24 @@
 									<div class="price">
 										<?=$sunglass['price']?> грн
 									</div>
-                  <a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>">
-                    <img src="#" lazy-src="<?=IMG?>addToCart.png" />
-                    <div>добавить <br /> в корзинку</div>
-                  </a>
+                                <a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>">
+                                    <img src="#" lazy-src="<?=IMG?>addToCart.png" />
+                                    <div>добавить <br /> в корзинку</div>
+                                </a>
 								</div>
 
 								<div class="color">
 									<?=$sunglass['color']?>
 								</div>
+
+                                <?php if ($model == 'Ken Block Helm'): ?>
+                                    <div class="product-description">
+                                        <div class="heading">
+                                            Мешочек в подарок!
+                                        </div>
+                                        <img class="pouch" src="<?=IMG?>pouch.jpg" />
+                                    </div>
+                                <?php endif; ?>
 								 </p>
 							</div> <!-- end .container -->
 						</li>

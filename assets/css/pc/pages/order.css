@@ -40,9 +40,19 @@
 }
 .cart .item img.glasses {
 	height: 90px;
+    vertical-align: middle;
 }
 .cart .item .imgContainer {
 	display: inline-block;
+}
+.cart .item .plus {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 30px;
+}
+.cart .item .imgContainer img.pouch {
+    height: 70px;
+    vertical-align: middle;
 }
 .cart .item .description {
 	font-size: 0.9em;
@@ -54,6 +64,8 @@
 }
 .cart a.removeItem img {
     height: 45px;
+    vertical-align: bottom;
+    margin-right: 10px;
 }
 /**********************************/
 

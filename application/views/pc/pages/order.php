@@ -41,6 +41,12 @@
                         <div class="imgContainer" id="<?=$item['id']?>" >
                             <img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
                         </div>
+                        <?php if ($item['model'] == 'Ken Block Helm'): ?>
+                            <span class="plus">+</span>
+                            <div class="imgContainer" id="<?=$item['id']?>" >
+                                <img class="pouch" src="<?=IMG?>pouch.jpg" />
+                            </div>
+                        <?php endif; ?>
                         <a id="<?=$item['id']?>" class="removeItem" href="javascript:void(0)">
                             <img src="<?=IMG?>mobile/layout/cartRemoveIcon.svg" />
                         </a>
