@@ -1,3 +1,8 @@
 assets/js/config/constants.js
 application/config/constants.php
 application/config/database.php
+# images
+assets/img/upload/**
+assets/img/kenBlockHelm/**
+assets/img/kenBlockHelm2/**
+assets/img/flynn/**

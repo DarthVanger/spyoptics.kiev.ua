@@ -1,4 +1,9 @@
 # vim swap files
 *.swp
+
+.git-ftp-ignore
 # images
 assets/img/upload/**
+assets/img/kenBlockHelm/**
+assets/img/kenBlockHelm2/**
+assets/img/flynn/**
