@@ -17,6 +17,7 @@
 	<script src="<?=JS?>jquery/jquery.min.js" type="text/javascript"></script>
 	<link rel="icon" type="image/png" href="<?=IMG?>favicon.png">
 	<title>Spy Optic очки Киев купить. Стильные Очки в Украине</title>
+	<meta name="description" content="Spyoptics.kiev,ua &mdash; сайт который поможет вам купить стильные солнцезащитные очки в Украине>
 
 </head>
 <body>
