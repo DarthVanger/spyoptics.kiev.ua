@@ -14,12 +14,15 @@
 								<img
                                     <?php if($model=="Flynn"): ?>
                                         class="height-100-percent"
+										alt="Очки Spy Optic Flynn"
                                     <?php else: ?>
                                         class="width-75-percent"
+										alt="Очки Spy Optic Ken Block Helm"
                                     <?php endif; ?>
                                     src="#"
                                     lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
                                     id="<?=$sunglass['id']?>"
+									
                                 />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
