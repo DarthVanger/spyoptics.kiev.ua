@@ -2,6 +2,7 @@
 
 <div id="contact-page" class="page-padding text">
 	<img class="contacts" src="<?=IMG?>phoneIcon2.png" />063 206 60 97<br />
+	<img class="contacts" src="<?=IMG?>phoneIcon2.png" />098 622 93 76<br />
 	<img class="contacts" src="<?=IMG?>skypeIcon.png" />spyoptics_kiev<br />
 	<a style="color: #555" href="mailto:spyoptics@ukr.net" target="_blank">
 		<img class="contacts" src="<?=IMG?>envelope.jpg" />spyoptics@ukr.net<br />
@@ -13,4 +14,7 @@
         </div>
         <span>spyoptics_kiev</span>
     </a>
+	<p>
+		По любым вопросам сотрудничества и оптовых закупок обращайтесь на email.
+	</p>
 </div>
