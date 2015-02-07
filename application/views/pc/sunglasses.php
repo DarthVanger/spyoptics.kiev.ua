@@ -72,7 +72,14 @@
 			$viewData['model'] = 'Flynn';
 			$this->load->view('pc/pages/sunglasses/imagesByModelFlexSlider.php', $viewData);
 		?>
-	</div> <!-- end page2 -->
+	</div>
+
+	<div class="page">
+		<?php
+			$viewData['model'] = 'Touring';
+			$this->load->view('pc/pages/sunglasses/imagesByModelFlexSlider.php', $viewData);
+		?>
+	</div>
 
 	<div class="page">
 		<?php
@@ -90,7 +97,7 @@
 		<?php
 			$this->load->view('pc/pages/sunglasses/site-description.php');
 		?>
-    </div> <!-- end page4 -->
+    </div>
 </div> <!-- end div id="body" -->
 
 <?php $this->load->view('pc/footer/minimal'); ?>

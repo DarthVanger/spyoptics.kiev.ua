@@ -104,14 +104,19 @@ class ImageDbProcessor extends CI_Model {
 	public function addToDbByImages() {
 		// config
         // name of folder with images (with trailing SLASH!)
-		$folder = 'kenBlockHelm2/';
-		$model = 'Ken Block Helm';
-		$price = 150;
+		$folder = 'touring/';
+		$model = 'Touring';
+		$price = 350;
 
 		// get image pathes
 		$this->load->helper('directory');
 
-		$imageNames = directory_map('./assets/img/'.$folder);
+        $folderPath = FCPATH . 'assets/img/'.$folder;
+        $imageNames = directory_map($folderPath);
+        if (empty($imageNames)) {
+            echo "Error: can't find images in $folderPath";
+            die();
+        }
 
 		$i = 0;
 		foreach($imageNames as $imageName) {
