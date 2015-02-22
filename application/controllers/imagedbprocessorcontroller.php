@@ -9,20 +9,29 @@
  */
 class ImageDbProcessorController extends CI_Controller {
 
+
+	/** 
+	 *	Calls addModelImagesFromFolder() method of ImageDbProcessor model.
+     */
+    public function addModelImagesFromFolder($imgSrcDir, $model) {
+		$this->load->model("ImageDbProcessor");
+		$this->ImageDbProcessor->addModelImagesFromFolder($imgSrcDir, $model);
+    }
+
 	/** addMiniatures
 	 *	Calls addMiniatures() method of ImageDbProcessor model.
 	 */
-	public function addMiniatures($model, $subfolder) {
+	public function addMiniatures($model) {
 		$this->load->model("ImageDbProcessor");
-		$this->ImageDbProcessor->addMiniatures($model, $subfolder);
+		$this->ImageDbProcessor->addMiniatures($model);
 	}
 
 	/** addThumbnails
 	 *	Calls addThumbnails() method of ImageDbProcessor model.
 	 */
-	public function addThumbnails($model, $subfolder) {
+	public function addThumbnails($model) {
 		$this->load->model("ImageDbProcessor");
-		$this->ImageDbProcessor->addThumbnails($model, $subfolder);
+		$this->ImageDbProcessor->addThumbnails($model);
 	}
 
 	/** relocateImages

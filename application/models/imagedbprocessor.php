@@ -3,6 +3,7 @@
 /** ImageDbProcessor model
  *
  *	Provides methods to resize/crop images; methods to add sugnlasses images to DB from folder.
+ *  Needs some refactoring, but works...
  *
  *****************************************************
  * Used libraries
@@ -27,13 +28,23 @@ class ImageDbProcessor extends CI_Model {
 	 *	@param $folder folder where images to be resized are located.
 	 *	@param $height output height of resized images.
 	 */
-	public function resize($folder, $height) {
+	public function resize($folder, $height, $outputDir = '') {
 		// config
-		$folder = 'assets/img/'.$folder.'/'; // folder path WITH trailing slash!
+		//$folder = 'assets/img/'.$folder.'/'; // folder path WITH trailing slash!
+        $folder = $folder . '/';
+
 		$outputHeight = $height;
+        if ($outputDir) {
+            $outputDir = 'pub/' . $outputDir;
+            if (!file_exists($outputDir)) {
+                mkdir($outputDir);
+            }
+        } else {
+            $outputDir = 'pub';
+        }
 
 		// include resize_image function, which I copied from stackoverflow
-		include 'resources/resize_image.php';
+		require_once 'resources/resize_image.php';
 
 		$imagePaths = $this->getImagePaths($folder);
 
@@ -42,10 +53,32 @@ class ImageDbProcessor extends CI_Model {
 			list($width, $height) = getimagesize($imagePath);
 			$image = resize_image($imagePath, $width, $outputHeight); // old image width is passed to resize function, but it preserves ratio anyway
 			// save image
-			$newImagePath = './pub/'.end(explode('/', $imagePath));
+			$newImagePath = $outputDir . '/'.end(explode('/', $imagePath));
 			imagejpeg($image, $newImagePath);
 		}
 	}
+
+    /**
+     * Add new model images from folder, resizing them to 3 sizes, and adding all the paths to db
+     */
+
+    public function addModelImagesFromFolder($imgSrcDir, $model) {
+        $tempDir = 'pub/' . $imgSrcDir; // '.' is referred to application root
+        $outputDir = 'assets/img/' . $imgSrcDir;
+        $imgSrcPath = 'assets/img/' . $imgSrcDir;
+        $outputHeight = 700;
+        $miniHeight = 300;
+        $thumbnailHeight = 60;
+
+        $this->resize($imgSrcPath, $outputHeight, $imgSrcDir); 
+        $this->resize($tempDir, $miniHeight, $imgSrcDir . '/mini');
+        $this->resize($tempDir, $thumbnailHeight, $imgSrcDir . '/thumbnail');
+
+        rename($outputDir, $outputDir . '-source');
+        rename($tempDir, $outputDir);
+
+        //$this->addToDbByImages($imgSrcDir, $model);
+    }
 
 	/** cropAndResize method
 	 *	
@@ -101,14 +134,15 @@ class ImageDbProcessor extends CI_Model {
 	 *	
 	 *
 	 */
-	public function addToDbByImages() {
+	public function addToDbByImages($folder, $model) {
 		// config
-        // name of folder with images (with trailing SLASH!)
-		$folder = 'touring/';
-		$model = 'Touring';
+        // name of folder with images
+		//$folder = 'touring';
+        $folder = $folder . '/';
+		//$model = 'Touring';
 		$price = 350;
 
-		// get image pathes
+		// get image paths
 		$this->load->helper('directory');
 
         $folderPath = FCPATH . 'assets/img/'.$folder;
@@ -124,7 +158,7 @@ class ImageDbProcessor extends CI_Model {
 				$images[$i]['path'] = $folder.$imageName;
 				$images[$i]['mini_path'] = $folder."mini/".$imageName;
 				$images[$i]['thumbnail_path'] = $folder."thumbnail/".$imageName;
-				$images[$i]['color'] = substr($imageName, 0, -4);
+				$images[$i]['color'] = substr($imageName, 8, -4);
 				$i++;
 			}
 		}
@@ -147,10 +181,10 @@ class ImageDbProcessor extends CI_Model {
 	 *	@param $model name of folder (model), where original full-size images located. Exapmles: kenBlockHelm, flynn.
 	 *	@param $subfolder name of subfolder, where miniature images located.
 	 */
-	public function addMiniatures($model, $subfolder) {
+	public function addMiniatures($model) {
 		// config
 		$folder = 'images/'.$model.'/';
-		$folderMini = $folder.$subfolder.'/';
+		$folderMini = $folder. 'mini' .'/';
 
 		// get image paths
 		$this->load->helper('directory');
@@ -177,10 +211,10 @@ class ImageDbProcessor extends CI_Model {
 	 *	@param $model name of folder (model), where original full-size images located. Exapmles: kenBlockHelm, flynn.
 	 *	@param $subfolder name of subfolder, where thumbnail images located.
 	 */
-	public function addThumbnails($model, $subfolder) {
+	public function addThumbnails($model) {
 		// config
 		$folder = 'images/'.$model.'/';
-		$folderMini = $folder.$subfolder.'/';
+		$folderMini = $folder. 'thumbnail' .'/';
 
 		// get image paths
 		$this->load->helper('directory');

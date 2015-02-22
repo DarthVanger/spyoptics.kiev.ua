@@ -53,6 +53,9 @@
 			<img src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
 		</a>
 		<a href="javascript: void(0)" class="pageSlidingButton">
+			<img src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
+		</a>
+		<a href="javascript: void(0)" class="pageSlidingButton">
 			<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
 		</a>
 		<a href="javascript: void(0)" class="pageSlidingButton">
