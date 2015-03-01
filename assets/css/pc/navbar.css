@@ -6,7 +6,14 @@
 	background-color: #eee;
 	opacity: .8;
 }
+#topNavbar .loading-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
 #topNavbar #loading {
+    text-align: center;
     display: inline-block;
     opacity: 0;
     font-size: 18px;
@@ -15,13 +22,16 @@
 	font-family: "Lobster";
 	letter-spacing: 1px;
 	padding: 5px 15px;
-	margin: 0 15px 0 25px;
+	/* margin: 0 15px 0 25px; */
 	height: 26px;
 }
 #topNavbar #loading.visible {
+    display: block;
     opacity: 1;
+    z-index: 100;
 }
 #topNavbar #loading.hidden {
+    display: none;
     opacity: 0;
 }
 #topLine {
@@ -35,7 +45,8 @@
 	background-color: #a6000c;
 }
 #topNavbar .navbar {
-	display: inline-block;
+  display: inline-block;
+  vertical-align: top;
   text-align: left;
 	/* padding: 5px 10px 5px 10px; */
 	height: 36px;
@@ -62,4 +73,36 @@
 #topNavbar .navbar a:hover {
 	background-color: #a6000c;
 	color: white;
+}
+/* social like buttons */
+.social-like-buttons {
+    display: inline-block;
+    height: 100%;
+    margin: 0 0 0 30px;
+}
+@media screen and (max-width: 890px) {
+    .social-like-buttons {
+        display: none;
+    }
+}
+.like-button-container {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    margin: -2px 10px 0 0;
+}
+.like-button-container::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+.like-button-container > * {
+    display: inline-block!important;
+    vertical-align: middle!important;
+}
+#vk_like {
+    margin-right: -20px;
 }
