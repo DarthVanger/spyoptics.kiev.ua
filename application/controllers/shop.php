@@ -46,11 +46,16 @@ class Shop extends CI_Controller
     {
 		$this->load->model('SunglassesModel');
 		$this->load->model('PeoplePhoto');
-		$basket = $this->Basket->getInstance();
-		
+		$this->load->model('DiscountCalculator');
+
 		$this->viewData['sunglasses'] = $this->SunglassesModel->selectAll();	
 		$this->viewData['peoplePhotos'] = $this->PeoplePhoto->selectAllWithSunglasses();	
-		$this->viewData['cartContent'] = $basket->getItems();
+
+		$basket = $this->Basket->getInstance();
+        $this->viewData['cart'] = array();
+		$this->viewData['cart']['content'] = $basket->getItems();
+		$this->viewData['cart']['totalPrice'] = $basket->getTotalPrice();
+		$this->viewData['cart']['itemCount'] = $basket->getItemsCount();
 
         if ($this->userDevice == 'pc') {
             $this->load->view($this->userDevice . '/sunglasses', $this->viewData);

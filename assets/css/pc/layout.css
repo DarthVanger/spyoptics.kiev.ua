@@ -1,4 +1,5 @@
 @import url("navbar.css");
+@import url("cart.css");
 html, body {
 	width: 100%;
     min-width: 600px;
@@ -6,121 +7,6 @@ html, body {
 	padding: 0;
 	font-family: "Roboto Slab";
 	font-size: 18px;
-}
-
-/* layout */
-#cart {
-	position: absolute;
-	right: 0;
-	top: 5px;
-	height: 80px;
-    line-height: 50px;
-	padding: 0 10px 0px 10px;
-
-	z-index: 1000;
-	background-color: #fff;
-	border-bottom: solid #eee 4px;
-	border-left: solid #eee 2px;
-	border-radius: 0px 0px 0px 60px;
-
-	overflow: hidden;
-
-	transition: padding-left .5s;
-}
-#cart:hover {
-  padding-left: 130px;
-}
-div.makeOrder {
-  display: none;
-  margin: 0 0 37px -110px;
-  transition: display .5s;
-  vertical-align: middle;
-  text-align: center;
-  color: red;
-  line-height: 20px;
-}
-#cart:hover .makeOrder {
-  display: inline-block;
-}
-#cartImgContainer {
-  position: relative;
-  display: inline-block;
-  height: 60px;
-  width: 60px;
-  margin: 0 0px 0 0px;
-}
-#cart img.cart, #cart img.cartHover {
-	position: absolute;
-	top: 0;
-	left: 0px;
-	height: 60px;
-	vertical-align: bottom;
-
-	cursor: pointer;
-}
-#cart img.cartHover {
-	opacity: 0;
-	z-index: 10;
-	transition: opacity .5s;
-}
-#cart:hover img.cartHover {
-	opacity: 1;
-}
-#cart div#cartContent {
-  display: inline-block;
-  vertical-align: middle;
-  height: 80px;
-  line-height: 80px;
-	float: right;
-
-}
-/* pseudo element for vertical aligning at middle */
-#cart div#cartContent:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-}
-#cart div#cartContent div.imgContainer {
-	display: inline-block;
-  vertical-align: middle;
-	position: relative;
-}
-#cart div#cartContent .imgContainer > img.sunglasses {
-	height: 30px;
-  vertical-align: middle;
-}
-#cart a.removeItem {
-	position: absolute;
-	top: 5px;
-	left: 15px;
-	cursor: pointer;
-}
-div#cartContent div.imgContainer a.removeItem {
-	visibility: hidden;
-}
-div#cartContent div.imgContainer:hover a.removeItem {
-	visibility: visible;
-}
-
-
-#cart a.removeItem img {
-	width: 20px;
-	height: 20px;
-}
-#cartContent div.itemCount {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-
-	padding: 2px;
-	text-align: center;
-	font-size: 13px;
-
-	width: 15px;
-	height: 15px;
-	border-radius: 40px;
-	background-color: #eee;
 }
 
 #body {

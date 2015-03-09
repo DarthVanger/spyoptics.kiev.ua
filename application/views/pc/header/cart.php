@@ -13,7 +13,7 @@
             $(document).ready(function() {
                 var cartAjax = new CartAjax();
                 cartAjax.initListeners({
-                    cartId: "cartContent",
+                    cartId: "cartContentAndSummary",
                     addItemButtonClass: "orderButton",
                     removeItemButtonClass: "removeItem"
                 });
@@ -23,16 +23,24 @@
 
     <!-- cart is absolutely positioned block -->
     <div id="cart" class="cart">
-        <div id="cartContent">
-            <?php if(!is_null($cartContent)): ?>
-                <?php foreach($cartContent as $item):?>
-                    <div class="imgContainer">
-                        <img src="<?=IMG?><?=$item['thumbnail_img_path']?>" class="sunglasses" />
-                        <a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
+            <div id="cartContentAndSummary"> 
+                <?php if(!empty($cart['content'])): ?>
+                    <div id="cartContent">
+                        <?php foreach($cart['content'] as $item):?>
+                            <div class="item">
+                                <div class="imgContainer">
+                                    <img src="<?=IMG?><?=$item['thumbnail_img_path']?>" class="sunglasses" />
+                                    <a href="javascript: void(0)" class="removeItem" id="<?=$item['id']?>"><img src="<?=IMG?>removeItemH20.png" /></a>
+                                    <div class="price"><?=$item['price']?></div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
-            <?php endif; ?>
-        </div>
+                    <div class="summary">
+                        &Sigma; = <?=$cart['totalPrice']?> грн
+                    </div>
+                <?php endif; ?>
+            </div>
 
         <a href="<?=site_url('/shop/order')?>">
           <div class="makeOrder">

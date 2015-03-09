@@ -3,6 +3,7 @@
 
 .git-ftp-ignore
 # images
+assets/img/upload
 assets/img/upload/**
 assets/img/kenBlockHelm/**
 assets/img/kenBlockHelm2/**

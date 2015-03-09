@@ -26,10 +26,10 @@
 								 <p class="flex-caption">
 								<div class="priceAndCart">
                                     <div class="priceAndDiscount">
-                                        <div id="sunglass-price" class="price" data-price="<?=$sunglass['price']?>">
+                                        <div id="sunglass-price" class="price" data-price="<?=$sunglass['price']?>" >
                                             <?=$sunglass['price']?> грн
                                         </div>
-                                        <div id="sunglass-discount" class="discount">
+                                        <div id="sunglass-discount" class="discount" data-product-price="<?=$sunglass['price']?>" >
                                             &mdash; 0 грн
                                         </div>
                                     </div>

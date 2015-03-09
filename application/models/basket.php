@@ -24,6 +24,13 @@
 
 class Basket extends CI_Model {
 
+    /**
+     * Is false for singleton and true for clones
+     */
+    //public $isClone = false;
+
+    public $applyDiscounts = true;
+
 	/* singleton instance */
 	private static $instance = null;
 	/* $items is an array of containing items */
@@ -51,14 +58,21 @@ class Basket extends CI_Model {
 		return self::$instance;
 	}
 
-
 	/** getItems
 	*	Returns all items from the basket.
 	*	 
 	*	@return $this->items - all items from the basket.
 	*/
 	public function getItems() {
-		return $this->items;
+        if ($this->applyDiscounts) {
+            $this->load->model('DiscountCalculator');
+            $itemsWithDiscount = $this->DiscountCalculator->applyDiscountsToItems($this->items);
+            $result = $itemsWithDiscount;
+        } else {
+            $result = $this->items;
+        }
+
+		return $result;
 	}
 
 	/** setItems
@@ -129,7 +143,7 @@ class Basket extends CI_Model {
 	  public function getTotalPrice() {
 		$items = $this->getItems();
 
-		if(!is_array($items)) return 0; // if cart is empty
+		if (!is_array($items)) return 0; // if cart is empty
 
 		$totalPrice = 0;
 		foreach($items as $item) {
@@ -165,7 +179,7 @@ class Basket extends CI_Model {
 	 *	Saves $this->items to session
 	 */
 	private function saveBasketToSession() {
-		$this->session->set_userdata('cartItems', $this->items);
+        $this->session->set_userdata('cartItems', $this->items);
 	}
 
 	 /** sendNewOrderNotification
@@ -235,4 +249,14 @@ class Basket extends CI_Model {
 
 		return $formData;
 	}
+
+    /**
+     * Return clone of the basket
+     */
+    //public function getClone() {
+    //   $clone = clone $this; 
+    //   $clone->isClone = true;
+
+    //   return $clone;
+    //}
 }

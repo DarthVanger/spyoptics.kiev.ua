@@ -108,9 +108,9 @@ var CartAjax = function(config) {
          */
         this.updateDiscounts = function() {
             console.log('updating discounts');
-            var productPrice = $('#sunglass-price').attr('data-price');
             $('.discount').each(function() {
                 var $this = $(this);
+                var productPrice = $this.attr('data-product-price');
                 var discount = calculateDiscount(productPrice);
                 $this.html('&mdash; ' + discount + ' грн')
             });
@@ -121,24 +121,21 @@ var CartAjax = function(config) {
 		/***********************/
 
         var calculateDiscount = function(productPrice) {
-            console.log('pr price = ' + productPrice);
-            console.log('it count = ' + itemCount);
-
             var discount;
-            if (itemCount < 0) {
+            if (itemCount <= 0) {
                 discount = 0;
             } else {
                 switch (itemCount) {
-                    case 0:
+                    case 0: // no items in the cart, no discount
                         discount = 0;
                         break;
-                    case 1:
+                    case 1: // one item in the cart, 15% discount for the next item
                         discount = 0.15 * productPrice;
                         break;
-                    case 2:
+                    case 2: // two items in the cart, 20% discount fot the next item
                         discount = 0.20 * productPrice;
                         break;
-                    case 3:
+                    case 3: // and so on ...
                         discount = 0.23 * productPrice;
                         break;
                     case 4:
