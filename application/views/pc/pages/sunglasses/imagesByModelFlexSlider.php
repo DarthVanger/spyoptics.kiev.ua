@@ -7,8 +7,7 @@
 		<div class="flexslider">
 			<ul class="slides">
 				<?php foreach($sunglasses as $sunglass): ?>
-					<?php if($sunglass['model']==$model): ?>
-						<li>
+					<?php if($sunglass['model']==$model): ?> <li>
 							<div class="container">
 								<!-- "lazy-src" - is for image lazy loading: it will be changed to "src" when page is shown by PageSlidingEffect script -->
 								<img
@@ -26,9 +25,14 @@
                                 />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
-									<div class="price">
-										<?=$sunglass['price']?> грн
-									</div>
+                                    <div class="priceAndDiscount">
+                                        <div id="sunglass-price" class="price" data-price="<?=$sunglass['price']?>">
+                                            <?=$sunglass['price']?> грн
+                                        </div>
+                                        <div id="sunglass-discount" class="discount">
+                                            &mdash; 0 грн
+                                        </div>
+                                    </div>
                                 <a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>">
                                     <img src="#" lazy-src="<?=IMG?>addToCart.png" />
                                     <div>добавить <br /> в корзинку</div>

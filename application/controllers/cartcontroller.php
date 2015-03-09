@@ -16,7 +16,7 @@ class CartController extends CI_Controller
 	public function add($sunglassesId) {
 		$this->load->model('SunglassesModel');
 		$this->SunglassesModel->addToCart($sunglassesId);
-		echo "Adding product to cart";
+        echo "Success";
 	}
 
 	/** remove
@@ -30,6 +30,14 @@ class CartController extends CI_Controller
 
 		echo "Removing prodcut from cart";
 	}
+
+    public function getItemCount() {
+		$this->load->model('Basket');
+        $response = array();
+        $response['itemCount'] = $this->Basket->getItemsCount();
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
 
 	
 	/** liqpayPaymentResponseHandler

@@ -14,7 +14,10 @@
 var CartAjax = function(config) {
 		
 		// keeping track of class' this pointer to pass it to events
-		var classThis = this;
+		var self = this;
+
+        // number of items in the cart
+        var itemCount = 0;
 
 		// id of DOM element, which displays cart content. It will be reloaded after adding/removing products.
 		var cartId; 
@@ -23,11 +26,20 @@ var CartAjax = function(config) {
 		// class name of buttons, which are responsible for removing product from the cart
 		var removeItemButtonClass;
 
+        /** construct */
+        $.ajax({
+            url: SITE_URL + 'cartcontroller/getItemCount',
+            success: function(response) {
+                itemCount = response.itemCount;
+                self.updateDiscounts(); // There may be a discount for next purchase, so update the prices for all products.
+            }
+        });
+
 		/*** getters/setters ***/
 
 		this.setCartId = function(p_cartId) {
 			cartId = p_cartId;
-		}
+        }
 
 		/*** methods ***/
 
@@ -59,8 +71,9 @@ var CartAjax = function(config) {
 			$.ajax({
 				url: SITE_URL + 'cartcontroller/add/'+id,
 				success: function(response) {
-					console.log('ajax response: ' + response);
-					classThis.updateCart();
+                    itemCount++;
+                    self.updateDiscounts(); // There may be a discount for next purchase, so update the prices for all products.
+					self.updateCart();
 				}
 			});
 		}
@@ -75,8 +88,9 @@ var CartAjax = function(config) {
 			$.ajax({
 				url: SITE_URL + 'cartcontroller/remove/'+id,
 				success: function(response) {
-					console.log('success! Ajax response: ' + response);
-					classThis.updateCart();
+                    itemCount--;
+                    self.updateDiscounts(); // There may be a discount for next purchase, so update the prices for all products.
+					self.updateCart();
 				}
 			});
 		}
@@ -85,13 +99,59 @@ var CartAjax = function(config) {
 		 *	Reloads element with id = cartId 
 		 */
 		this.updateCart = function() {
-			console.log("debug", "CartAjax: updating cart, cartId = " + cartId);
+			//console.log("debug", "CartAjax: updating cart, cartId = " + cartId);
 			$('#' + cartId).load(document.URL + ' #' + cartId, addItemRemovalListeners); // since DOM is reloaded, listeners should be readded 
-		}
+		};
+
+        /**
+         * Update the discounts, depending on products in the cart.
+         */
+        this.updateDiscounts = function() {
+            console.log('updating discounts');
+            var productPrice = $('#sunglass-price').attr('data-price');
+            $('.discount').each(function() {
+                var $this = $(this);
+                var discount = calculateDiscount(productPrice);
+                $this.html('&mdash; ' + discount + ' грн')
+            });
+        };
 
 		/***********************/
 		/*** private methods ***/
 		/***********************/
+
+        var calculateDiscount = function(productPrice) {
+            console.log('pr price = ' + productPrice);
+            console.log('it count = ' + itemCount);
+
+            var discount;
+            if (itemCount < 0) {
+                discount = 0;
+            } else {
+                switch (itemCount) {
+                    case 0:
+                        discount = 0;
+                        break;
+                    case 1:
+                        discount = 0.15 * productPrice;
+                        break;
+                    case 2:
+                        discount = 0.20 * productPrice;
+                        break;
+                    case 3:
+                        discount = 0.23 * productPrice;
+                        break;
+                    case 4:
+                        discount = 0.25 * productPrice;
+                        break;
+                    default:
+                        discount = 0.3 * productPrice;
+                        break;
+                }
+            }
+
+            return Math.ceil(discount);
+        }
 
 		/** addListeners
 		 *	Adds click listeners to buttons responsive for adding and removing items from the cart.
@@ -100,7 +160,7 @@ var CartAjax = function(config) {
 			console.log("debug", "CartAjax: adding onclick listeners");
 			// listeners for adding items
 			$('.' + addItemButtonClass).click(function() {
-				classThis.addItem($(this).attr('id'));
+				self.addItem($(this).attr('id'));
 			});
 
 			addItemRemovalListeners();
@@ -113,7 +173,7 @@ var CartAjax = function(config) {
 		var addItemRemovalListeners = function() {
 			console.log("debug", "adding item removal listeners");
 			$('.' + removeItemButtonClass).click(function() {
-				classThis.removeItem($(this).attr('id'));
+				self.removeItem($(this).attr('id'));
 			});
 		}
 }

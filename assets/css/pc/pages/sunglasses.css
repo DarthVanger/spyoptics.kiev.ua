@@ -132,18 +132,33 @@ div.color {
 	right: 20px;
 	width: 120px;
 }
-.priceAndCart .price {
-  width: 90px;
-	line-height: 1.5em;
-	background-color: #a6000c;
-	border-radius: 2px;
-	padding: 10px;
-	color: white;
-	font-family: "Roboto Slab";
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-size: 90%
+
+.priceAndDiscount {
+    line-height: 1.5em;
+    letter-spacing: 1px;
 }
+    .priceAndDiscount .price,
+    .priceAndDiscount .discount {
+        width: 90px;
+        border-radius: 2px;
+        padding: 10px;
+    }
+
+    .priceAndDiscount .price {
+        background-color: #a6000c;
+        font-family: "Roboto Slab";
+        font-weight: bold;
+        color: white;
+        font-size: 90%
+    }
+    .priceAndDiscount .discount {
+        background-color: #f1f1f1;
+        color: #555;
+        font-family: Play;
+        font-transform: uppercase;
+        font-size: 0.8em;
+    }
+        
 .slides .product-description {
     position: absolute;
 	z-index: 100;
