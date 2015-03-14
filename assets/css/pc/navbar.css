@@ -103,6 +103,10 @@
     display: inline-block!important;
     vertical-align: middle!important;
 }
+.vk-like-button-container {
+    width: 50px;
+    overflow: hidden;
+}
 #vk_like {
-    margin-right: -20px;
+    margin-right: -28px;
 }

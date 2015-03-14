@@ -17,10 +17,11 @@
 
     <div class="social-like-buttons">
         <div class="like-button-container">
-            <div id="vk_like"></div>
+            <div class="fb-like" data-href="http://spyoptics.kiev.ua/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         </div>
         <div class="like-button-container">
-            <div class="fb-like" data-href="http://spyoptics.kiev.ua/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+            <div id="vk_share"></div>
+            <div id="vk_like"></div>
         </div>
         <div class="like-button-container">
             <div class="g-plusone" data-href="http://spyoptics.kiev.ua/"></div>
@@ -40,30 +41,30 @@
 
 <!-- VK Like button scripts -->
 <script type="text/javascript" src="<?=TOOLS?>socialAPI/vk.js"></script>
+<script type="text/javascript" src="<?=TOOLS?>socialAPI/vk_share.js"></script>
 <script type="text/javascript">
   VK.init({apiId: 4806597, onlyWidgets: true});
 </script>
 <script type="text/javascript">
-    VK.Widgets.Like("vk_like", {type: "mini"});
-// Now using OpenGraph tags, so no need for title, descr, etc here.
-/*
+    //VK.Widgets.Like("vk_like", {type: "mini"});
     VK.Widgets.Like("vk_like", {
         type: "mini",
         pageUrl: 'http://spyoptics.kiev.ua',
         pageTitle: 'Очки Spyoptic',
         pageDescription: 'Интернет магазин стильных очков компании Spyoptic',
-        pageImage: 'http://localhost/spyoptic/assets/img/upload/product/_MG_37671.jpg'
+        pageImage: '<?=IMG?>vk-share-post-img.jpg'
     });
-*/
 </script>
   <!-- VK share -->
 <script type="text/javascript">
-    document.getElementById("vk_share").innerHTML = (VK.Share.button({
-      url: 'http://spyoptics.kiev.ua',
-      title: 'Очки Spyoptic',
-      description: 'Интернет магазин стильных очков компании Spyoptic',
-      image: 'http://localhost/spyoptic/assets/img/upload/product/_MG_37671.jpg',
-      noparse: true
+    document.getElementById("vk_share").innerHTML = (VK.Share.button(false, {
+        type: "round_nocount",
+        text: "Поделиться",
+        url: 'http://spyoptics.kiev.ua',
+        title: 'Очки Spyoptic',
+        description: 'Интернет магазин стильных очков компании Spyoptic',
+        image: "<?=IMG?>vk-share-post-img.jpg",
+        noparse: "true"
     }));
 </script>
 <!-- --------------------- -->
