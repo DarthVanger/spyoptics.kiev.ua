@@ -37,7 +37,7 @@ $(document).ready(function(){
         Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
 	</div>
 	<div class="sunglasses-block">
-        <!-- Ken Block Helm -->
+        <!-- Ken Block Helm model -->
 		<?php foreach($sunglasses as $sunglass): ?>
             <?php if($sunglass['model'] == 'Ken Block Helm'): ?>
                 <div class="sunglasses-item">
@@ -58,9 +58,30 @@ $(document).ready(function(){
                 </div>
             <?php endif; ?>
 		<?php endforeach; ?>
-        <!-- Flynn -->
+        <!-- Flynn model -->
 		<?php foreach($sunglasses as $sunglass): ?>
             <?php if($sunglass['model'] == 'Flynn'): ?>
+                <div class="sunglasses-item">
+                        <div class="description">
+                            <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
+                        </div>
+                        <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+                            <img
+                                src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
+                                class = "isInCartMark"
+                                <?php if($sunglass['inCart']): ?>
+                                    style = "display: inline-block";
+                                <?php endif; ?>
+                            />
+                            <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
+                            <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
+                        </div>
+                </div>
+            <?php endif; ?>
+		<?php endforeach; ?>
+        <!-- Touring model -->
+		<?php foreach($sunglasses as $sunglass): ?>
+            <?php if($sunglass['model'] == 'Touring'): ?>
                 <div class="sunglasses-item">
                         <div class="description">
                             <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
