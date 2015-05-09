@@ -73,10 +73,13 @@
                 <div class="fieldName">Телефон</div>
                 <input name="phone"  id="phoneInput" type="text" class="glowing-border" value="<?=set_value('phone')?>"/>
                 <br />
+                <!-- darthvanger@gmail.com 2015-05-09: do we need email in the form? -->
+                <!--
                 <div class="fieldName">E-mail</div>
                 <input name="email" type="text" class="glowing-border" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" />
                 <br />
-                <div class="fieldName">Адрес</div>
+                -->
+                <div class="fieldName">Адрес или № отделения Новой Почты</div>
                 <input name="address" type="text" class="glowing-border" value="<?=set_value('address')?>"/>
                 <br />
                 <div class="fieldName">Доставка</div>
@@ -94,6 +97,7 @@
                         Курьерская (только г. Киев, правый берег)
                     </option>
                 </select>
+                <!--
                 <div class="fieldName">№ Отделения Новой Почты</div>
                 <input
                     name="novaPoshtaOffice"
@@ -102,6 +106,7 @@
                     value="<?php if(isset($_POST['novaPoshtaOffice'])) echo $_POST['novaPoshtaOffice']; ?>"
                 />
                 <br />
+                -->
                 <div class="fieldName">Способ оплаты</div>
                 <select name="paymentMethod" class="glowing-border">
                     <option
@@ -120,6 +125,15 @@
                 <br />
                 <div class="fieldName">Доп. информация</div>
                 <textarea name="additionalInfo" class="glowing-border" rows="5"><?php if(isset($_POST['additionalInfo'])) echo $_POST['additionalInfo']; ?></textarea>
+                <br />
+
+                <div class="fieldName">Вам необходимо подтверждение заказа оператором Call-центра?</div>
+                <div style="text-align: left; padding: 1em;">
+                    <input id="order_confirm_by_call_yes" type="radio" name="order_confirm_by_call" value="yes" />
+                    <label for="order_confirm_by_call_yes">Да</label>
+                    <input id="order_confirm_by_call_no"type="radio" name="order_confirm_by_call" value="no" checked="checked" />
+                    <label for="order_confirm_by_call_no">Нет</label>
+                </div>
 
                 <?=validation_errors('<div class="validationError">', '</div>')?>
 
