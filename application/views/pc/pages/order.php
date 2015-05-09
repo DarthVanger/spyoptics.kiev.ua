@@ -129,10 +129,10 @@
 
                 <div class="fieldName">Вам необходимо подтверждение заказа оператором Call-центра?</div>
                 <div style="text-align: left; padding: 1em;">
-                    <input id="order_confirm_by_call_yes" type="radio" name="order_confirm_by_call" value="yes" />
-                    <label for="order_confirm_by_call_yes">Да</label>
-                    <input id="order_confirm_by_call_no"type="radio" name="order_confirm_by_call" value="no" checked="checked" />
-                    <label for="order_confirm_by_call_no">Нет</label>
+                    <input id="orderConfirmByCallYes" type="radio" name="orderConfirmByCall" value="yes" />
+                    <label for="orderConfirmByCallYes" style="cursor: pointer">Да</label>
+                    <input id="orderConfirmByCallNo"type="radio" name="orderConfirmByCall" value="no" checked="checked" />
+                    <label for="orderConfirmByCallNo" style="cursor: pointer">Нет</label>
                 </div>
 
                 <?=validation_errors('<div class="validationError">', '</div>')?>
