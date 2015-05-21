@@ -79,6 +79,11 @@
                 <input name="email" type="text" class="glowing-border" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" />
                 <br />
                 -->
+
+                <div class="fieldName">Город</div>
+                <input name="city" type="text" class="glowing-border" value="<?=set_value('city')?>"/>
+                <br />
+
                 <div class="fieldName">Адрес или № отделения Новой Почты</div>
                 <input name="address" type="text" class="glowing-border" value="<?=set_value('address')?>"/>
                 <br />
