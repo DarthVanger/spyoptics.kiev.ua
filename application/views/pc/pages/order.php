@@ -85,7 +85,7 @@
                 <br />
 
                 <div class="fieldName">Адрес или № отделения Новой Почты</div>
-                <input name="address" type="text" class="glowing-border" value="<?=set_value('address')?>"/>
+                <input name="address_or_nova_poshta_office" type="text" class="glowing-border" value="<?=set_value('address')?>"/>
                 <br />
                 <div class="fieldName">Доставка</div>
                 <select name="delivery" class="glowing-border">
