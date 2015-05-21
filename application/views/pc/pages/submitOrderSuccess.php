@@ -22,7 +22,7 @@
         <?php endif;?>
         !
         <p>
-          Ваш заказ принят и будет отправлен в течении 24 часов по адресу <span class="address"><?=$post['address']?></span>. 
+          Ваш заказ принят и будет отправлен в течении 24 часов по адресу (или на отделение новой почты) <span class="address"><?=$post['addressOrNovaPoshtaOffice']?></span>. 
         </p>
           Возможно, Вам перезвонят на номер <span class="phone"><?=$post['phone']?></span> для уточнения деталей.<br />
         <br />

@@ -117,7 +117,7 @@ class Shop extends CI_Controller
         // syntax: set_rules(field, label, rules)
         $this->form_validation->set_rules('name', 'Имя', 'required');
         $this->form_validation->set_rules('phone', 'Телефон', 'required');
-        $this->form_validation->set_rules('address', 'Адрес', 'required');
+        $this->form_validation->set_rules('addressOrNovaPoshtaOffice', 'Адрес или отделение новой почты', 'required');
 
         // syntax: set_message('rule', 'Error Message');
         $this->form_validation->set_message('required', 'Поле <b>%s</b> не должно быть пустым');
