@@ -99,7 +99,7 @@
                         value="Курьерская"
                         <?php if(isset($_POST['delivery']) && $_POST['delivery']=='Курьерская') echo 'selected="selected"'?>
                     >
-                        Курьерская (только г. Киев, правый берег)
+                        Курьерская (только г. Киев)
                     </option>
                 </select>
                 <!--
