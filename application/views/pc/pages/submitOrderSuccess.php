@@ -21,12 +21,21 @@
             <?=$post['name']?>
         <?php endif;?>
         !
+        <!--
         <p>
           Ваш заказ принят и будет отправлен в течении 24 часов по адресу (или на отделение новой почты) <span class="address"><?=$post['addressOrNovaPoshtaOffice']?></span>. 
         </p>
           Возможно, Вам перезвонят на номер <span class="phone"><?=$post['phone']?></span> для уточнения деталей.<br />
         <br />
         Если хотите нам что-нибудь еще сказать перед отправкой заказа, звоните!
+        -->
+        <br />
+        <br />
+        <div>
+            <strongs style="font-size: 1.2em">Ваш заказ будет обработан <span style="color: red">02.07.2015 (2 июля)</span>, в связи с отпуском администрации сайта. Извините за неудобства.</strong>
+        </div>
 	</div>
 </div>
+<!--
 <?php $this->load->view("pc/pages/contact");?>
+-->
