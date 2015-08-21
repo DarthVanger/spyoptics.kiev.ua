@@ -1,4 +1,5 @@
-This is just the code of a simple, minimalistic e-shop, based on CodeIgniter php framework, http://spyoptics.kiev.ua.   
+This is just the code of a simple, minimalistic e-shop, based on CodeIgniter php framework, http://spyoptics.kiev.ua.
+
 So, nothing interesting here!
 
 Installing
