@@ -31,26 +31,4 @@ class CartController extends CI_Controller
 		echo "Removing prodcut from cart";
 	}
 
-	
-	/** liqpayPaymentResponseHandler
-	 *	Accepts POST message from Liqpay API with result of payment.
-	 */
-	public function liqpayPaymentResponseHandler() {
-		$paymentStatus = ""; foreach($_POST as $key => $value) {
-			$paymentStatus .= $key . ": " . $value . PHP_EOL;
-		}
-
-		$sql = "INSERT INTO payment (status) VALUES ('".$paymentStatus."')";
-		$this->db->query($sql);
-	}
-
-	/** liqpayTest
-	 *	Method for DEBUGGING.
-	 *	Loads liqpayTest view, which has form to try liqpay.
-	 */
-	public function liqpayTest() {
-		$this->load->view("header/minimal");
-		$this->load->view("liqpayTest");
-		$this->load->view("footer/minimal");
-	}
 }
