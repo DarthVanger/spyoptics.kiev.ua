@@ -55,9 +55,11 @@
 		<a href="javascript: void(0)" class="pageSlidingButton">
 			<img src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
 		</a>
+        <!--
 		<a href="javascript: void(0)" class="pageSlidingButton">
 			<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
 		</a>
+        -->
 		<a href="javascript: void(0)" class="pageSlidingButton">
 			<img src="<?=IMG?>pages/sunglasses/photosIcon.png" />
 		</a>
@@ -83,12 +85,6 @@
 			$this->load->view('pc/pages/sunglasses/imagesByModelFlexSlider.php', $viewData);
 		?>
 	</div>
-
-	<div class="page">
-		<?php
-			$this->load->view('pc/pages/sunglasses/video.php');
-		?>
-	</div> <!-- end page3 -->
 
 	<div class="page">
 		<?php
