@@ -1,0 +1,22 @@
+{
+  "name": "spyoptic",
+  "version": "0.1.0",
+  "homepage": "https://github.com/DarthVanger/spyoptics.kiev.ua",
+  "authors": [
+    "Darth Vanger <darthvanger@gmail.com>"
+  ],
+  "description": "e-shop",
+  "main": "index.php",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

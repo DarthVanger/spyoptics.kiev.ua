@@ -13,6 +13,7 @@ define('IMG', URL.'assets/img/');
 define('CSS', URL.'assets/css/');
 define('JS', URL.'assets/js/');
 define('TOOLS', URL.'assets/tools/');
+define('BOWER', URL.'assets/bower_components/');
 
 /*
 |--------------------------------------------------------------------------

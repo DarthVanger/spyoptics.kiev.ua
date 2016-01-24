@@ -8,14 +8,17 @@
 class AdminProduct extends CI_Controller {
 
 	public function login() {
-        $this->load->helper('cookie');
-        set_cookie(array(
-            'name' => 'admin',
-            'value' => 1,
-            'expire' => '86500'
-        ));
-        $this->load->helper('url');
-        redirect('/');
+        //$this->load->helper('cookie');
+        //set_cookie(array(
+        //    'name' => 'admin',
+        //    'value' => 1,
+        //    'expire' => '86500'
+        //));
+        //$this->load->helper('url');
+        //redirect('/');
+
+        $this->load->view("admin/pages/login.php");
+        //$this->load->view("pc/footer/minimal")
 	}
 
 	public function logout() {
