@@ -181,7 +181,7 @@ class Basket extends CI_Model {
 	 private function sendNewOrderNotification($submitData) {
 	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
 		$subject = "spyoptics.kiev.ua";
-		$from = "Силы Тьмы <DarkSide@nowhere>";
+		$from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
 		$message = "Новый заказ!<br />";
 		$message .= "Инфо о клиенте:<br />";
 
