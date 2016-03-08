@@ -68,7 +68,7 @@ div.makeOrder {
   border-style: solid;
   border-width: 3px;
   border-color: #ff7300;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .cart-icon {
   position: absolute;
@@ -76,7 +76,7 @@ div.makeOrder {
   left: 7px;
   color: white;
   font-size: 30px;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 #cart:hover .cart-icon-container {
   background-color: white;
