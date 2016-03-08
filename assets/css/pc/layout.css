@@ -15,7 +15,7 @@ html, body {
 	top: 5px;
 	height: 80px;
     line-height: 50px;
-	padding: 0 10px 0px 10px;
+    padding-left: 10px;
 
 	z-index: 1000;
 	background-color: #fff;
@@ -28,11 +28,11 @@ html, body {
 	transition: padding-left .5s;
 }
 #cart:hover {
-  padding-left: 130px;
+  padding-left: 140px;
 }
 div.makeOrder {
   display: none;
-  margin: 0 0 37px -110px;
+  margin: 0 10px 37px -110px;
   transition: display .5s;
   vertical-align: middle;
   text-align: center;
@@ -49,15 +49,43 @@ div.makeOrder {
   width: 60px;
   margin: 0 0px 0 0px;
 }
-#cart img.cart, #cart img.cartHover {
+#cart img.cart, #cart img.cartHover, .cart-icon-container {
 	position: absolute;
-	top: 0;
-	left: 0px;
-	height: 60px;
+	top: 10px;
+	left: 0;
+	height: 50px;
 	vertical-align: bottom;
 
 	cursor: pointer;
 }
+.cart-icon-container {
+  box-sizing: border-box;
+  position: relative;
+  background-color: #ff7300;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #ff7300;
+  transition: all 1s;
+}
+.cart-icon {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  color: white;
+  font-size: 30px;
+  transition: all 1s;
+}
+#cart:hover .cart-icon-container {
+  background-color: white;
+  border-color: #ff7300; 
+}
+#cart:hover .cart-icon {
+  color: #ff7300;
+}
+/*
 #cart img.cartHover {
 	opacity: 0;
 	z-index: 10;
@@ -66,13 +94,16 @@ div.makeOrder {
 #cart:hover img.cartHover {
 	opacity: 1;
 }
+*/
 #cart div#cartContent {
   display: inline-block;
   vertical-align: middle;
   height: 80px;
   line-height: 80px;
-	float: right;
-
+  float: right;
+}
+#cart div#cartContent .imgContainer:last-child {
+  margin-right: 10px;
 }
 /* pseudo element for vertical aligning at middle */
 #cart div#cartContent:before {

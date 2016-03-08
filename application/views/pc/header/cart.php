@@ -40,8 +40,19 @@
             заказ
           </div>
           <div id="cartImgContainer" >
-            <img class="cart" src="<?=IMG?>cart1_blue.png" />
+
+<!--
+            -->
+            <div class="cart-icon-container">
+                <span class="glyphicon glyphicon-shopping-cart cart-icon"></span>
+                <i class="cart-icon fa fa-shopping-cart"></i>
+                <!--
+                <img class="cart" src="<?=IMG?>cart.png" />
+                -->
+            </div>
+            <!--
             <img class="cartHover" src="<?=IMG?>cart1_red.png" />
+            -->
           </div>
         </a>
     </div>

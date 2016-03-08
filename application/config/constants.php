@@ -9,6 +9,7 @@
 |
 */
 define('URL', 'http://localhost/spyoptic/');
+define('BOWER', URL.'assets/bower_components/');
 define('IMG', URL.'assets/img/');
 define('CSS', URL.'assets/css/');
 define('JS', URL.'assets/js/');

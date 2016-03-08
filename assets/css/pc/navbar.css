@@ -37,12 +37,12 @@
 #topLine {
 	width: 100%;
 	height: 4px;
-	background-color: #0013ff;
+	background-color: #ff7300;
 
 	transition: background-color 1s;
 }
 #topNavbar:hover #topLine {
-	background-color: #a6000c;
+  background-color: #a6000c; 
 }
 #topNavbar .navbar {
   display: inline-block;

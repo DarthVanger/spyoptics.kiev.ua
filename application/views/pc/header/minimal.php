@@ -9,8 +9,9 @@
 <head>
 	<meta charset="UTF-8">
 
-	<script src="<?=TOOLS?>googleAnalytics.js"></script>
+    <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
+	<link href="<?=BOWER?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/general.css" rel="stylesheet" type="text/css" />
 	<script src="<?=JS?>config/constants.js" type="text/javascript"></script>
