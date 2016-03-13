@@ -34,7 +34,7 @@
             <?php endif; ?>
         </div>
 
-        <a href="<?=site_url('/shop/order')?>">
+        <a href="<?=site_url('/shop/order')?>" class="makeOrder-link">
           <div class="makeOrder">
             оформить <br />
             заказ
@@ -44,7 +44,9 @@
 <!--
             -->
             <div class="cart-icon-container">
+                <!--
                 <span class="glyphicon glyphicon-shopping-cart cart-icon"></span>
+                -->
                 <i class="cart-icon fa fa-shopping-cart"></i>
                 <!--
                 <img class="cart" src="<?=IMG?>cart.png" />

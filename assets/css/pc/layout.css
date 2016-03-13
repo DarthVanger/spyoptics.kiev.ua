@@ -25,22 +25,35 @@ html, body {
 
 	overflow: hidden;
 
-	transition: padding-left .5s;
+    transition: padding-left .5s;
 }
 #cart:hover {
-  padding-left: 140px;
+  padding-left: 120px;
 }
-div.makeOrder {
-  display: none;
-  margin: 0 10px 37px -110px;
-  transition: display .5s;
+#cart .cartContent
+#cart .makeOrder-link,
+#cart .makeOrder-link .makeOrder,
+#cart .makeOrder-link .cartImgContainer {
+  display: inline-block;
+}
+#cart .makeOrder-link {
+  display: inline-block;
+  transition: width .5s;
+}
+#cart .makeOrder-link:hover {
+  text-decoration: none;
+}
+#cart .makeOrder-link .makeOrder {
+  margin: 0 10px 37px -100px;
+  opacity: 0;
+  transition: opacity .5s, margin .5s;
   vertical-align: middle;
   text-align: center;
   color: red;
   line-height: 20px;
 }
 #cart:hover .makeOrder {
-  display: inline-block;
+  opacity: 1;
 }
 #cartImgContainer {
   position: relative;

@@ -11,6 +11,7 @@
 
     <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
+	<link href="<?=BOWER?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=BOWER?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/general.css" rel="stylesheet" type="text/css" />
