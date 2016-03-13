@@ -30,6 +30,13 @@
         vertical-align: middle;  /* vertical alignment of the inline element */
         height: 100%;
     }
+
+    /* darthvanger@gmail.com, 2016-03-13: fix for using flexslider with bootstrap:
+     * for some reason arrow icons are cropped vertically by 6px without this fix
+     */
+    .flexslider .flex-direction-nav a {
+        height: 46px;
+    }
     /* ********************************* */
 
     .flexslider img.height-100-percent {

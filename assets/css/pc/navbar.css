@@ -52,6 +52,7 @@
 	height: 36px;
   font-size: 0;
   font-size: 12px\9; /* IE6-9 only hack */
+  border: none;
 }
 #topNavbar .navbar a {
 	color: #111;
@@ -59,7 +60,7 @@
 	letter-spacing: 1px;
 	padding: 5px;
 	margin: 0 15px 0 0;
-	height: 26px;
+	height: 36px;
 
 	/* layout */
   display: inline-block;
@@ -71,6 +72,7 @@
 	transition: background-color 1s, color .5s;
 }
 #topNavbar .navbar a:hover {
+    text-decoration: none;
 	background-color: #a6000c;
 	color: white;
 }
