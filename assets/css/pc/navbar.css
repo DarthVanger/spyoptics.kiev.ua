@@ -10,7 +10,7 @@
     border-bottom-width: 0;
     padding-bottom: 7px;
 
-    transition: background-color 1s, padding-bottom .5s, border-bottom-width .5s;
+    transition: all 0.3s;
 }
 #topNavbar:hover {
   background-color: white;

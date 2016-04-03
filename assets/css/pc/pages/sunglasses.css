@@ -224,6 +224,7 @@ div.color {
   background-color: #ff7300;
   border: solid #ff7300 4px;
   color: white;
+  transition: all 0.2s;
 }
 .orderButton:hover {
   color: #ff7300;
