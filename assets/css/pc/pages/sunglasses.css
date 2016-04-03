@@ -182,7 +182,8 @@ div.color {
 	width: 120px;
 }
 .priceAndCart .price {
-  width: 90px;
+    width: 90px;
+    margin: 0 auto;
 	line-height: 1.5em;
 	background-color: #a6000c;
 	border-radius: 2px;
