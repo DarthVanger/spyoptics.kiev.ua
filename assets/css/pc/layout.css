@@ -189,16 +189,13 @@ div.page-body {
 /* social like buttons */
 .social-buttons-fixed-footer {
     position: fixed;
+    width: 100%;
     bottom: 10px;
-    right: 5px;
     z-index: 10;
+    padding-left: 10px;
+    padding-right: 50px;
 }
 
-.social-like-buttons {
-    display: inline-block;
-    height: 100%;
-    margin: 0 0 0 30px;
-}
 @media screen and (max-width: 1279px) {
     .social-like-buttons {
         display: none;
@@ -231,4 +228,7 @@ div.page-body {
 }
 #vk_share a {
     height: 21px!important;
+}
+.fb-like-button-container {
+    float: right;
 }
