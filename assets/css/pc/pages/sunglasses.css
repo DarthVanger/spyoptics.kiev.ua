@@ -36,6 +36,10 @@
         background-color: #ff7300;
     }
 
+    .flexslider .flex-direction-nav a {
+        color: #ff7300;
+    }
+
     /* darthvanger@gmail.com, 2016-03-13: fix for using flexslider with bootstrap:
      * for some reason arrow icons are cropped vertically by 6px without this fix
      */
