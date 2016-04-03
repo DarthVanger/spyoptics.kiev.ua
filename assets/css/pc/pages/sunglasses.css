@@ -177,18 +177,22 @@ div.color {
 .priceAndCart {
 	position: absolute;
 	z-index: 100;
-	top: 80px;
+	top: 60px;
 	right: 20px;
 	width: 120px;
 }
 .priceAndCart .price {
-    width: 90px;
+    width: 100px;
     margin: 0 auto;
 	line-height: 1.5em;
-	background-color: #a6000c;
+	/* background-color: #a6000c; */
+    background-color: #ff7300;
+    background-color:white;
+    border: solid #ff7300 4px;
 	border-radius: 2px;
 	padding: 10px;
 	color: white;
+	color: #ff7300;
 	font-family: "Roboto Slab";
 	font-weight: bold;
 	letter-spacing: 1px;
@@ -210,14 +214,24 @@ div.color {
 	padding: 8px;
 }
 .orderButton {
-	display: inline-block;
+  display: block;
   width: 120px;
   margin-top: 20px;
-	cursor: pointer;
+  cursor: pointer;
   font-size: .85em;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  background-color: #ff7300;
+  border: solid #ff7300 4px;
+  color: white;
 }
-.orderButton img {
-	width: 80px;
+.orderButton:hover {
+  color: #ff7300;
+  background-color: white;
+}
+.orderButton .cart-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
 }
 .orderButton.old:hover {
 	background-color: #a6000c;

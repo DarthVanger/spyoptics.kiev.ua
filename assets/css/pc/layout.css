@@ -83,7 +83,7 @@ html, body {
   border-color: #ff7300;
   transition: all 0.5s;
 }
-.cart-icon {
+#cart .cart-icon {
   position: absolute;
   top: 7px;
   left: 7px;

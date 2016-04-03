@@ -30,7 +30,10 @@
 										<?=$sunglass['price']?> грн
 									</div>
                                 <a href="javascript: void(0)" class="orderButton" id="<?=$sunglass['id']?>">
-                                    <img src="#" lazy-src="<?=IMG?>addToCart.png" />
+                                    <!--
+                                    <img src="#" class="cart-icon" lazy-src="<?=IMG?>addToCart.png" />
+                                    -->
+                                    <span class="cart-icon fa fa-cart-plus"></span>
                                     <div>добавить <br /> в корзинку</div>
                                 </a>
 								</div>
