@@ -175,7 +175,7 @@ div#cartContent div.imgContainer:hover a.removeItem {
 	z-index: 1;
 }
 div.page-body {
-	margin-top: 40px; /* header height */	
+	margin-top: 50px; /* header height */	
 }
 
 #footer {

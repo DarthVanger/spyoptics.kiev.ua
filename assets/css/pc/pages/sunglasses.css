@@ -6,7 +6,7 @@
     position: relative; /* fixed or absolute may be needed */
     height: 80%!important; /* this is a fallback if calc() won't work */
     /* #header_height_used // search for this tag */
-    height: calc(100% - 60px - 50px)!important; /* 60px is my header height, and 50px is flex slider's footer height */
+    height: calc(100% - 50px - 50px)!important; /* 60px is my header height, and 50px is flex slider's footer height */
     width: 100%!important;
     }
     .flexslider .slides,
@@ -138,7 +138,7 @@
 	height: 100%;
 	width: 100%;
     /* #header_height_used // search for this tag */
-	margin-top: 60px; /* header height */
+	margin-top: 50px; /* header height */
 }
 .pictures .modelName {
 	display: inline-block;
