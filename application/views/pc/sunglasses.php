@@ -99,4 +99,5 @@
     </div>
 </div> <!-- end div id="body" -->
 
+<?php $this->load->view('pc/footer/social-buttons.php');?>
 <?php $this->load->view('pc/footer/minimal'); ?>
