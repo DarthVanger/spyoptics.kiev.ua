@@ -94,8 +94,10 @@
 		width: 70px;
 	}
 	#pageSlidingNavbar .current {
-		background-color: rgba(0, 155, 222, .1); 
-		/* background-color: rgba(0, 0, 0, .1); */
+        /* background-color: rgba(0, 155, 222, .1); */
+		/* background-color: #ff7300; */
+		border: #ff7300 solid 3px;
+        padding: 2px;
 	}
 	#pageSlidingNavbar .background-dashed-line {
         position: absolute;
