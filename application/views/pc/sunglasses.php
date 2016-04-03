@@ -10,7 +10,6 @@
 <?php $this->load->view('pc/header/navbar.php');?>
 
 
-<link href="<?=CSS.$userDevice?>/pages/sunglasses.css" rel="stylesheet" type="text/css" /> 
 <!-- flex slider sources -->
 	<!-- including jquery (if it's not already included) -->
 	<script type="text/javascript">
@@ -42,27 +41,42 @@
 	</script>
 <!-- END Page Sliding Effect sources -->
 
+<!-- stylesheet for this page -->
+<link href="<?=CSS.$userDevice?>/pages/sunglasses.css" rel="stylesheet" type="text/css" /> 
+
 <div id="body">
 
 	<!-- pageSlidingNavbar has absolute position -->
 	<div id="pageSlidingNavbar">
-		<a href="javascript: void(0)" id="kenBlockButton" class="pageSlidingButton current">
-			<img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
-		</a>
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
-		</a>
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
-		</a>
-        <!--
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
-		</a>
-        -->
-		<a href="javascript: void(0)" class="pageSlidingButton">
-			<img src="<?=IMG?>pages/sunglasses/photosIcon.png" />
-		</a>
+        <div class="circle-icon top-circle-icon">
+            <div class="circle-icon-inner"></div>
+        </div>
+
+        <div class="navbar-buttons">
+            <a href="javascript: void(0)" id="kenBlockButton" class="pageSlidingButton current">
+                <img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
+            </a>
+            <a href="javascript: void(0)" class="pageSlidingButton">
+                <img src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
+            </a>
+            <a href="javascript: void(0)" class="pageSlidingButton">
+                <img src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
+            </a>
+            <!--
+            <a href="javascript: void(0)" class="pageSlidingButton">
+                <img src="<?=IMG?>pages/sunglasses/videoIcon3.png" />
+            </a>
+            -->
+            <a href="javascript: void(0)" class="pageSlidingButton">
+                <img src="<?=IMG?>pages/sunglasses/photosIcon.png" />
+            </a>
+        </div>
+
+        <div class="background-dashed-line"></div>
+
+        <div class="circle-icon bottom-circle-icon">
+            <div class="circle-icon-inner"></div>
+        </div>
 	</div>
 
 	<div class="page">
