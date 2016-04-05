@@ -187,17 +187,20 @@ div.page-body {
 }
 
 /* social like buttons */
-.social-buttons-fixed-footer {
+.footer-social-buttons {
     position: fixed;
-    width: 100%;
     bottom: 10px;
     z-index: 10;
-    padding-left: 10px;
-    padding-right: 50px;
+}
+.footer-social-buttons-left-part {
+    left: 10px;
+}
+.footer-social-buttons-right-part {
+    right: 50px;
 }
 
 @media screen and (max-width: 1279px) {
-    .social-like-buttons {
+    .footer-social-buttons {
         display: none;
     }
 }

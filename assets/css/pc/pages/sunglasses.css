@@ -2,18 +2,18 @@
 
     /* making flexslider height = 100% - header - footer */
     .flexslider{
-    display: block;
-    position: relative; /* fixed or absolute may be needed */
-    height: 80%!important; /* this is a fallback if calc() won't work */
-    /* #header_height_used // search for this tag */
-    height: calc(100% - 50px - 50px)!important; /* 60px is my header height, and 50px is flex slider's footer height */
-    width: 100%!important;
+        display: block;
+        position: relative; /* fixed or absolute may be needed */
+        height: 80%!important; /* this is a fallback if calc() won't work */
+        /* #header_height_used // search for this tag */
+        height: calc(100% - 50px - 50px)!important; /* 60px is my header height, and 50px is flex slider's footer height */
+        width: 100%!important;
     }
     .flexslider .slides,
     .flexslider .slides li {
-    width: 100%!important;
-    height: 100%!important;
-    vertical-align: middle;
+        width: 100%!important;
+        height: 100%!important;
+        vertical-align: middle;
     }
 
     /* for vertical aligned at middle images */
