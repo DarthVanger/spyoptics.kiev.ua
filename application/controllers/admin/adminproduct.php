@@ -8,14 +8,20 @@
 class AdminProduct extends CI_Controller {
 
 	public function login() {
-        $this->load->helper('cookie');
-        set_cookie(array(
-            'name' => 'admin',
-            'value' => 1,
-            'expire' => '86500'
-        ));
-        $this->load->helper('url');
-        redirect('/');
+        $pass = !empty($_GET['pass']) ? $_GET['pass'] : null;
+        if ($pass == 'spyoptic_rulezz') {
+            $this->load->helper('cookie');
+            set_cookie(array(
+                'name' => 'admin',
+                'value' => 1,
+                'expire' => '86500'
+            ));
+            $this->load->helper('url');
+            redirect('/admin/photo');
+        } else {
+            $this->output->set_status_header('401');
+            echo 'Wrong pass bitch';
+        }
 	}
 
 	public function logout() {
@@ -29,10 +35,22 @@ class AdminProduct extends CI_Controller {
 
 	}
 
+    public function checkPermissions() {
+        $this->load->helper('cookie');
+        $logged_in = get_cookie('admin');
+        if (!$logged_in) {
+            $this->output->set_status_header('401');
+            echo '401 Unauthorized';
+            die();
+        }
+    }
+
 	/** uploadPeoplePhotos
 	 *	Loads uploadPeoplePhotos page, which provides form for uploading photos of people wearing Spyoptic sunglasses.
 	 */
 	public function uploadPeoplePhotos($message="") {
+        $this->checkPermissions();
+
 		$this->load->model("SunglassesModel");
 
 		$viewData["sunglasses"] = $this->SunglassesModel->selectAll();
