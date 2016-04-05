@@ -37,6 +37,7 @@ class AdminProduct extends CI_Controller {
 
 		$viewData["sunglasses"] = $this->SunglassesModel->selectAll();
 		$viewData["message"] = $message;
+		$viewData["userDevice"] = "pc";
 
 		$viewData["pageName"] = "uploadPeoplePhotos";
 		$this->load->view("admin/page.php", $viewData);
@@ -65,7 +66,7 @@ class AdminProduct extends CI_Controller {
 			$uploadData = $this->upload->data();
 
 			$this->load->model("PeoplePhoto");
-			$this->PeoplePhoto->addToDb($uploadData["file_name"], $_POST["sunglassesId"]);
+			$this->PeoplePhoto->addToDb($uploadData["file_name"]);
 
 			$this->uploadPeoplePhotos($uploadData);
 		}

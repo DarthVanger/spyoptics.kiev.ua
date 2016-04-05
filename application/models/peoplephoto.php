@@ -26,13 +26,13 @@ class PeoplePhoto extends CI_Model {
 	 *
 	 *	@return void
 	 */
-	function addToDb($imgName, $sunglassesId) {
+	function addToDb($imgName) {
 		$img_path = "peoplePhotos/" . $imgName;
-		if($sunglassesId!="null") $sunglassesId = "'" + $sunglassesId + "'";
 
-		$sql = "INSERT INTO people_wearing_glasses(img_path, sunglasses_id) VALUES('$img_path', $sunglassesId)";
+		$sql = "INSERT INTO people_wearing_glasses(img_path) VALUES('$img_path')";
 		$this->db->query($sql);
-		echo "<br />query: ".$sql . "<br />";
+		echo "<br /><p><strong>File <code>$imgName</code> was uploaded successfully!</strong></p>";
+		//echo "<code>[ SQL query: ".$sql . " ]</code>";
 	}
 
 	/** getPhotos

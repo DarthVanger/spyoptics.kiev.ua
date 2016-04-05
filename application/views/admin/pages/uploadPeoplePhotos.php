@@ -2,22 +2,17 @@
 
 <h2>Upload people photos</h2>
 
+<!--
+<br />
 ----------------- log ------------------<br />
 <?php var_dump($message); ?> <br /> 
 ----------------------------------------
 <br />
+-->
+
 <form method="post" action="<?=site_url()?>/admin/savePeoplePhoto" enctype="multipart/form-data">
+    <br />
 	<input  type="file" name="userfile" /> <br />
-	<?php foreach($sunglasses as $sunglass): ?>
-		<span class="sunglasses">
-			<input type="radio" name="sunglassesId" value="<?=$sunglass['id']?>" />
-			<img class="sunglasses" src="<?=IMG.$sunglass['thumbnail_img_path']?>" />
-		</span>
-	<?php endforeach; ?>
-		<span class="sunglasses">
-			<input type="radio" checked="checked" name="sunglassesId" value="null" />
-			Нихуя
-		</span>
 	<br />
 	<input class="button2" type="submit" value="submit" />
 </form>

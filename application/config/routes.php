@@ -44,6 +44,8 @@ $route['404_override'] = '';
 $route['mobile'] = 'mobile/mobileshop';
 $route['admin'] = 'admin/adminproduct/login';
 $route['admin/logout'] = 'admin/adminproduct/logout';
+$route['admin/photo'] = 'admin/adminproduct/uploadPeoplePhotos';
+$route['admin/savePeoplePhoto'] = 'admin/adminproduct/savePeoplePhoto';
 
 
 /* End of file routes.php */
