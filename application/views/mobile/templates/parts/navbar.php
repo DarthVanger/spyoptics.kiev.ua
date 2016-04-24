@@ -1,5 +1,3 @@
-<!-- mobile navigation bar -->
-<link rel="stylesheet" href="<?=CSS?>mobile/navbar.css" type="text/stylesheet" />
 <div id="navbar">
 	<a href="<?=site_url('/shop/showSunglasses')?>">
 		<img src="<?=IMG?>mobile/layout/sunglassesIcon.png" />

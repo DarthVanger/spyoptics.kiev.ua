@@ -1,7 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-}
+@import url("navbar.css");
 html, body {
 	width: 100%;
 	overflow-x: hidden;
