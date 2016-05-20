@@ -29,7 +29,11 @@ $(document).ready(function(){
 </script>
 <!-- ------------------------- -->
 
-<!-- model choosing script -->
+<!-- hammer lib for detecting swipe events -->
+    <script src="<?=TOOLS?>hammer.min.js"></script>
+<!-- ------------------------------------- -->
+
+<!-- model switching navbar script -->
 <script src="<?=JS?>mobile/ModelSwitchingNavbar.js" type="text/javascript"></script>
 </script>
 <!-- ------------------------- -->
