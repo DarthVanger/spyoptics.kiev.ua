@@ -35,8 +35,6 @@ $(document).ready(function(){
 <!-- ------------------------- -->
 
 <!-- sticky header script -->
-	<script src="<?=BOWER?>sticky-kit/jquery.sticky-kit.min.js"></script>
-
 	<script src="<?=JS?>mobile/StickyHeader.js"></script>
 <!-- -------------------- -->
 
