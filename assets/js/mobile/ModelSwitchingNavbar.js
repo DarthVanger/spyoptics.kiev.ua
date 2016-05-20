@@ -51,16 +51,12 @@ $(document).ready(function() {
     }
 
     function initSwipeListeners() {
-        var bodyHammer = new Hammer(document.body);
-
-        bodyHammer.on('swipeleft', function(event) {
-            console.debug('fucking swipeleft bitch!!!');
-            previousModel();
+        $(document.body).on('swipeleft', function(event) {
+            nextModel();
         });
 
-        bodyHammer.on('swiperight', function(event) {
-            console.debug('fucking swiperight bitch!!!');
-            nextModel();
+        $(document.body).on('swiperight', function(event) {
+            previousModel();
         });
     }
 
