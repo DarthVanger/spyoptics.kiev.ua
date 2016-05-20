@@ -8,7 +8,7 @@ $(document).ready(function() {
     var selectedModel = 'Ken Block Helm';
     var sunglasses = $('.sunglasses-item'); 
     initButtonListeners();
-    hideSpinner();
+    //hideSpinner();
     showModel(selectedModel);
 
     function showModel(model) {
@@ -25,23 +25,25 @@ $(document).ready(function() {
     function initButtonListeners() {
         var modelSwitchingButtons = $('.model-switching-button');
         modelSwitchingButtons.on('click', function() {
-            showSpinner();
+            //showSpinner();
             var model = $(this).attr('data-model');
             showModel(model);
-            hideSpinner();
-            // this makes jquery.lazyload load images
-            // that are in viewport
+            //hideSpinner();
+
+            // trigerring scroll event on window,
+            // makes jquery.lazyload load images
+            // that are in viewport.
             $(window).scroll();
         });
     }
 
-    function showSpinner() {
-        $('.sunglasses-block').hide();
-        $('.loading-model-spinner').show();
-    }
-    
-    function hideSpinner() {
-        $('.sunglasses-block').show();
-        $('.loading-model-spinner').hide();
-    }
+    //function showSpinner() {
+    //    $('.sunglasses-block').hide();
+    //    $('.loading-model-spinner').show();
+    //}
+    //
+    //function hideSpinner() {
+    //    $('.sunglasses-block').show();
+    //    $('.loading-model-spinner').hide();
+    //}
 });

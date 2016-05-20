@@ -42,9 +42,12 @@ $(document).ready(function(){
         Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
 	</div>
     
+    <!--
     <div class="loading-model-spinner">
         Loading...
     </div>
+    -->
+
 	<div class="sunglasses-block">
         <?php
             /**
