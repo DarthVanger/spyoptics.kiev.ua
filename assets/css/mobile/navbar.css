@@ -31,3 +31,9 @@
     height: 100%;
     width: 0;
 }
+.model-switching-navbar{
+    background-color: black;
+    padding: 6px 0 6px 0;
+    /* make it above the sunglasses images */
+    z-index: 10;
+}

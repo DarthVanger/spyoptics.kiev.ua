@@ -11,9 +11,7 @@
         </a>
     </div>
 
-    <div style="height: 0.5em">&nbsp;</div>
-
-    <div>
+    <div class="model-switching-navbar">
         <a class="model-switching-button" href="javascript:void(0);" data-model="Ken Block Helm">
             <img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
         </a>
