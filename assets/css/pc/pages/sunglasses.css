@@ -21,15 +21,23 @@
         height: 100%;
         overflow: hidden;
         vertical-align: middle;
+
+        /* 
+         * without white-space: nowrap, images of flynn glasses
+         * will jump to the second line and thus disappear from screen,
+         * for some screen size proportions (in particular, for big LCD screens).
+         */
+        white-space: nowrap;
     }
     .flexslider .slides li .container img.flex {
         vertical-align: middle;
     }
     .flexslider .slides li .container:before  {    /* create a full-height inline block pseudo-element */
-        content: ' ';
+        content: '';
         display: inline-block;
         vertical-align: middle;  /* vertical alignment of the inline element */
         height: 100%;
+        width: 0;
     }
 
     .flex-control-paging li a {
