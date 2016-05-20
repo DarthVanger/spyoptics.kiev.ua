@@ -34,10 +34,6 @@ $(document).ready(function(){
 </script>
 <!-- ------------------------- -->
 
-<!-- sticky header script -->
-	<script src="<?=JS?>mobile/StickyHeader.js"></script>
-<!-- -------------------- -->
-
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
 
 <div id="sunglasses-page" class="page-padding text">
