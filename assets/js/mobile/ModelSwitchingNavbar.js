@@ -8,10 +8,10 @@ $(document).ready(function() {
     var selectedModel = 'Ken Block Helm';
     var sunglasses = $('.sunglasses-item'); 
     initButtonListeners();
+    hideSpinner();
     showModel(selectedModel);
 
     function showModel(model) {
-        var deferred = $.Deferred();
         sunglasses.each(function(index, sunglassesItem) {
             var $sunglassesItem = $(sunglassesItem);
             if ($sunglassesItem.attr('data-model') === model) {
@@ -20,8 +20,6 @@ $(document).ready(function() {
                 $sunglassesItem.hide();
             }
         });
-        deferred.resolve();
-        return deferred.promise();
     }
 
     function initButtonListeners() {
@@ -29,9 +27,11 @@ $(document).ready(function() {
         modelSwitchingButtons.on('click', function() {
             showSpinner();
             var model = $(this).attr('data-model');
-            showModel(model).then(function() {
-                hideSpinner();
-            });
+            showModel(model);
+            hideSpinner();
+            // this makes jquery.lazyload load images
+            // that are in viewport
+            $(window).scroll();
         });
     }
 
