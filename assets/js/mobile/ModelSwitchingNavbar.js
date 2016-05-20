@@ -6,7 +6,19 @@
  */ 
 $(document).ready(function() {
     var modelNames = ['Ken Block Helm', 'Flynn', 'Touring'];
-    var selectedModel = modelNames[0];
+
+    //console.debug('hash: ', modelFromHash);
+
+    var selectedModel;
+
+    var modelFromHash = decodeURI(window.location.hash.substr(1));
+    if (modelFromHash) {
+        //console.debug('setting model from hash');
+        selectedModel = modelFromHash;
+    } else {
+        selectedModel = modelNames[0];
+    }
+
     var sunglasses = $('.sunglasses-item'); 
     var modelSwitchingButtons = $('.model-switching-button');
 
