@@ -38,3 +38,6 @@
     /* make it above the sunglasses images */
     z-index: 10;
 }
+.model-switching-button.selected {
+    border: #ff7300 2px solid;
+}

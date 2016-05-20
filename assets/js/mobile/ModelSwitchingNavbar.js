@@ -8,6 +8,7 @@ $(document).ready(function() {
     var modelNames = ['Ken Block Helm', 'Flynn', 'Touring'];
     var selectedModel = modelNames[0];
     var sunglasses = $('.sunglasses-item'); 
+    var modelSwitchingButtons = $('.model-switching-button');
 
     initButtonListeners();
     initSwipeListeners();
@@ -15,6 +16,8 @@ $(document).ready(function() {
     showModel(selectedModel);
 
     function showModel(model) {
+        setSelectedClassForButton();
+
         sunglasses.each(function(index, sunglassesItem) {
             var $sunglassesItem = $(sunglassesItem);
             if ($sunglassesItem.attr('data-model') === model) {
@@ -26,11 +29,12 @@ $(document).ready(function() {
     }
 
     function initButtonListeners() {
-        var modelSwitchingButtons = $('.model-switching-button');
-        modelSwitchingButtons.on('click', function() {
+        modelSwitchingButtons.on('click', function(event) {
+            event.preventDefault();
             selectedModel = $(this).attr('data-model');
             showModel(selectedModel);
             updateJqueryLazyLoad();
+            return false;
         });
     }
 
@@ -63,6 +67,18 @@ $(document).ready(function() {
         selectedModel = modelNames[index];
         showModel(selectedModel);
         updateJqueryLazyLoad();
+    }
+
+    function setSelectedClassForButton() {
+        modelSwitchingButtons.each(function(index, button) {
+            $button = $(button);
+            var model = $button.attr('data-model');
+            if (model !== selectedModel) {
+                $button.removeClass('selected');
+            } else {
+                $button.addClass('selected');
+            }
+        });
     }
 
     function updateJqueryLazyLoad() {
