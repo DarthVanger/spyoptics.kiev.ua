@@ -7,7 +7,7 @@
  *
  * You can load different configurations depending on your
  * current environment. Setting the environment also influences
- * things like logging and error reporting. anything
+ * things like logging and error reporting.
  *
  * This can be set to anything, but default usage is:
  *
