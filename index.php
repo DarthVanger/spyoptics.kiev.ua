@@ -41,6 +41,10 @@ if (defined('ENVIRONMENT'))
 			error_reporting(0);
 		break;
 
+		case 'kotuhan-environment':
+			error_reporting(E_ALL);
+		break;
+
 		default:
 			exit('The application environment is not set correctly.');
 	}
