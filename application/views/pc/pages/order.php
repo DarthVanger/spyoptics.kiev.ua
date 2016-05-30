@@ -42,10 +42,11 @@
                             <img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
                         </div>
                         <?php if ($item['model'] == 'Ken Block Helm'): ?>
-                            <span class="plus">+</span>
-                           <!--! <div class="imgContainer" id="<?=$item['id']?>" >
+                            <!-- <span class="plus">+</span>
+                            <div class="imgContainer" id="<?=$item['id']?>" >
                                 <img class="pouch" src="<?=IMG?>pouch.jpg" />
-                            </div>-->
+                            </div>
+                            -->
 
 
                             <!-- Section for cases. We need empty onClick becouse of maintain apple devices -->

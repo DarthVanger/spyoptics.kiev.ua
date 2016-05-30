@@ -169,7 +169,7 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 
 .item-cases-section
 {
-    display:inline-block;
+    display:block;
     vertical-align: middle;
     position: relative;
     margin-top: 20px;
@@ -207,10 +207,9 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 }
 
 .attention-message-for-choose {
-    position: absolute;
     width: 100%;
     z-index: 3;
-    top: -10px;
     margin: auto;
-    font-size: 13px;
+    margin-bottom: 10px;
+    font-size: 17px;
 }
