@@ -31,7 +31,7 @@
         <div class="cart" id="cart-view">
             <h1 class="textAlignCenter">Ваш заказ</h1>
             <?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
-                <?php foreach($cart['items'] as $item): ?> 
+                <?php $count = 0; foreach($cart['items'] as $item): ?> 
                     <div class="item">
                         <div class="description">
                             <?=$item['model']?>, 
@@ -43,14 +43,32 @@
                         </div>
                         <?php if ($item['model'] == 'Ken Block Helm'): ?>
                             <span class="plus">+</span>
-                            <div class="imgContainer" id="<?=$item['id']?>" >
+                           <!--! <div class="imgContainer" id="<?=$item['id']?>" >
                                 <img class="pouch" src="<?=IMG?>pouch.jpg" />
-                            </div>
+                            </div>-->
+
+
+                            <!-- Section for cases. We need empty onClick becouse of maintain apple devices -->
+                            <section class="item-cases-section">
+                                    <p class="attention-message-for-choose"><small>Выберите кейс для очков:</small></p>
+                                    <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" name="<?=$item['model']+$count?>">
+                                    <label for="input-free-<?=$count?>" class="label-free">
+                                        <img src="<?=IMG?>pouch_135_90.jpg">
+                                        0 грн
+                                    </label>
+                                    <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" name="<?=$item['model']+$count?>">
+                                    <label for="input-200-<?=$count?>" class="label-200">
+                                        <img src="<?=IMG?>pouch_135_90.jpg">
+                                        200 грн
+                                    </label>
+                            </section>
                         <?php endif; ?>
                         <a id="<?=$item['id']?>" class="removeItem" href="javascript:void(0)">
                             <img src="<?=IMG?>mobile/layout/cartRemoveIcon.svg" />
                         </a>
                     </div>
+                    <hr>
+                    <?php $count++;?>
                 <?php endforeach; ?>
                 <div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
             <?php else:?>

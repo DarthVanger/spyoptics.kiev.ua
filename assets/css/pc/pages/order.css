@@ -154,3 +154,63 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 	-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 	box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
 }
+
+
+
+/* css about cases for glasses */
+
+
+.item-cases-section input[type="radio"][class^="radio"]
+/* disabling radio buttons */
+{
+    display: none;
+}
+
+
+.item-cases-section
+{
+    display:inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 20px;
+}
+
+.item-cases-section label{
+    width: 135px;
+}
+
+.item-cases-section label img{
+    width: 127px;
+    height: 82px;
+}
+
+.item-cases-section input[type="radio"][class^="radio"]+label{
+    border: transparent solid 4px;
+}
+
+.item-cases-section input[type="radio"][class^="radio"]:checked+label{
+    border: #ff7300 solid 4px;
+    border-radius: 2px;
+    position: relative; 
+}
+
+
+.item-cases-section input[type="radio"][class^="radio"]:checked+label:after{
+    content: url(../../../img/check_icon.svg);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    border-radius: 50%;
+    line-height: 24px;
+}
+
+.attention-message-for-choose {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    top: -10px;
+    margin: auto;
+    font-size: 13px;
+}
