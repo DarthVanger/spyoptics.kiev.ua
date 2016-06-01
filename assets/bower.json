@@ -1,0 +1,15 @@
+{
+  "name": "spyoptics",
+  "homepage": "https://github.com/Kotuhan/spyoptics.kiev.ua",
+  "authors": [
+    "Denysiuk Bohdan <kotuchi0203@gmail.com>"
+  ],
+  "description": "glasses e-shop",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3"
+  }
+}
