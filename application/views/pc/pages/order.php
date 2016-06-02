@@ -31,7 +31,7 @@
         <div class="cart" id="cart-view">
             <h1 class="textAlignCenter">Ваш заказ</h1>
             <?php if(is_array($cart['items']) && $cart['totalPrice']>0):?>
-                <?php $count = 0; foreach($cart['items'] as $item): ?> 
+                <?php $count = 1; foreach($cart['items'] as $item): ?> 
                     <div class="item">
                         <div class="description">
                             <?=$item['model']?>, 
