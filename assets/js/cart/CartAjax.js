@@ -95,6 +95,7 @@ var CartAjax = function(config) {
 
 		/** addListeners
 		 *	Adds click listeners to buttons responsive for adding and removing items from the cart.
+		 *  Second part adding listeners to radiobuttons to display price changes in DOM.
 		 */
 		var addListeners = function() {
 			//console.log("debug", "CartAjax: adding onclick listeners");
@@ -102,6 +103,39 @@ var CartAjax = function(config) {
 			$('.' + addItemButtonClass).click(function() {
 				classThis.addItem($(this).attr('id'));
 			});
+
+
+
+			// Second part. Listeners for change prices in DOM
+			$( '[id ^=input-200' ).click(function() {
+				var id = this.getAttribute('id').substr(-1);
+
+			  	if (!$('#flag-'+id).prop('checked')){
+				  	$( '#case-price-value-id-'+id).text(' + 200 за кейс');
+				  	priceToChange = $('#total-price').text();
+				  	priceToChange = parseInt(priceToChange)+200;
+				  	$('#total-price').text(priceToChange);
+
+				  	$('#flag-'+id).prop('checked', true);
+			  	}
+			});
+
+			$("[id ^=input-free]" ).click(function() {
+				var id = this.getAttribute('id').substr(-1);
+
+				if ($('#flag-'+id).prop('checked')){
+				  	$( '#case-price-value-id-'+id).text('');
+				  	priceToChange = $('#total-price').text();
+				  	priceToChange = parseInt(priceToChange)-200;
+				  	$('#total-price').text(priceToChange);
+
+				  	$('#flag-'+id).prop('checked',false);
+			  	}
+			});			
+
+
+
+
 
 			addItemRemovalListeners();
 		}

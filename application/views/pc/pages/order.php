@@ -37,7 +37,10 @@
                             <?=$item['model']?>, 
                             <?=$item['color']?>, 
                             <?=$item['price']?> грн
+                            <strong id="case-price-value-id-<?=$count?>"></strong>
+
                         </div>
+
                         <div class="imgContainer" id="<?=$item['id']?>" >
                             <img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
                         </div>
@@ -52,6 +55,7 @@
                             <!-- Section for cases. We need empty onClick becouse of maintain apple devices -->
                             <section class="item-cases-section">
                                     <p class="attention-message-for-choose"><small>Выберите кейс для очков:</small></p>
+                                    <input type="radio" class="radio-free" id="flag-<?=$count?>">
                                     <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" name="<?=$item['model']+$count?>">
                                     <label for="input-free-<?=$count?>" class="label-free">
                                         <img src="<?=IMG?>pouch_135_90.jpg">
@@ -64,14 +68,14 @@
                                     </label>
                             </section>
                         <?php endif; ?>
-                        <a id="<?=$item['id']?>" class="removeItem" href="javascript:void(0)">
+                        <a id="<?=$item['id']?>" class="removeItem" order-id="<?=$count?>" href="javascript:void(0)">
                             <img src="<?=IMG?>mobile/layout/cartRemoveIcon.svg" />
                         </a>
                     </div>
                     <hr>
                     <?php $count++;?>
                 <?php endforeach; ?>
-                <div class="total-price">Общая стоимость заказа: <?=$cart['totalPrice']?> грн (+ доставка)</div>
+                <div class="total-price">Общая стоимость заказа: <span id="total-price"><?=$cart['totalPrice']?></span> грн (+ доставка)</div>
             <?php else:?>
                 <div>Ваша корзинка пуста</div>
                 <div>
