@@ -24,7 +24,7 @@
 	</script>
 <!-- ---------------------------------------- -->
 
-
+<form class="order" method="POST" id="orderForm" action="<?=site_url('/shop/submitOrder')?>">
 <div id="order-page" class="pagePadding">
     <div class="inner-container">
         <!-- cart -->
@@ -44,6 +44,12 @@
                         <div class="imgContainer" id="<?=$item['id']?>" >
                             <img class="glasses" src="<?=IMG?><?=$item['mini_img_path']?>" />
                         </div>
+
+
+                        <input type="hidden" name="orderItems[<?=$count?>][model]" value="<?=$item['model']?>" />
+                        <input type="hidden" name="orderItems[<?=$count?>][color]" value="<?=$item['color']?>" />
+                        <input type="hidden" name="orderItems[<?=$count?>][price]" value="<?=$item['price']?>" />
+
                         <?php if ($item['model'] == 'Ken Block Helm'): ?>
                             <!-- <span class="plus">+</span>
                             <div class="imgContainer" id="<?=$item['id']?>" >
@@ -51,23 +57,25 @@
                             </div>
                             -->
 
-
                             <!-- Section for cases. We need empty onClick becouse of maintain apple devices -->
                             <section class="item-cases-section">
                                     <p class="attention-message-for-choose"><small>Выберите кейс для очков:</small></p>
-                                    <input type="radio" class="radio-free" id="flag-<?=$count?>">
-                                    <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" name="<?=$item['model']+$count?>">
+                                    <input type="radio" class="radio-free" id="flag-<?=$count?>" >
+                                    <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" value="case-free" name="orderItems[<?=$count?>][case]" required> 
                                     <label for="input-free-<?=$count?>" class="label-free">
                                         <img src="<?=IMG?>pouch_135_90.jpg">
                                         0 грн
                                     </label>
-                                    <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" name="<?=$item['model']+$count?>">
+                                    <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" value="case-200" name="orderItems[<?=$count?>][case]" required>
                                     <label for="input-200-<?=$count?>" class="label-200">
                                         <img src="<?=IMG?>pouch_135_90.jpg">
                                         200 грн
                                     </label>
                             </section>
+                        <?php else: ?>
+                            <input type="hidden" value="no-choice" name="orderItems[<?=$count?>][case]"> 
                         <?php endif; ?>
+
                         <a id="<?=$item['id']?>" class="removeItem" order-id="<?=$count?>" href="javascript:void(0)">
                             <img src="<?=IMG?>mobile/layout/cartRemoveIcon.svg" />
                         </a>
@@ -75,7 +83,9 @@
                     <hr>
                     <?php $count++;?>
                 <?php endforeach; ?>
+                <script>var casesPrices = new Array(<?=$count-1?>)</script>
                 <div class="total-price">Общая стоимость заказа: <span id="total-price"><?=$cart['totalPrice']?></span> грн (+ доставка)</div>
+                <input type="hidden" value="<?=$cart['totalPrice']?>" id="input-total-price" name="totalPrice"> 
             <?php else:?>
                 <div>Ваша корзинка пуста</div>
                 <div>
@@ -87,14 +97,14 @@
 
         <br />
 
-        <div id="orderForm">
-            <form class="order" method="POST" action="<?=site_url('/shop/submitOrder')?>">
+        <div class="orderFormContainer">
+            
                 <h2 class="textAlignCenter">Оформление заказа</h2>
                 <div class="fieldName">Фамилия, имя, отчество</div>
                 <input name="name" type="text" class="glowing-border" value="<?=set_value('name')?>" />
                 <br />
                 <div class="fieldName">Телефон</div>
-                <input name="phone"  id="phoneInput" type="text" class="glowing-border" value="<?=set_value('phone')?>"/>
+                <input name="phone"  id="phoneInput" type="text" class="glowing-border" value="<?=set_value('phone')?>" required />
                 <br />
                 <!-- darthvanger@gmail.com 2015-05-09: do we need email in the form? -->
                 <!--
@@ -108,7 +118,7 @@
                 <br />
 
                 <div class="fieldName">Адрес или № отделения Новой Почты</div>
-                <input name="addressOrNovaPoshtaOffice" type="text" class="glowing-border" value="<?=set_value('address')?>"/>
+                <input name="addressOrNovaPoshtaOffice" type="text" class="glowing-border" value="<?=set_value('address')?>" required />
                 <br />
                 <div class="fieldName">Доставка</div>
                 <select name="delivery" class="glowing-border">
@@ -139,7 +149,7 @@
                 <select name="paymentMethod" class="glowing-border">
                     <option
                         value="Оплата при получении"
-                        <?php if(isset($_POST['paymentMethod']) && $_POST['paymentMethod']=='Полата при получении') echo 'selected="selected"';  ?>
+                        <?php if(isset($_POST['paymentMethod']) && $_POST['paymentMethod']=='Оплата при получении') echo 'selected="selected"';  ?>
                     >
                         Оплата при получении
                     </option>

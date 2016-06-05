@@ -111,6 +111,11 @@ class Shop extends CI_Controller
 	 */
 	public function submitOrder()
     {
+
+        // echo "<pre>";
+        // var_dump($_POST);
+        // echo "</pre>";
+        // die();
         // validation
         $this->load->library('form_validation');
 
@@ -144,7 +149,8 @@ class Shop extends CI_Controller
         $submitData['userDevice'] = $this->userDevice;
         $submitData['userAgent'] = $this->agent->agent_string();
         
-        $submitResult = $basket->submitOrder($submitData);
+        //$submitResult = $basket->submitOrder($submitData);
+        $this->sendNewOrderNotification($submitData);
         
         if (!$submitResult) { // if $basket->submitOrder() went wrong
             $this->viewData['pageName'] = 'submitOrderFail';
@@ -156,11 +162,66 @@ class Shop extends CI_Controller
             $this->viewData['post'] = $_POST;
             // cartItems are needed by JS for google analytics ecommerce 
             $this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
-            $this->viewData['totalPrice'] = $basket->getTotalPrice();
+            $this->viewData['totalPrice'] = $_POST['totalPrice'];
 
             $basket->removeAll();
 
             $this->load->view($this->userDevice . '/templates/main', $this->viewData);
         }
     }
+
+    private function sendNewOrderNotification($submitData) {
+        $shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com, kotuhan0203@gmail.com";
+        $subject = "spyoptics.kiev.ua";
+        $from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
+        $message = "Новый заказ!<br />";
+        $message .= "Инфо о клиенте:<br />";
+
+        $userInfo = $submitData['userInputData'];
+        $userInfo['userDevice'] = $submitData['userDevice'];
+
+        foreach ($userInfo as $key => $value) {
+            if (!is_array($value)) {
+                $message .= $key.": ".$value."<br />";
+            }
+        }
+
+        $message .= "<br />";
+
+        $message .= "Заказ:"."<br />";
+        if(is_array($userInfo['orderItems'])) {
+            foreach($userInfo['orderItems'] as $item) {
+                $message .= $item['model']." ".$item['color']."<br />";
+                $message .= 'Sunglasses price: '.$item['price']."<br />";
+                $message .= 'Case: '.$item['case']."<br>";
+                $message .= '<br>';
+            }
+        } else {
+            $message .= "Корзина пуста<br />";
+        }
+        $message .= "<br />";
+
+
+
+        $message .= "<br />";
+        $message .= "Debug:" . "<br />";
+        $message .= "user agent: " . $submitData['userAgent'] . "<br />";
+
+        // prepare headers for using mail() function
+        $headers = "MIME-Version: 1.0" . PHP_EOL;
+        $headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
+        $headers .= 'From: ' . $from . PHP_EOL;
+    
+    //debug // echo $message;
+
+    // return mail($shopManagerEmails, $subject, $message, $headers);
+
+        echo "<pre>";
+        var_dump($message);
+        echo "</pre>";
+        die();
+     }
+
+
+
 }

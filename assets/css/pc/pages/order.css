@@ -163,7 +163,7 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 .item-cases-section input[type="radio"][class^="radio"]
 /* disabling radio buttons */
 {
-    display: none;
+    opacity: 0;
 }
 
 
