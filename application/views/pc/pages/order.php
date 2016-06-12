@@ -64,12 +64,14 @@
                                     <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" value="case-free" name="orderItems[<?=$count?>][case]" required> 
                                     <label for="input-free-<?=$count?>" class="label-free">
                                         <img src="<?=IMG?>pouch_135_90.jpg">
-                                        0 грн
+                                        <div class="case-name">Тряпичный кейс</div>
+                                        <div>0 грн</div>
                                     </label>
                                     <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" value="case-200" name="orderItems[<?=$count?>][case]" required>
                                     <label for="input-200-<?=$count?>" class="label-200">
-                                        <img src="<?=IMG?>pouch_135_90.jpg">
-                                        200 грн
+                                        <img src="<?=IMG?>pouch_solid_.jpg">
+                                        <div class="case-name">Твердый кейс</div>
+                                        <div>200 грн</div>
                                     </label>
                             </section>
                         <?php else: ?>

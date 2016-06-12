@@ -215,3 +215,7 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
     margin-bottom: 10px;
     font-size: 17px;
 }
+
+.case-name {
+    font-size: 14px;
+}
