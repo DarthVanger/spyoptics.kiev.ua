@@ -55,7 +55,7 @@ $(document).ready(function(){
              * 'Ken Block Helm' > 'Flynn' > 'Touring'.
              */
             function compareModel($a, $b) {
-                $order = ['Ken Block Helm', 'Flynn', 'Touring'];
+                $order = array('Ken Block Helm', 'Flynn', 'Touring');
                 $orderA = array_search($a['model'], $order);
                 $orderB = array_search($b['model'], $order);
                 return $orderA > $orderB;

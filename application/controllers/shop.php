@@ -211,15 +211,16 @@ class Shop extends CI_Controller
         $headers = "MIME-Version: 1.0" . PHP_EOL;
         $headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
         $headers .= 'From: ' . $from . PHP_EOL;
-    
-    //debug // echo $message;
+        
+        // debug
+        // echo "<pre>";
+        // var_dump($message);
+        // echo "</pre>";
+        // die();
+        
+        return mail($shopManagerEmails, $subject, $message, $headers);
 
-    // return mail($shopManagerEmails, $subject, $message, $headers);
 
-        echo "<pre>";
-        var_dump($message);
-        echo "</pre>";
-        die();
      }
 
 
