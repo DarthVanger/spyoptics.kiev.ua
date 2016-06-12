@@ -101,11 +101,14 @@
             
                 <h2 class="textAlignCenter">Оформление заказа</h2>
                 <div class="fieldName">Фамилия, имя, отчество</div>
-                <input name="name" type="text" class="glowing-border" value="<?=set_value('name')?>" />
+                <input name="name" type="text" class="glowing-border" value="<?=set_value('name')?>" required />
                 <br />
                 <div class="fieldName">Телефон</div>
-                <input name="phone"  id="phoneInput" type="text" class="glowing-border" value="<?=set_value('phone')?>" required />
-                <br />
+                <input name="phone"  id="phoneInput" type="text" class="glowing-border" value="<?=set_value('phone')?>" required   
+                pattern="(?:[\.\-\s]?\d\d\d){2}(?:[\.\-\s]?\d\d){2}$" title="Формат ввода 0XX XXX XX XX" placeholder="0XX XXX XX XX"/>
+                <!-- default pattern pattern="[0-9]{3}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}" -->
+                
+                 <br />
                 <!-- darthvanger@gmail.com 2015-05-09: do we need email in the form? -->
                 <!--
                 <div class="fieldName">E-mail</div>
