@@ -150,7 +150,7 @@ class Shop extends CI_Controller
         $submitData['userAgent'] = $this->agent->agent_string();
         
         //$submitResult = $basket->submitOrder($submitData);
-        $this->sendNewOrderNotification($submitData);
+        $submitResult = $this->sendNewOrderNotification($submitData);
         
         if (!$submitResult) { // if $basket->submitOrder() went wrong
             $this->viewData['pageName'] = 'submitOrderFail';
