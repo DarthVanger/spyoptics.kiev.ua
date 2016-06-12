@@ -29,6 +29,11 @@ $(document).ready(function(){
 </script>
 <!-- ------------------------- -->
 
+<!-- model switching navbar script -->
+<script src="<?=JS?>mobile/ModelSwitchingNavbar.js" type="text/javascript"></script>
+</script>
+<!-- ------------------------- -->
+
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
 
 <div id="sunglasses-page" class="page-padding text">
@@ -36,70 +41,46 @@ $(document).ready(function(){
 		Нажмите на очки, чтобы добавить/убрать очки из корзинки. <br />
         Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
 	</div>
+    
+    <!--
+    <div class="loading-model-spinner">
+        Loading...
+    </div>
+    -->
+
 	<div class="sunglasses-block">
-        <!-- Ken Block Helm model -->
-		<?php foreach($sunglasses as $sunglass): ?>
-            <?php if($sunglass['model'] == 'Ken Block Helm'): ?>
-                <div class="sunglasses-item">
-                        <div class="description">
-                            <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
-                        </div>
-                        <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
-                            <img
-                                src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
-                                class = "isInCartMark"
-                                <?php if($sunglass['inCart']): ?>
-                                    style = "display: inline-block";
-                                <?php endif; ?>
-                            />
-                            <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
-                            <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
-                        </div>
+        <?php
+            /**
+             * Sort the sunglasses by model, in order
+             * 'Ken Block Helm' > 'Flynn' > 'Touring'.
+             */
+            function compareModel($a, $b) {
+                $order = ['Ken Block Helm', 'Flynn', 'Touring'];
+                $orderA = array_search($a['model'], $order);
+                $orderB = array_search($b['model'], $order);
+                return $orderA > $orderB;
+            }
+            usort($sunglasses, 'compareModel');
+        ?>
+        <?php foreach($sunglasses as $sunglass): ?>
+            <div class="sunglasses-item" data-model="<?=$sunglass['model']?>">
+                <div class="description">
+                    <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
                 </div>
-            <?php endif; ?>
-		<?php endforeach; ?>
-        <!-- Flynn model -->
-		<?php foreach($sunglasses as $sunglass): ?>
-            <?php if($sunglass['model'] == 'Flynn'): ?>
-                <div class="sunglasses-item">
-                        <div class="description">
-                            <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
-                        </div>
-                        <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
-                            <img
-                                src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
-                                class = "isInCartMark"
-                                <?php if($sunglass['inCart']): ?>
-                                    style = "display: inline-block";
-                                <?php endif; ?>
-                            />
-                            <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
-                            <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
-                        </div>
+                <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
+                    <img
+                        src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
+                        class = "isInCartMark"
+                        <?php if($sunglass['inCart']): ?>
+                            style = "display: inline-block";
+                        <?php endif; ?>
+                    />
+                    <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
+                    <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
                 </div>
-            <?php endif; ?>
-		<?php endforeach; ?>
-        <!-- Touring model -->
-		<?php foreach($sunglasses as $sunglass): ?>
-            <?php if($sunglass['model'] == 'Touring'): ?>
-                <div class="sunglasses-item">
-                        <div class="description">
-                            <?=$sunglass['price']?> грн | <?=$sunglass['model']?> <?=$sunglass['color']?>
-                        </div>
-                        <div class="sunglassesImgContainer" id="<?=$sunglass['id']?>" >
-                            <img
-                                src="<?=IMG?>mobile/pages/sunglasses/inCart.svg" 
-                                class = "isInCartMark"
-                                <?php if($sunglass['inCart']): ?>
-                                    style = "display: inline-block";
-                                <?php endif; ?>
-                            />
-                            <img class = "loadingIcon" src="<?=IMG?>mobile/pages/sunglasses/loadingIcon.gif" />
-                            <img class = "sunglasses lazy" data-original="<?=IMG.$sunglass['mini_img_path']?>" />
-                        </div>
-                </div>
-            <?php endif; ?>
-		<?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 
