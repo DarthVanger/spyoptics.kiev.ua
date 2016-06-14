@@ -175,12 +175,12 @@ class Shop extends CI_Controller
         $subject = "spyoptics.kiev.ua";
         $from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
         $message = "Новый заказ!<br />";
-        $message .= "Инфо о клиенте:<br />";
+        $message .= "Инфо о заказе:<br />";
 
-        $userInfo = $submitData['userInputData'];
-        $userInfo['userDevice'] = $submitData['userDevice'];
+        $orderInfo = $submitData['userInputData'];
+        $orderInfo['userDevice'] = $submitData['userDevice'];
 
-        foreach ($userInfo as $key => $value) {
+        foreach ($orderInfo as $key => $value) {
             if (!is_array($value)) {
                 $message .= $key.": ".$value."<br />";
             }
@@ -188,9 +188,9 @@ class Shop extends CI_Controller
 
         $message .= "<br />";
 
-        $message .= "Заказ:"."<br />";
-        if(is_array($userInfo['orderItems'])) {
-            foreach($userInfo['orderItems'] as $item) {
+        $message .= "Айтемы:"."<br />";
+        if(is_array($orderInfo['orderItems'])) {
+            foreach($orderInfo['orderItems'] as $item) {
                 $message .= $item['model']." ".$item['color']."<br />";
                 $message .= 'Sunglasses price: '.$item['price']."<br />";
                 $message .= 'Case: '.$item['case']."<br>";
