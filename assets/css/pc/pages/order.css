@@ -164,7 +164,7 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 /* disabling radio buttons */
 {
     opacity: 0;
-    position: relative;
+    position: absolute;
     left: 128px;
 }
 
