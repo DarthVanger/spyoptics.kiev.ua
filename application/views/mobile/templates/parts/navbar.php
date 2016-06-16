@@ -3,13 +3,16 @@
 
     <div class="model-switching-navbar">
         <a class="model-switching-button" href="<?=site_url('/#Ken Block Helm')?>" data-model="Ken Block Helm">
-            <img src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
+            <img class="for-deselected-img" src="<?=IMG?>pages/sunglasses/kenBlockIconBlack.png" />
+			<img class="for-selected-img" src="<?=IMG?>pages/sunglasses/kenBlockIconOrange.png" />
         </a>
         <a class="model-switching-button" href="<?=site_url('/#Flynn')?>" data-model="Flynn">
-            <img src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
+            <img class="for-deselected-img" src="<?=IMG?>pages/sunglasses/flynnIconBlack.png" />
+			<img class="for-selected-img" src="<?=IMG?>pages/sunglasses/flynnIconOrange.png" />
         </a>
         <a class="model-switching-button" href="<?=site_url('/#Touring')?>" data-model="Touring">
-            <img src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
+            <img class="for-deselected-img" src="<?=IMG?>pages/sunglasses/touringIconBlack.png" />
+			<img class="for-selected-img" src="<?=IMG?>pages/sunglasses/touringIconOrange.png" />
         </a>
 
         <a href="<?=site_url('/shop/order')?>">
