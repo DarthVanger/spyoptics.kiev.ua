@@ -45,15 +45,15 @@
     height: 100%;
     width: 0;
 }
-.model-switching-button.selected {
+#navbar .model-switching-button.selected {
     border: #ff7300 2px solid;
 }
-.model-switching-button .for-selected-img {
+#navbar .model-switching-button .for-selected-img {
     display: none;
 }
-.model-switching-button.selected .for-selected-img {
+#navbar .model-switching-button.selected .for-selected-img {
     display: inline-block;
 }
-.model-switching-button.selected .for-deselected-img {
+#navbar .model-switching-button.selected .for-deselected-img {
     display: none;
 }
