@@ -193,8 +193,8 @@ class Shop extends CI_Controller
         if(is_array($userInfo['orderItems'])) {
             foreach($userInfo['orderItems'] as $item) {
                 $message .= $item['model']." ".$item['color']."<br />";
-                $message .= 'Sunglasses price: '.$item['price']."<br />";
-                $message .= 'Case: '.$item['case']."<br>";
+                $message .= 'Цена очков: '.$item['price']."<br />";
+                $message .= 'Тип кейса: '.$item['case']."<br>";
                 $message .= '<br>';
             }
         } else {

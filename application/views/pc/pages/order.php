@@ -61,13 +61,13 @@
                             <section class="item-cases-section">
                                     <p class="attention-message-for-choose"><small>Выберите кейс для очков:</small></p>
                                     <input type="radio" class="radio-free" id="flag-<?=$count?>" >
-                                    <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" value="case-free" name="orderItems[<?=$count?>][case]" required> 
+                                    <input type="radio" class="radio-free" onclick="" id="input-free-<?=$count?>" value="Бесплатный кейс" name="orderItems[<?=$count?>][case]" required> 
                                     <label for="input-free-<?=$count?>" class="label-free">
                                         <img src="<?=IMG?>pouch_135_90.jpg">
                                         <div class="case-name">Тряпичный кейс</div>
                                         <div>0 грн</div>
                                     </label>
-                                    <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" value="case-200" name="orderItems[<?=$count?>][case]" required>
+                                    <input type="radio" class="radio-200" onclick="" id="input-200-<?=$count?>" value="Твёрдый кейс" name="orderItems[<?=$count?>][case]" required>
                                     <label for="input-200-<?=$count?>" class="label-200">
                                         <img src="<?=IMG?>pouch_solid_.jpg">
                                         <div class="case-name">Твердый кейс</div>
