@@ -184,6 +184,7 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 .item-cases-section label img{
     width: 127px;
     height: 82px;
+    cursor: pointer;
 }
 
 .item-cases-section input[type="radio"][class^="radio"]+label{
