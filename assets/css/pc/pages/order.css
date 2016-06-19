@@ -178,7 +178,9 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 }
 
 .item-cases-section label{
-    width: 135px;
+    vertical-align: top;
+    width:  135px;
+    height: 145px;
 }
 
 .item-cases-section label img{
@@ -219,4 +221,8 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 
 .case-name {
     font-size: 14px;
+}
+
+.case-description {
+    font-size: 10px;
 }

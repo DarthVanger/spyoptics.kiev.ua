@@ -71,6 +71,7 @@
                                     <label for="input-200-<?=$count?>" class="label-200">
                                         <img src="<?=IMG?>pouch_solid_.jpg">
                                         <div class="case-name">Твердый кейс</div>
+                                        <div class="case-description">(противоударный)</div>
                                         <div>200 грн</div>
                                     </label>
                             </section>
