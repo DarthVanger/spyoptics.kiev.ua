@@ -165,7 +165,8 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 {
     opacity: 0;
     position: absolute;
-    left: 128px;
+    left: 85px;
+    height: 135px;
 }
 
 
