@@ -182,7 +182,7 @@ class Basket extends CI_Model {
 	  *	 @return true on success, false on fail.
 	  */
 	 private function sendNewOrderNotification($submitData) {
-	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
+	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com, kotuchi0203@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
 		$message = "Новый заказ!<br />";
