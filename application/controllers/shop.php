@@ -171,7 +171,7 @@ class Shop extends CI_Controller
     }
 
     private function sendNewOrderNotification($submitData) {
-        $shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com, kotuchi0203@gmail.com";
+        $shopManagerEmails = "Acdc2007@ukr.net, incallbiz@gmail.com, DarthVanger@gmail.com, kotuchi0203@gmail.com";
         $subject = "spyoptics.kiev.ua";
         $fromAddress = "robot@" . $_SERVER['HTTP_HOST'];
         $from = "Spyoptic Kiev <$fromAddress>";
