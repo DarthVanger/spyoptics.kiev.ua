@@ -105,7 +105,7 @@ class Shop extends CI_Controller
 
 	/** submitOrder
      *  Validates "order" form $_POST data, and calls $this->submitValidatedOrder()
-     *  when validaation is passed.
+     *  when validation is passed.
      *
      *  @return void
 	 */
