@@ -39,7 +39,7 @@ $(document).ready(function(){
 <div id="sunglasses-page" class="page-padding text">
 	<div>
 		Нажмите на очки, чтобы добавить/убрать очки из корзинки. <br />
-        Нажмите на кнопку-корзинку вверху страницы, когда определитесь с выбором.
+        Нажмите на кнопку-корзинку для того чтобы оформить заказ.
 	</div>
     
     <!--
@@ -55,7 +55,7 @@ $(document).ready(function(){
              * 'Ken Block Helm' > 'Flynn' > 'Touring'.
              */
             function compareModel($a, $b) {
-                $order = ['Ken Block Helm', 'Flynn', 'Touring'];
+                $order = array('Ken Block Helm', 'Flynn', 'Touring');
                 $orderA = array_search($a['model'], $order);
                 $orderB = array_search($b['model'], $order);
                 return $orderA > $orderB;
