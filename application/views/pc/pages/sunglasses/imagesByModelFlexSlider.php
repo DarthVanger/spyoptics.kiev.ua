@@ -47,7 +47,12 @@
                                         <div class="heading">
                                             В комплекте мешочек
                                         </div>
+
                                         <img class="pouch" src="<?=IMG?>pouch.jpg" />
+                                        <div class="heading">
+                                            или твердый кейс
+                                        </div>
+                                        <img class="pouch" src="<?=IMG?>pouch_solid_.jpg" />
                                     </div>
                                 <?php endif; ?>
 								 </p>

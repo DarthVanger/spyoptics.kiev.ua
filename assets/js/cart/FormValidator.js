@@ -37,82 +37,24 @@ var FormValidator = function(){};
 	 */
 	FormValidator.init = function() {
 		FormValidator.addValidationListeners();
+		console.log('addValidationListeners');
 	}
 
 
 	/** addValidationListeners
 	 *	Adds validation listeners to text inputs and submit button.
 	 */
-	FormValidator.addValidationListeners = function() {
-		// check entered phone on blur
-		$("#" + phoneInputId).blur(function() {
-			FormValidator.validatePhone();
-		});
+	// FormValidator.addValidationListeners = function() {
+	// 	// check if validation is ok on submit
+	// 	$("#" + formId).submit(function(){
+	// 		validateRequiredFields();
+	// 		validateCases();
+	// 		if(validated) {
+	// 			return true;
 
-		// check if validation is ok on submit
-		$("#" + formId).submit(function(){
-			if(validated) {
-				return true;
-			} else {
-				FormValidator.animateValidationErrors();
-				return false;
-			}
-		});
-	}
-
-	/** validatePhone
-	 *	Checks if phone is valid and displays ok/wrong messages.
-	 */
-	 FormValidator.validatePhone = function() {
-		var userPhone = $("#" + phoneInputId).val();
-		$phoneValidation = $("#phoneValidation");
-		if(userPhone=="") {
-			console.log("debug", "phone empty");
-			$phoneValidation.css({opacity: 0});		
-			$phoneValidation.html(phoneEmpty);
-			$phoneValidation.animate({opacity: 1});
-			validated = false;
-		} else if(!phoneContainsDigitsRegex.test(userPhone)) {
-			console.log("debug", "phone contains no digits");
-			$phoneValidation.css({opacity: 0});		
-			$phoneValidation.html(noDigits);
-			$phoneValidation.animate({opacity: 1});
-			validated = false;
-		} else if(!phoneWarningRegex.test(userPhone)) {
-			console.log("debug", "phone warning");
-			$phoneValidation.css({opacity: 0, color: "black"});		
-			$phoneValidation.html(phoneWarning);
-			$phoneValidation.animate({opacity: 1});
-			validated = true;
-		} else {
-			console.log("debug", "phone ok");
-			$phoneValidation.css({opacity: 0});		
-			$phoneValidation.html(phoneOk);
-			$phoneValidation.animate({opacity: 1});
-			validated = true;
-		}
-	}
-
-	/** animateValidationErros
-	 *	Animates validation errors in order to catch user's eye on them.
-	 */
-	 FormValidator.animateValidationErrors = function() {
-		var times = 3;
-		var speed = 200;
-		function validationNotPassedAnimation() {
-			$phoneValidation.animate({color: "black", marginLeft: "5px"}, speed/2, function() {
-				$(this).animate({color: "black", marginLeft: "-5px"}, speed/2);
-			});
-			times--;
-			if(times===0) {
-				clearInterval(loop);
-				setTimeout(function() {$phoneValidation.animate({color: "red", marginLeft: 0}, speed/2);}, speed);
-			}
-		}
-
-		$phoneValidation = $("#" + phoneValidationMessageDivId);
-		if($phoneValidation.html() == "" || $phoneValidation.html() == "&nbsp;") {
-			$phoneValidation.html(phoneEmpty);
-		}
-		var loop = setInterval(validationNotPassedAnimation, speed);
-	}
+	// 		} else {
+	// 			FormValidator.animateValidationErrors();
+	// 			return false;
+	// 		}
+	// 	});
+	//}
