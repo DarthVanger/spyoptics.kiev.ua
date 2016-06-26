@@ -169,6 +169,9 @@ class Basket extends CI_Model {
 	}
 
 	 /** sendNewOrderNotification
+ 	  *  This method is deprecated. 05.06.2016 rip
+ 	  *	 Now using sendNewOrderNotification in shop.php controller.
+ 	  *	 
 	  *	 Sends email with all info to $shopManagerEmail (specified inside this method).
       *
       *  @param $submitData array with submit data, should contain:
@@ -179,7 +182,7 @@ class Basket extends CI_Model {
 	  *	 @return true on success, false on fail.
 	  */
 	 private function sendNewOrderNotification($submitData) {
-	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com";
+	 	$shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com, kotuchi0203@gmail.com";
 		$subject = "spyoptics.kiev.ua";
 		$from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
 		$message = "Новый заказ!<br />";
@@ -190,6 +193,7 @@ class Basket extends CI_Model {
 
 		foreach($userInfo as $key => $value) {
 			$message .= $key.": ".$value."<br />";
+
 		}
         $message .= "<br />";
 
