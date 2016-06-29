@@ -19,7 +19,7 @@
             <img src="<?=IMG?>mobile/layout/cartIcon.png" />
         </a>
         <a href="<?=site_url('/shop/showPeoplePhotos')?>">
-            <img src="<?=IMG?>mobile/layout/photosIcon.png" />
+            <img src="<?=IMG?>mobile/layout/photosIconBlackCircle.png" />
         </a>
         <a href="<?=site_url('/shop/loadSimplePage/contact')?>">
             <img src="<?=IMG?>mobile/layout/contactIcon.png" />

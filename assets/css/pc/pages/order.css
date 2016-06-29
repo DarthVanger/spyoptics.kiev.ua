@@ -165,7 +165,8 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 {
     opacity: 0;
     position: absolute;
-    left: 128px;
+    left: 85px;
+    height: 135px;
 }
 
 
@@ -178,12 +179,15 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 }
 
 .item-cases-section label{
-    width: 135px;
+    vertical-align: top;
+    width:  135px;
+    height: 145px;
 }
 
 .item-cases-section label img{
     width: 127px;
     height: 82px;
+    cursor: pointer;
 }
 
 .item-cases-section input[type="radio"][class^="radio"]+label{
@@ -218,4 +222,8 @@ form.order input[type="submit"]:hover, form.order input[type="submit"]:focus {
 
 .case-name {
     font-size: 14px;
+}
+
+.case-description {
+    font-size: 10px;
 }

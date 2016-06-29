@@ -105,7 +105,7 @@ class Shop extends CI_Controller
 
 	/** submitOrder
      *  Validates "order" form $_POST data, and calls $this->submitValidatedOrder()
-     *  when validaation is passed.
+     *  when validation is passed.
      *
      *  @return void
 	 */
@@ -171,9 +171,10 @@ class Shop extends CI_Controller
     }
 
     private function sendNewOrderNotification($submitData) {
-        $shopManagerEmails = "Acdc2007@ukr.net, DarthVanger@gmail.com, kotuhan0203@gmail.com";
+        $shopManagerEmails = "Acdc2007@ukr.net, incallbiz@gmail.com, DarthVanger@gmail.com, kotuchi0203@gmail.com";
         $subject = "spyoptics.kiev.ua";
-        $from = "Spyoptic Kiev <robot@spyoptics.kiev.ua>";
+        $fromAddress = "robot@" . $_SERVER['HTTP_HOST'];
+        $from = "Spyoptic Kiev <$fromAddress>";
         $message = "Новый заказ!<br />";
         $message .= "Инфо о клиенте:<br />";
 
@@ -192,8 +193,8 @@ class Shop extends CI_Controller
         if(is_array($userInfo['orderItems'])) {
             foreach($userInfo['orderItems'] as $item) {
                 $message .= $item['model']." ".$item['color']."<br />";
-                $message .= 'Sunglasses price: '.$item['price']."<br />";
-                $message .= 'Case: '.$item['case']."<br>";
+                $message .= 'Цена очков: '.$item['price']."<br />";
+                $message .= 'Тип кейса: '.$item['case']."<br>";
                 $message .= '<br>';
             }
         } else {
