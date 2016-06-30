@@ -45,9 +45,6 @@
     height: 100%;
     width: 0;
 }
-#navbar .model-switching-button.selected {
-    border: #ff7300 2px solid;
-}
 #navbar .model-switching-button .for-selected-img {
     display: none;
 }
