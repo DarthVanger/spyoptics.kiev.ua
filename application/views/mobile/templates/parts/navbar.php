@@ -3,7 +3,6 @@
 
     <div class="model-switching-navbar">
         <a class="model-switching-button" href="<?=site_url('/#Ken Block Helm')?>" data-model="Ken Block Helm">
-
             <img class="for-deselected-img" src="<?=IMG?>pages/sunglasses/kenBlockIconBlackRound.png" />
 			<img class="for-selected-img" src="<?=IMG?>pages/sunglasses/kenBlockIconOrangeRound.png" />
         </a>
