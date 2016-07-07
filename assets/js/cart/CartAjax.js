@@ -107,7 +107,7 @@ var CartAjax = function(config) {
 
 
 			// Second part. Listeners for change prices in DOM
-			$( '[id ^=input-200' ).click(function() {
+			$( '[id ^=input-200]' ).click(function() {
 				var id = this.getAttribute('id').substr(-1);
 
 				  	// casesPrices[id-1] = {
