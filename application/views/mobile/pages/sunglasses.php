@@ -24,7 +24,9 @@
 <script src="<?=TOOLS?>jquery.lazyload.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
-    $("img.lazy").lazyload();
+    $("img.lazy").lazyload({
+        threshold: 100
+    });
 });
 </script>
 <!-- ------------------------- -->
