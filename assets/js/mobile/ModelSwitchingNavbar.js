@@ -29,6 +29,7 @@ $(document).ready(function() {
 
     function showModel(model) {
         setSelectedClassForButton();
+        window.location.hash = selectedModel;
 
         sunglasses.each(function(index, sunglassesItem) {
             var $sunglassesItem = $(sunglassesItem);
