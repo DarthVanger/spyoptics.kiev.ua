@@ -5,7 +5,7 @@
 -->
 
 <!-- Initiate JS touch controls -->
-	<script src="<?=JS?>cart/CartAjax.js"></script>
+	<script src="<?=JS?>cart/CartAjax.js?version=0.2.1.1"></script>
 	<script src="<?=TOOLS?>jquery-flip/jquery.flip.min.js"></script>
 	<script src="<?=JS?>mobile/ShopControls.js"></script>
 	<script>
@@ -24,14 +24,15 @@
 <script src="<?=TOOLS?>jquery.lazyload.min.js" type="text/javascript"></script>
 <script>
 $(document).ready(function(){
-    $("img.lazy").lazyload();
+    $("img.lazy").lazyload({
+        threshold: 100
+    });
 });
 </script>
 <!-- ------------------------- -->
 
 <!-- model switching navbar script -->
 <script src="<?=JS?>mobile/ModelSwitchingNavbar.js" type="text/javascript"></script>
-</script>
 <!-- ------------------------- -->
 
 <link href="<?=CSS?>mobile/pages/sunglasses.css" rel="stylesheet" type="text/css" />
