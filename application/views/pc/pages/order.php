@@ -1,9 +1,8 @@
 <!-- order page
  -	 Shows order form and cart contents
 -->
-
+<script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript">123123</script>
 <link href="<?=CSS?>pc/pages/order.css" rel="stylesheet" type="text/css" />
-<script src="<?=JS?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
 
 <!-- load jquery (if it's not already loaded) -->
 	<script type="text/javascript">
