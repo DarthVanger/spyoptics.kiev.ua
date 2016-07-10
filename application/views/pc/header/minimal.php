@@ -12,7 +12,7 @@
 
      <!--Polyfill for html5 validation>
     <!--[if IE]>
-    <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
+    <script src="<?=BOWER?>better-dom/dist/better-dom-legacy.js"></script>
     <![endif]-->
     <script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
     <script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
