@@ -13,12 +13,13 @@
      <!--Polyfill for html5 validation>
     <!--[if IE]>
     <script src="<?=BOWER?>better-dom/dist/better-dom-legacy.js"></script>
-    <![endif]-->
+    <![endif]--
     <script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
     <script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
     <script src="<?=BOWER?>better-i18n-plugin/dist/better-i18n-plugin.js"></script>
     <script src="<?=BOWER?>better-popover-plugin/dist/better-popover-plugin.js"></script>
     <!-- --------------------- -->
+
 
 
 	<link href="<?=BOWER?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -47,6 +48,14 @@
     <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37068795 = new Ya.Metrika({ id:37068795, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/37068795" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+
+        <!--Second polyfill for html5 validation try>
+    <script src="http://gist.github.com/607687.js?file=h5Validate-loader-part.html"></script>
+    <!-- --------------------- -->
+
+    <script src="<?=JS?>cart/html5Validator.js" type="text/javascript"></script>
+
+    <!-- --------------------- -->
 
 </head>
 <body>
