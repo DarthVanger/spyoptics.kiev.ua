@@ -10,6 +10,17 @@
 
     <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
+     <!--Polyfill for html5 validation>
+    <!--[if IE]>
+    <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
+    <![endif]-->
+    <script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
+    <script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
+    <script src="<?=BOWER?>better-i18n-plugin/dist/better-i18n-plugin.js"></script>
+    <script src="<?=BOWER?>better-popover-plugin/dist/better-popover-plugin.js"></script>
+    <!-- --------------------- -->
+
+
 	<link href="<?=BOWER?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=BOWER?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />

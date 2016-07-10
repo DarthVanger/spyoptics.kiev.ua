@@ -1,10 +1,7 @@
 <!-- order page
  -	 Shows order form and cart contents
 -->
-<script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
-<script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
-<script src="<?=BOWER?>better-i18n-plugin/dist/better-i18n-plugin.js"></script>
-<script src="<?=BOWER?>better-popover-plugin/dist/better-popover-plugin.js"></script>
+
 <link href="<?=CSS?>pc/pages/order.css" rel="stylesheet" type="text/css" />
 
 <!-- load jquery (if it's not already loaded) -->
