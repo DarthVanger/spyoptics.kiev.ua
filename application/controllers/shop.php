@@ -194,7 +194,11 @@ class Shop extends CI_Controller
             foreach($userInfo['orderItems'] as $item) {
                 $message .= $item['model']." ".$item['color']."<br />";
                 $message .= 'Цена очков: '.$item['price']."<br />";
-                $message .= 'Тип кейса: '.$item['case']."<br>";
+                if(isset($item['case'])){
+                    $message .= 'Тип кейса: '.$item['case']."<br>";
+                } else {
+                    $message .= 'Кейс тупо не выбрали';
+                };
                 $message .= '<br>';
             }
         } else {
@@ -213,13 +217,13 @@ class Shop extends CI_Controller
         $headers .= "Content-type:text/html;charset=UTF-8" . PHP_EOL;
         $headers .= 'From: ' . $from . PHP_EOL;
         
-        // debug
+        // //debug
         // echo "<pre>";
         // var_dump($message);
         // echo "</pre>";
         // die();
         
-        return mail($shopManagerEmails, $subject, $message, $headers);
+       return mail($shopManagerEmails, $subject, $message, $headers);
 
 
      }

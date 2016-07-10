@@ -11,7 +11,6 @@
 /*global jQuery, window, console */
 (function ($) {
 	'use strict';
-	alert('hi')
 	var console = window.console || function () {},
 		h5 = { // Public API
 			defaults : {
