@@ -20,11 +20,25 @@
                 cartId: 'cart-view',
                 removeItemButtonClass: 'removeItem'
             });
-
-
-
+            console.log('one')
 		});
 	</script>
+    <script>
+        $(window).load(function() {
+            webshims.setOptions("forms", {
+            lazyCustomMessages: true,
+            replaceValidationUI: true,
+            customDatalist: "auto",
+            list: {
+                    "filter": "^"
+                }
+            });
+
+            webshims.polyfill('forms');
+            console.log('two')
+
+        });
+    </script>
 <!-- ---------------------------------------- -->
 
 <form class="order" method="POST" id="orderForm" action="<?=site_url('/shop/submitOrder')?>">
@@ -190,15 +204,3 @@
         </div>
     </div> <!-- end .page-container -->
 </div> <!-- end #order-page -->
-<script>
-            webshim.setOptions("forms", {
-            lazyCustomMessages: true,
-            replaceValidationUI: true,
-            customDatalist: "auto",
-            list: {
-                    "filter": "^"
-                }
-            });
-
-            webshim.polyfill('forms');
-</script>
