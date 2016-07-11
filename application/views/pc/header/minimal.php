@@ -10,15 +10,15 @@
 
     <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
-     <!--Polyfill for html5 validation>
-    <!--[if IE]>
+     
+
     <script src="<?=BOWER?>better-dom/dist/better-dom-legacy.js"></script>
-    <![endif]--
-    <script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
+
     <script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
     <script src="<?=BOWER?>better-i18n-plugin/dist/better-i18n-plugin.js"></script>
     <script src="<?=BOWER?>better-popover-plugin/dist/better-popover-plugin.js"></script>
-    <!-- --------------------- -->
+    
+    
 
 
 
@@ -51,11 +51,15 @@
 
         <!--Second polyfill for html5 validation try>
     <script src="http://gist.github.com/607687.js?file=h5Validate-loader-part.html"></script>
-    <!-- --------------------- -->
 
     <script src="<?=JS?>cart/html5Validator.js" type="text/javascript"></script>
 
     <!-- --------------------- -->
 
+<!--[if IE]>
+    <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
+<![endif]-->
+<script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
+<script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
 </head>
 <body>
