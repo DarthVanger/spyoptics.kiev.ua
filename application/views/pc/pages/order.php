@@ -21,16 +21,7 @@
                 removeItemButtonClass: 'removeItem'
             });
 
-            webshim.setOptions("forms", {
-            lazyCustomMessages: true,
-            replaceValidationUI: true,
-            customDatalist: "auto",
-            list: {
-                    "filter": "^"
-                }
-            });
 
-            webshim.polyfill('forms');
 
 		});
 	</script>
@@ -200,5 +191,14 @@
     </div> <!-- end .page-container -->
 </div> <!-- end #order-page -->
 <script>
+            webshim.setOptions("forms", {
+            lazyCustomMessages: true,
+            replaceValidationUI: true,
+            customDatalist: "auto",
+            list: {
+                    "filter": "^"
+                }
+            });
 
+            webshim.polyfill('forms');
 </script>
