@@ -10,17 +10,6 @@
 
     <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
-     
-
-    <script src="<?=BOWER?>better-dom/dist/better-dom-legacy.js"></script>
-
-    <script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
-    <script src="<?=BOWER?>better-i18n-plugin/dist/better-i18n-plugin.js"></script>
-    <script src="<?=BOWER?>better-popover-plugin/dist/better-popover-plugin.js"></script>
-    
-    
-
-
 
 	<link href="<?=BOWER?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=BOWER?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -49,17 +38,8 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/37068795" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-        <!--Second polyfill for html5 validation try>
-    <script src="http://gist.github.com/607687.js?file=h5Validate-loader-part.html"></script>
+<!-- Webshim for HTML5 forms -->
+<script src="<?=JS?>webshim/polyfiller.js" async></script>
 
-    <script src="<?=JS?>cart/html5Validator.js" type="text/javascript"></script>
-
-    <!-- --------------------- -->
-
-<!--[if IE]>
-    <script src="bower_components/better-dom/dist/better-dom-legacy.js"></script>
-<![endif]-->
-<script src="<?=BOWER?>better-form-validation/dist/better-form-validation.js" type="text/javascript"></script>
-<script src="<?=BOWER?>better-dom/dist/better-dom.js"></script>
 </head>
 <body>

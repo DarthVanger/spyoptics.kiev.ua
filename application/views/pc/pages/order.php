@@ -20,6 +20,18 @@
                 cartId: 'cart-view',
                 removeItemButtonClass: 'removeItem'
             });
+
+            webshim.setOptions("forms", {
+            lazyCustomMessages: true,
+            replaceValidationUI: true,
+            customDatalist: "auto",
+            list: {
+                    "filter": "^"
+                }
+            });
+
+            webshim.polyfill('forms');
+
 		});
 	</script>
 <!-- ---------------------------------------- -->
@@ -181,9 +193,12 @@
 
                 <?=validation_errors('<div class="validationError">', '</div>')?>
 
-                <input type="submit" value="Готово" />
+                <input type="submit" value="Готово"/>
 
             </form>
         </div>
     </div> <!-- end .page-container -->
 </div> <!-- end #order-page -->
+<script>
+
+</script>
