@@ -20,7 +20,6 @@
                 cartId: 'cart-view',
                 removeItemButtonClass: 'removeItem'
             });
-            console.log('one')
 		});
 	</script>
     <script>
@@ -35,7 +34,6 @@
             });
 
             webshims.polyfill('forms');
-            console.log('two')
 
         });
     </script>
