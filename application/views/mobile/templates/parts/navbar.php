@@ -15,14 +15,14 @@
 			<img class="for-selected-img" src="<?=IMG?>pages/sunglasses/touringIconOrangeCircle.png" />
         </a>
 
-        <a href="<?=site_url('/shop/order')?>">
-            <img src="<?=IMG?>mobile/layout/cartIcon.png" />
-        </a>
         <a href="<?=site_url('/shop/showPeoplePhotos')?>">
             <img src="<?=IMG?>mobile/layout/photosIconBlackCircle.png" />
         </a>
         <a href="<?=site_url('/shop/loadSimplePage/contact')?>">
             <img src="<?=IMG?>mobile/layout/contactIconBlackCircle.png" />
+        </a>
+		<a href="<?=site_url('/shop/order')?>" class="orderIcon">
+            <i class="cart-icon fa fa-shopping-cart"></i>
         </a>
     </div>
 

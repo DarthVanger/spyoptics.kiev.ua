@@ -34,6 +34,17 @@
     display: inline-block;
 	vertical-align: middle;
 }
+#navbar .orderIcon {
+	border-bottom: solid #FF7300 4px;
+    border-left: solid #FF7300 2px;
+    border-radius: 0px 0px 0px 60px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    height: 58px;
+    padding-left: 15px;
+    width: 58px;
+}
 #navbar a:hover,
 #navbar a:active {
     text-decoration: none;
