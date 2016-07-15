@@ -80,8 +80,11 @@
 }
 @media (max-width: 400px){
 	#navbar {
-		text-align: left;
+		text-align: center;
+		padding-right: 55px;
 	}
+}
+@media (max-width: 350px){
 	#navbar a {
 		width: 45px;
 	}
