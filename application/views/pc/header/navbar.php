@@ -8,10 +8,12 @@
 <div id="topNavbar">
 	<div id="topLine"></div>
 	<div class="navbar">
-		<a href="<?=site_url('/')?>">Spyoptic</a>
-		<a href="<?=site_url('/shop/loadSimplePage/about-glasses')?>">описание</a>
-		<a href="<?=site_url('/shop/order')?>">заказать</a>
-		<a href="<?=site_url('/shop/loadSimplePage/delivery')?>">доставка</a>
-		<a href="<?=site_url('/shop/loadSimplePage/contact')?>">контакты</a>
+		<a href="<?=URL?>">Spyoptic</a>
+		<a href="<?=URL?>shop/loadSimplePage/about-glasses">описание</a>
+		<a href="<?=URL?>shop/order">заказать</a>
+		<a href="<?=URL?>shop/loadSimplePage/delivery">доставка</a>
+		<a href="<?=URL?>shop/loadSimplePage/contact">контакты</a>
 	</div>
 </div>
+
+
