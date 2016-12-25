@@ -10,6 +10,7 @@
 
     <script src="<?=TOOLS?>googleAnalytics.js"></script>
 
+
 	<link href="<?=BOWER?>bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=BOWER?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?=CSS.$userDevice?>/layout.css" rel="stylesheet" type="text/css" />
@@ -32,10 +33,16 @@
     <meta property="vk:app_id" content="4806597" />
     <!-- --------------------- -->
 
+    <!-- Yandex verification code -->
+    <meta name="yandex-verification" content="e47038ccccd84808" />
+
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37068795 = new Ya.Metrika({ id:37068795, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script>
+    <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37068795 = new Ya.Metrika({ id:37068795, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/37068795" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
+    <!-- /Yandex.Metrika counter --> 
+
+<!-- Webshim for HTML5 forms -->
+<script src="<?=JS?>webshim/polyfiller.js" async></script>
 
 </head>
 <body>

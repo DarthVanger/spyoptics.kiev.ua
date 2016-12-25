@@ -22,6 +22,21 @@
             });
 		});
 	</script>
+    <script>
+        $(window).load(function() {
+            webshims.setOptions("forms", {
+            lazyCustomMessages: true,
+            replaceValidationUI: true,
+            customDatalist: "auto",
+            list: {
+                    "filter": "^"
+                }
+            });
+
+            webshims.polyfill('forms');
+
+        });
+    </script>
 <!-- ---------------------------------------- -->
 
 <form class="order" method="POST" id="orderForm" action="<?=site_url('/shop/submitOrder')?>">
@@ -181,7 +196,7 @@
 
                 <?=validation_errors('<div class="validationError">', '</div>')?>
 
-                <input type="submit" value="Готово" />
+                <input type="submit" value="Готово"/>
 
             </form>
         </div>

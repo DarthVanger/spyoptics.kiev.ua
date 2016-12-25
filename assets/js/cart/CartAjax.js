@@ -86,35 +86,38 @@ var CartAjax = function(config) {
 		 */
 		this.updateCart = function() {
 			//console.log("debug", "CartAjax: updating cart, cartId = " + cartId);
-			$('#' + cartId).load(document.URL + ' #' + cartId, addItemRemovalListeners); // since DOM is reloaded, listeners should be readded 
+			$('#' + cartId).load(document.URL + ' #' + cartId, function(){
+				addItemRemovalListeners();addCaseSelectionListeners()
+			}); // since DOM is reloaded, listeners should be readded 
 		}
 
 		/***********************/
 		/*** private methods ***/
 		/***********************/
 
-		/** addListeners
-		 *	Adds click listeners to buttons responsive for adding and removing items from the cart.
-		 *  Second part adding listeners to radiobuttons to display price changes in DOM.
-		 */
+
 		var addListeners = function() {
-			//console.log("debug", "CartAjax: adding onclick listeners");
+
 			// listeners for adding items
 			$('.' + addItemButtonClass).click(function() {
 				classThis.addItem($(this).attr('id'));
 			});
 
 
+			addCaseSelectionListeners();
+			addItemRemovalListeners();
+		}
 
-			// Second part. Listeners for change prices in DOM
-			$( '[id ^=input-200' ).click(function() {
+
+		/** addCaseSelectionListeners
+		 *	Add events on images of cases, which adds price of case to particular sunglasses and changes total price of order
+		 */
+
+		var addCaseSelectionListeners = function(){
+			//console.log("debug", "CartAjax: adding onclick listeners");
+
+			$( '[id ^=input-200]' ).click(function() {
 				var id = this.getAttribute('id').substr(-1);
-
-				  	// casesPrices[id-1] = {
-				  	// 	id : 2,
-				  	// 	price: 200
-				  	// };
-
 			  	if (!$('#flag-'+id).prop('checked')){
 				  	$( '#case-price-value-id-'+id).text(' + 200 за кейс');
 				  	priceToChange = $('#total-price').text();
@@ -127,17 +130,8 @@ var CartAjax = function(config) {
 			  	}
 			});
 
-//TODO 	$('#total-price').text(priceToChange);$('#input-total-price').text(priceToChange); in another function
-				  	
-
 			$("[id ^=input-free]" ).click(function() {
 				var id = this.getAttribute('id').substr(-1);
-
-				// casesPrices[id-1] = {
-				//   		id : 1,
-				//   		price: 0
-				//   	}
-				//   	console.log(casesPrices)
 				if ($('#flag-'+id).prop('checked')){
 				  	$( '#case-price-value-id-'+id).text('');
 				  	priceToChange = $('#total-price').text();
@@ -147,13 +141,8 @@ var CartAjax = function(config) {
 
 				  	$('#flag-'+id).prop('checked',false);
 			  	}
-			});			
+			});	
 
-
-
-
-
-			addItemRemovalListeners();
 		}
 
 		/** addItemRemovalListeners

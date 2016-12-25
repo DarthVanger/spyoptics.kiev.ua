@@ -245,3 +245,13 @@ div.color {
 .orderButton.old:hover {
 	background-color: #a6000c;
 }
+
+
+@media (max-height: 600px) {
+    .slides .product-description img.pouch {
+        width: 110px;
+    }
+    .slides .product-description .heading {
+    font-size: 0.8em;
+}
+}
