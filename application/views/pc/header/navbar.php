@@ -13,6 +13,7 @@
 		<a href="<?=URL?>shop/order">заказать</a>
 		<a href="<?=URL?>shop/loadSimplePage/delivery">доставка</a>
 		<a href="<?=URL?>shop/loadSimplePage/contact">контакты</a>
+		<a href="<?=URL?>blog">блог</a>
 	</div>
 </div>
 
