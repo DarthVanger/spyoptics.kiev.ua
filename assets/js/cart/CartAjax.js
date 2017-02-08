@@ -113,36 +113,34 @@ var CartAjax = function(config) {
 		 *	Add events on images of cases, which adds price of case to particular sunglasses and changes total price of order
 		 */
 
-		var addCaseSelectionListeners = function(){
+		var addCaseSelectionListeners = function() {
 			//console.log("debug", "CartAjax: adding onclick listeners");
 
 			$( '[id ^=input-200]' ).click(function() {
 				var id = this.getAttribute('id').substr(-1);
-			  	if (!$('#flag-'+id).prop('checked')){
-				  	$( '#case-price-value-id-'+id).text(' + 200 за кейс');
+
+			  	if (!$('#flag-'+id).prop('checked')) {
+				  	$( '#case-price-value-id-'+id).text(' + 100 за кейс');
 				  	priceToChange = $('#total-price').text();
-				  	priceToChange = parseInt(priceToChange)+200;
+				  	priceToChange = parseInt(priceToChange)+100;
 				  	$('#total-price').text(priceToChange);
 				  	$('#input-total-price').val(priceToChange);
-
-
 				  	$('#flag-'+id).prop('checked', true);
 			  	}
 			});
 
 			$("[id ^=input-free]" ).click(function() {
 				var id = this.getAttribute('id').substr(-1);
-				if ($('#flag-'+id).prop('checked')){
+
+				if ($('#flag-'+id).prop('checked')) {
 				  	$( '#case-price-value-id-'+id).text('');
 				  	priceToChange = $('#total-price').text();
-				  	priceToChange = parseInt(priceToChange)-200;
+				  	priceToChange = parseInt(priceToChange)-100;
 				  	$('#total-price').text(priceToChange);
 				  	$('#input-total-price').val(priceToChange);
-
 				  	$('#flag-'+id).prop('checked',false);
 			  	}
-			});	
-
+			});
 		}
 
 		/** addItemRemovalListeners
