@@ -87,11 +87,11 @@
                                         <img src="<?=IMG?>pouch_solid_.jpg">
                                         <div class="case-name">Твердый кейс</div>
                                         <div class="case-description">(противоударный)</div>
-                                        <div>200 грн</div>
+                                        <div>100 грн</div>
                                     </label>
                             </section>
                         <?php else: ?>
-                            <input type="hidden" value="no-choice" name="orderItems[<?=$count?>][case]"> 
+                            <input type="hidden" value="no-choice" name="orderItems[<?=$count?>][case]">
                         <?php endif; ?>
 
                         <a id="<?=$item['id']?>" class="removeItem" order-id="<?=$count?>" href="javascript:void(0)">
