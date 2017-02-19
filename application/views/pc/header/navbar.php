@@ -15,5 +15,10 @@
 		<a href="<?=URL?>shop/loadSimplePage/contact">контакты</a>
 	</div>
 </div>
-
-
+<div id="infograph">
+	<div id="img-5"></div>
+	<div id="img-4"></div>
+	<div id="img-3"></div>
+	<div id="img-2"></div>
+	<div id="img-1"></div>
+</div>
