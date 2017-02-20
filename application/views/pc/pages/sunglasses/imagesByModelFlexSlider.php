@@ -13,7 +13,7 @@
 								<!-- "lazy-src" - is for image lazy loading: it will be changed to "src" when page is shown by PageSlidingEffect script -->
 								<img
                                     <?php if($model=="Flynn"): ?>
-                                        class="height-100-percent"
+                                        class="width-75-percent"
 										alt="Очки Spy Optic Flynn"
                                     <?php else: ?>
                                         class="width-75-percent"
@@ -22,7 +22,7 @@
                                     src="#"
                                     lazy-src="<?=IMG?><?=$sunglass['img_path']?>"
                                     id="<?=$sunglass['id']?>"
-									
+
                                 />
 								 <p class="flex-caption">
 								<div class="priceAndCart">
@@ -57,6 +57,15 @@
                                 <?php endif; ?>
 								 </p>
 							</div> <!-- end .container -->
+							<div id="infograph">
+							  <div class="center-infograph">
+									<div id="img-1"></div>
+									<div id="img-2"></div>
+									<div id="img-3"></div>
+									<div id="img-4"></div>
+									<div id="img-5"></div>
+							  </div>
+							</div>
 						</li>
 					<?php endif; ?>
 				<?php endforeach; ?>
