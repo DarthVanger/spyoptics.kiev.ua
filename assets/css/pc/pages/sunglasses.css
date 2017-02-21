@@ -22,7 +22,7 @@
         overflow: hidden;
         vertical-align: middle;
 
-        /* 
+        /*
          * without white-space: nowrap, images of flynn glasses
          * will jump to the second line and thus disappear from screen,
          * for some screen size proportions (in particular, for big LCD screens).
@@ -130,7 +130,7 @@
         height: 12px;
         border-radius: 50%;
         background-color: #ff7300;
-        margin: 5px; 
+        margin: 5px;
     }
     #pageSlidingNavbar .top-circle-icon {
         top: 0;
@@ -141,7 +141,7 @@
 /* END pageSlidingNavbar */
 
 .pictures {
-	text-align: center;	
+	text-align: center;
 	position: relative;
 	height: 100%;
 	width: 100%;
@@ -154,7 +154,7 @@
 	left: 0px;
 	top: 0px;
 	z-index: 10;
-	
+
 	color: white;
 	background-color: #333;
 	padding: 3px 6px 3px 6px;
@@ -244,6 +244,71 @@ div.color {
 }
 .orderButton.old:hover {
 	background-color: #a6000c;
+}
+#shop-benefits-infographic {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    z-index: 999;
+    bottom: 20px;
+    text-align: center;
+}
+#shop-benefits-infographic .center-infograph {
+    position: relative;
+    width: auto;
+    height: auto;
+}
+#shop-benefits-infographic .center-infograph div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);
+}
+#shop-benefits-infographic .center-infograph div:hover {
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.5);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.5);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.5);
+    transition: all 200ms ease-in;
+    transform: scale(1.5);
+}
+#infographic-5-years {
+    background: url("../../../img/shop-benefits-infographic/5_years.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+}
+#infographic-uv-protect {
+    background: url("../../../img/shop-benefits-infographic/uv_protect.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+}
+#infographic-100-percent {
+    background: url("../../../img/shop-benefits-infographic/100_percent.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+}
+#infographic-many-clients {
+    background: url("../../../img/shop-benefits-infographic/many_clients.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+}
+#infographic-14-days {
+    background: url("../../../img/shop-benefits-infographic/14_days.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
 }
 
 
