@@ -57,13 +57,13 @@
                                 <?php endif; ?>
 								 </p>
 							</div> <!-- end .container -->
-							<div id="infograph">
+							<div id="shop-benefits-infographic">
 							  <div class="center-infograph">
-									<div id="img-1"></div>
-									<div id="img-2"></div>
-									<div id="img-3"></div>
-									<div id="img-4"></div>
-									<div id="img-5"></div>
+									<div id="infographic-5-years"></div>
+									<div id="infographic-uv-protect"></div>
+									<div id="infographic-100-percent"></div>
+									<div id="infographic-many-clients"></div>
+									<div id="infographic-14-days"></div>
 							  </div>
 							</div>
 						</li>
