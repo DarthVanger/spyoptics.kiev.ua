@@ -16,5 +16,3 @@
 		<a href="<?=URL?>blog">блог</a>
 	</div>
 </div>
-
-
