@@ -250,7 +250,7 @@ div.color {
     height: 80px;
     position: absolute;
     z-index: 999;
-    bottom: 10px;
+    bottom: 0px;
     text-align: center;
 }
 #shop-benefits-infographic .center-infograph {
