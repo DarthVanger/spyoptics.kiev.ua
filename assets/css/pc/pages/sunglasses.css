@@ -247,10 +247,10 @@ div.color {
 }
 #shop-benefits-infographic {
     width: 100%;
-    height: 100px;
+    height: 80px;
     position: absolute;
     z-index: 999;
-    bottom: 20px;
+    bottom: 0px;
     text-align: center;
 }
 #shop-benefits-infographic .center-infograph {
@@ -259,8 +259,8 @@ div.color {
     height: auto;
 }
 #shop-benefits-infographic .center-infograph div {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     position: relative;
     margin: 0;
     padding: 0;
@@ -277,13 +277,13 @@ div.color {
 #shop-benefits-infographic .center-infograph div:hover {
     z-index: 2;
     -webkit-transition: all 200ms ease-in;
-    -webkit-transform: scale(1.5);
+    -webkit-transform: scale(2);
     -ms-transition: all 200ms ease-in;
-    -ms-transform: scale(1.5);
+    -ms-transform: scale(2);
     -moz-transition: all 200ms ease-in;
-    -moz-transform: scale(1.5);
+    -moz-transform: scale(2);
     transition: all 200ms ease-in;
-    transform: scale(1.5);
+    transform: scale(2);
 }
 #infographic-5-years {
     background: url("../../../img/shop-benefits-infographic/5_years.svg");
