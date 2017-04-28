@@ -25,3 +25,42 @@ img.isInCartMark, img.loadingIcon {
     text-align: center;
     margin-bottom: .5em;
 }
+
+#mobile-shop-benefits-infographic {
+	position: relative;
+	width: 100%;
+}
+
+.benefits-container {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: auto;
+	max-width: 750px;
+	text-align: center;
+}
+
+.mobile-shop-benefits-infographic-icon {
+	position: relative;
+	display: inline-block;
+}
+
+@media all and (max-width: 410px) {
+	.mobile-shop-benefits-infographic-icon {
+		width: 50%;
+	}
+}
+
+@media (min-width: 411px) and (max-width: 650px) {
+        .mobile-shop-benefits-infographic-icon {
+                width: 33%;
+		max-width: 160px;
+        }
+}
+
+@media (min-width: 651px) {
+        .mobile-shop-benefits-infographic-icon {
+                width: 19%;
+                max-width: 160px;
+        }
+}
