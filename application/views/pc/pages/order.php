@@ -174,12 +174,6 @@
                     >
                         Оплата при получении
                     </option>
-                    <option
-                        value="Предоплата на карточку ПриватБанк"
-                        <?php if(isset($POST['paymentMethod']) && $_POST['paymentMethod']=='Предоплата на карточку ПриватБанк') echo 'selected="selected"'; ?>
-                    >
-                        Предоплата на карточку ПриватБанк (номер будет сообщен по смс)
-                    </option>
                 </select>
                 <br />
                 <div class="fieldName">Доп. информация</div>
