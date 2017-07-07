@@ -2,6 +2,10 @@ http://spyoptics.kiev.ua is a simple, minimalistic e-shop, based on CodeIgniter 
 
 Installing
 ----------
+You will need a server with:
+- php (TODO: version?)
+- mysql (TODO: version?)
+
 There's no easy installation, but if you want to try using this code (not recommended :), you can find the file with database structure at application/config/dbInstallScript.sql.
 
 Config
@@ -23,9 +27,11 @@ Installing or moving to another host you should change following config files:
 
 Architecture
 ------------
-The base is CodeIgniter (v2.1.4) php framework.
+The base is CodeIgniter (v2.1.4) php framework + MySql.  
+There is also some JS scripts, but no framework is used (only `jQuery`).
 
-It's helper method is used to determine user device (PC or mobile) and serve different pages to the user.
+### Mobile and Desktop version of the site
+CodeIgniter (v2.1.4) helper method is used to determine user device (PC or mobile) and serve different pages to the user.
 
 Pages for desktop are here:
 ```
@@ -43,5 +49,10 @@ Some mobile pages, like `application/views/mobile/pages/order.php` just load the
 -->
 <?php $this->load->view('pc/pages/order'); ?>
 ```
+
+### Order processing
+Orders are NOT saved anywhere, but only sent to an email... (hope is everything :)
+// TODO: save them at least to a file as JSON, and log fails of sending an email
+// (ideally save to DB and create an admin page with orders table).
 
 To be continued...
