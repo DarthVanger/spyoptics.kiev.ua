@@ -1,6 +1,4 @@
-This is just the code of a simple, minimalistic e-shop, based on CodeIgniter php framework, http://spyoptics.kiev.ua.
-
-So, nothing interesting here!
+http://spyoptics.kiev.ua is a simple, minimalistic e-shop, based on CodeIgniter (v2.1.4) php framework.
 
 Installing
 ----------
@@ -23,3 +21,20 @@ Installing or moving to another host you should change following config files:
     Change user, db name, pass, etc. for mysql.
 
 
+Architecture
+------------
+The base is CodeIgniter (v2.1.4) php framework.
+It's helper method is used to determine user device (PC or mobile) and serve different pages to the user.
+Pages for desktop are here:
+`/application/views/pc`
+Pages for mobile:
+`/application/views/mobile`
+Some mobile pages, like `application/views/mobile/pages/order.php` just load the `pc` page, since it has responsive design
+```
+<!-- mobile order page
+ -	 Shows order form and cart contents
+-->
+<?php $this->load->view('pc/pages/order'); ?>
+```
+
+To be continued...
