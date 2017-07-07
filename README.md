@@ -24,11 +24,18 @@ Installing or moving to another host you should change following config files:
 Architecture
 ------------
 The base is CodeIgniter (v2.1.4) php framework.
+
 It's helper method is used to determine user device (PC or mobile) and serve different pages to the user.
+
 Pages for desktop are here:
-`/application/views/pc`
+```
+/application/views/pc
+```
 Pages for mobile:
-`/application/views/mobile`
+```
+/application/views/mobile
+```
+
 Some mobile pages, like `application/views/mobile/pages/order.php` just load the `pc` page, since it has responsive design
 ```
 <!-- mobile order page
