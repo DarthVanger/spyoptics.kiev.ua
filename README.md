@@ -51,9 +51,8 @@ Some mobile pages, like `application/views/mobile/pages/order.php` just load the
 ```
 
 ### Order processing
-Orders are NOT saved anywhere, but only sent to an email... (hope is everything :)
-
-// TODO: save them at least to a file as JSON, and log fails of sending an email  
+Orders are NOT saved anywhere, but only sent to an email... (hope is everything :)  
+// TODO: save orders at least to a file as JSON, and log fails of sending an email  
 // (ideally save to DB and create an admin page with orders table).
 
 To be continued...
