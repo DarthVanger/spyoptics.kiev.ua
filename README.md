@@ -58,5 +58,5 @@ Orders are NOT saved anywhere, but only sent to an email... (hope is everything 
 To be continued...
 
 ## Environments
-- Staging
+- Staging  
   http://178.62.21.133/spyoptics/
