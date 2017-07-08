@@ -56,3 +56,7 @@ Orders are NOT saved anywhere, but only sent to an email... (hope is everything 
 // (ideally save to DB and create an admin page with orders table).
 
 To be continued...
+
+## Environments
+- Staging
+  http://178.62.21.133/spyoptics/
