@@ -162,7 +162,9 @@ class Shop extends CI_Controller
             $this->viewData['post'] = $_POST;
             // cartItems are needed by JS for google analytics ecommerce 
             $this->viewData['cartItemsJSON'] = json_encode($basket->getItems());
-            $this->viewData['totalPrice'] = $_POST['totalPrice'];
+            if (!empty($_POST['totalPrice'])) {
+                $this->viewData['totalPrice'] = $_POST['totalPrice'];
+            }
 
             $basket->removeAll();
 
@@ -190,7 +192,7 @@ class Shop extends CI_Controller
         $message .= "<br />";
 
         $message .= "Заказ:"."<br />";
-        if(is_array($userInfo['orderItems'])) {
+        if(!empty($userInfo['orderItems'])) {
             foreach($userInfo['orderItems'] as $item) {
                 $message .= $item['model']." ".$item['color']."<br />";
                 $message .= 'Цена очков: '.$item['price']."<br />";
