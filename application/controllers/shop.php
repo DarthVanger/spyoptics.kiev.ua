@@ -127,12 +127,21 @@ class Shop extends CI_Controller
         // syntax: set_message('rule', 'Error Message');
         $this->form_validation->set_message('required', 'Поле <b>%s</b> не должно быть пустым');
 
-        if ($this->form_validation->run() == FALSE) {
-            $this->order();
-        } else {
+        if ($this->isOrderFormValid()) {
             $this->submitValidatedOrder($_POST);
+        } else {
+            // show the same order page again
+            $this->order();
         }
 	}
+
+  private function isOrderFormValid() {
+     $basket = $this->Basket->getInstance();
+
+     $areFieldsValid = $this->form_validation->run();
+     $isBasketNotEmpty = count($basket->getItems()) > 0;
+     return $areFieldsValid && $isBasketNotEmpty;
+  }
 
     /** submitValidatedOrder
      *  Must be called only after order info is validated.
