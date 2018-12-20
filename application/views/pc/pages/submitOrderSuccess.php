@@ -22,7 +22,6 @@
         <?php endif;?>
         !
 
-      <!--
         <p>
           Ваш заказ принят и будет отправлен в течении 24 часов по адресу (или на отделение новой почты) <span class="address"><?=$post['addressOrNovaPoshtaOffice']?></span>. 
         </p>
@@ -30,8 +29,8 @@
         <br />
         Если хотите нам что-нибудь еще сказать перед отправкой заказа, звоните!
 
-      -->
        
+      <!-- Vacation message
         <br />
 
         <div>
@@ -43,6 +42,7 @@
             </p>
         </div>
        
+      -->
 	</div>
 </div>
 <?php $this->load->view("pc/pages/contact");?>
