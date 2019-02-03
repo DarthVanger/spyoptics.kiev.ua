@@ -5,6 +5,14 @@
  -
 -->
 
+<?php
+  /*
+   * Shop is closing! So hiding the cart, to not let people buy :(
+   * @date 2019-02-03
+   */
+  $hideHeaderCart = true;
+?>
+
 <?php if(!isset($hideHeaderCart) || !$hideHeaderCart): ?>
     <!-- CartAjax sources -->
     <!-- depends on jquery (assuming it was already included) -->
