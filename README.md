@@ -23,7 +23,29 @@ Installing or moving to another host you should change following config files:
 3.  application/config/database.php
  
     Change user, db name, pass, etc. for mysql.
+    
+Deploy
+------
+I use [git-ftp](https://github.com/git-ftp/git-ftp) to deploy.
 
+This means there is a file with the last deployed commit on the server.
+
+To see the last deployed version use:
+
+```
+git ftp show # downloads the file with the last deployed commit SHA1 from server, and shows it
+```
+
+When you do another commit, you can use `git-ftp` to easily upload via `ftp` only the files which were changed in this commit:
+
+```
+git commit -m 'my new commit'
+git ftp push 
+# 1 file to sync:
+# [1 of 1] Buffered for upload 'index.html'.
+# Uploading ...
+# Last deployment changed to ded01b27e5c785fb251150805308d3d0f8117387.
+```
 
 Architecture
 ------------
